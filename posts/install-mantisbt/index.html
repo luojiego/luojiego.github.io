@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>MantisBT 安装 - </title>
+
+  <meta name="description" content="MantisBT 安装
+github 地址 注意，不能从 release 页面下载来安装，要从官网进行下载
+下载并解压
+# curl -LO https://github.com/mantisbt/mantisbt/archive/release-2.24.1.zip # 这个代码是错误的
+curl -LO https://nchc.dl.sourceforge.net/project/mantisbt/mantis-stable/2.24.1/mantisbt-2.24.1.zip
+unzip unzip release-2.24.1.zip
+安装官方文档
+建议详细阅读官方文档，不然将会和我一样遇到一车子的坑。"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Roger\u0027s Blog",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/install-mantisbt\/",
+          "name": "Mantis bt 安装"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "MantisBT 安装",
+  "description" : "MantisBT 安装 github 地址 注意，不能从 release 页面下载来安装，要从官网进行下载\n下载并解压 # curl -LO https:\/\/github.com\/mantisbt\/mantisbt\/archive\/release-2.24.1.zip # 这个代码是错误的 curl -LO https:\/\/nchc.dl.sourceforge.net\/project\/mantisbt\/mantis-stable\/2.24.1\/mantisbt-2.24.1.zip unzip unzip release-2.24.1.zip 安装官方文档\n建议详细阅读官方文档，不然将会和我一样遇到一车子的坑。\n",
+  "inLanguage" : "en",
+  "wordCount":  201 ,
+  "datePublished" : "2020-07-01T08:43:41",
+  "dateModified" : "2020-07-01T08:43:41",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "MantisBT" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/install-mantisbt\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="MantisBT 安装" />
+<meta property="og:description" content="MantisBT 安装
+github 地址 注意，不能从 release 页面下载来安装，要从官网进行下载
+下载并解压
+# curl -LO https://github.com/mantisbt/mantisbt/archive/release-2.24.1.zip # 这个代码是错误的
+curl -LO https://nchc.dl.sourceforge.net/project/mantisbt/mantis-stable/2.24.1/mantisbt-2.24.1.zip
+unzip unzip release-2.24.1.zip
+安装官方文档
+建议详细阅读官方文档，不然将会和我一样遇到一车子的坑。">
+<meta property="og:url" content="http://localhost:1313/posts/install-mantisbt/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Roger&#39;s Blog" />
+
+  <meta name="twitter:title" content="MantisBT 安装" />
+  <meta name="twitter:description" content="MantisBT 安装
+github 地址 注意，不能从 release 页面下载来安装，要从官网进行下载
+下载并解压
+# curl -LO https://github.com/mantisbt/mantisbt/archive/release-2.24.1.zip # 这个代码是错误的
+curl -LO …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.124.1">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Roger&#39;s Blog"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Roger&#39;s Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>MantisBT 安装</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h1 id="mantisbt-安装">MantisBT 安装</h1>
+<p><a href="https://github.com/mantisbt/mantisbt">github 地址</a> <strong>注意，不能从 release 页面下载来安装，要从官网进行下载</strong></p>
+<h2 id="下载并解压">下载并解压</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># curl -LO https://github.com/mantisbt/mantisbt/archive/release-2.24.1.zip # 这个代码是错误的</span>
+</span></span><span style="display:flex;"><span>curl -LO https://nchc.dl.sourceforge.net/project/mantisbt/mantis-stable/2.24.1/mantisbt-2.24.1.zip
+</span></span><span style="display:flex;"><span>unzip unzip release-2.24.1.zip
+</span></span></code></pre></div><p><a href="https://www.mantisbt.org/docs/master/en-US/Admin_Guide/html-desktop/">安装官方文档</a></p>
+<p><strong>建议详细阅读官方文档</strong>，不然将会和我一样遇到一车子的坑。</p>
+<h2 id="php-环境">PHP 环境</h2>
+<p>由于 CentOS 默认安装的是 5.4，但是 MantisBT 要求的是 5.5.9+，所以需要安装更高版本的 PHP。</p>
+<p>此处，我们安装 7.2 吧。其实我也不知道为什么要安装 7.2</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+</span></span><span style="display:flex;"><span>yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+</span></span><span style="display:flex;"><span>yum install yum-utils
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># yum-config-manager --enable remi-php55   # Install PHP 5.5</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># yum-config-manager --enable remi-php56   # Install PHP 5.6	</span>
+</span></span><span style="display:flex;"><span>yum-config-manager --enable remi-php72
+</span></span><span style="display:flex;"><span>yum install php <span style="color:#75715e"># 此时安装时则会是 7.2</span>
+</span></span></code></pre></div><p><a href="https://www.tecmint.com/install-php-5-6-on-centos-7/">PHP 安装参考地址</a></p>
+<h2 id="数据库">数据库</h2>
+<p>此处使用我比较熟悉的 Mariadb，直接拷贝了之前的启动脚本</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run --restart<span style="color:#f92672">=</span>always --name MariaDB -p 3307:3306 -v /data/db/mariadb:/var/lib/mysql -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span><span style="color:#ae81ff">123456</span> -d mariadb:10.1
+</span></span></code></pre></div><h2 id="拷贝文件">拷贝文件</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mv mantisbt-release-2.24.1 mantisbt
+</span></span><span style="display:flex;"><span>cd mantisbt/config
+</span></span></code></pre></div><h2 id="安装">安装</h2>
+<h3 id="坑1">坑1</h3>
+<p>没有重新启动 Apache, 所以直接在浏览器里面打开了 php 文件。</p>
+<p><strong>重启 Apache</strong></p>
+<h3 id="坑2">坑2</h3>
+<pre tabindex="0"><code>FATAL ERROR: PHP mbstring extension is not enabled.
+MantisBT requires this extension for Unicode (UTF-8) support
+http://www.php.net/manual/en/mbstring.installation.php
+</code></pre><p>解决方案</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>yum install php-mbstring
+</span></span></code></pre></div><p>重新启动 Apache</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>service httpd restart
+</span></span></code></pre></div><h3 id="坑3">坑3</h3>
+<p><strong>页面报 500 错误</strong>。。。</p>
+<p>查看 <strong>Apache</strong> 错误日志</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tailf /var/log/httpd/error_log
+</span></span></code></pre></div><p><a href="https://www.mantisbt.org/forums/viewtopic.php?f=3&amp;t=25660">解决方案</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 重新下载安装包</span>
+</span></span><span style="display:flex;"><span>curl -LO https://nchc.dl.sourceforge.net/project/mantisbt/mantis-stable/2.24.1/mantisbt-2.24.1.zip
+</span></span></code></pre></div><h3 id="坑4">坑4</h3>
+<p>输入 http://ip:8080/admin/check/index.php，然后提示 <strong>PHP 不支持的数据库类型</strong></p>
+<p>叕怎么了？</p>
+<p>查看文档，Mantis 是支持 mysqli，但是啥问题哈？</p>
+<p>研究半天，索性尝试安装了一下 <strong>php-mysqli</strong>，结果可以安装，看来是插件没有安装</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span> yum install php-mysqli
+</span></span></code></pre></div><p>安装好之后，再试，还是不行。</p>
+<p>噢，对了，还需要<strong>重新启动 Apache 服务</strong></p>
+<p>check 成功，安装成功了。</p>
+<p>请注意：由于数据库是安装在 Docker 中的，所以数据库的 <strong>hostname</strong> 需要使用 <strong>172.17.0.1</strong></p>
+<h3 id="坑5">坑5</h3>
+<p>安装过程中，会提示无法正常创建 config_inc.php，需要手动创建这个文件，并将页面上展示的配置数据拷贝到这个文件中，或者将 mantis 这个目录权限设置为 apache:apache。</p>
+<h3 id="坑6">坑6</h3>
+<p>终于跳转到启动页面了，真心不容易，对于我这个对 PHP 没有任何研究的人而言，真的挺难的。</p>
+<p>页面会有提示说删除 admin 目录，并且禁用 administrator 账户。</p>
+<p>然后我要登录管理员账号，可是 administrator 的密码是什么？</p>
+<p><strong>不是空，也不是 administrator.</strong></p>
+<p>你猜怎么着，是 <strong>root</strong>，从文档中得到的。</p>
+<h2 id="结语">结语</h2>
+<p>首先由于我对 PHP 和 Apache 不熟悉，导致坑比较多。其实我没有到详细阅读说明文档，导致遇到许多麻烦事情。所以对于需要安装 Mantis 的小伙伴，若有时间，请先阅读说明文档，若时间不允许，但是自己对整个环境都不熟悉的话，可能需要浪费比较多的时间在安装上面。</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="http://localhost:1313//tags/mantisbt/">MantisBT</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/v2ray-proxy-setting/" data-toggle="tooltip" data-placement="top" title="V2ray 终端代理">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/why-should-programmers-support-genuine-software/" data-toggle="tooltip" data-placement="top" title="为什么程序员更应该支持正版软件？">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2024
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Roger&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.124.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>管理后台关于时间的“补丁” - </title>
+
+  <meta name="description" content="我们管理后台的历史
+18年可以新做的项目，要求我们做管理后台，但是我之前没有前端的任何经验，另外两个小伙伴也没有。只是用 Go 做过简单的页面。只接触过一点点模板的东西，要做一个管理后台，难度可想而知。
+但是坚持了下来，19年后台经过两三次的框架重构，算是有模有样了吧。
+问题显现
+刚开始，我们只有国际版本的后台，使用的是 UTC 时间，管理后台上有很多关于活动时间的设置，之前并没有任何关于时间的标准设计方式。所以后台页面传入到后台的时间格式有两种，一种是时间格式字符串，例如 2020-05-20 20:00，另外一种是以时间戳的方式传递给后端。"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Roger\u0027s Blog",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/background-time\/",
+          "name": "管理后台关于时间的“补丁”"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "管理后台关于时间的“补丁”",
+  "description" : "我们管理后台的历史 18年可以新做的项目，要求我们做管理后台，但是我之前没有前端的任何经验，另外两个小伙伴也没有。只是用 Go 做过简单的页面。只接触过一点点模板的东西，要做一个管理后台，难度可想而知。 但是坚持了下来，19年后台经过两三次的框架重构，算是有模有样了吧。\n问题显现 刚开始，我们只有国际版本的后台，使用的是 UTC 时间，管理后台上有很多关于活动时间的设置，之前并没有任何关于时间的标准设计方式。所以后台页面传入到后台的时间格式有两种，一种是时间格式字符串，例如 2020-05-20 20:00，另外一种是以时间戳的方式传递给后端。\n",
+  "inLanguage" : "en",
+  "wordCount":  86 ,
+  "datePublished" : "2020-05-20T07:39:12",
+  "dateModified" : "2020-05-20T07:39:12",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "后台, 时间" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/background-time\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="管理后台关于时间的“补丁”" />
+<meta property="og:description" content="我们管理后台的历史
+18年可以新做的项目，要求我们做管理后台，但是我之前没有前端的任何经验，另外两个小伙伴也没有。只是用 Go 做过简单的页面。只接触过一点点模板的东西，要做一个管理后台，难度可想而知。
+但是坚持了下来，19年后台经过两三次的框架重构，算是有模有样了吧。
+问题显现
+刚开始，我们只有国际版本的后台，使用的是 UTC 时间，管理后台上有很多关于活动时间的设置，之前并没有任何关于时间的标准设计方式。所以后台页面传入到后台的时间格式有两种，一种是时间格式字符串，例如 2020-05-20 20:00，另外一种是以时间戳的方式传递给后端。">
+<meta property="og:url" content="http://localhost:1313/posts/background-time/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Roger&#39;s Blog" />
+
+  <meta name="twitter:title" content="管理后台关于时间的“补丁”" />
+  <meta name="twitter:description" content="我们管理后台的历史
+18年可以新做的项目，要求我们做管理后台，但是我之前没有前端的任何经验，另外两个小伙伴也没有。只是用 Go 做过简单的页面。只接触过一点点模板的东西，要做一个管理后台，难度可想而知。
+但是坚持了下来，19年后台经过两三次的框架重构，算是有模有样了吧。
+问题显现
+刚开始，我们只有国际版本的后台，使用的是 UTC 时间，管理后台上有很多关于活动时间的设置，之前并没有任何关于时间的标 …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.124.1">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Roger&#39;s Blog"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Roger&#39;s Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>管理后台关于时间的“补丁”</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h1 id="我们管理后台的历史">我们管理后台的历史</h1>
+<p>18年可以新做的项目，要求我们做管理后台，但是我之前没有前端的任何经验，另外两个小伙伴也没有。只是用 Go 做过简单的页面。只接触过一点点模板的东西，要做一个管理后台，难度可想而知。
+但是坚持了下来，19年后台经过两三次的框架重构，算是有模有样了吧。</p>
+<h1 id="问题显现">问题显现</h1>
+<p>刚开始，我们只有国际版本的后台，使用的是 UTC 时间，管理后台上有很多关于活动时间的设置，之前并没有任何关于时间的标准设计方式。所以后台页面传入到后台的时间格式有两种，一种是<strong>时间格式字符串，例如 2020-05-20 20:00</strong>，另外一种是<strong>以时间戳的方式传递给后端</strong>。</p>
+<h2 id="时间格式串">时间格式串</h2>
+<h3 id="问题">问题</h3>
+<ul>
+<li>非 UTC 时区的服务器上，出现了异常【国服和日本服时间异常，因为在解析时，我们使用的是 <strong>time.Parse</strong> 函数进行的处理，所以在对应的服务上会有异常】。</li>
+</ul>
+<h3 id="解决办法">解决办法</h3>
+<ul>
+<li>在后台使用 <strong>time.ParseInLocation</strong> 解析成本地服务器的正确时间</li>
+</ul>
+<h2 id="时间戳">时间戳</h2>
+<h3 id="问题-1">问题</h3>
+<p>若服务器与本地时间不一致，则需要传递正确的时间戳到服务器。例如：最开始只有国际版，我们解决这个问题的办法简单又粗暴，直接将时间戳减去了 8 * 3600 秒。因为我们的本地时间是 CST，这样就能传递正确的时间戳到服务器了。但是随着后续新增加的 国服和日本服分别采用了 <strong>CST</strong> 和 <strong>JST</strong>，前端就无法正常工作了。加之，服务器端只有两个人了，维护三个版本，许多开发的功能需要同步，所以会异常痛苦。</p>
+<h3 id="解决办法-1">解决办法</h3>
+<p><strong>干掉传递时间戳的方式，直接传递时间格式字符串。</strong> 这样前台代码就是统一的，对于设置者而言，永远记得我设计的就是服务器的时间，这样再也不用担心合并过程中的“失误”。</p>
+<h1 id="前台展示问题">前台展示问题</h1>
+<p>解决了前台往后台传递的问题，但是如何展示呢？</p>
+<h2 id="解决方案">解决方案</h2>
+<ul>
+<li>若不能通过后台直接格式化时间，则显式告诉前台后台使用的时区【因为我们后台，大部分传递到前台的是时间戳，所以我们会将后台所使用的时区传递到前台】。</li>
+<li>直接由后台根据时间戳转换成时间格式传递出来。【依然有负作用，因为前台可能需要根据时间格式和当前的时间展示一些特殊的状态，这样前台还是需要后台的格式得到时间戳才能进行简单的计算】</li>
+</ul>
+<h1 id="总结">总结</h1>
+<ul>
+<li>前台传递给后台使用时间格式字符串，最合理；</li>
+<li>前台需要知道后台的时区，后台传递时间戳，前台计算会比较简单；</li>
+</ul>
+<h1 id="相关操作">相关操作</h1>
+<h2 id="修改-linux-时区">修改 Linux 时区</h2>
+<p>在 <strong>CentOS7 和 Ubuntu 18.04</strong> 测试过</p>
+<pre tabindex="0"><code>timedatectl set-timezone UTC # 设置本地时区为 UTC
+timedatectl set-timezone Asia/Tokyo # 设置为日本标准时间 即东京
+timedatectl set-timezone Asia/Shanghai # 设置为中国标准时间 即上海
+</code></pre><h2 id="查看可用的时区">查看可用的时区</h2>
+<pre tabindex="0"><code>timedatectl list-timezones
+</code></pre><h2 id="我笑了">我笑了</h2>
+<p>看到一个博客说：CST 应该是 “China Shanghai Time”，还好是应该。
+其实计算机中应该有好多 ‘ST’，都是标准的意思。例如：stdio.h, unistd.h。
+多看多学多遇到就不会搞这么萌的笑话……</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="http://localhost:1313//tags/%E5%90%8E%E5%8F%B0/">后台</a>&nbsp;
+            
+              <a href="http://localhost:1313//tags/%E6%97%B6%E9%97%B4/">时间</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/goland-short-cuts/" data-toggle="tooltip" data-placement="top" title="goland 25 大特色编辑功能">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/cpp-null/" data-toggle="tooltip" data-placement="top" title="C&#43;&#43; Mysql null 引发的血案">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2024
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Roger&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.124.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

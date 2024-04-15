@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>aws secrity day 10 月 23 日笔记 - </title>
+
+  <meta name="description" content="Security Day
+责任共担 的安全模型
+AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设施
+
+安全可视化和安全可控
+服务之间高度集成，达到自动化布署 Macie 。。
+建立隐私数据保护
+丰富的使用场景
+"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Roger\u0027s Blog",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/aws-secrity-day\/",
+          "name": "Aws secrity day 10 月 23 日笔记"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "aws secrity day 10 月 23 日笔记",
+  "description" : "Security Day 责任共担 的安全模型\nAWS 的安全责任：计算，存储，数据库和网络以及 全球基础设施\n安全可视化和安全可控 服务之间高度集成，达到自动化布署 Macie 。。 建立隐私数据保护 丰富的使用场景 ",
+  "inLanguage" : "en",
+  "wordCount":  139 ,
+  "datePublished" : "2020-10-25T10:30:11",
+  "dateModified" : "2020-10-25T10:30:11",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/aws-secrity-day\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="aws secrity day 10 月 23 日笔记" />
+<meta property="og:description" content="Security Day
+责任共担 的安全模型
+AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设施
+
+安全可视化和安全可控
+服务之间高度集成，达到自动化布署 Macie 。。
+建立隐私数据保护
+丰富的使用场景
+">
+<meta property="og:url" content="http://localhost:1313/posts/aws-secrity-day/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Roger&#39;s Blog" />
+
+  <meta name="twitter:title" content="aws secrity day 10 月 23 日笔记" />
+  <meta name="twitter:description" content="Security Day
+责任共担 的安全模型
+AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设施
+
+安全可视化和安全可控
+服务之间高度集成，达到自动化布署 Macie 。。
+建立隐私数据保护
+丰富的使用场景
+">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.124.1">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Roger&#39;s Blog"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Roger&#39;s Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>aws secrity day 10 月 23 日笔记</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h1 id="security-day">Security Day</h1>
+<p><strong>责任共担</strong> 的安全模型</p>
+<p>AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设施</p>
+<ul>
+<li>安全可视化和安全可控</li>
+<li>服务之间高度集成，达到自动化布署 Macie 。。</li>
+<li>建立隐私数据保护</li>
+<li>丰富的使用场景</li>
+</ul>
+<p>外部：</p>
+<p>AWS Shield Standard 和 <strong>Shield Advanced</strong> 的优势：盾牌服务</p>
+<p>WAF 7 层安全防护：动态阻止机器人和爬虫 自动化的解决方案，WebACL</p>
+<p>GuardDuty: 安全守卫 机器学习 账号的行为 异常的行为会通知给管理员</p>
+<p>Detective: 进一步分析异常的行为</p>
+<p>内部：</p>
+<p>Secret Manager: 密钥的记录与轮换 需要账号和密码先去找该服务</p>
+<p>CloundWatch: 监控平台 收集日志 分析</p>
+<p>AWS Config: 配置合规性检测</p>
+<p>AWS KMS: 密钥加密服务</p>
+<p>SecurityHub: 合规检测 检测环境是否达到要求</p>
+<p>安全管理：</p>
+<p>Certificate Manager: TLS 证书免费申请，自动续签</p>
+<p>Cognito: 和第三方做联合登录认证</p>
+<p>Amazon Fraud Detector: 欺诈检测，适应不同的场景</p>
+<h1 id="权限边界">权限边界</h1>
+<p>IAM &amp; 权限边界</p>
+<p>开发中密切相关 devops 发展的方向</p>
+<p>IAM 用户：可以设置别名，方便记忆与登录</p>
+<p>IAM 角色：非人（应用）的访问，给 EC2 访问 S3 的权限</p>
+<p>分配 AWS 托管策略、自定义的策略</p>
+<p>建议：<strong>至少拥有两个 IAM 用户</strong></p>
+<p>ARN：<strong>AWS 所有资源的唯一标识</strong></p>
+<h2 id="权限边界-1">权限边界</h2>
+<p>安全授权管理，更安全的委派自己的权限</p>
+<p>不同部门有不同的权限边界：权限边界下的账号只有该权限边界之内</p>
+<p>通过编辑 json 来控制</p>
+<h1 id="game-day">Game Day</h1>
+<h2 id="数据安全">数据安全</h2>
+<p>传输 网络加密</p>
+<p>存储加密 S3 和 EBS</p>
+<p>使用中的数据 应用级别的加密</p>
+<p>CloundTrail 可以用来审核 AWS KMS 的使用情况</p>
+<p>VPC</p>
+<p>安全组 有状态的防火墙 <strong>按照角色划分安全组</strong> <strong>可以附加多个安全组</strong></p>
+<p>NACL 无状态的防火墙 安全级别非常高</p>
+<p>子网是不能跨 AZ 的</p>
+<p>SSO:</p>
+<p>Directory Service:</p>
+<p>Firewall Manager:</p>
+<p>Amazon Inspector: 自动化安全评估服务 网络层和操作系统/中间件</p>
+<p>云管理挑战</p>
+<p>Systems Manager：好多工具。。</p>
+<p>S3 ALB EC2 RDS VPC</p>
+<p>简报：不规则的突增访问流量</p>
+<p>S3 静态文件被删除</p>
+<p>账号数据也异常了</p>
+<p>恢复业务，最佳实践</p>
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/the-convert-in-go/" data-toggle="tooltip" data-placement="top" title="Go 中&#34;坑爹&#34;的类型转换">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="http://localhost:1313/posts/aws-re-invent-12-23/" data-toggle="tooltip" data-placement="top" title="AWS re-invent 12-23">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2024
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Roger&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.124.1</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

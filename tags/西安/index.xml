@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>西安 on Roger&#39;s Blog</title>
+    <link>http://localhost:1313/tags/%E8%A5%BF%E5%AE%89/</link>
+    <description>Recent content in 西安 on Roger&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Dec 2020 11:45:53 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E8%A5%BF%E5%AE%89/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS re-invent 12-23</title>
+      <link>http://localhost:1313/posts/aws-re-invent-12-23/</link>
+      <pubDate>Sun, 27 Dec 2020 11:45:53 +0000</pubDate>
+      <guid>http://localhost:1313/posts/aws-re-invent-12-23/</guid>
+      <description>&lt;h1 id=&#34;巅峰科技-重塑未来&#34;&gt;巅峰科技 重塑未来&lt;/h1&gt;&#xA;&lt;p&gt;这次举办的比上一次参加的 10 月 23 的能好一些，人也多一些。不过总体的感觉就是每次都是新产品推销会议。但是对于我们小公司而言，了解趋势有帮助。不然一直用着那些古老的技术也不太合适。&lt;/p&gt;&#xA;&lt;h2 id=&#34;2020-主题分享&#34;&gt;2020 主题分享&lt;/h2&gt;&#xA;&lt;p&gt;算是对于 re:invent 发布的内容的总体概览，讲解者的职位最高，也是最能将东西讲解的最清楚的。&lt;/p&gt;&#xA;&lt;p&gt;自 2006 年发布 S3，AWS 已经持续创新 15 年。&lt;/p&gt;&#xA;&lt;p&gt;2019，在拉斯维加斯举办的线上有高达 6.7 万的参会者，而且门票将近 1.8K 美金。&lt;/p&gt;&#xA;&lt;p&gt;2020 年因为疫情的原因，在线上举行超过 3 周，有超过 50w 的注意用户观看。现在线上的版本已经有了中文版本，对于有需要的可以点击链接去观看了。&lt;/p&gt;&#xA;&lt;p&gt;AWS 云市场的份额高达 45 %。&lt;/p&gt;&#xA;&lt;p&gt;目前云计算本地部署高达 96%，而云上部署只有 4%，这个数字让我特别震惊。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
