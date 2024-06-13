@@ -173,6 +173,51 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://luojiego.github.io/posts/filco-minila-air-experience/">
+        <h2 class="post-title">Filco Minila Air 使用体验</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 17, 2021
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>今年 6 月，公司喊了两年的搬家终于看起来要搬了，而且我的 IKBC C87 服役超过三个年头了，我想是时候换个新键盘了，毕竟已经相当用了三年零三个月了。</p>
+        <a href="https://luojiego.github.io/posts/filco-minila-air-experience/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://luojiego.github.io//tags/%E9%94%AE%E7%9B%98/">键盘</a>&nbsp;
+        
+        <a href="https://luojiego.github.io//tags/filco/">Filco</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://luojiego.github.io/posts/aws-re-invent-12-23/">
         <h2 class="post-title">AWS re-invent 12-23</h2>
         
@@ -622,74 +667,6 @@
         <a href="https://luojiego.github.io//tags/go-micro/">go-micro</a>&nbsp;
         
         <a href="https://luojiego.github.io//tags/kafka/">kafka</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://luojiego.github.io/posts/cpp-null/">
-        <h2 class="post-title">C&#43;&#43; Mysql null 引发的血案</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on June 3, 2020
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <h1 id="代码">代码</h1>
-<h2 id="出错代码段">出错代码段</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span> CGameServer<span style="color:#f92672">::</span>getAccountInfoByUserId(<span style="color:#66d9ef">int</span> user_id, UserAccountData<span style="color:#f92672">&amp;</span> data) {                                                                                          
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (connectToLocalDB()) {
-</span></span><span style="display:flex;"><span>        log_error(<span style="color:#e6db74">&#34;connect to db failed&#34;</span>);
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> false;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    TLIB_DB_LINK <span style="color:#f92672">*</span>pTempDBLink <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>m_stLDBLink;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    snprintf(pTempDBLink<span style="color:#f92672">-&gt;</span>sQuery[<span style="color:#ae81ff">0</span>], <span style="color:#66d9ef">sizeof</span>(pTempDBLink<span style="color:#f92672">-&gt;</span>sQuery[<span style="color:#ae81ff">0</span>]), 
-</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;select bind_mark, account, password, state, device_mark, country, tunnel, \
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        register_version, transfer_code, bind_equipment from account_data where \
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        user_id=%d&#34;</span>, user_id);
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//......
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> (pTempDBLink<span style="color:#f92672">-&gt;</span>stRow[i]) {
-</span></span><span style="display:flex;"><span>                    data._transfer_code <span style="color:#f92672">=</span> pTempDBLink<span style="color:#f92672">-&gt;</span>stRow[i<span style="color:#f92672">++</span>];
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (pTempDBLink<span style="color:#f92672">-&gt;</span>stRow[i]) {
-</span></span><span style="display:flex;"><span>                    data._bind_equipment <span style="color:#f92672">=</span> atoi(pTempDBLink<span style="color:#f92672">-&gt;</span>stRow[i<span style="color:#f92672">++</span>]);
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>   <span style="color:#75715e">//......
-</span></span></span></code></pre></div>
-        <a href="https://luojiego.github.io/posts/cpp-null/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://luojiego.github.io//tags/c&#43;&#43;/">C&#43;&#43;</a>&nbsp;
-        
-        <a href="https://luojiego.github.io//tags/mysql/">MySQL</a>&nbsp;
         
     </div>
     
