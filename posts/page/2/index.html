@@ -173,6 +173,56 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://luojiego.github.io/posts/2022-annual-summary/">
+        <h2 class="post-title">2022 年终总结</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 14, 2023
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>迟到的年终总结，不想和去年一样，匆忙的总结，今年就多花了些时间，不过最主要还是写给我自己。</p>
+<h1 id="最大的收获">最大的收获</h1>
+<h2 id="英语学习">英语学习</h2>
+<p>去年的 11 月 30 日，我订阅了 Medium，花费 $50。虽然今年在 Medium 平台上花费的时间比较少，离自己制定的目标差了不少。但是我觉得至少督促了我加强了英语的学习，从三月份开始，我在 B 站的一个 Up 主的安利下，下载了欧路词典，说实话，我刚才购买了朗文词典 App，花费 128 元，转眼间就有购买了欧路的高级版，着实有点难受，但是至少我下载网上朗文词库时，心里没有负罪感了，毕竟我已经支持过正版了。从四月开始，我在学完极客时间课程《互联网人的英语私教课》后，意识到自己的单词量着实太着急了。无法高效的看完 Medium 上的文章，是英语水平太差了。如果不提高单词量，那么每一句对我来说都可能要使用翻译工具，效率有点差。所以我开始了平均每天的单词记忆，我选择了大学四词汇，对于每一个单词，我都会将朗文词库的每种释义的每个例名听一遍。这让我想起，高中的时候，为了记住五笔词根，把整个字典的每个字的编码都看了一遍，学完之后，果然一下子打字的速度就提上来了。虽然截止元旦前我还有接近 50% 的单词没有学完，但是我读英文书籍和听 Uncle Bob 关于 Clean Code 的演讲时，明显感觉压力没有那么大了。</p>
+<h2 id="我选择">“我选择”</h2>
+<p>之前在听樊登读书的时候，也曾对”我选择做 XXX，因为 XXX“。但是今年年初也有那么半个月内心真的是，我选择这样做，是因为你们逼我的。不过现在好多了，我已经清楚的意识，不论什么时候，我们都不能放弃选择的权力。时刻提醒我当前的所有选择，是因为我选择。</p>
+<h2 id="编码水平提升">编码水平提升</h2>
+<p>关于编码水平，直到我听完了 Uncle Bob 的激情演讲，读完 TCL 语言之父 John Ousterhout 的《软件设计哲学》，《人月神话》，《数据密集型应用系统设计》等书籍之后，我深刻意识到自己目前的水平还需要不断的提升。在今年的项目中，我虽然并未践行 TDD，但是对于我写的代码，基本上单元测试覆盖率已经达到了 80% 以上，对接的过程也是相当高效，终于不用再被别人频繁打断，能安心做事的感觉真好。未来的项目我依旧要不停的践行 Clean Code 的思想，借助 Copilot 及 ChatGPT ，将自己的编码水平可以提升到优秀开源代码的级别。</p>
+        <a href="https://luojiego.github.io/posts/2022-annual-summary/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://luojiego.github.io//tags/annual-summary/">Annual Summary</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://luojiego.github.io/posts/2022-movie/">
         <h2 class="post-title">2022 年我看过的电影</h2>
         
@@ -632,63 +682,6 @@ github 地址：<a href="https://github.com/lxgw/LxgwWenKai">字体地址</a><br
         <a href="https://luojiego.github.io//tags/c&#43;&#43;/">C&#43;&#43;</a>&nbsp;
         
         <a href="https://luojiego.github.io//tags/python/">Python</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://luojiego.github.io/posts/delete-mysql-250-million-items/">
-        <h2 class="post-title">如何删除 MySQL 表中 2.5 亿条数据？</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 25, 2021
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <h1 id="为什么会有-25-亿条数据">为什么会有 2.5 亿条数据</h1>
-<p>运营需求，需要提供查询用户登录的记录。</p>
-<p>我一思索，这简单呀，就设计了如下的数据表。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">desc</span> login_record;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-------------+------------------+------+-----+-------------------+-------+
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Field       <span style="color:#f92672">|</span> <span style="color:#66d9ef">Type</span>             <span style="color:#f92672">|</span> <span style="color:#66d9ef">Null</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Key</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Default</span>           <span style="color:#f92672">|</span> Extra <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-------------+------------------+------+-----+-------------------+-------+
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> user_id     <span style="color:#f92672">|</span> int(<span style="color:#ae81ff">10</span>) unsigned <span style="color:#f92672">|</span> <span style="color:#66d9ef">NO</span>   <span style="color:#f92672">|</span> MUL <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>              <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> ip          <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">40</span>)      <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span>                   <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> device_mark <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">500</span>)     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NO</span>   <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span>                   <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> time        <span style="color:#f92672">|</span> <span style="color:#66d9ef">timestamp</span>        <span style="color:#f92672">|</span> <span style="color:#66d9ef">NO</span>   <span style="color:#f92672">|</span> MUL <span style="color:#f92672">|</span> <span style="color:#66d9ef">CURRENT_TIMESTAMP</span> <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-------------+------------------+------+-----+-------------------+-------+
-</span></span></span></code></pre></div>
-        <a href="https://luojiego.github.io/posts/delete-mysql-250-million-items/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://luojiego.github.io//tags/mysql/">MySQL</a>&nbsp;
-        
-        <a href="https://luojiego.github.io//tags/go/">Go</a>&nbsp;
         
     </div>
     
