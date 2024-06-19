@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kafka on Roger&#39;s Blog</title>
-    <link>https://luojiego.github.io/tags/kafka/</link>
+    <link>https://luojiego.com/tags/kafka/</link>
     <description>Recent content in Kafka on Roger&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 Jun 2020 08:13:33 +0000</lastBuildDate>
-    <atom:link href="https://luojiego.github.io/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://luojiego.com/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>go-micro-broker-kafka-demo</title>
-      <link>https://luojiego.github.io/posts/go-micro-broker-kafka-demo/</link>
+      <link>https://luojiego.com/posts/go-micro-broker-kafka-demo/</link>
       <pubDate>Wed, 10 Jun 2020 08:13:33 +0000</pubDate>
-      <guid>https://luojiego.github.io/posts/go-micro-broker-kafka-demo/</guid>
+      <guid>https://luojiego.com/posts/go-micro-broker-kafka-demo/</guid>
       <description>&lt;h1 id=&#34;困惑&#34;&gt;困惑&lt;/h1&gt;&#xA;&lt;p&gt;有点小心动要研究一下 go-micro 的 broker，正好在研究 kafka，想找个 demo 尝试一下，但是真让人头大，并没有找到很容易上手的案例，于是自己码一篇来帮助有兴趣研究的朋友。&lt;/p&gt;&#xA;&lt;h1 id=&#34;v2-版本&#34;&gt;V2 版本&lt;/h1&gt;&#xA;&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;在 &lt;a href=&#34;https://github.com/micro/examples&#34;&gt;https://github.com/micro/examples&lt;/a&gt; v2 版本下面的 broker/main.go 中增加了一行代码&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;github.com/micro/go-plugins/broker/kafka/v2&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Summary on Roger&#39;s Blog</title>
-    <link>https://luojiego.github.io/tags/summary/</link>
+    <link>https://luojiego.com/tags/summary/</link>
     <description>Recent content in Summary on Roger&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 19 Nov 2021 13:36:10 +0000</lastBuildDate>
-    <atom:link href="https://luojiego.github.io/tags/summary/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://luojiego.com/tags/summary/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>改变从学习开始</title>
-      <link>https://luojiego.github.io/posts/summary-share/</link>
+      <link>https://luojiego.com/posts/summary-share/</link>
       <pubDate>Fri, 19 Nov 2021 13:36:10 +0000</pubDate>
-      <guid>https://luojiego.github.io/posts/summary-share/</guid>
+      <guid>https://luojiego.com/posts/summary-share/</guid>
       <description>&lt;p&gt;&lt;strong&gt;以下内容是我在 &lt;a href=&#34;https://time.geekbang.org/column/intro/100085301?tab=catalog&#34;&gt;陈天 · Rust 编程第一课&lt;/a&gt;的分享&lt;a href=&#34;https://time.geekbang.org/column/article/445818?cid=100085301&#34;&gt;用户故事｜绝望之谷：罗杰，改变从学习开始&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;你好，我是罗杰，目前在一家游戏公司担任后端开发主程。&lt;/p&gt;&#xA;&lt;p&gt;到现在我也快工作十年了，作为一个从小学习能力很一般的人，这中间的打怪升级史可以说是相当惨痛。&lt;/p&gt;&#xA;&lt;p&gt;我是13 年毕业的，在师范类院校学的软件工程专业。大四参加校招，历时三个月不断面试、笔试，勉强找到一份工作，做棋牌游戏后端开发，签到了深圳。这份工作实习不到半个月，我就开始失眠，因为在学校里从来没有深入学习，专业知识非常欠缺，代码几乎看不懂，当时也没有太多可以寻求帮助的途径，进入不了工作状态，非常痛苦。&lt;/p&gt;</description>
     </item>
   </channel>

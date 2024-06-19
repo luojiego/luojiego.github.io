@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>思考 on Roger&#39;s Blog</title>
-    <link>https://luojiego.github.io/tags/%E6%80%9D%E8%80%83/</link>
+    <link>https://luojiego.com/tags/%E6%80%9D%E8%80%83/</link>
     <description>Recent content in 思考 on Roger&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 29 Aug 2020 08:45:22 +0000</lastBuildDate>
-    <atom:link href="https://luojiego.github.io/tags/%E6%80%9D%E8%80%83/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://luojiego.com/tags/%E6%80%9D%E8%80%83/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>为什么程序员更应该支持正版软件？</title>
-      <link>https://luojiego.github.io/posts/why-should-programmers-support-genuine-software/</link>
+      <link>https://luojiego.com/posts/why-should-programmers-support-genuine-software/</link>
       <pubDate>Sat, 29 Aug 2020 08:45:22 +0000</pubDate>
-      <guid>https://luojiego.github.io/posts/why-should-programmers-support-genuine-software/</guid>
+      <guid>https://luojiego.com/posts/why-should-programmers-support-genuine-software/</guid>
       <description>&lt;h1 id=&#34;做对的事情&#34;&gt;做对的事情&lt;/h1&gt;&#xA;&lt;p&gt;我始终觉得，程序员应该将更多的精力花费在自己的专业上。如果在自己可接受的范围里面，花钱去支持正版软件，节约自己的时间，提高幸福感，才是正确的事情。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Code on Roger&#39;s Blog</title>
-    <link>https://luojiego.github.io/tags/code/</link>
+    <link>https://luojiego.com/tags/code/</link>
     <description>Recent content in Code on Roger&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 06 Mar 2022 22:26:27 +0000</lastBuildDate>
-    <atom:link href="https://luojiego.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://luojiego.com/tags/code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>内存不足 Redis 获取数据出错引发的雪崩分析</title>
-      <link>https://luojiego.github.io/posts/avalanche-caused-by-insufficient-machine-memory/</link>
+      <link>https://luojiego.com/posts/avalanche-caused-by-insufficient-machine-memory/</link>
       <pubDate>Sun, 06 Mar 2022 22:26:27 +0000</pubDate>
-      <guid>https://luojiego.github.io/posts/avalanche-caused-by-insufficient-machine-memory/</guid>
+      <guid>https://luojiego.com/posts/avalanche-caused-by-insufficient-machine-memory/</guid>
       <description>&lt;h2 id=&#34;异常回顾&#34;&gt;异常回顾&lt;/h2&gt;&#xA;&lt;p&gt;28 日凌晨机器警报拉响，某 Redis 服务出现“MISCONF Redis is configured to save RDB snapshots……”，接着活动服开始连续崩溃，大概十分钟之后，活动服正常拉起。&lt;/p&gt;&#xA;&lt;p&gt;经过分析，发现机器由于内存不足，Redis 服务无法正常 dump，导致写入失败引发的连环错误。但是看服务的日志时，我们发现一些特别诡异的问题，从 Redis 中获取出来的数据数据格式和请求的根本的不匹配。熟悉 C++ 的小伙伴深知，这大概率是内存出错了。但是仔细看了看，毫无头绪，主要由于服务&lt;strong&gt;使用的是单线程的模型，请求数据时，返回的数据格式就是错误的&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;HSET 的时候，还会调用 EXPIRE 设置过期时间，调用了两次 &lt;code&gt;redisAppendCommand&lt;/code&gt; ，&lt;strong&gt;但却只调用了一次&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;redisGetReply&lt;/code&gt;&lt;/strong&gt; 命令，&lt;strong&gt;也即只获取了 hset 的返回，但是并未获取 expire 的返回&lt;/strong&gt;，&lt;strong&gt;这会导致后续的命令再调用&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;redisGetReply&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;时获取到是 expire 的返回，后续的命令就会连续错位。&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>

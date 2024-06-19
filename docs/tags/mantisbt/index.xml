@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MantisBT on Roger&#39;s Blog</title>
-    <link>https://luojiego.github.io/tags/mantisbt/</link>
+    <link>https://luojiego.com/tags/mantisbt/</link>
     <description>Recent content in MantisBT on Roger&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Jul 2020 08:43:41 +0000</lastBuildDate>
-    <atom:link href="https://luojiego.github.io/tags/mantisbt/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://luojiego.com/tags/mantisbt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MantisBT 安装</title>
-      <link>https://luojiego.github.io/posts/install-mantisbt/</link>
+      <link>https://luojiego.com/posts/install-mantisbt/</link>
       <pubDate>Wed, 01 Jul 2020 08:43:41 +0000</pubDate>
-      <guid>https://luojiego.github.io/posts/install-mantisbt/</guid>
+      <guid>https://luojiego.com/posts/install-mantisbt/</guid>
       <description>&lt;h1 id=&#34;mantisbt-安装&#34;&gt;MantisBT 安装&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/mantisbt/mantisbt&#34;&gt;github 地址&lt;/a&gt; &lt;strong&gt;注意，不能从 release 页面下载来安装，要从官网进行下载&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;下载并解压&#34;&gt;下载并解压&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# curl -LO https://github.com/mantisbt/mantisbt/archive/release-2.24.1.zip # 这个代码是错误的&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -LO https://nchc.dl.sourceforge.net/project/mantisbt/mantis-stable/2.24.1/mantisbt-2.24.1.zip&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;unzip unzip release-2.24.1.zip&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://www.mantisbt.org/docs/master/en-US/Admin_Guide/html-desktop/&#34;&gt;安装官方文档&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;建议详细阅读官方文档&lt;/strong&gt;，不然将会和我一样遇到一车子的坑。&lt;/p&gt;</description>
     </item>
   </channel>
