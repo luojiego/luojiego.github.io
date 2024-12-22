@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>Rust 超快安装方法 - </title>
+
+  <meta name="description" content="由于 Rust 安装需要从 github 下载资源，直接安装，速度会非常感人，而且安装到一半还可能会失败，即使使用源码也会面临相同的情况。
+感谢中科大，Respect！！！
+以下是简单的解决方法：
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh
+几乎不出一分钟，就安装成功了。
+安装成功，执行个 cargo install ripgrep ，依然让人非常无语。
+此时只需要添加 ~/.cargo/config 文件
+文件内容如下：
+[source.crates-io]                                                                                                                                                                                              
+registry = &#34;https://github.com/rust-lang/crates.io-index&#34;
+
+replace-with = &#39;tuna&#39;
+[source.tuna]
+registry = &#34;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&#34;
+这样能就能愉快的  cargo install/run/build 了。
+注意：ustc 的源已经不能正常使用了，tuna 速度还是不错的"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Roger\u0027s Blog",
+    
+    "url": "https:\/\/luojiego.com\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/luojiego.com\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/luojiego.com\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/luojiego.com\/posts\/rust-install\/",
+          "name": "Rust 超快安装方法"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "Rust 超快安装方法",
+  "description" : "由于 Rust 安装需要从 github 下载资源，直接安装，速度会非常感人，而且安装到一半还可能会失败，即使使用源码也会面临相同的情况。\n感谢中科大，Respect！！！\n以下是简单的解决方法：\nexport RUSTUP_DIST_SERVER=https:\/\/mirrors.ustc.edu.cn\/rust-static export RUSTUP_UPDATE_ROOT=https:\/\/mirrors.ustc.edu.cn\/rust-static\/rustup curl --proto \u0026#39;=https\u0026#39; --tlsv1.2 -sSf https:\/\/sh.rustup.rs | sh 几乎不出一分钟，就安装成功了。\n安装成功，执行个 cargo install ripgrep ，依然让人非常无语。\n此时只需要添加 ~\/.cargo\/config 文件\n文件内容如下：\n[source.crates-io] registry = \u0026#34;https:\/\/github.com\/rust-lang\/crates.io-index\u0026#34; replace-with = \u0026#39;tuna\u0026#39; [source.tuna] registry = \u0026#34;https:\/\/mirrors.tuna.tsinghua.edu.cn\/git\/crates.io-index.git\u0026#34; 这样能就能愉快的 cargo install\/run\/build 了。\n注意：ustc 的源已经不能正常使用了，tuna 速度还是不错的\n",
+  "inLanguage" : "en",
+  "wordCount":  47 ,
+  "datePublished" : "2021-11-03T21:46:46\u002b00:00",
+  "dateModified" : "2021-11-03T21:46:46\u002b00:00",
+  "image" : "https:\/\/luojiego.com\/",
+  "keywords" : [ "Rust" ],
+  "mainEntityOfPage" : "https:\/\/luojiego.com\/posts\/rust-install\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/luojiego.com\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/luojiego.com\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="Rust 超快安装方法" />
+<meta property="og:description" content="由于 Rust 安装需要从 github 下载资源，直接安装，速度会非常感人，而且安装到一半还可能会失败，即使使用源码也会面临相同的情况。
+感谢中科大，Respect！！！
+以下是简单的解决方法：
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh
+几乎不出一分钟，就安装成功了。
+安装成功，执行个 cargo install ripgrep ，依然让人非常无语。
+此时只需要添加 ~/.cargo/config 文件
+文件内容如下：
+[source.crates-io]                                                                                                                                                                                              
+registry = &#34;https://github.com/rust-lang/crates.io-index&#34;
+
+replace-with = &#39;tuna&#39;
+[source.tuna]
+registry = &#34;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&#34;
+这样能就能愉快的  cargo install/run/build 了。
+注意：ustc 的源已经不能正常使用了，tuna 速度还是不错的">
+<meta property="og:url" content="https://luojiego.com/posts/rust-install/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Roger&#39;s Blog" />
+
+  <meta name="twitter:title" content="Rust 超快安装方法" />
+  <meta name="twitter:description" content="由于 Rust 安装需要从 github 下载资源，直接安装，速度会非常感人，而且安装到一半还可能会失败，即使使用源码也会面临相同的情况。
+感谢中科大，Respect！！！
+以下是简单的解决方法：
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT= …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.140.0">
+  <link rel="alternate" href="https://luojiego.com/index.xml" type="application/rss+xml" title="Roger&#39;s Blog"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="https://luojiego.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://luojiego.com/css/syntax.css" /><link rel="stylesheet" href="https://luojiego.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://luojiego.com/">Roger&#39;s Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Rust 超快安装方法</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>由于 Rust 安装需要从 github 下载资源，直接安装，速度会非常感人，而且安装到一半还可能会失败，即使使用源码也会面临相同的情况。</p>
+<p>感谢中科大，Respect！！！</p>
+<p>以下是简单的解决方法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export RUSTUP_DIST_SERVER<span style="color:#f92672">=</span>https://mirrors.ustc.edu.cn/rust-static
+</span></span><span style="display:flex;"><span>export RUSTUP_UPDATE_ROOT<span style="color:#f92672">=</span>https://mirrors.ustc.edu.cn/rust-static/rustup
+</span></span><span style="display:flex;"><span>curl --proto <span style="color:#e6db74">&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</span></span></code></pre></div><p>几乎不出一分钟，就安装成功了。</p>
+<p>安装成功，执行个 <code>cargo install ripgrep</code> ，依然让人非常无语。</p>
+<p>此时只需要添加 <code>~/.cargo/config</code> 文件</p>
+<p>文件内容如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>source.crates-io<span style="color:#f92672">]</span>                                                                                                                                                                                              
+</span></span><span style="display:flex;"><span>registry <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://github.com/rust-lang/crates.io-index&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>replace-with <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;tuna&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>source.tuna<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>registry <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&#34;</span>
+</span></span></code></pre></div><p>这样能就能愉快的  <code>cargo install/run/build</code> 了。</p>
+<p>注意：ustc 的源已经不能正常使用了，tuna 速度还是不错的</p>
+
+
+        
+          <div class="blog-tags">
+            
+              
+              <a href="https://luojiego.com/tags/rust/">Rust</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://luojiego.com/posts/divied-zero-panic/" data-toggle="tooltip" data-placement="top" title="除 0 真的会 panic 吗？">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://luojiego.com/posts/summary-share/" data-toggle="tooltip" data-placement="top" title="改变从学习开始">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2024
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://luojiego.com/">Roger&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.140.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="https://luojiego.com/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://luojiego.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>如何删除 MySQL 表中 2.5 亿条数据？ - </title>
+
+  <meta name="description" content="为什么会有 2.5 亿条数据
+运营需求，需要提供查询用户登录的记录。
+我一思索，这简单呀，就设计了如下的数据表。
+desc login_record;
+&#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43;
+| Field       | Type             | Null | Key | Default           | Extra |
+&#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43;
+| user_id     | int(10) unsigned | NO   | MUL | NULL              |       |
+| ip          | varchar(40)      | YES  |     |                   |       |
+| device_mark | varchar(500)     | NO   |     |                   |       |
+| time        | timestamp        | NO   | MUL | CURRENT_TIMESTAMP |       |
+&#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43;
+"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Roger\u0027s Blog",
+    
+    "url": "https:\/\/luojiego.com\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/luojiego.com\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/luojiego.com\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/luojiego.com\/posts\/delete-mysql-250-million-items\/",
+          "name": "如何删除 my SQL 表中 2.5 亿条数据？"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "如何删除 MySQL 表中 2.5 亿条数据？",
+  "description" : "为什么会有 2.5 亿条数据 运营需求，需要提供查询用户登录的记录。\n我一思索，这简单呀，就设计了如下的数据表。\ndesc login_record; \u002b-------------\u002b------------------\u002b------\u002b-----\u002b-------------------\u002b-------\u002b | Field | Type | Null | Key | Default | Extra | \u002b-------------\u002b------------------\u002b------\u002b-----\u002b-------------------\u002b-------\u002b | user_id | int(10) unsigned | NO | MUL | NULL | | | ip | varchar(40) | YES | | | | | device_mark | varchar(500) | NO | | | | | time | timestamp | NO | MUL | CURRENT_TIMESTAMP | | \u002b-------------\u002b------------------\u002b------\u002b-----\u002b-------------------\u002b-------\u002b ",
+  "inLanguage" : "en",
+  "wordCount":  322 ,
+  "datePublished" : "2021-05-25T21:57:32\u002b00:00",
+  "dateModified" : "2021-05-25T21:57:32\u002b00:00",
+  "image" : "https:\/\/luojiego.com\/",
+  "keywords" : [ "MySQL, Go" ],
+  "mainEntityOfPage" : "https:\/\/luojiego.com\/posts\/delete-mysql-250-million-items\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/luojiego.com\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/luojiego.com\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="如何删除 MySQL 表中 2.5 亿条数据？" />
+<meta property="og:description" content="为什么会有 2.5 亿条数据
+运营需求，需要提供查询用户登录的记录。
+我一思索，这简单呀，就设计了如下的数据表。
+desc login_record;
+&#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43;
+| Field       | Type             | Null | Key | Default           | Extra |
+&#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43;
+| user_id     | int(10) unsigned | NO   | MUL | NULL              |       |
+| ip          | varchar(40)      | YES  |     |                   |       |
+| device_mark | varchar(500)     | NO   |     |                   |       |
+| time        | timestamp        | NO   | MUL | CURRENT_TIMESTAMP |       |
+&#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43;
+">
+<meta property="og:url" content="https://luojiego.com/posts/delete-mysql-250-million-items/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Roger&#39;s Blog" />
+
+  <meta name="twitter:title" content="如何删除 MySQL 表中 2.5 亿条数据？" />
+  <meta name="twitter:description" content="为什么会有 2.5 亿条数据
+运营需求，需要提供查询用户登录的记录。
+我一思索，这简单呀，就设计了如下的数据表。
+desc login_record;
+&#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43;
+| Field       | Type             | Null | Key | …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.140.0">
+  <link rel="alternate" href="https://luojiego.com/index.xml" type="application/rss+xml" title="Roger&#39;s Blog"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="https://luojiego.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://luojiego.com/css/syntax.css" /><link rel="stylesheet" href="https://luojiego.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://luojiego.com/">Roger&#39;s Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>如何删除 MySQL 表中 2.5 亿条数据？</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h1 id="为什么会有-25-亿条数据">为什么会有 2.5 亿条数据</h1>
+<p>运营需求，需要提供查询用户登录的记录。</p>
+<p>我一思索，这简单呀，就设计了如下的数据表。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">desc</span> login_record;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-------------+------------------+------+-----+-------------------+-------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Field       <span style="color:#f92672">|</span> <span style="color:#66d9ef">Type</span>             <span style="color:#f92672">|</span> <span style="color:#66d9ef">Null</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Key</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Default</span>           <span style="color:#f92672">|</span> Extra <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-------------+------------------+------+-----+-------------------+-------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> user_id     <span style="color:#f92672">|</span> int(<span style="color:#ae81ff">10</span>) unsigned <span style="color:#f92672">|</span> <span style="color:#66d9ef">NO</span>   <span style="color:#f92672">|</span> MUL <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>              <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> ip          <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">40</span>)      <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span>                   <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> device_mark <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">500</span>)     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NO</span>   <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span>                   <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> time        <span style="color:#f92672">|</span> <span style="color:#66d9ef">timestamp</span>        <span style="color:#f92672">|</span> <span style="color:#66d9ef">NO</span>   <span style="color:#f92672">|</span> MUL <span style="color:#f92672">|</span> <span style="color:#66d9ef">CURRENT_TIMESTAMP</span> <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-------------+------------------+------+-----+-------------------+-------+
+</span></span></span></code></pre></div><p>由于 <code>user_id</code> 和 <code>time</code> 上都有索引，所以查询的速度很快。</p>
+<p>但是某一次我闲着没事，执行了个 <code>SELECT COUNT(*) FROM login_record</code> 发现很久都没有返回，我觉得事情可能比我想的要严重，这个表根据我的推测，可能数据过亿条了。</p>
+<p><img src="https://go-daily.oss-cn-chengdu.aliyuncs.com/img/counts-more-than-250-millions.png" alt="表中的总条目"></p>
+<h1 id="例行维护">例行维护</h1>
+<p>在知道这个表比较大之后，我的应对方案是将该表从 RDS 迁移到本地的数据库中。</p>
+<p><img src="https://go-daily.oss-cn-chengdu.aliyuncs.com/img/2021-05-25-rds-config.png" alt="RDS 的配置"></p>
+<p>本地的数据库使用的 EC2 机器比较渣，2 核 8 GB。</p>
+<p>反正停服之后搞，也不会影响用户。我们预计的停服时间是六个小时，停服一开始，在确定没有数据库写入之后，我的小伙伴就开始用 mysqldump 工具将 RDS 中的数据往本地导入了，因为在同个内网，我们猜测应该会比较快，顺便我们也看了一下 RDS 的监控。</p>
+<p><img src="https://go-daily.oss-cn-chengdu.aliyuncs.com/img/2021-05-25-rds-monitor.png" alt="14:17 分执行了 mysqldump 之后，RDS IOPS 监控"></p>
+<p>显然，<strong>RDS 的 IOPS 瞬间从 0 上升到了 2000</strong>，但是就下降了。但是 mysqldump 一直在执行，直到 15:30，我们实在没有办法等了，就停止掉了 mysqldump。此时查看本地数据库，发现<strong>才导入了 九千万记录</strong>。</p>
+<p>此时我们意识到，可能我们直接扔掉这个表可能会比较合适。</p>
+<p>那就先用本地的刚才导入的数据表试一下 drop，在我们执行了 drop 一小时之后，正常结束。</p>
+<p>这下我打消了在 RDS 上执行 drop 的想法，因为已经离停服开始过去了两个半小时，而且我们还有好多功能要进行测试。</p>
+<p>但是好消息是，我可以先删除掉 RDS 记录上的一部分数据，因为这个不会影响测试人员的正常工作。</p>
+<p><img src="https://go-daily.oss-cn-chengdu.aliyuncs.com/img/Untitled%203.png" alt="删除 1.1 亿条数据，花费了这么长时间"></p>
+<p>但是即使我删除掉 1.1 亿条数据，也花费了两个小时。</p>
+<p>接着，我们放弃了立刻要在本地停服中删除掉这个数据表的想法，可以通过脚本慢慢删除这个数据表中的数据，毕竟这个表不会再写入。</p>
+<h1 id="如何删除">如何删除</h1>
+<h2 id="用-limit-">用 LIMIT ?</h2>
+<p>看看以下有趣的现象</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">explain</span> <span style="color:#66d9ef">select</span> user_id <span style="color:#66d9ef">from</span> login_record <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">------+-------------+--------------+-------+---------------+---------+---------+------+----------+-------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> id   <span style="color:#f92672">|</span> select_type <span style="color:#f92672">|</span> <span style="color:#66d9ef">table</span>        <span style="color:#f92672">|</span> <span style="color:#66d9ef">type</span>  <span style="color:#f92672">|</span> possible_keys <span style="color:#f92672">|</span> <span style="color:#66d9ef">key</span>     <span style="color:#f92672">|</span> key_len <span style="color:#f92672">|</span> <span style="color:#66d9ef">ref</span>  <span style="color:#f92672">|</span> <span style="color:#66d9ef">rows</span>     <span style="color:#f92672">|</span> Extra       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">------+-------------+--------------+-------+---------------+---------+---------+------+----------+-------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">SIMPLE</span>      <span style="color:#f92672">|</span> login_record <span style="color:#f92672">|</span> <span style="color:#66d9ef">index</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>          <span style="color:#f92672">|</span> user_id <span style="color:#f92672">|</span> <span style="color:#ae81ff">4</span>       <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">12261955</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Using</span> <span style="color:#66d9ef">index</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">------+-------------+--------------+-------+---------------+---------+---------+------+----------+-------------+
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">explain</span> <span style="color:#66d9ef">select</span> user_id,time <span style="color:#66d9ef">from</span> login_record <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">------+-------------+--------------+------+---------------+------+---------+------+----------+-------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> id   <span style="color:#f92672">|</span> select_type <span style="color:#f92672">|</span> <span style="color:#66d9ef">table</span>        <span style="color:#f92672">|</span> <span style="color:#66d9ef">type</span> <span style="color:#f92672">|</span> possible_keys <span style="color:#f92672">|</span> <span style="color:#66d9ef">key</span>  <span style="color:#f92672">|</span> key_len <span style="color:#f92672">|</span> <span style="color:#66d9ef">ref</span>  <span style="color:#f92672">|</span> <span style="color:#66d9ef">rows</span>     <span style="color:#f92672">|</span> Extra <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">------+-------------+--------------+------+---------------+------+---------+------+----------+-------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span>    <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">SIMPLE</span>      <span style="color:#f92672">|</span> login_record <span style="color:#f92672">|</span> <span style="color:#66d9ef">ALL</span>  <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>          <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">12262319</span> <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">------+-------------+--------------+------+---------------+------+---------+------+----------+-------+
+</span></span></span></code></pre></div><p>虽然 user_id 和 time 上都有索引，<strong>查询 user_id 或者 time 都会使用索引</strong>，但是如果<strong>一起查，不好意思，不能使用索引</strong>。</p>
+<p>这个仔细一想，很合理，因为该表 user_id 和 time 都是普通索引，如果两个要一起查，显然不能使用索引，所以要么根据 user_id 删除，要么根据时间删除。</p>
+<h2 id="用时间删除可能比较合理">用时间删除可能比较合理</h2>
+<p>线上总注册用户超过三百万，虽然可以使用 user_id 不停的删除也是个办法。</p>
+<p>但是我还是觉得使用时间来删除比较合适，于是我写个程序，按小时来删除数据。每次删除完之后，还执行睡眠一秒。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>		<span style="color:#75715e">// 每次删除一个小时的日志
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">startTime</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#a6e22e">endTime</span>; {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">start</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Unix</span>(int64(<span style="color:#a6e22e">i</span>), <span style="color:#ae81ff">0</span>).<span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">layout</span>)                                                                                              
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">i</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1800</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">end</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Unix</span>(int64(<span style="color:#a6e22e">i</span>), <span style="color:#ae81ff">0</span>).<span style="color:#a6e22e">Format</span>(<span style="color:#a6e22e">layout</span>)
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">count</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">deleteRecord</span>(<span style="color:#a6e22e">start</span>, <span style="color:#a6e22e">end</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>            panic(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">count</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;end time: &#34;</span>, <span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;[%s-%s) delete count: %d\n&#34;</span>, <span style="color:#a6e22e">start</span>, <span style="color:#a6e22e">end</span>, <span style="color:#a6e22e">count</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Sleep</span>(<span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">time</span>.<span style="color:#a6e22e">Second</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p><img src="https://go-daily.oss-cn-chengdu.aliyuncs.com/img/Untitled%204.png" alt="使用脚本删除时，IOPS 的变化"></p>
+<p><img src="https://go-daily.oss-cn-chengdu.aliyuncs.com/img/Untitled%205.png" alt="使用脚本删除时，CPU 和内存使用率的变化"></p>
+<h1 id="总结">总结</h1>
+<p>在执行了大概两个多小时，删除了 1.5 亿条中的 90% 的日志。剩余的日志，我使用脚本导入到了本地数据库，让运营有数据可查。</p>
+<p>删除完 RDS 数据表中的数据之后，占用的存储空间不会下降，需要 drop 掉表之后，空间才能释放，我的需求也是不再使用这张表，所以就使用了 drop。</p>
+<p><img src="https://go-daily.oss-cn-chengdu.aliyuncs.com/img/Untitled%206.png" alt="drop 掉表之后，磁盘空间的释放"></p>
+
+        
+          <div class="blog-tags">
+            
+              
+              <a href="https://luojiego.com/tags/mysql/">MySQL</a>&nbsp;
+            
+              
+              <a href="https://luojiego.com/tags/go/">Go</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://luojiego.com/posts/filco-minila-air-experience/" data-toggle="tooltip" data-placement="top" title="Filco Minila Air 使用体验">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://luojiego.com/posts/divied-zero-panic/" data-toggle="tooltip" data-placement="top" title="除 0 真的会 panic 吗？">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2024
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://luojiego.com/">Roger&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.140.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="https://luojiego.com/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://luojiego.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>字体 on Roger&#39;s Blog</title>
+    <link>https://luojiego.com/tags/%E5%AD%97%E4%BD%93/</link>
+    <description>Recent content in 字体 on Roger&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Dec 2022 18:28:59 +0000</lastBuildDate>
+    <atom:link href="https://luojiego.com/tags/%E5%AD%97%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的常用软件字体设置</title>
+      <link>https://luojiego.com/posts/my-font-settings/</link>
+      <pubDate>Fri, 23 Dec 2022 18:28:59 +0000</pubDate>
+      <guid>https://luojiego.com/posts/my-font-settings/</guid>
+      <description>&lt;p&gt;由于“霞鹜文楷”这个字体太好看了，不得不想要设置成为，我所有的非常常用的软件字体。&lt;br&gt;&#xA;但是这款字体的英文着实不是太漂亮，所以我的常用软件的首选字体是 “Roboto Mono”，这样中文字体会使用“霞鹜文楷”&lt;br&gt;&#xA;github 地址：&lt;a href=&#34;https://github.com/lxgw/LxgwWenKai&#34;&gt;字体地址&lt;/a&gt;&lt;br&gt;&#xA;安装比较简单，VS Code 和 Typora 需要机器本身安装这两款字体。&lt;/p&gt;&#xA;&lt;h1 id=&#34;vs-code-设置&#34;&gt;VS Code 设置&lt;/h1&gt;&#xA;&lt;p&gt;就正常设置 “Font Family” 即可：&lt;code&gt;&#39;Roboto Mono&#39;,&#39;霞鹜文楷等宽&#39;&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

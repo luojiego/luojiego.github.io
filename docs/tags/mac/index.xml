@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on Roger&#39;s Blog</title>
+    <link>https://luojiego.com/tags/mac/</link>
+    <description>Recent content in Mac on Roger&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Jun 2020 10:48:46 +0000</lastBuildDate>
+    <atom:link href="https://luojiego.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>谈谈我对 Mac 的看法</title>
+      <link>https://luojiego.com/posts/about-mac/</link>
+      <pubDate>Sat, 27 Jun 2020 10:48:46 +0000</pubDate>
+      <guid>https://luojiego.com/posts/about-mac/</guid>
+      <description>&lt;h1 id=&#34;当初错误的决定&#34;&gt;当初错误的决定&lt;/h1&gt;&#xA;&lt;p&gt;Air 是 2015 年初买的 2014 年的 128GB机器，自己一个人的深圳呆的非常无聊，想买点啥来填补内心的空虚，索性就买了一个 Macbook Air。为啥不买 Pro? 因为当时的工资还不够买一个 Pro，而且看同事用的 Pro，颜值也不是很好，但是当买回来之后，用了一段时间之后，感觉还是视网膜屏幕舒服。其实现有看来，当初应该买个 Pro，最起码用的时候，看着很养眼……&lt;/p&gt;&#xA;&lt;h1 id=&#34;一直闲置的机器&#34;&gt;一直闲置的机器&lt;/h1&gt;&#xA;&lt;p&gt;讲道理，上班一直用的 Windows 开发，下班也比较累，几乎用笔记本在家解决一下线上的问题。对于 Mac 真的就是有啥问题，反正凑合能用即可，Mac 上的快捷键到最近我都认不全。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mac 重装之后,删除容器中的其它卷宗</title>
+      <link>https://luojiego.com/posts/mac-delete-container/</link>
+      <pubDate>Sat, 27 Jun 2020 10:44:10 +0000</pubDate>
+      <guid>https://luojiego.com/posts/mac-delete-container/</guid>
+      <description>&lt;h1 id=&#34;问题&#34;&gt;问题&lt;/h1&gt;&#xA;&lt;p&gt;128GB 的机器，重新安装机器之后，安装完一些必备的软件，发现只有 8GB 可用了，要知道我是为了节省一个空间才重新安装的，结果成这样，恶心程度可想而知啊。&lt;/p&gt;&#xA;&lt;p&gt;如图：&lt;br&gt;&#xA;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200627093013328.png&#34; alt=&#34;可怜的存储空间&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;存储空间查看&#34;&gt;存储空间查看&lt;/h2&gt;&#xA;&lt;p&gt;关于本机 -&amp;gt; 存储空间&lt;br&gt;&#xA;发现『容器中的其它卷宗』占用了 70GB+&lt;/p&gt;&#xA;&lt;h2 id=&#34;一番谷歌&#34;&gt;一番谷歌&lt;/h2&gt;&#xA;&lt;p&gt;Apple 论坛上并没有找到解决方案，让我重启，重启并没有任何改善。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AppleId on Roger&#39;s Blog</title>
+    <link>https://luojiego.com/tags/appleid/</link>
+    <description>Recent content in AppleId on Roger&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Dec 2022 11:47:25 +0800</lastBuildDate>
+    <atom:link href="https://luojiego.com/tags/appleid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ultra PAYGO 实体卡折腾记录</title>
+      <link>https://luojiego.com/posts/ultra-paygo-paypal-appleid/</link>
+      <pubDate>Sun, 25 Dec 2022 11:47:25 +0800</pubDate>
+      <guid>https://luojiego.com/posts/ultra-paygo-paypal-appleid/</guid>
+      <description>&lt;p&gt;2020 年时我想在手机上安装 ShadowRocket 以方便我的网络搜索，但是因为没有美区账号所以无法下载。网上提供的免费账号没有一个能使用的。&lt;br&gt;&#xA;当时看有人说可以自行注册，但当时也搜索到可以直接购买一个账号的网页，索性就直接购买了一个。购买了之后，一顿操作，把所有的信息都修改成了我自己的账号。但是还要付费 ShadowRocket 软件的费用，当时忘记怎么弄的了，总之这个美区账号的支付我一直没有搞，当时也担心账号安全问题。&lt;br&gt;&#xA;然而两年都快要过去了，我发现有一个美区账号还是相当幸福的。毕竟国区因为游戏版号问题，如果要在手机上体验竞品还是非常麻烦的，安卓因为有模拟器，非常容易。但是手机端因为我一直使用的是 iPhone，国区因为版号问题根本就不可能有，所以切换成美区账号进行下载，再切换回来。&lt;br&gt;&#xA;最近也看到一些关于 Apple TV 的视频，虽说国区不售卖，但是用美区账号可以正常使用，而且体验极好，虽然有想购买的打算，但是最终放弃了。主要是我根本没有时间看，其次呢，家里的电视品质也不高。&lt;br&gt;&#xA;某天我看到大家说美区的 iCloud 如何如何好，但是想想自己当初毫无意识就将数据迁入到了中国区，以为速度能快一点，实际上并没有明显的感觉。有次我登录的是美区的账号，打开了 Apple Music，发现可以兑换 6 个月，但需要订阅，我信心满满的输入了我的招行信用卡信息，结果竟然告诉我绑定失败。此时我才明白，原来美区账号是不能使用中国的信用卡。好在苹果提供了 PayPal 的绑定，可是我也没有 PayPal 呀。&lt;br&gt;&#xA;搜索一圈之后，发现可以使用 Paygo 美国的实体卡来注册 Paypal，就在淘宝上下单买了一张。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
