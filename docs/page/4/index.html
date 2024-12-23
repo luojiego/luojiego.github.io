@@ -173,6 +173,117 @@
           
           
             <article class="post-preview">
+    <a href="https://luojiego.com/posts/aws-secrity-day/">
+        <h2 class="post-title">aws secrity day 10 月 23 日笔记</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 25, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <h1 id="security-day">Security Day</h1>
+<p><strong>责任共担</strong> 的安全模型</p>
+<p>AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设施</p>
+<ul>
+<li>安全可视化和安全可控</li>
+<li>服务之间高度集成，达到自动化布署 Macie 。。</li>
+<li>建立隐私数据保护</li>
+<li>丰富的使用场景</li>
+</ul>
+        <a href="https://luojiego.com/posts/aws-secrity-day/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://luojiego.com/posts/the-convert-in-go/">
+        <h2 class="post-title">Go 中&#34;坑爹&#34;的类型转换</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 20, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <h2 id="go-代码">go 代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">count</span> <span style="color:#66d9ef">uint32</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;count: %d\n&#34;</span>, <span style="color:#a6e22e">count</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;count - 1: %d\n&#34;</span>, <span style="color:#a6e22e">count</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// num := math.Pow(2, float64(count-1))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;math.Pow(2, float64(count-1)): %f\n&#34;</span>, <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, float64(<span style="color:#a6e22e">count</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;int(math.Pow(2, float64(count-1))): %d\n&#34;</span>, int(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, float64(<span style="color:#a6e22e">count</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;uint32(math.Pow(2, float64(count-1))): %d\n&#34;</span>, uint32(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, float64(<span style="color:#a6e22e">count</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;int32(math.Pow(2, float64(count-1))): %d\n&#34;</span>, int32(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, float64(<span style="color:#a6e22e">count</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;uint64(math.Pow(2, float64(count-1))): %d\n&#34;</span>, uint64(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, float64(<span style="color:#a6e22e">count</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;int64(pow(2,1023): %d\n&#34;</span>, int64(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1023</span>)))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;uint64(pow(2,1023): %d\n&#34;</span>, uint64(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1023</span>)))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+        <a href="https://luojiego.com/posts/the-convert-in-go/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+       
+       <a href="https://luojiego.com/tags/go/">go</a>&nbsp;
+         
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://luojiego.com/posts/why-should-programmers-support-genuine-software/">
         <h2 class="post-title">为什么程序员更应该支持正版软件？</h2>
         
@@ -587,96 +698,6 @@
        <a href="https://luojiego.com/tags/%E6%97%B6%E9%97%B4/">时间</a>&nbsp;
          
     </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://luojiego.com/posts/goland-short-cuts/">
-        <h2 class="post-title">goland 25 大特色编辑功能</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 19, 2020
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <h1 id="写在前面">写在前面</h1>
-<p><strong>使用了Goland两年了，好多功能都不会用，特意总结一下，加强自己的记忆</strong></p>
-<p><a href="https://blog.jetbrains.com/cn/2019/11/goland-ide-p1/">GoLand IDE 的 25 大特色编辑功能 – 第 1 部分</a><br>
-<a href="https://blog.jetbrains.com/cn/2019/11/goland-ide-p2/">GoLand IDE 的 25 大特色编辑功能 – 第 2 部分</a><br>
-<a href="https://blog.jetbrains.com/cn/2020/02/goland-ide-3/">GoLand IDE 的 25 大特色编辑功能 – 第 3 部分</a></p>
-        <a href="https://luojiego.com/posts/goland-short-cuts/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-       
-       <a href="https://luojiego.com/tags/goland/">goland</a>&nbsp;
-         
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://luojiego.com/posts/programmer-fancy-death-onboarding-method/">
-        <h2 class="post-title">程序员“花式作死”的入职方式</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 13, 2020
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <blockquote>
-<p>不会游泳，怎么换泳池也是没有用的。</p>
-</blockquote>
-<p>程序员很有可能在做出一些成就的时候，过分高估自己的能力。从此目中无人，很快便会发现，在公司干不下去。在他看来，是原有公司的问题比较多，所以离职了。</p>
-<p>但是他们却忘记了，离开平台，他们什么也不是，甚至连他平时使用最熟悉的一个平台，或者环境都没有能力搭起来，这个时间，在新入职的公司，必然磕磕绊绊。甚至会出现，一年内连续换几家公司的情况。</p>
-<p>下面我说说我对于这些问题的看法，毕竟自己也曾错的一塌糊涂。</p>
-        <a href="https://luojiego.com/posts/programmer-fancy-death-onboarding-method/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
     
 
 </article>

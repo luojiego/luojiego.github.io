@@ -1,0 +1,554 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>游戏 GM 指令系统设计与优化指南：从复杂到简单的演进之路 - </title>
+
+  <meta name="description" content="1. 系统概述
+本文档详细描述了游戏 GM 指令系统的设计演进过程，重点关注如何通过持续优化提升使用体验。该系统主要用于管理游戏中的道具和货币添加操作，展现了从最初的复杂设计到最终的智能化处理的完整优化历程。
+2. 系统演进阶段
+2.1 初始版本（add_category）
+
+指令格式：add_category &lt;类型枚举&gt; &lt;配置表ID&gt; &lt;数量&gt;
+存在问题：
+
+参数过多，使用复杂
+枚举值容易拼写错误
+用户需要记忆物品类型
+
+
+使用示例：add_category ITEM 10001 1
+
+2.2 第一次优化（指令拆分）
+
+新增指令：
+
+add_cur：专门用于添加货币
+add_item：专门用于添加道具
+
+
+改进点：
+
+减少参数数量（仅需ID和数量）
+明确指令用途
+
+
+存在问题：
+
+用户仍会混淆物品类型
+经常出现货币指令误输入道具ID的情况
+
+
+"><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Roger\u0027s Blog",
+    
+    "url": "https:\/\/luojiego.com\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/luojiego.com\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/luojiego.com\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/luojiego.com\/posts\/gm-add-item-design\/",
+          "name": "游戏 gm 指令系统设计与优化指南：从复杂到简单的演进之路"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : ""
+  },
+  "headline": "游戏 GM 指令系统设计与优化指南：从复杂到简单的演进之路",
+  "description" : "1. 系统概述 本文档详细描述了游戏 GM 指令系统的设计演进过程，重点关注如何通过持续优化提升使用体验。该系统主要用于管理游戏中的道具和货币添加操作，展现了从最初的复杂设计到最终的智能化处理的完整优化历程。\n2. 系统演进阶段 2.1 初始版本（add_category） 指令格式：add_category \u0026lt;类型枚举\u0026gt; \u0026lt;配置表ID\u0026gt; \u0026lt;数量\u0026gt; 存在问题： 参数过多，使用复杂 枚举值容易拼写错误 用户需要记忆物品类型 使用示例：add_category ITEM 10001 1 2.2 第一次优化（指令拆分） 新增指令： add_cur：专门用于添加货币 add_item：专门用于添加道具 改进点： 减少参数数量（仅需ID和数量） 明确指令用途 存在问题： 用户仍会混淆物品类型 经常出现货币指令误输入道具ID的情况 ",
+  "inLanguage" : "en",
+  "wordCount":  186 ,
+  "datePublished" : "2024-12-23T23:07:50\u002b08:00",
+  "dateModified" : "2024-12-23T23:07:50\u002b08:00",
+  "image" : "https:\/\/luojiego.com\/",
+  "keywords" : [ "设计, GM" ],
+  "mainEntityOfPage" : "https:\/\/luojiego.com\/posts\/gm-add-item-design\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/luojiego.com\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/luojiego.com\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="游戏 GM 指令系统设计与优化指南：从复杂到简单的演进之路" />
+<meta property="og:description" content="1. 系统概述
+本文档详细描述了游戏 GM 指令系统的设计演进过程，重点关注如何通过持续优化提升使用体验。该系统主要用于管理游戏中的道具和货币添加操作，展现了从最初的复杂设计到最终的智能化处理的完整优化历程。
+2. 系统演进阶段
+2.1 初始版本（add_category）
+
+指令格式：add_category &lt;类型枚举&gt; &lt;配置表ID&gt; &lt;数量&gt;
+存在问题：
+
+参数过多，使用复杂
+枚举值容易拼写错误
+用户需要记忆物品类型
+
+
+使用示例：add_category ITEM 10001 1
+
+2.2 第一次优化（指令拆分）
+
+新增指令：
+
+add_cur：专门用于添加货币
+add_item：专门用于添加道具
+
+
+改进点：
+
+减少参数数量（仅需ID和数量）
+明确指令用途
+
+
+存在问题：
+
+用户仍会混淆物品类型
+经常出现货币指令误输入道具ID的情况
+
+
+">
+<meta property="og:url" content="https://luojiego.com/posts/gm-add-item-design/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Roger&#39;s Blog" />
+
+  <meta name="twitter:title" content="游戏 GM 指令系统设计与优化指南：从复杂到简单的演进之路" />
+  <meta name="twitter:description" content="1. 系统概述
+本文档详细描述了游戏 GM 指令系统的设计演进过程，重点关注如何通过持续优化提升使用体验。该系统主要用于管理游戏中的道具和货币添加操作，展现了从最初的复杂设计到最终的智能化处理的完整优化历程。
+2. 系统演进阶段
+2.1 初始版本（add_category）
+
+指令格式：add_category &lt;类型枚举&gt; &lt;配置表ID&gt; &lt;数量&gt;
+存在问题： …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="generator" content="Hugo 0.140.0">
+  <link rel="alternate" href="https://luojiego.com/index.xml" type="application/rss+xml" title="Roger&#39;s Blog"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="https://luojiego.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://luojiego.com/css/syntax.css" /><link rel="stylesheet" href="https://luojiego.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://luojiego.com/">Roger&#39;s Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>游戏 GM 指令系统设计与优化指南：从复杂到简单的演进之路</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h2 id="1-系统概述">1. 系统概述</h2>
+<p>本文档详细描述了游戏 GM 指令系统的设计演进过程，重点关注如何通过持续优化提升使用体验。该系统主要用于管理游戏中的道具和货币添加操作，展现了从最初的复杂设计到最终的智能化处理的完整优化历程。</p>
+<h2 id="2-系统演进阶段">2. 系统演进阶段</h2>
+<h3 id="21-初始版本add_category">2.1 初始版本（add_category）</h3>
+<ul>
+<li><strong>指令格式</strong>：<code>add_category &lt;类型枚举&gt; &lt;配置表ID&gt; &lt;数量&gt;</code></li>
+<li><strong>存在问题</strong>：
+<ul>
+<li>参数过多，使用复杂</li>
+<li>枚举值容易拼写错误</li>
+<li>用户需要记忆物品类型</li>
+</ul>
+</li>
+<li><strong>使用示例</strong>：<code>add_category ITEM 10001 1</code></li>
+</ul>
+<h3 id="22-第一次优化指令拆分">2.2 第一次优化（指令拆分）</h3>
+<ul>
+<li><strong>新增指令</strong>：
+<ul>
+<li><code>add_cur</code>：专门用于添加货币</li>
+<li><code>add_item</code>：专门用于添加道具</li>
+</ul>
+</li>
+<li><strong>改进点</strong>：
+<ul>
+<li>减少参数数量（仅需ID和数量）</li>
+<li>明确指令用途</li>
+</ul>
+</li>
+<li><strong>存在问题</strong>：
+<ul>
+<li>用户仍会混淆物品类型</li>
+<li>经常出现货币指令误输入道具ID的情况</li>
+</ul>
+</li>
+</ul>
+<h3 id="23-第二次优化指令合并">2.3 第二次优化（指令合并）</h3>
+<ul>
+<li><strong>统一指令</strong>：<code>add_cat &lt;ID&gt; &lt;数量&gt;</code></li>
+<li><strong>改进点</strong>：
+<ul>
+<li>自动识别ID类型（货币/道具）</li>
+<li>简化用户操作流程</li>
+</ul>
+</li>
+<li><strong>前提条件</strong>：
+<ul>
+<li>货币和道具ID不能存在冲突</li>
+<li>配置表需要严格管理ID分配</li>
+</ul>
+</li>
+</ul>
+<h3 id="24-第三次优化名称支持">2.4 第三次优化（名称支持）</h3>
+<ul>
+<li><strong>功能扩展</strong>：支持通过物品名称添加</li>
+<li><strong>改进点</strong>：
+<ul>
+<li>建立ID与名称的映射关系</li>
+<li>解决长ID难记忆的问题</li>
+</ul>
+</li>
+<li><strong>使用示例</strong>：<code>add_cat &quot;升级石&quot; 10</code></li>
+</ul>
+<h3 id="25-最终优化智能匹配与批量处理">2.5 最终优化（智能匹配与批量处理）</h3>
+<ul>
+<li><strong>功能特性</strong>：
+<ul>
+<li>支持中文全名</li>
+<li>支持拼音模糊匹配</li>
+<li>统一分隔符处理</li>
+<li>支持批量添加功能</li>
+</ul>
+</li>
+<li><strong>智能处理</strong>：
+<ul>
+<li>自动处理中英文标点符号</li>
+<li>模糊匹配唯一结果自动添加</li>
+<li>多个匹配结果提示错误</li>
+</ul>
+</li>
+<li><strong>批量添加格式</strong>：
+<ul>
+<li>基础格式：<code>add_cat &lt;ID1,数量1,ID2,数量2,...&gt;</code></li>
+<li>支持多种分隔符自动转换</li>
+<li>支持名称和ID混用</li>
+</ul>
+</li>
+<li><strong>批量添加示例</strong>：
+<ul>
+<li>使用ID：<code>add_cat 10001,5,10002,10</code></li>
+<li>使用名称：<code>add_cat 升级石,5,体力药水,10</code></li>
+<li>混合使用：<code>add_cat 10001,5,体力药水,10</code></li>
+<li>使用拼音：<code>add_cat shengjishi,5,tiliyaoshui,10</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-技术实现要点">3. 技术实现要点</h2>
+<h3 id="31-id与名称映射">3.1 ID与名称映射</h3>
+<pre tabindex="0"><code>{
+    &#34;10001&#34;: {
+        &#34;name&#34;: &#34;升级石&#34;,
+        &#34;pinyin&#34;: &#34;shengjishi&#34;,
+        &#34;type&#34;: &#34;ITEM&#34;
+    }
+}
+</code></pre><h3 id="32-模糊匹配逻辑">3.2 模糊匹配逻辑</h3>
+<ul>
+<li>支持部分拼音匹配</li>
+<li>建立拼音索引表</li>
+<li>处理多音字情况</li>
+</ul>
+<h3 id="33-标点符号处理">3.3 标点符号处理</h3>
+<pre tabindex="0"><code>input_text = input_text.replace(&#39;，&#39;, &#39;,&#39;)
+input_text = input_text.replace(&#39;、&#39;, &#39;,&#39;)
+</code></pre><h3 id="34-批量处理逻辑">3.4 批量处理逻辑</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">process_batch_command</span>(input_str):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 标准化分隔符</span>
+</span></span><span style="display:flex;"><span>    input_str <span style="color:#f92672">=</span> normalize_separators(input_str)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 分割参数</span>
+</span></span><span style="display:flex;"><span>    params <span style="color:#f92672">=</span> input_str<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;,&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 确保参数数量正确（必须是偶数）</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> len(params) <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">!=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;参数数量不正确&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 处理每对参数</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(params), <span style="color:#ae81ff">2</span>):
+</span></span><span style="display:flex;"><span>        item_id_or_name <span style="color:#f92672">=</span> params[i]<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>        count <span style="color:#f92672">=</span> int(params[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 解析物品ID或名称</span>
+</span></span><span style="display:flex;"><span>        real_id <span style="color:#f92672">=</span> resolve_item_identifier(item_id_or_name)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 执行添加操作</span>
+</span></span><span style="display:flex;"><span>        add_item_to_inventory(real_id, count)
+</span></span></code></pre></div><h2 id="4-最佳实践">4. 最佳实践</h2>
+<h3 id="41-配置规范">4.1 配置规范</h3>
+<ul>
+<li>货币ID与道具ID使用不同数值区间</li>
+<li>物品名称避免完全重复</li>
+<li>确保拼音索引的唯一性</li>
+</ul>
+<h3 id="42-使用建议">4.2 使用建议</h3>
+<ul>
+<li>优先使用物品名称而非ID</li>
+<li>使用拼音时注意准确性</li>
+<li>遇到多个匹配时使用更完整的名称</li>
+<li>批量添加时注意检查逗号分隔的完整性</li>
+</ul>
+<h3 id="43-批量添加建议">4.3 批量添加建议</h3>
+<ul>
+<li>每次批量添加建议不超过10个物品</li>
+<li>使用前先通过单个添加测试物品标识符</li>
+<li>养成使用统一的标识符习惯（全部用名称或全部用ID）</li>
+<li>重要操作建议先使用预览功能</li>
+</ul>
+<h2 id="5-总结">5. 总结</h2>
+<p>本系统通过多次优化，实现了从复杂到简单、从严格到灵活的演进过程。最终版本不仅大大提升了使用效率，也显著降低了使用门槛，为游戏运营提供了更好的支持。批量处理功能的添加进一步提高了操作效率，使得大规模物品发放变得更加便捷。</p>
+<h2 id="6-未来展望">6. 未来展望</h2>
+<ul>
+<li>添加物品预览功能</li>
+<li>集成物品搜索界面</li>
+<li>支持常用物品收藏</li>
+<li>支持批量操作配置模板</li>
+<li>添加操作日志和回滚功能</li>
+<li>集成物品组合快捷操作</li>
+</ul>
+
+        
+          <div class="blog-tags">
+            
+              
+              <a href="https://luojiego.com/tags/%E8%AE%BE%E8%AE%A1/">设计</a>&nbsp;
+            
+              
+              <a href="https://luojiego.com/tags/gm/">GM</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://luojiego.com/posts/the-underlying-logic/" data-toggle="tooltip" data-placement="top" title="选择大于努力 -《底层逻辑》读书笔记">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2024
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://luojiego.com/">Roger&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.140.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="https://luojiego.com/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://luojiego.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

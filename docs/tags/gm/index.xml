@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GM on Roger&#39;s Blog</title>
+    <link>https://luojiego.com/tags/gm/</link>
+    <description>Recent content in GM on Roger&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Dec 2024 23:07:50 +0800</lastBuildDate>
+    <atom:link href="https://luojiego.com/tags/gm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>游戏 GM 指令系统设计与优化指南：从复杂到简单的演进之路</title>
+      <link>https://luojiego.com/posts/gm-add-item-design/</link>
+      <pubDate>Mon, 23 Dec 2024 23:07:50 +0800</pubDate>
+      <guid>https://luojiego.com/posts/gm-add-item-design/</guid>
+      <description>&lt;h2 id=&#34;1-系统概述&#34;&gt;1. 系统概述&lt;/h2&gt;&#xA;&lt;p&gt;本文档详细描述了游戏 GM 指令系统的设计演进过程，重点关注如何通过持续优化提升使用体验。该系统主要用于管理游戏中的道具和货币添加操作，展现了从最初的复杂设计到最终的智能化处理的完整优化历程。&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-系统演进阶段&#34;&gt;2. 系统演进阶段&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-初始版本add_category&#34;&gt;2.1 初始版本（add_category）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;指令格式&lt;/strong&gt;：&lt;code&gt;add_category &amp;lt;类型枚举&amp;gt; &amp;lt;配置表ID&amp;gt; &amp;lt;数量&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;存在问题&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;参数过多，使用复杂&lt;/li&gt;&#xA;&lt;li&gt;枚举值容易拼写错误&lt;/li&gt;&#xA;&lt;li&gt;用户需要记忆物品类型&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;使用示例&lt;/strong&gt;：&lt;code&gt;add_category ITEM 10001 1&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;22-第一次优化指令拆分&#34;&gt;2.2 第一次优化（指令拆分）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;新增指令&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;add_cur&lt;/code&gt;：专门用于添加货币&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;add_item&lt;/code&gt;：专门用于添加道具&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;改进点&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;减少参数数量（仅需ID和数量）&lt;/li&gt;&#xA;&lt;li&gt;明确指令用途&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;存在问题&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;用户仍会混淆物品类型&lt;/li&gt;&#xA;&lt;li&gt;经常出现货币指令误输入道具ID的情况&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>
