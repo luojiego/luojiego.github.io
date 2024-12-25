@@ -49,7 +49,8 @@ add_item：专门用于添加道具
 经常出现货币指令误输入道具ID的情况
 
 
-"><script type="application/ld+json">
+">
+  <meta name="author" content="Roger"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -94,7 +95,7 @@ add_item：专门用于添加道具
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : ""
+    "name" : "Roger"
   },
   "headline": "游戏 GM 指令系统设计与优化指南：从复杂到简单的演进之路",
   "description" : "1. 系统概述 本文档详细描述了游戏 GM 指令系统的设计演进过程，重点关注如何通过持续优化提升使用体验。该系统主要用于管理游戏中的道具和货币添加操作，展现了从最初的复杂设计到最终的智能化处理的完整优化历程。\n2. 系统演进阶段 2.1 初始版本（add_category） 指令格式：add_category \u0026lt;类型枚举\u0026gt; \u0026lt;配置表ID\u0026gt; \u0026lt;数量\u0026gt; 存在问题： 参数过多，使用复杂 枚举值容易拼写错误 用户需要记忆物品类型 使用示例：add_category ITEM 10001 1 2.2 第一次优化（指令拆分） 新增指令： add_cur：专门用于添加货币 add_item：专门用于添加道具 改进点： 减少参数数量（仅需ID和数量） 明确指令用途 存在问题： 用户仍会混淆物品类型 经常出现货币指令误输入道具ID的情况 ",
@@ -169,6 +170,8 @@ add_item：专门用于添加道具
 指令格式：add_category &lt;类型枚举&gt; &lt;配置表ID&gt; &lt;数量&gt;
 存在问题： …">
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@luojie710" />
+  <meta name="twitter:creator" content="@luojie710" />
   <meta name="generator" content="Hugo 0.140.0">
   <link rel="alternate" href="https://luojiego.com/index.xml" type="application/rss+xml" title="Roger&#39;s Blog"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
@@ -176,6 +179,20 @@ add_item：专门用于添加道具
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://luojiego.com/css/syntax.css" /><link rel="stylesheet" href="https://luojiego.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BEV0Q1G3S5"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BEV0Q1G3S5');
+        }
+      </script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
@@ -512,9 +529,33 @@ input_text = input_text.replace(&#39;、&#39;, &#39;,&#39;)
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <ul class="list-inline text-center footer-links">
           
+              <li>
+		
+		  <a href="https://github.com/luojiego" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/luojie710" title="Twitter">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
           
         </ul>
         <p class="credits copyright text-muted">
+          
+            
+              <a href="https://luojiego.com">Roger</a>
+            
           
 
           &nbsp;&bull;&nbsp;&copy;

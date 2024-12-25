@@ -37,7 +37,8 @@ bool CGameServer::getAccountInfoByUserId(int user_id, UserAccountData&amp; data)
                     data._bind_equipment = atoi(pTempDBLink-&gt;stRow[i&#43;&#43;]);
                 }
    //......
-"><script type="application/ld+json">
+">
+  <meta name="author" content="Roger"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -82,7 +83,7 @@ bool CGameServer::getAccountInfoByUserId(int user_id, UserAccountData&amp; data)
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : ""
+    "name" : "Roger"
   },
   "headline": "C\u002b\u002b Mysql null 引发的血案",
   "description" : "代码 出错代码段 bool CGameServer::getAccountInfoByUserId(int user_id, UserAccountData\u0026amp; data) { if (connectToLocalDB()) { log_error(\u0026#34;connect to db failed\u0026#34;); return false; } TLIB_DB_LINK *pTempDBLink = \u0026amp;m_stLDBLink; snprintf(pTempDBLink-\u0026gt;sQuery[0], sizeof(pTempDBLink-\u0026gt;sQuery[0]), \u0026#34;select bind_mark, account, password, state, device_mark, country, tunnel, \\ register_version, transfer_code, bind_equipment from account_data where \\ user_id=%d\u0026#34;, user_id); \/\/...... if (pTempDBLink-\u0026gt;stRow[i]) { data._transfer_code = pTempDBLink-\u0026gt;stRow[i\u002b\u002b]; } if (pTempDBLink-\u0026gt;stRow[i]) { data._bind_equipment = atoi(pTempDBLink-\u0026gt;stRow[i\u002b\u002b]); } \/\/...... ",
@@ -142,6 +143,8 @@ bool CGameServer::getAccountInfoByUserId(int user_id, UserAccountData&amp; data)
 bool CGameServer::getAccountInfoByUserId(int user_id, UserAccountData&amp; data) {                                                                                          
     if …">
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@luojie710" />
+  <meta name="twitter:creator" content="@luojie710" />
   <meta name="generator" content="Hugo 0.140.0">
   <link rel="alternate" href="https://luojiego.com/index.xml" type="application/rss+xml" title="Roger&#39;s Blog"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
@@ -149,6 +152,20 @@ bool CGameServer::getAccountInfoByUserId(int user_id, UserAccountData&amp; data)
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://luojiego.com/css/syntax.css" /><link rel="stylesheet" href="https://luojiego.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BEV0Q1G3S5"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BEV0Q1G3S5');
+        }
+      </script>
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
@@ -379,9 +396,33 @@ bool CGameServer::getAccountInfoByUserId(int user_id, UserAccountData&amp; data)
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <ul class="list-inline text-center footer-links">
           
+              <li>
+		
+		  <a href="https://github.com/luojiego" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/luojie710" title="Twitter">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
           
         </ul>
         <p class="credits copyright text-muted">
+          
+            
+              <a href="https://luojiego.com">Roger</a>
+            
           
 
           &nbsp;&bull;&nbsp;&copy;
