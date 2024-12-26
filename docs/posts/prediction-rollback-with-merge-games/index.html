@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>基于休闲合成游戏的数据同步方案实践 - </title>
+
+  <meta name="description" content="前言
+本文将以一个休闲合成类游戏的实践经验为切入点，探讨游戏开发中的数据同步方案。在这个合成游戏中，玩家需要在地图上移动和合成物体，涉及复杂的验证逻辑和数据同步问题。
+一、合成游戏的核心玩法
+在这款休闲合成游戏中，玩家主要进行两种操作：
+
+移动物体：在地图格子间移动不同大小的物体
+合成物体：将多个相同物体合成为新的物体，可能触发额外产出
+
+这些看似简单的操作，实际上涉及复杂的验证逻辑和状态同步问题。
+二、同步方案的选择
+2.1 我们的选择：预测回滚
+在开发这款游戏时，我们选择了预测回滚(Prediction Rollback)同步方案。主要考虑因素是：
+
+需要保证游戏操作的流畅性
+对网络延迟有一定的容忍度
+需要严格的服务器验证
+">
+  <meta name="author" content="Roger"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Roger\u0027s Blog",
+    
+    "url": "http:\/\/localhost:1313\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "http:\/\/localhost:1313\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "http:\/\/localhost:1313\/posts\/prediction-rollback-with-merge-games\/",
+          "name": "基于休闲合成游戏的数据同步方案实践"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Roger"
+  },
+  "headline": "基于休闲合成游戏的数据同步方案实践",
+  "description" : "前言 本文将以一个休闲合成类游戏的实践经验为切入点，探讨游戏开发中的数据同步方案。在这个合成游戏中，玩家需要在地图上移动和合成物体，涉及复杂的验证逻辑和数据同步问题。\n一、合成游戏的核心玩法 在这款休闲合成游戏中，玩家主要进行两种操作：\n移动物体：在地图格子间移动不同大小的物体 合成物体：将多个相同物体合成为新的物体，可能触发额外产出 这些看似简单的操作，实际上涉及复杂的验证逻辑和状态同步问题。\n二、同步方案的选择 2.1 我们的选择：预测回滚 在开发这款游戏时，我们选择了预测回滚(Prediction Rollback)同步方案。主要考虑因素是：\n需要保证游戏操作的流畅性 对网络延迟有一定的容忍度 需要严格的服务器验证 ",
+  "inLanguage" : "en",
+  "wordCount":  85 ,
+  "datePublished" : "2024-12-27T06:45:15\u002b08:00",
+  "dateModified" : "2024-12-27T06:45:15\u002b08:00",
+  "image" : "http:\/\/localhost:1313\/",
+  "keywords" : [ "设计, 数据" ],
+  "mainEntityOfPage" : "http:\/\/localhost:1313\/posts\/prediction-rollback-with-merge-games\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "http:\/\/localhost:1313\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "http:\/\/localhost:1313\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="基于休闲合成游戏的数据同步方案实践" />
+<meta property="og:description" content="前言
+本文将以一个休闲合成类游戏的实践经验为切入点，探讨游戏开发中的数据同步方案。在这个合成游戏中，玩家需要在地图上移动和合成物体，涉及复杂的验证逻辑和数据同步问题。
+一、合成游戏的核心玩法
+在这款休闲合成游戏中，玩家主要进行两种操作：
+
+移动物体：在地图格子间移动不同大小的物体
+合成物体：将多个相同物体合成为新的物体，可能触发额外产出
+
+这些看似简单的操作，实际上涉及复杂的验证逻辑和状态同步问题。
+二、同步方案的选择
+2.1 我们的选择：预测回滚
+在开发这款游戏时，我们选择了预测回滚(Prediction Rollback)同步方案。主要考虑因素是：
+
+需要保证游戏操作的流畅性
+对网络延迟有一定的容忍度
+需要严格的服务器验证
+">
+<meta property="og:url" content="http://localhost:1313/posts/prediction-rollback-with-merge-games/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Roger&#39;s Blog" />
+
+  <meta name="twitter:title" content="基于休闲合成游戏的数据同步方案实践" />
+  <meta name="twitter:description" content="前言
+本文将以一个休闲合成类游戏的实践经验为切入点，探讨游戏开发中的数据同步方案。在这个合成游戏中，玩家需要在地图上移动和合成物体，涉及复杂的验证逻辑和数据同步问题。
+一、合成游戏的核心玩法
+在这款休闲合成游戏中，玩家主要进行两种操作：
+
+移动物体：在地图格子间移动不同大小的物体
+合成物体：将多个相同物体合成为新的物体，可能触发额外产出
+
+这些看似简单的操作，实际上涉及复杂的验证逻辑和状态同步问 …">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@luojie710" />
+  <meta name="twitter:creator" content="@luojie710" />
+  <meta name="generator" content="Hugo 0.140.0">
+  <link rel="alternate" href="http://localhost:1313/index.xml" type="application/rss+xml" title="Roger&#39;s Blog"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="http://localhost:1313/css/syntax.css" /><link rel="stylesheet" href="http://localhost:1313/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://localhost:1313/">Roger&#39;s Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>基于休闲合成游戏的数据同步方案实践</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h2 id="前言">前言</h2>
+<p>本文将以一个休闲合成类游戏的实践经验为切入点，探讨游戏开发中的数据同步方案。在这个合成游戏中，玩家需要在地图上移动和合成物体，涉及复杂的验证逻辑和数据同步问题。</p>
+<h2 id="一合成游戏的核心玩法">一、合成游戏的核心玩法</h2>
+<p>在这款休闲合成游戏中，玩家主要进行两种操作：</p>
+<ol>
+<li>移动物体：在地图格子间移动不同大小的物体</li>
+<li>合成物体：将多个相同物体合成为新的物体，可能触发额外产出</li>
+</ol>
+<p>这些看似简单的操作，实际上涉及复杂的验证逻辑和状态同步问题。</p>
+<h2 id="二同步方案的选择">二、同步方案的选择</h2>
+<h3 id="21-我们的选择预测回滚">2.1 我们的选择：预测回滚</h3>
+<p>在开发这款游戏时，我们选择了预测回滚(Prediction Rollback)同步方案。主要考虑因素是：</p>
+<ul>
+<li>需要保证游戏操作的流畅性</li>
+<li>对网络延迟有一定的容忍度</li>
+<li>需要严格的服务器验证</li>
+</ul>
+<h3 id="22-方案工作流程">2.2 方案工作流程</h3>
+<ol>
+<li>客户端不等待服务器响应，直接执行操作</li>
+<li>同时将操作发送给服务器进行验证</li>
+<li>如果服务器检测到不合法操作，客户端回滚到前一状态</li>
+</ol>
+<h3 id="23-其他可选方案分析">2.3 其他可选方案分析</h3>
+<p>虽然我们选择了预测回滚方案，但其他同步方案也有其适用场景：</p>
+<ul>
+<li>帧同步：适用于竞技类游戏，但对我们的休闲游戏来说过于严格</li>
+<li>状态同步：带宽消耗较大，不适合频繁的小操作</li>
+<li>事件同步：不能很好地处理实时操作需求</li>
+</ul>
+<h2 id="三核心玩法的同步实现">三、核心玩法的同步实现</h2>
+<h3 id="31-移动操作的验证流程">3.1 移动操作的验证流程</h3>
+<p>移动操作看似简单，但需要验证多个条件：</p>
+<ol>
+<li>
+<p><strong>源格子验证</strong></p>
+<ul>
+<li>确认A格子存在可移动物体</li>
+<li>验证物体属性和状态</li>
+</ul>
+</li>
+<li>
+<p><strong>目标格子验证</strong></p>
+<ul>
+<li>检查B格子是否可移动</li>
+<li>验证格子是否已解锁</li>
+<li>考虑物体尺寸（1×1, 1×2, 2×1, 2×2, 3×3等）</li>
+<li>确保目标区域无占用</li>
+</ul>
+</li>
+</ol>
+<h3 id="32-合成操作的复杂性">3.2 合成操作的复杂性</h3>
+<ol>
+<li>
+<p><strong>基础验证</strong></p>
+<ul>
+<li>验证参与合成的格子状态</li>
+<li>确认物体的位置连续性</li>
+</ul>
+</li>
+<li>
+<p><strong>合成规则验证</strong></p>
+<ul>
+<li>支持多种合成模式（三合一、五合二等）</li>
+<li>验证合成数量的合法性</li>
+<li>确认物品ID转换的正确性</li>
+</ul>
+</li>
+<li>
+<p><strong>特殊情况处理</strong></p>
+<ul>
+<li>合成后新物体的位置处理</li>
+<li>额外产出的合法性验证（如XXX01→XXX02的转换）</li>
+<li>稀有物品掉落的验证</li>
+</ul>
+</li>
+</ol>
+<h2 id="四实践中的经验总结">四、实践中的经验总结</h2>
+<h3 id="41-遇到的问题及解决方案">4.1 遇到的问题及解决方案</h3>
+<ol>
+<li>
+<p><strong>玩家体验问题</strong></p>
+<ul>
+<li>问题：网络延迟导致回滚频繁</li>
+<li>解决：优化客户端预判断，减少无效请求</li>
+</ul>
+</li>
+<li>
+<p><strong>数据一致性问题</strong></p>
+<ul>
+<li>问题：长期运行可能导致状态偏差</li>
+<li>解决：定期完整状态同步</li>
+</ul>
+</li>
+<li>
+<p><strong>性能优化问题</strong></p>
+<ul>
+<li>问题：频繁的验证请求导致服务器压力大</li>
+<li>解决：实现请求批处理和节流控制</li>
+</ul>
+</li>
+</ol>
+<h3 id="42-优化建议">4.2 优化建议</h3>
+<ol>
+<li>
+<p><strong>性能优化</strong></p>
+<ul>
+<li>客户端缓存验证规则</li>
+<li>合并同类型请求</li>
+<li>实现请求队列管理</li>
+</ul>
+</li>
+<li>
+<p><strong>安全性优化</strong></p>
+<ul>
+<li>添加操作时间戳</li>
+<li>实现操作序列号</li>
+<li>服务端频率限制</li>
+</ul>
+</li>
+</ol>
+<h2 id="五心得体会">五、心得体会</h2>
+<p>通过这个合成游戏的开发经验，我们发现：</p>
+<ol>
+<li>选择合适的同步方案对游戏体验至关重要</li>
+<li>预测回滚方案能很好地平衡流畅度和数据安全</li>
+<li>复杂的游戏逻辑需要严谨的验证系统</li>
+<li>优化工作需要持续进行</li>
+</ol>
+<h2 id="结语">结语</h2>
+<p>合成游戏的开发经验让我们深入理解了游戏同步方案的重要性。预测回滚方案虽然实现复杂，但能够很好地满足休闲游戏的需求。希望这些经验能够帮助其他开发者在选择和实现游戏同步方案时提供参考。</p>
+
+        
+          <div class="blog-tags">
+            
+              
+              <a href="http://localhost:1313/tags/%E8%AE%BE%E8%AE%A1/">设计</a>&nbsp;
+            
+              
+              <a href="http://localhost:1313/tags/%E6%95%B0%E6%8D%AE/">数据</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="http://localhost:1313/posts/never-give-up/" data-toggle="tooltip" data-placement="top" title="顺心而活，平静前行 - 《人间值得》读书笔记">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="https://github.com/luojiego" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/luojie710" title="Twitter">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://luojiego.com">Roger</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2024
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://localhost:1313/">Roger&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.140.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="http://localhost:1313/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="http://localhost:1313/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
