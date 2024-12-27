@@ -6,8 +6,15 @@
     <description>Recent content on Roger&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Dec 2024 23:23:41 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Dec 2024 06:45:15 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基于休闲合成游戏的数据同步方案实践</title>
+      <link>https://luojiego.com/posts/prediction-rollback-with-merge-games/</link>
+      <pubDate>Fri, 27 Dec 2024 06:45:15 +0800</pubDate>
+      <guid>https://luojiego.com/posts/prediction-rollback-with-merge-games/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;本文将以一个休闲合成类游戏的实践经验为切入点，探讨游戏开发中的数据同步方案。在这个合成游戏中，玩家需要在地图上移动和合成物体，涉及复杂的验证逻辑和数据同步问题。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一合成游戏的核心玩法&#34;&gt;一、合成游戏的核心玩法&lt;/h2&gt;&#xA;&lt;p&gt;在这款休闲合成游戏中，玩家主要进行两种操作：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;移动物体：在地图格子间移动不同大小的物体&lt;/li&gt;&#xA;&lt;li&gt;合成物体：将多个相同物体合成为新的物体，可能触发额外产出&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;这些看似简单的操作，实际上涉及复杂的验证逻辑和状态同步问题。&lt;/p&gt;&#xA;&lt;h2 id=&#34;二同步方案的选择&#34;&gt;二、同步方案的选择&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-我们的选择预测回滚&#34;&gt;2.1 我们的选择：预测回滚&lt;/h3&gt;&#xA;&lt;p&gt;在开发这款游戏时，我们选择了预测回滚(Prediction Rollback)同步方案。主要考虑因素是：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;需要保证游戏操作的流畅性&lt;/li&gt;&#xA;&lt;li&gt;对网络延迟有一定的容忍度&lt;/li&gt;&#xA;&lt;li&gt;需要严格的服务器验证&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>顺心而活，平静前行 - 《人间值得》读书笔记</title>
       <link>https://luojiego.com/posts/never-give-up/</link>
