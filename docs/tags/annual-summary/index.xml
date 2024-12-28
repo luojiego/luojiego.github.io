@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Annual Summary on Roger&#39;s Blog</title>
-    <link>https://luojiego.com/tags/annual-summary/</link>
+    <link>http://localhost:1313/tags/annual-summary/</link>
     <description>Recent content in Annual Summary on Roger&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 21 Jan 2024 12:17:34 +0000</lastBuildDate>
-    <atom:link href="https://luojiego.com/tags/annual-summary/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/annual-summary/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2023 年终总结</title>
-      <link>https://luojiego.com/posts/2023-annual-summary/</link>
+      <link>http://localhost:1313/posts/2023-annual-summary/</link>
       <pubDate>Sun, 21 Jan 2024 12:17:34 +0000</pubDate>
-      <guid>https://luojiego.com/posts/2023-annual-summary/</guid>
+      <guid>http://localhost:1313/posts/2023-annual-summary/</guid>
       <description>&lt;h1 id=&#34;阅读&#34;&gt;阅读&lt;/h1&gt;&#xA;&lt;h2 id=&#34;阅读完的书籍&#34;&gt;阅读完的书籍&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;《代码大全2》&lt;/strong&gt;，实体书跟英语电子版完整的看了一遍。这本书算是一本程序员必读的书籍，但是真的是名字毁掉的是一本书。要我说这本书甚至可以翻译为程序员必读书籍 Top1。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;《浪潮之颠》&lt;/strong&gt;，大二就听过名字的一本书，但是没有看，一直拖到了今年。不过就是因为浪潮之颠，我要搜索中时候第一次听说了&lt;strong&gt;得到 App&lt;/strong&gt;，这让我又新增了一个学习的渠道。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;《别想太多啦》&lt;/strong&gt;，一本相当短，但是却充满了智慧的书籍。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;《夏洛的网》&lt;/strong&gt;，一本看似是写给小朋友的书籍，却跟《小王子》一样值得人反复揣摩的书籍。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;未完成&#34;&gt;未完成&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;《如何阅读一本书》：50%&lt;/li&gt;&#xA;&lt;li&gt;《人生只有一件事》：20%&lt;/li&gt;&#xA;&lt;li&gt;《敏捷开发》：10%&lt;/li&gt;&#xA;&lt;li&gt;《性能之巅》：10%&lt;/li&gt;&#xA;&lt;li&gt;《悉达多》：20%&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>2022 年终总结</title>
-      <link>https://luojiego.com/posts/2022-annual-summary/</link>
+      <link>http://localhost:1313/posts/2022-annual-summary/</link>
       <pubDate>Sat, 14 Jan 2023 22:32:55 +0000</pubDate>
-      <guid>https://luojiego.com/posts/2022-annual-summary/</guid>
+      <guid>http://localhost:1313/posts/2022-annual-summary/</guid>
       <description>&lt;p&gt;迟到的年终总结，不想和去年一样，匆忙的总结，今年就多花了些时间，不过最主要还是写给我自己。&lt;/p&gt;&#xA;&lt;h1 id=&#34;最大的收获&#34;&gt;最大的收获&lt;/h1&gt;&#xA;&lt;h2 id=&#34;英语学习&#34;&gt;英语学习&lt;/h2&gt;&#xA;&lt;p&gt;去年的 11 月 30 日，我订阅了 Medium，花费 $50。虽然今年在 Medium 平台上花费的时间比较少，离自己制定的目标差了不少。但是我觉得至少督促了我加强了英语的学习，从三月份开始，我在 B 站的一个 Up 主的安利下，下载了欧路词典，说实话，我刚才购买了朗文词典 App，花费 128 元，转眼间就有购买了欧路的高级版，着实有点难受，但是至少我下载网上朗文词库时，心里没有负罪感了，毕竟我已经支持过正版了。从四月开始，我在学完极客时间课程《互联网人的英语私教课》后，意识到自己的单词量着实太着急了。无法高效的看完 Medium 上的文章，是英语水平太差了。如果不提高单词量，那么每一句对我来说都可能要使用翻译工具，效率有点差。所以我开始了平均每天的单词记忆，我选择了大学四词汇，对于每一个单词，我都会将朗文词库的每种释义的每个例名听一遍。这让我想起，高中的时候，为了记住五笔词根，把整个字典的每个字的编码都看了一遍，学完之后，果然一下子打字的速度就提上来了。虽然截止元旦前我还有接近 50% 的单词没有学完，但是我读英文书籍和听 Uncle Bob 关于 Clean Code 的演讲时，明显感觉压力没有那么大了。&lt;/p&gt;&#xA;&lt;h2 id=&#34;我选择&#34;&gt;“我选择”&lt;/h2&gt;&#xA;&lt;p&gt;之前在听樊登读书的时候，也曾对”我选择做 XXX，因为 XXX“。但是今年年初也有那么半个月内心真的是，我选择这样做，是因为你们逼我的。不过现在好多了，我已经清楚的意识，不论什么时候，我们都不能放弃选择的权力。时刻提醒我当前的所有选择，是因为我选择。&lt;/p&gt;&#xA;&lt;h2 id=&#34;编码水平提升&#34;&gt;编码水平提升&lt;/h2&gt;&#xA;&lt;p&gt;关于编码水平，直到我听完了 Uncle Bob 的激情演讲，读完 TCL 语言之父 John Ousterhout 的《软件设计哲学》，《人月神话》，《数据密集型应用系统设计》等书籍之后，我深刻意识到自己目前的水平还需要不断的提升。在今年的项目中，我虽然并未践行 TDD，但是对于我写的代码，基本上单元测试覆盖率已经达到了 80% 以上，对接的过程也是相当高效，终于不用再被别人频繁打断，能安心做事的感觉真好。未来的项目我依旧要不停的践行 Clean Code 的思想，借助 Copilot 及 ChatGPT ，将自己的编码水平可以提升到优秀开源代码的级别。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2021 年度总结</title>
-      <link>https://luojiego.com/posts/2021-annual-summary/</link>
+      <link>http://localhost:1313/posts/2021-annual-summary/</link>
       <pubDate>Sat, 01 Jan 2022 17:44:34 +0000</pubDate>
-      <guid>https://luojiego.com/posts/2021-annual-summary/</guid>
+      <guid>http://localhost:1313/posts/2021-annual-summary/</guid>
       <description>&lt;h2 id=&#34;二宝出生&#34;&gt;二宝出生&lt;/h2&gt;&#xA;&lt;p&gt;奥利奥于 2021 年 5 月 28 日出生，农历四月十七，跟我农历生日月和日都差了一。&lt;/p&gt;&#xA;&lt;p&gt;鉴于生老大时媳妇对顺产的心理阴影，我们思考再三选择了剖腹产，宝宝距离预产期十天来到我们和身边。&lt;/p&gt;&#xA;&lt;p&gt;第四医院虽然体验极其糟糕，但好在宝宝出生第四天我们就到了月子中心，这感觉简直是天差地别，同样的空间医院竟然能住六个产妇，简直难道想象。**在此我强烈建议，如果想要大人恢复的比较好，一定不要在家做月子。**根据自己的经济条件，能在月子中心多待几天是几天。&lt;/p&gt;&#xA;&lt;p&gt;老大一到三岁，我陪伴的时间太少了，二宝我是几乎天天看着他长大的，真心体会到当妈妈的辛苦。出生时七斤三两，已经被媳妇奶成了二十二斤的大胖小子了。&lt;/p&gt;&#xA;&lt;p&gt;二宝在年底最后的几天开始不停地喊”爸~爸，耙，爸爸“。&lt;/p&gt;&#xA;&lt;p&gt;总之**陪伴孩子成长的过程是一个不停学习，不停治愈自己的过程，孩子真的是来教育大人的。**还没有准备要宝宝的小伙伴们，可以准备啦。陪孩子一起学习成长的感觉其实是非常不错的。&lt;/p&gt;</description>
     </item>
   </channel>

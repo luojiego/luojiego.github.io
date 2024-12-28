@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>设计 on Roger&#39;s Blog</title>
-    <link>https://luojiego.com/tags/%E8%AE%BE%E8%AE%A1/</link>
+    <link>http://localhost:1313/tags/%E8%AE%BE%E8%AE%A1/</link>
     <description>Recent content in 设计 on Roger&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 27 Dec 2024 06:45:15 +0800</lastBuildDate>
-    <atom:link href="https://luojiego.com/tags/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>基于休闲合成游戏的数据同步方案实践</title>
-      <link>https://luojiego.com/posts/prediction-rollback-with-merge-games/</link>
+      <link>http://localhost:1313/posts/prediction-rollback-with-merge-games/</link>
       <pubDate>Fri, 27 Dec 2024 06:45:15 +0800</pubDate>
-      <guid>https://luojiego.com/posts/prediction-rollback-with-merge-games/</guid>
+      <guid>http://localhost:1313/posts/prediction-rollback-with-merge-games/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;本文将以一个休闲合成类游戏的实践经验为切入点，探讨游戏开发中的数据同步方案。在这个合成游戏中，玩家需要在地图上移动和合成物体，涉及复杂的验证逻辑和数据同步问题。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一合成游戏的核心玩法&#34;&gt;一、合成游戏的核心玩法&lt;/h2&gt;&#xA;&lt;p&gt;在这款休闲合成游戏中，玩家主要进行两种操作：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;移动物体：在地图格子间移动不同大小的物体&lt;/li&gt;&#xA;&lt;li&gt;合成物体：将多个相同物体合成为新的物体，可能触发额外产出&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;这些看似简单的操作，实际上涉及复杂的验证逻辑和状态同步问题。&lt;/p&gt;&#xA;&lt;h2 id=&#34;二同步方案的选择&#34;&gt;二、同步方案的选择&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-我们的选择预测回滚&#34;&gt;2.1 我们的选择：预测回滚&lt;/h3&gt;&#xA;&lt;p&gt;在开发这款游戏时，我们选择了预测回滚(Prediction Rollback)同步方案。主要考虑因素是：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;需要保证游戏操作的流畅性&lt;/li&gt;&#xA;&lt;li&gt;对网络延迟有一定的容忍度&lt;/li&gt;&#xA;&lt;li&gt;需要严格的服务器验证&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>游戏 GM 指令系统设计与优化指南：从复杂到简单的演进之路</title>
-      <link>https://luojiego.com/posts/gm-add-item-design/</link>
+      <link>http://localhost:1313/posts/gm-add-item-design/</link>
       <pubDate>Mon, 23 Dec 2024 23:07:50 +0800</pubDate>
-      <guid>https://luojiego.com/posts/gm-add-item-design/</guid>
+      <guid>http://localhost:1313/posts/gm-add-item-design/</guid>
       <description>&lt;h2 id=&#34;1-系统概述&#34;&gt;1. 系统概述&lt;/h2&gt;&#xA;&lt;p&gt;本文档详细描述了游戏 GM 指令系统的设计演进过程，重点关注如何通过持续优化提升使用体验。该系统主要用于管理游戏中的道具和货币添加操作，展现了从最初的复杂设计到最终的智能化处理的完整优化历程。&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-系统演进阶段&#34;&gt;2. 系统演进阶段&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-初始版本add_category&#34;&gt;2.1 初始版本（add_category）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;指令格式&lt;/strong&gt;：&lt;code&gt;add_category &amp;lt;类型枚举&amp;gt; &amp;lt;配置表ID&amp;gt; &amp;lt;数量&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;存在问题&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;参数过多，使用复杂&lt;/li&gt;&#xA;&lt;li&gt;枚举值容易拼写错误&lt;/li&gt;&#xA;&lt;li&gt;用户需要记忆物品类型&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;使用示例&lt;/strong&gt;：&lt;code&gt;add_category ITEM 10001 1&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;22-第一次优化指令拆分&#34;&gt;2.2 第一次优化（指令拆分）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;新增指令&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;add_cur&lt;/code&gt;：专门用于添加货币&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;add_item&lt;/code&gt;：专门用于添加道具&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;改进点&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;减少参数数量（仅需ID和数量）&lt;/li&gt;&#xA;&lt;li&gt;明确指令用途&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;存在问题&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;用户仍会混淆物品类型&lt;/li&gt;&#xA;&lt;li&gt;经常出现货币指令误输入道具ID的情况&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>
