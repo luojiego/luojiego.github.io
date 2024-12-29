@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>后台 on Roger&#39;s Blog</title>
-    <link>http://localhost:1313/tags/%E5%90%8E%E5%8F%B0/</link>
+    <link>https://luojiego.com/tags/%E5%90%8E%E5%8F%B0/</link>
     <description>Recent content in 后台 on Roger&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 May 2020 07:39:12 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%90%8E%E5%8F%B0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://luojiego.com/tags/%E5%90%8E%E5%8F%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>管理后台关于时间的“补丁”</title>
-      <link>http://localhost:1313/posts/background-time/</link>
+      <link>https://luojiego.com/posts/background-time/</link>
       <pubDate>Wed, 20 May 2020 07:39:12 +0000</pubDate>
-      <guid>http://localhost:1313/posts/background-time/</guid>
+      <guid>https://luojiego.com/posts/background-time/</guid>
       <description>&lt;h1 id=&#34;我们管理后台的历史&#34;&gt;我们管理后台的历史&lt;/h1&gt;&#xA;&lt;p&gt;18年可以新做的项目，要求我们做管理后台，但是我之前没有前端的任何经验，另外两个小伙伴也没有。只是用 Go 做过简单的页面。只接触过一点点模板的东西，要做一个管理后台，难度可想而知。&lt;br&gt;&#xA;但是坚持了下来，19年后台经过两三次的框架重构，算是有模有样了吧。&lt;/p&gt;&#xA;&lt;h1 id=&#34;问题显现&#34;&gt;问题显现&lt;/h1&gt;&#xA;&lt;p&gt;刚开始，我们只有国际版本的后台，使用的是 UTC 时间，管理后台上有很多关于活动时间的设置，之前并没有任何关于时间的标准设计方式。所以后台页面传入到后台的时间格式有两种，一种是&lt;strong&gt;时间格式字符串，例如 2020-05-20 20:00&lt;/strong&gt;，另外一种是&lt;strong&gt;以时间戳的方式传递给后端&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
   </channel>
