@@ -189,6 +189,44 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://luojiego.com/posts/start_use_github_pages/">
+        <h2 class="post-title">开始使用 GitHub Pages</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on April 11, 2024
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>买个服务器单纯用来部署个博客挺浪费的，既然 GitHub 提供了，那就安心使用吧。<br>
+后续直接使用 GitHub Pages，不再考虑单独使用服务器，浪费时间和精力。</p>
+
+        
+    </div>
+
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://luojiego.com/posts/stop-overthinking-reading-notes/">
         <h2 class="post-title">《别想太多啦》读书笔记</h2>
         
@@ -661,56 +699,6 @@ github 地址：<a href="https://github.com/lxgw/LxgwWenKai">字体地址</a><br
         
        
        <a href="https://luojiego.com/tags/%E8%AE%BE%E7%BD%AE/">设置</a>&nbsp;
-         
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://luojiego.com/posts/avalanche-caused-by-insufficient-machine-memory/">
-        <h2 class="post-title">内存不足 Redis 获取数据出错引发的雪崩分析</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on March 6, 2022
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <h2 id="异常回顾">异常回顾</h2>
-<p>28 日凌晨机器警报拉响，某 Redis 服务出现“MISCONF Redis is configured to save RDB snapshots……”，接着活动服开始连续崩溃，大概十分钟之后，活动服正常拉起。</p>
-<p>经过分析，发现机器由于内存不足，Redis 服务无法正常 dump，导致写入失败引发的连环错误。但是看服务的日志时，我们发现一些特别诡异的问题，从 Redis 中获取出来的数据数据格式和请求的根本的不匹配。熟悉 C++ 的小伙伴深知，这大概率是内存出错了。但是仔细看了看，毫无头绪，主要由于服务<strong>使用的是单线程的模型，请求数据时，返回的数据格式就是错误的</strong>。</p>
-<p>HSET 的时候，还会调用 EXPIRE 设置过期时间，调用了两次 <code>redisAppendCommand</code> ，<strong>但却只调用了一次</strong> <strong><code>redisGetReply</code></strong> 命令，<strong>也即只获取了 hset 的返回，但是并未获取 expire 的返回</strong>，<strong>这会导致后续的命令再调用</strong> <strong><code>redisGetReply</code></strong> <strong>时获取到是 expire 的返回，后续的命令就会连续错位。</strong></p>
-        <a href="https://luojiego.com/posts/avalanche-caused-by-insufficient-machine-memory/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-       
-       <a href="https://luojiego.com/tags/redis/">Redis</a>&nbsp;
-        
-       
-       <a href="https://luojiego.com/tags/code/">Code</a>&nbsp;
          
     </div>
     
