@@ -2,14 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://luojiego.com/posts/2024-annual-summary-courage/</loc>
+    <lastmod>2025-01-05T23:10:21+08:00</lastmod>
+  </url><url>
+    <loc>https://luojiego.com/tags/annual-summary/</loc>
+    <lastmod>2025-01-05T23:10:21+08:00</lastmod>
+  </url><url>
     <loc>https://luojiego.com/posts/</loc>
-    <lastmod>2025-01-05T22:20:17+08:00</lastmod>
+    <lastmod>2025-01-05T23:10:21+08:00</lastmod>
   </url><url>
     <loc>https://luojiego.com/</loc>
-    <lastmod>2025-01-05T22:20:17+08:00</lastmod>
+    <lastmod>2025-01-05T23:10:21+08:00</lastmod>
   </url><url>
     <loc>https://luojiego.com/tags/</loc>
-    <lastmod>2025-01-05T22:20:17+08:00</lastmod>
+    <lastmod>2025-01-05T23:10:21+08:00</lastmod>
+  </url><url>
+    <loc>https://luojiego.com/tags/%E5%B7%A5%E4%BD%9C/</loc>
+    <lastmod>2025-01-05T23:10:21+08:00</lastmod>
   </url><url>
     <loc>https://luojiego.com/tags/%E4%B8%93%E6%A0%8F/</loc>
     <lastmod>2025-01-05T22:20:17+08:00</lastmod>
@@ -144,9 +153,6 @@
     <lastmod>2024-02-03T16:24:42+00:00</lastmod>
   </url><url>
     <loc>https://luojiego.com/posts/2023-annual-summary/</loc>
-    <lastmod>2024-01-21T12:17:34+00:00</lastmod>
-  </url><url>
-    <loc>https://luojiego.com/tags/annual-summary/</loc>
     <lastmod>2024-01-21T12:17:34+00:00</lastmod>
   </url><url>
     <loc>https://luojiego.com/posts/2023-movie/</loc>
