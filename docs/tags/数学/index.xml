@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数学 on Roger&#39;s Blog</title>
+    <link>https://luojiego.com/tags/%E6%95%B0%E5%AD%A6/</link>
+    <description>Recent content in 数学 on Roger&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Jan 2025 22:20:17 +0800</lastBuildDate>
+    <atom:link href="https://luojiego.com/tags/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>提高抽象思维能力 - 《数学通识 50 讲》笔记</title>
+      <link>https://luojiego.com/posts/50-lecture-general-mathematics/</link>
+      <pubDate>Sun, 05 Jan 2025 22:20:17 +0800</pubDate>
+      <guid>https://luojiego.com/posts/50-lecture-general-mathematics/</guid>
+      <description>&lt;h1 id=&#34;提高抽象思维能力&#34;&gt;提高抽象思维能力&lt;/h1&gt;&#xA;&lt;p&gt;从高中数学、物理上是很明显能体现出来自己的抽象思维挺差劲。上初中的时候，我觉得这些科目简直都是小儿科，但在高中我傻眼了，数学和物理都跟不上。特别是物理，涉及到电磁力相关的我完全想象不来，高考物理简直就是我的噩梦。数学虽然可以通过努力让成绩显得不是那么差，但是到底学了个啥，只有自己清楚。大学的微积分更有些听天书的感觉了，虽然最后的考试能过关，但离理解还差的太远了。&lt;br&gt;&#xA;在学了这个专栏之后，我知道具体的原因在哪里了，就是自己的抽象能力太差了。这如同原始人刚有数字的概念，能理解 1，2，3。但是 0 是什么，太难了。因为微积分已经从静态转向了动态，如果没有更加抽象的思维，是很难理解微积分的。&lt;br&gt;&#xA;对于算法，我很头疼，好多次拿起书，或者看视频都觉得离掌握太远了。学习数学是要弥补这方面的缺陷，为了能更好把自己的专业知识理解的更加透切。工作了这么多年，我已经可以在大脑中模拟代码的运行，精通命令行的使用精髓，文件系统中的在大脑中井井有条。但是算法以及数据结构的离到这种地步差的还是太远，我需要有更高的抽象思维能力来提升自己的能力。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
