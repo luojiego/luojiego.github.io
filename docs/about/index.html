@@ -12,8 +12,12 @@
  
 
 
-      <title>Redis - </title>
+      <title>关于我 - </title>
 
+  <meta name="description" content="个人介绍
+[你的个人介绍内容]
+兴趣爱好
+联系方式">
   <meta name="author" content="Roger"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -34,13 +38,70 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/luojiego.com\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/luojiego.com\/about\/",
+          "name": "关于我"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Roger"
+  },
+  "headline": "关于我",
+  "description" : "个人介绍 [你的个人介绍内容]\n兴趣爱好 联系方式",
+  "inLanguage" : "en",
+  "wordCount":  4 ,
+  "datePublished" : "0001-01-01T00:00:00\u002b00:00",
+  "dateModified" : "0001-01-01T00:00:00\u002b00:00",
+  "image" : "https:\/\/luojiego.com\/",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https:\/\/luojiego.com\/about\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/luojiego.com\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/luojiego.com\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="Redis" />
-<meta property="og:url" content="https://luojiego.com/tags/redis/" />
+
+<meta property="og:title" content="关于我" />
+<meta property="og:description" content="个人介绍
+[你的个人介绍内容]
+兴趣爱好
+联系方式">
+<meta property="og:url" content="https://luojiego.com/about/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Roger&#39;s Blog" />
 
-  <meta name="twitter:title" content="Redis" />
+  <meta name="twitter:title" content="关于我" />
+  <meta name="twitter:description" content="个人介绍
+[你的个人介绍内容]
+兴趣爱好
+联系方式">
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@luojie710" />
   <meta name="twitter:creator" content="@luojie710" />
@@ -175,9 +236,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="tags-heading">
+            <div class="page-heading">
               
-                <h1>Redis</h1>
+                <h1>关于我</h1>
               
               
                 <hr class="small">
@@ -194,69 +255,41 @@
 
 
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="posts-list">
-          
-            <article class="post-preview">
-    <a href="https://luojiego.com/posts/avalanche-caused-by-insufficient-machine-memory/">
-        <h2 class="post-title">内存不足 Redis 获取数据出错引发的雪崩分析</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on March 6, 2022
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
-    
-  
-  
-</span>
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h2 id="个人介绍">个人介绍</h2>
+<p>[你的个人介绍内容]</p>
+<h2 id="兴趣爱好">兴趣爱好</h2>
+<h2 id="联系方式">联系方式</h2>
 
 
-    </p>
-    <div class="post-entry">
         
-        <h2 id="异常回顾">异常回顾</h2>
-<p>28 日凌晨机器警报拉响，某 Redis 服务出现“MISCONF Redis is configured to save RDB snapshots……”，接着活动服开始连续崩溃，大概十分钟之后，活动服正常拉起。</p>
-<p>经过分析，发现机器由于内存不足，Redis 服务无法正常 dump，导致写入失败引发的连环错误。但是看服务的日志时，我们发现一些特别诡异的问题，从 Redis 中获取出来的数据数据格式和请求的根本的不匹配。熟悉 C++ 的小伙伴深知，这大概率是内存出错了。但是仔细看了看，毫无头绪，主要由于服务<strong>使用的是单线程的模型，请求数据时，返回的数据格式就是错误的</strong>。</p>
-<p>HSET 的时候，还会调用 EXPIRE 设置过期时间，调用了两次 <code>redisAppendCommand</code> ，<strong>但却只调用了一次</strong> <strong><code>redisGetReply</code></strong> 命令，<strong>也即只获取了 hset 的返回，但是并未获取 expire 的返回</strong>，<strong>这会导致后续的命令再调用</strong> <strong><code>redisGetReply</code></strong> <strong>时获取到是 expire 的返回，后续的命令就会连续错位。</strong></p>
-        <a href="https://luojiego.com/posts/avalanche-caused-by-insufficient-machine-memory/" class="post-read-more">[Read More]</a>
-        
-    </div>
 
-    
-    <div class="blog-tags">
         
-       
-       <a href="https://luojiego.com/tags/redis/">Redis</a>&nbsp;
-        
-       
-       <a href="https://luojiego.com/tags/code/">Code</a>&nbsp;
-         
-    </div>
-    
 
-</article>
-          
-        </div>
         
-      </div>
+      </article>
+
+      
+
+
+      
+
     </div>
   </div>
+</div>
 
-      <footer>
+      
+    <div class="page-meta">
+  
+  
+  
+</div>
+
+
+  <footer>
   <div class="container">
     
     <div class="row">

@@ -84,6 +84,12 @@
         
           
             <li>
+              <a title="关于" href="/about/">关于</a>
+            </li>
+          
+        
+          
+            <li>
               <a title="搜索" href="/search/">搜索</a>
             </li>
           
@@ -193,6 +199,65 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="https://luojiego.com/posts/2023-annual-summary/">
+        <h2 class="post-title">2023 年终总结</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 21, 2024
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <h1 id="阅读">阅读</h1>
+<h2 id="阅读完的书籍">阅读完的书籍</h2>
+<ul>
+<li><strong>《代码大全2》</strong>，实体书跟英语电子版完整的看了一遍。这本书算是一本程序员必读的书籍，但是真的是名字毁掉的是一本书。要我说这本书甚至可以翻译为程序员必读书籍 Top1。</li>
+<li><strong>《浪潮之颠》</strong>，大二就听过名字的一本书，但是没有看，一直拖到了今年。不过就是因为浪潮之颠，我要搜索中时候第一次听说了<strong>得到 App</strong>，这让我又新增了一个学习的渠道。</li>
+<li><strong>《别想太多啦》</strong>，一本相当短，但是却充满了智慧的书籍。</li>
+<li><strong>《夏洛的网》</strong>，一本看似是写给小朋友的书籍，却跟《小王子》一样值得人反复揣摩的书籍。</li>
+</ul>
+<h2 id="未完成">未完成</h2>
+<ul>
+<li>《如何阅读一本书》：50%</li>
+<li>《人生只有一件事》：20%</li>
+<li>《敏捷开发》：10%</li>
+<li>《性能之巅》：10%</li>
+<li>《悉达多》：20%</li>
+</ul>
+        <a href="https://luojiego.com/posts/2023-annual-summary/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+       
+       <a href="https://luojiego.com/tags/annual-summary/">Annual Summary</a>&nbsp;
+         
+    </div>
+    
+
+</article>
           
             <article class="post-preview">
     <a href="https://luojiego.com/posts/2023-movie/">
@@ -648,67 +713,6 @@ github 地址：<a href="https://github.com/lxgw/LxgwWenKai">字体地址</a><br
         
        
        <a href="https://luojiego.com/tags/summary/">Summary</a>&nbsp;
-         
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://luojiego.com/posts/rust-install/">
-        <h2 class="post-title">Rust 超快安装方法</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 3, 2021
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <p>由于 Rust 安装需要从 github 下载资源，直接安装，速度会非常感人，而且安装到一半还可能会失败，即使使用源码也会面临相同的情况。</p>
-<p>感谢中科大，Respect！！！</p>
-<p>以下是简单的解决方法：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export RUSTUP_DIST_SERVER<span style="color:#f92672">=</span>https://mirrors.ustc.edu.cn/rust-static
-</span></span><span style="display:flex;"><span>export RUSTUP_UPDATE_ROOT<span style="color:#f92672">=</span>https://mirrors.ustc.edu.cn/rust-static/rustup
-</span></span><span style="display:flex;"><span>curl --proto <span style="color:#e6db74">&#39;=https&#39;</span> --tlsv1.2 -sSf https://sh.rustup.rs | sh
-</span></span></code></pre></div><p>几乎不出一分钟，就安装成功了。</p>
-<p>安装成功，执行个 <code>cargo install ripgrep</code> ，依然让人非常无语。</p>
-<p>此时只需要添加 <code>~/.cargo/config</code> 文件</p>
-<p>文件内容如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>source.crates-io<span style="color:#f92672">]</span>                                                                                                                                                                                              
-</span></span><span style="display:flex;"><span>registry <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://github.com/rust-lang/crates.io-index&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>replace-with <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;tuna&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>source.tuna<span style="color:#f92672">]</span>
-</span></span><span style="display:flex;"><span>registry <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&#34;</span>
-</span></span></code></pre></div><p>这样能就能愉快的  <code>cargo install/run/build</code> 了。</p>
-<p>注意：ustc 的源已经不能正常使用了，tuna 速度还是不错的</p>
-
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-       
-       <a href="https://luojiego.com/tags/rust/">Rust</a>&nbsp;
          
     </div>
     

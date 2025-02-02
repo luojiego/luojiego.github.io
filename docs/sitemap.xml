@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://luojiego.com/posts/the-thinking-machine/</loc>
-    <lastmod>2025-01-24T10:41:35+08:00</lastmod>
-  </url><url>
     <loc>https://luojiego.com/tags/books/</loc>
-    <lastmod>2025-01-24T10:41:35+08:00</lastmod>
+    <lastmod>2025-02-02T21:12:21+08:00</lastmod>
   </url><url>
     <loc>https://luojiego.com/posts/</loc>
-    <lastmod>2025-01-24T10:41:35+08:00</lastmod>
+    <lastmod>2025-02-02T21:12:21+08:00</lastmod>
   </url><url>
     <loc>https://luojiego.com/</loc>
-    <lastmod>2025-01-24T10:41:35+08:00</lastmod>
+    <lastmod>2025-02-02T21:12:21+08:00</lastmod>
   </url><url>
     <loc>https://luojiego.com/tags/</loc>
+    <lastmod>2025-02-02T21:12:21+08:00</lastmod>
+  </url><url>
+    <loc>https://luojiego.com/posts/pridictions-for-2025/</loc>
+    <lastmod>2025-02-02T21:12:21+08:00</lastmod>
+  </url><url>
+    <loc>https://luojiego.com/tags/%E5%BE%97%E5%88%B0/</loc>
+    <lastmod>2025-02-02T21:12:21+08:00</lastmod>
+  </url><url>
+    <loc>https://luojiego.com/posts/the-thinking-machine/</loc>
     <lastmod>2025-01-24T10:41:35+08:00</lastmod>
   </url><url>
     <loc>https://luojiego.com/posts/change-your-mindset/</loc>
@@ -33,9 +39,6 @@
     <lastmod>2025-01-05T22:20:17+08:00</lastmod>
   </url><url>
     <loc>https://luojiego.com/tags/%E5%90%B4%E5%86%9B/</loc>
-    <lastmod>2025-01-05T22:20:17+08:00</lastmod>
-  </url><url>
-    <loc>https://luojiego.com/tags/%E5%BE%97%E5%88%B0/</loc>
     <lastmod>2025-01-05T22:20:17+08:00</lastmod>
   </url><url>
     <loc>https://luojiego.com/posts/50-lecture-general-mathematics/</loc>
@@ -336,6 +339,8 @@
     <lastmod>2020-04-07T00:06:15+00:00</lastmod>
   </url><url>
     <loc>https://luojiego.com/categories/</loc>
+  </url><url>
+    <loc>https://luojiego.com/about/</loc>
   </url><url>
     <loc>https://luojiego.com/search/</loc>
   </url>
