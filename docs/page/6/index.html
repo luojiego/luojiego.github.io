@@ -202,6 +202,168 @@
           
           
             <article class="post-preview">
+    <a href="https://luojiego.com/posts/the-convert-in-go/">
+        <h2 class="post-title">Go 中&#34;坑爹&#34;的类型转换</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 20, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <h2 id="go-代码">go 代码</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">count</span> <span style="color:#66d9ef">uint32</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;count: %d\n&#34;</span>, <span style="color:#a6e22e">count</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;count - 1: %d\n&#34;</span>, <span style="color:#a6e22e">count</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// num := math.Pow(2, float64(count-1))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;math.Pow(2, float64(count-1)): %f\n&#34;</span>, <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, float64(<span style="color:#a6e22e">count</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;int(math.Pow(2, float64(count-1))): %d\n&#34;</span>, int(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, float64(<span style="color:#a6e22e">count</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;uint32(math.Pow(2, float64(count-1))): %d\n&#34;</span>, uint32(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, float64(<span style="color:#a6e22e">count</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;int32(math.Pow(2, float64(count-1))): %d\n&#34;</span>, int32(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, float64(<span style="color:#a6e22e">count</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;uint64(math.Pow(2, float64(count-1))): %d\n&#34;</span>, uint64(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, float64(<span style="color:#a6e22e">count</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;int64(pow(2,1023): %d\n&#34;</span>, int64(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1023</span>)))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;uint64(pow(2,1023): %d\n&#34;</span>, uint64(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1023</span>)))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+        <a href="https://luojiego.com/posts/the-convert-in-go/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+       
+       <a href="https://luojiego.com/tags/go/">go</a>&nbsp;
+         
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://luojiego.com/posts/why-should-programmers-support-genuine-software/">
+        <h2 class="post-title">为什么程序员更应该支持正版软件？</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 29, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <h1 id="做对的事情">做对的事情</h1>
+<p>我始终觉得，程序员应该将更多的精力花费在自己的专业上。如果在自己可接受的范围里面，花钱去支持正版软件，节约自己的时间，提高幸福感，才是正确的事情。</p>
+        <a href="https://luojiego.com/posts/why-should-programmers-support-genuine-software/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+       
+       <a href="https://luojiego.com/tags/%E6%80%9D%E8%80%83/">思考</a>&nbsp;
+         
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://luojiego.com/posts/install-mantisbt/">
+        <h2 class="post-title">MantisBT 安装</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 1, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <h1 id="mantisbt-安装">MantisBT 安装</h1>
+<p><a href="https://github.com/mantisbt/mantisbt">github 地址</a> <strong>注意，不能从 release 页面下载来安装，要从官网进行下载</strong></p>
+<h2 id="下载并解压">下载并解压</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># curl -LO https://github.com/mantisbt/mantisbt/archive/release-2.24.1.zip # 这个代码是错误的</span>
+</span></span><span style="display:flex;"><span>curl -LO https://nchc.dl.sourceforge.net/project/mantisbt/mantis-stable/2.24.1/mantisbt-2.24.1.zip
+</span></span><span style="display:flex;"><span>unzip unzip release-2.24.1.zip
+</span></span></code></pre></div><p><a href="https://www.mantisbt.org/docs/master/en-US/Admin_Guide/html-desktop/">安装官方文档</a></p>
+<p><strong>建议详细阅读官方文档</strong>，不然将会和我一样遇到一车子的坑。</p>
+        <a href="https://luojiego.com/posts/install-mantisbt/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+       
+       <a href="https://luojiego.com/tags/mantisbt/">MantisBT</a>&nbsp;
+         
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://luojiego.com/posts/v2ray-proxy-setting/">
         <h2 class="post-title">V2ray 终端代理</h2>
         
@@ -572,147 +734,6 @@
 
 </article>
           
-            <article class="post-preview">
-    <a href="https://luojiego.com/posts/programmer-fancy-death-onboarding-method/">
-        <h2 class="post-title">程序员“花式作死”的入职方式</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 13, 2020
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <blockquote>
-<p>不会游泳，怎么换泳池也是没有用的。</p>
-</blockquote>
-<p>程序员很有可能在做出一些成就的时候，过分高估自己的能力。从此目中无人，很快便会发现，在公司干不下去。在他看来，是原有公司的问题比较多，所以离职了。</p>
-<p>但是他们却忘记了，离开平台，他们什么也不是，甚至连他平时使用最熟悉的一个平台，或者环境都没有能力搭起来，这个时间，在新入职的公司，必然磕磕绊绊。甚至会出现，一年内连续换几家公司的情况。</p>
-<p>下面我说说我对于这些问题的看法，毕竟自己也曾错的一塌糊涂。</p>
-        <a href="https://luojiego.com/posts/programmer-fancy-death-onboarding-method/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://luojiego.com/posts/goal-md/">
-        <h2 class="post-title">学习目标</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 9, 2020
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <h2 id="误区">误区</h2>
-<p>从业7年以来，前5年都在使用 C++, 14年就开始接触 Redis 和 Protobuf, 但是到现在，依然只停留在使用层面，甚至只会使用一些简单的东西。类似于 Redis 中的集群，根本连了解都没有了解过，批量请求也没有使用过。接触 Go 以来，也是只会用, 原理不了解。</p>
-<h2 id="改进">改进</h2>
-<ul>
-<li>每个疑惑点，最好深究原因；</li>
-<li>重新学习，<strong>学而时习之，不亦乐乎</strong>；</li>
-<li>学习源码，刚开始必然很难，可以从别人的讲解开始；</li>
-<li>学习算法，之前学习的太浅，根本不能在大脑中停留太长时间；</li>
-<li>坚持，每天早晨6点30起床，早睡早起，使用早起的时间来学习；</li>
-</ul>
-
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-       
-       <a href="https://luojiego.com/tags/%E7%9B%AE%E6%A0%87/">目标</a>&nbsp;
-        
-       
-       <a href="https://luojiego.com/tags/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
-        
-       
-       <a href="https://luojiego.com/tags/%E6%96%B9%E6%B3%95/">方法</a>&nbsp;
-         
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://luojiego.com/posts/meet-ngiht-go/">
-        <h2 class="post-title">遇见Go夜读</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 7, 2020
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <h1 id="更加清晰的人生方向">更加清晰的人生方向</h1>
-<h2 id="不再迷茫">不再迷茫</h2>
-<p>​		在人生的第 30 个年头，终于明白人生的意义。19 年 9 月底，公司唯一一款产品因为一些原因被苹果下架。梦想破灭，我几乎要对游戏失去了兴趣，有想过放弃现在的环境，重新选择。但是，在西安这个比较小的环境里面，我也清楚的知道，没有其它的选择。虽然很失望，但是起码和老婆孩子在一起，每天下班回到家，儿子一直不停的叫着“爸爸”，也没有那么累了。</p>
-<p>​		在这个比较关键的时刻，我终于开始听一年前媳妇推荐给我的樊登读书。得益于樊老师传达的许多理论，让我不再迷茫。9月24日被通知产品下架，10月8日我便从这个失意的过程中走出。因为在这段时间，吸收了许多的人生智慧，get 不到许多新技能。我从产品被下架的阴影中走出来了，同时也放下手里的烟，顺带明白了如何和媳妇孩子相处。我终于明白，<strong>活的不快乐只是因为内心不够充实，而物质的满足对于内心的满足无任何帮助，反而只会让欲望变得更强</strong>。</p>
-        <a href="https://luojiego.com/posts/meet-ngiht-go/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-
-</article>
-          
         </div>
 
         
@@ -722,6 +743,10 @@
                 <a href="https://luojiego.com/page/5/">&larr; Newer Posts</a>
               </li>
             
+            
+              <li class="next">
+                <a href="https://luojiego.com/page/7/">Older Posts &rarr;</a>
+              </li>
             
           </ul>
         

@@ -1,0 +1,393 @@
+
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+ 
+
+
+      <title>换了8款IDE后，我悟出了什么 - </title>
+
+  <meta name="description" content="又翻开了尘封的代码，突然想不起第一个用的编辑器叫啥了，这才意识到是时候记录下这些年我和各种 IDE 的爱恨情仇了。">
+  <meta name="author" content="Roger"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Roger\u0027s Blog",
+    
+    "url": "https:\/\/luojiego.com\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/luojiego.com\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/luojiego.com\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/luojiego.com\/posts\/key-takeaway-after-switching-8-ides\/",
+          "name": "换了8款 ID e后，我悟出了什么"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Roger"
+  },
+  "headline": "换了8款IDE后，我悟出了什么",
+  "description" : "又翻开了尘封的代码，突然想不起第一个用的编辑器叫啥了，这才意识到是时候记录下这些年我和各种 IDE 的爱恨情仇了。\n",
+  "inLanguage" : "en",
+  "wordCount":  145 ,
+  "datePublished" : "2025-06-16T22:31:14\u002b08:00",
+  "dateModified" : "2025-06-16T22:31:14\u002b08:00",
+  "image" : "https:\/\/luojiego.com\/",
+  "keywords" : [ "编程, 总结, IDE" ],
+  "mainEntityOfPage" : "https:\/\/luojiego.com\/posts\/key-takeaway-after-switching-8-ides\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/luojiego.com\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/luojiego.com\/",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+
+<meta property="og:title" content="换了8款IDE后，我悟出了什么" />
+<meta property="og:description" content="又翻开了尘封的代码，突然想不起第一个用的编辑器叫啥了，这才意识到是时候记录下这些年我和各种 IDE 的爱恨情仇了。">
+<meta property="og:url" content="https://luojiego.com/posts/key-takeaway-after-switching-8-ides/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Roger&#39;s Blog" />
+
+  <meta name="twitter:title" content="换了8款IDE后，我悟出了什么" />
+  <meta name="twitter:description" content="又翻开了尘封的代码，突然想不起第一个用的编辑器叫啥了，这才意识到是时候记录下这些年我和各种 IDE 的爱恨情仇了。">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@luojie710" />
+  <meta name="twitter:creator" content="@luojie710" />
+  <meta name="generator" content="Hugo 0.140.0">
+  <link rel="alternate" href="https://luojiego.com/index.xml" type="application/rss+xml" title="Roger&#39;s Blog"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css" integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css" integrity="sha384-h/hnnw1Bi4nbpD6kE7nYfCXzovi622sY5WBxww8ARKwpdLj5kUWjRuyiXaD1U2JT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="https://luojiego.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://luojiego.com/css/syntax.css" /><link rel="stylesheet" href="https://luojiego.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-BEV0Q1G3S5"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BEV0Q1G3S5');
+        }
+      </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://luojiego.com/">Roger&#39;s Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="关于" href="/about/">关于</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="搜索" href="/search/">搜索</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>换了8款IDE后，我悟出了什么</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>又翻开了尘封的代码，突然想不起第一个用的编辑器叫啥了，这才意识到是时候记录下这些年我和各种 IDE 的爱恨情仇了。</p>
+<h2 id="大学时光初次牵手">大学时光：初次牵手</h2>
+<p>大学时第一次接触编程，VC++ 6.0 成了启蒙老师。那个蓝色的界面，那个怎么也配不好的中文字体，还有课上老师讲解&quot;友元&quot;时连续两节课都编译失败的尴尬场景，现在想来还挺好笑的。那时候想，要是早点接触 Linux 和 gcc，可能对我这种想做后端的人更有帮助吧。</p>
+<p>后来学 MFC 和.Net 时接触了完整版的 Visual Studio，比起 VC++6.0 复杂不少，但功能确实强大。那个智能提示，在当时简直是黑科技。</p>
+<h2 id="职场初体验水土不服">职场初体验：水土不服</h2>
+<p>毕业后才发现，学校那些 Photoshop、Flash 甚至 Java 在我工作中竟然一点用都没上。典型的学非所用，用非所学啊！</p>
+<p>2013 年入职第一家公司，发现隔壁大神用的是 SourceInsight。抱着学习的心态也装了一个，结果那个中文注释显示，简直是折磨强迫症。挣扎了一年后，还是放弃了。</p>
+<p>2014 年回归 Visual Studio 2012。虽然最终代码要在 Linux（CentOS 6）上运行，但没找到顺手的 Linux IDE，只能继续依赖老朋友 VS 了。那时候的跨平台开发，真的只能用&quot;痛苦&quot;两字形容——Windows 写代码，Linux 编译运行，两边反复横跳。</p>
+<h2 id="效率至上vim-的日子">效率至上：Vim 的日子</h2>
+<p>受不了这种效率，2015 年开始硬着头皮学 Vim。刚开始那个速度慢得令人发指，什么 i 进入编辑模式，Esc 返回普通模式，:wq 保存退出，搞得我脑子乱成一团。但坚持两周后，速度确实上来了。</p>
+<p>最终在 Vim 上耗费了 2100 多小时（竟然真的有计时插件！）。说实话，即使配了一堆插件，搜索功能还是不如 VS 直观。不过能在服务器上直接改代码、编译、运行的感觉，真的上瘾。</p>
+<p>2016-2018 年间，因为还是主要写 C++，VS 依然是我的主力。只不过这段时间后，C++代码几乎全部迁移到了 Linux 环境。有搜索需求时，grep 就成了最好的朋友。</p>
+<h2 id="新欢jetbrains-全家桶">新欢：JetBrains 全家桶</h2>
+<p>2018 年公司开始用 Go 语言，同时我也接手了游戏后台的前端部分。第一次接触了 IntelliJ 社区版，使用时间大概 300 小时。那个代码补全和重构功能，真是让人欲罢不能。</p>
+<p>2019 年果断买了 Goland 的授权。JS 和 HTML 页面也能在 Goland 里完成，简直完美。这两年几乎所有时间都在用它，累计超过 1700 小时。</p>
+<h2 id="回归轻量vs-code-的崛起">回归轻量：VS Code 的崛起</h2>
+<p>经过无数次尝试和失败，2021 年我终于接受了 VS Code 也能胜任 Go 开发的事实。立刻取消了 Goland 的订阅，全面拥抱 VS Code。哈哈，也是因为我们家老二快出生了，不花的钱就省下来。</p>
+<p>加上 Remote SSH 插件和 Vim 插件，简直如虎添翼。轻量、快速、免费，还有一大堆扩展可用，三年下来累计使用超过 3700 小时，绝对是我的最长情编辑器了。</p>
+<p>2023 年，老版本 Vim 在 Linux 上总是莫名其妙崩溃，尝试了 NEO Vim 后感觉像重获新生。异步特性太香了，内置 LSP 支持也让配置简单不少。虽然才用了 300 多小时，但绝对是老 Vim 的完美继任者。</p>
+<h2 id="ai-时代cursor-改变了一切">AI 时代：Cursor 改变了一切</h2>
+<p>去年初试了 Cursor，彻底被震撼了。用了两年的 Copilot 与它一比，简直是小巫见大巫。二话不说立刻订阅，至今累计使用超过 600 小时。</p>
+<p>今年它的 Agent 功能更是让我对编程有了全新认识。很多时候，我只需要描述需求，AI 就能生成完整可用的代码。我现在的工作更像是一个&quot;代码审核员&quot;——专注于 Review 代码质量和业务逻辑，AI 负责繁琐的实现细节。版本控制做好了，效率蹭蹭往上涨。</p>
+<h2 id="后记">后记</h2>
+<p>回头看这些年换过的 IDE，就像看自己的成长轨迹。从菜鸟到老鸟，从盲目跟风到理性选择，每一步都刻下了时代的烙印。</p>
+<p>以前总想着掌握编辑器的每个细节，现在却在思考：未来我们真的还需要&quot;编写&quot;代码吗？AI 会不会彻底改变编程的本质？</p>
+<p>不管工具怎么变，核心还是解决问题的思维和对业务的理解。这些年，IDE 换了一个又一个，但热爱编程的心一直没变。</p>
+<p>倒是挺期待下一个颠覆我认知的工具是什么。毕竟，唯一不变的就是变化本身啊！</p>
+
+        
+          <div class="blog-tags">
+            
+              
+              <a href="https://luojiego.com/tags/%E7%BC%96%E7%A8%8B/">编程</a>&nbsp;
+            
+              
+              <a href="https://luojiego.com/tags/%E6%80%BB%E7%BB%93/">总结</a>&nbsp;
+            
+              
+              <a href="https://luojiego.com/tags/ide/">IDE</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://luojiego.com/posts/from-cplusplus-to-full-stack/" data-toggle="tooltip" data-placement="top" title="后端老兵的前端突围：从 C&#43;&#43; 到全栈的进化之路">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      <footer>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+		
+		  <a href="https://github.com/luojiego" title="GitHub">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+		
+		  <a href="https://twitter.com/luojie710" title="Twitter">
+		
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://luojiego.com">Roger</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2025
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://luojiego.com/">Roger&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.140.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js" integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<script src="https://luojiego.com/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://luojiego.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

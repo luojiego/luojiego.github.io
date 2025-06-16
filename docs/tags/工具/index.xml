@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on Roger&#39;s Blog</title>
+    <link>https://luojiego.com/tags/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on Roger&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Jun 2025 21:41:15 +0800</lastBuildDate>
+    <atom:link href="https://luojiego.com/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>远程控制完整指南：从局域网到云端的全方位解决方案</title>
+      <link>https://luojiego.com/posts/remote-control-solutions/</link>
+      <pubDate>Mon, 16 Jun 2025 21:41:15 +0800</pubDate>
+      <guid>https://luojiego.com/posts/remote-control-solutions/</guid>
+      <description>&lt;p&gt;在现代工作环境中，远程控制已成为提高工作效率和灵活性的重要工具。无论是在家办公、技术支持还是多设备协作，掌握各种远程控制方案都显得尤为重要。本文将详细介绍从同一局域网内的桌面连接到跨网络的远程控制解决方案。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
