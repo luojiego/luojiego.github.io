@@ -201,6 +201,59 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://luojiego.com/posts/goodbye-grep-transition-from-cli-grafana-loki/">
+        <h2 class="post-title">从Grep 到 Grafana Loki 的日志分析之路</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 21, 2025
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <h1 id="我走了太多弯路">我走了太多弯路</h1>
+<p>说实话，在日志处理这件事上，我被“知识陷阱”困了很久。</p>
+<p>因为我太熟悉命令行了，grep、rg、awk 玩得飞起，所以过去很长一段时间，我都固执地认为这就是分析日志的“正统”方式。但现实经常打脸：当日志散落在不同服务器、不同路径下时，我得开无数个终端窗口跳来跳去，查个链路问题跟查案一样。</p>
+<p>更惨的是，以前公司不给硬件资源，我根本不敢想 Elasticsearch 这种“吞金兽”。为了解决查询问题，我还自己折腾过一套特原始的方案：写脚本去 OSS 上拉压缩包，下载、解压、再用 rg 扫。还能只查找固定时间短的日志，使用者必须先在 GM 后台上查询到用户的登录记录，再根据日期查询具体时间的日志。</p>
+<p>后来入职新公司，我这套“土法炼钢”的操作甚至被同事吐槽过：“你怎么还在当原始人？我们早都用 Grafana 查了。”</p>
+<p>直到最近，我硬着头皮自己试着搭了一套 Grafana + Loki + Promtail，真的感觉推开了新世界的大门。那种震撼感在于：我只花了不到三十分钟部署，那种多机协同、可视化检索的爽感，瞬间就秒杀了过去几年的肉搏操作。</p>
+<p>现在回头看，天天蹲在黑框框里人肉搜索，确实像个原始人。这篇文章就记录一下这个让我“走出石器时代”的工具组合，以及我的安装过程。讲真，以后哪怕项目再小、只有一个服务，我也要把日志接入 Loki。<strong>人生苦短，不要把生命浪费在 cd 和 grep 上。</strong></p>
+        <a href="https://luojiego.com/posts/goodbye-grep-transition-from-cli-grafana-loki/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+       
+       <a href="https://luojiego.com/tags/%E6%97%A5%E5%BF%97/">日志</a>&nbsp;
+        
+       
+       <a href="https://luojiego.com/tags/%E7%BB%8F%E9%AA%8C/">经验</a>&nbsp;
+         
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://luojiego.com/posts/key-takeaway-after-switching-8-ides/">
         <h2 class="post-title">换了8款IDE后，我悟出了什么</h2>
         
@@ -650,57 +703,6 @@
         
        
        <a href="https://luojiego.com/tags/%E5%BE%97%E5%88%B0/">得到</a>&nbsp;
-         
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://luojiego.com/posts/jing-jie/">
-        <h2 class="post-title">什么是哲学 - 《境界》读书笔记</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 4, 2025
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <p>最早接触“哲学”这个词语，竟然是在学习 Go 语言的时候，有人提到 XXX 是这个语言的设计哲学。<br>
-然后是在 19 年，听了《悲剧的诞生》这本书，也算是开始对哲学有了关注，后来断断续续在樊登读书上听了几本哲学相关的书籍，但是没有像这本书一样，一次讲到好多哲学的大家。虽然讲了这么多哲学相关的内容，但是我对哲学是什么还没有一个清晰的概念，需要我后续学习更多的书籍，去体会什么是哲学。</p>
-        <a href="https://luojiego.com/posts/jing-jie/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-       
-       <a href="https://luojiego.com/tags/books/">books</a>&nbsp;
-        
-       
-       <a href="https://luojiego.com/tags/%E5%90%B4%E5%86%9B/">吴军</a>&nbsp;
-        
-       
-       <a href="https://luojiego.com/tags/%E5%93%B2%E5%AD%A6/">哲学</a>&nbsp;
          
     </div>
     

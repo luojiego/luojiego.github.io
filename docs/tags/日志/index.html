@@ -12,7 +12,8 @@
  
 
 
-  
+      <title>日志 - </title>
+
   <meta name="author" content="Roger"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -34,12 +35,12 @@
 }
 </script>
 
-<meta property="og:title" content="Roger&#39;s Blog" />
-<meta property="og:url" content="https://luojiego.com/" />
+<meta property="og:title" content="日志" />
+<meta property="og:url" content="https://luojiego.com/tags/%E6%97%A5%E5%BF%97/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Roger&#39;s Blog" />
 
-  <meta name="twitter:title" content="Roger&#39;s Blog" />
+  <meta name="twitter:title" content="日志" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@luojie710" />
   <meta name="twitter:creator" content="@luojie710" />
@@ -174,9 +175,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
+            <div class="tags-heading">
               
-                <h1>Roger&#39;s Blog</h1>
+                <h1>日志</h1>
               
               
                 <hr class="small">
@@ -193,17 +194,15 @@
 
 
     
-  <div role="main" class="container">
+  <div class="container" role="main">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
-
         <div class="posts-list">
           
-          
             <article class="post-preview">
-    <a href="https://luojiego.com/posts/goland-short-cuts/">
-        <h2 class="post-title">goland 25 大特色编辑功能</h2>
+    <a href="https://luojiego.com/posts/goodbye-grep-transition-from-cli-grafana-loki/">
+        <h2 class="post-title">从Grep 到 Grafana Loki 的日志分析之路</h2>
         
         
         
@@ -213,7 +212,7 @@
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 19, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 21, 2025
   
   
   
@@ -229,12 +228,14 @@
     </p>
     <div class="post-entry">
         
-        <h1 id="写在前面">写在前面</h1>
-<p><strong>使用了Goland两年了，好多功能都不会用，特意总结一下，加强自己的记忆</strong></p>
-<p><a href="https://blog.jetbrains.com/cn/2019/11/goland-ide-p1/">GoLand IDE 的 25 大特色编辑功能 – 第 1 部分</a><br>
-<a href="https://blog.jetbrains.com/cn/2019/11/goland-ide-p2/">GoLand IDE 的 25 大特色编辑功能 – 第 2 部分</a><br>
-<a href="https://blog.jetbrains.com/cn/2020/02/goland-ide-3/">GoLand IDE 的 25 大特色编辑功能 – 第 3 部分</a></p>
-        <a href="https://luojiego.com/posts/goland-short-cuts/" class="post-read-more">[Read More]</a>
+        <h1 id="我走了太多弯路">我走了太多弯路</h1>
+<p>说实话，在日志处理这件事上，我被“知识陷阱”困了很久。</p>
+<p>因为我太熟悉命令行了，grep、rg、awk 玩得飞起，所以过去很长一段时间，我都固执地认为这就是分析日志的“正统”方式。但现实经常打脸：当日志散落在不同服务器、不同路径下时，我得开无数个终端窗口跳来跳去，查个链路问题跟查案一样。</p>
+<p>更惨的是，以前公司不给硬件资源，我根本不敢想 Elasticsearch 这种“吞金兽”。为了解决查询问题，我还自己折腾过一套特原始的方案：写脚本去 OSS 上拉压缩包，下载、解压、再用 rg 扫。还能只查找固定时间短的日志，使用者必须先在 GM 后台上查询到用户的登录记录，再根据日期查询具体时间的日志。</p>
+<p>后来入职新公司，我这套“土法炼钢”的操作甚至被同事吐槽过：“你怎么还在当原始人？我们早都用 Grafana 查了。”</p>
+<p>直到最近，我硬着头皮自己试着搭了一套 Grafana + Loki + Promtail，真的感觉推开了新世界的大门。那种震撼感在于：我只花了不到三十分钟部署，那种多机协同、可视化检索的爽感，瞬间就秒杀了过去几年的肉搏操作。</p>
+<p>现在回头看，天天蹲在黑框框里人肉搜索，确实像个原始人。这篇文章就记录一下这个让我“走出石器时代”的工具组合，以及我的安装过程。讲真，以后哪怕项目再小、只有一个服务，我也要把日志接入 Loki。<strong>人生苦短，不要把生命浪费在 cd 和 grep 上。</strong></p>
+        <a href="https://luojiego.com/posts/goodbye-grep-transition-from-cli-grafana-loki/" class="post-read-more">[Read More]</a>
         
     </div>
 
@@ -242,179 +243,23 @@
     <div class="blog-tags">
         
        
-       <a href="https://luojiego.com/tags/goland/">goland</a>&nbsp;
+       <a href="https://luojiego.com/tags/%E6%97%A5%E5%BF%97/">日志</a>&nbsp;
+        
+       
+       <a href="https://luojiego.com/tags/%E7%BB%8F%E9%AA%8C/">经验</a>&nbsp;
          
     </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://luojiego.com/posts/programmer-fancy-death-onboarding-method/">
-        <h2 class="post-title">程序员“花式作死”的入职方式</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 13, 2020
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <blockquote>
-<p>不会游泳，怎么换泳池也是没有用的。</p>
-</blockquote>
-<p>程序员很有可能在做出一些成就的时候，过分高估自己的能力。从此目中无人，很快便会发现，在公司干不下去。在他看来，是原有公司的问题比较多，所以离职了。</p>
-<p>但是他们却忘记了，离开平台，他们什么也不是，甚至连他平时使用最熟悉的一个平台，或者环境都没有能力搭起来，这个时间，在新入职的公司，必然磕磕绊绊。甚至会出现，一年内连续换几家公司的情况。</p>
-<p>下面我说说我对于这些问题的看法，毕竟自己也曾错的一塌糊涂。</p>
-        <a href="https://luojiego.com/posts/programmer-fancy-death-onboarding-method/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://luojiego.com/posts/goal-md/">
-        <h2 class="post-title">学习目标</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 9, 2020
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <h2 id="误区">误区</h2>
-<p>从业7年以来，前5年都在使用 C++, 14年就开始接触 Redis 和 Protobuf, 但是到现在，依然只停留在使用层面，甚至只会使用一些简单的东西。类似于 Redis 中的集群，根本连了解都没有了解过，批量请求也没有使用过。接触 Go 以来，也是只会用, 原理不了解。</p>
-<h2 id="改进">改进</h2>
-<ul>
-<li>每个疑惑点，最好深究原因；</li>
-<li>重新学习，<strong>学而时习之，不亦乐乎</strong>；</li>
-<li>学习源码，刚开始必然很难，可以从别人的讲解开始；</li>
-<li>学习算法，之前学习的太浅，根本不能在大脑中停留太长时间；</li>
-<li>坚持，每天早晨6点30起床，早睡早起，使用早起的时间来学习；</li>
-</ul>
-
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-       
-       <a href="https://luojiego.com/tags/%E7%9B%AE%E6%A0%87/">目标</a>&nbsp;
-        
-       
-       <a href="https://luojiego.com/tags/%E5%AD%A6%E4%B9%A0/">学习</a>&nbsp;
-        
-       
-       <a href="https://luojiego.com/tags/%E6%96%B9%E6%B3%95/">方法</a>&nbsp;
-         
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://luojiego.com/posts/meet-ngiht-go/">
-        <h2 class="post-title">遇见Go夜读</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 7, 2020
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Roger
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <h1 id="更加清晰的人生方向">更加清晰的人生方向</h1>
-<h2 id="不再迷茫">不再迷茫</h2>
-<p>​		在人生的第 30 个年头，终于明白人生的意义。19 年 9 月底，公司唯一一款产品因为一些原因被苹果下架。梦想破灭，我几乎要对游戏失去了兴趣，有想过放弃现在的环境，重新选择。但是，在西安这个比较小的环境里面，我也清楚的知道，没有其它的选择。虽然很失望，但是起码和老婆孩子在一起，每天下班回到家，儿子一直不停的叫着“爸爸”，也没有那么累了。</p>
-<p>​		在这个比较关键的时刻，我终于开始听一年前媳妇推荐给我的樊登读书。得益于樊老师传达的许多理论，让我不再迷茫。9月24日被通知产品下架，10月8日我便从这个失意的过程中走出。因为在这段时间，吸收了许多的人生智慧，get 不到许多新技能。我从产品被下架的阴影中走出来了，同时也放下手里的烟，顺带明白了如何和媳妇孩子相处。我终于明白，<strong>活的不快乐只是因为内心不够充实，而物质的满足对于内心的满足无任何帮助，反而只会让欲望变得更强</strong>。</p>
-        <a href="https://luojiego.com/posts/meet-ngiht-go/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
     
 
 </article>
           
         </div>
-
-        
-          <ul class="pager main-pager">
-            
-              <li class="previous">
-                <a href="https://luojiego.com/page/6/">&larr; Newer Posts</a>
-              </li>
-            
-            
-          </ul>
         
       </div>
     </div>
   </div>
 
-      
-    <div class="page-meta">
-  
-  
-  
-</div>
-
-
-  <footer>
+      <footer>
   <div class="container">
     
     <div class="row">
