@@ -161,6 +161,19 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">除 0 真的会 panic 吗？
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>某天，小伙伴反馈说程序 panic 在一个比较诡异的地方，差不多是下面的代码。
+type Point struct { X float32 Y float32 } func Get(p Point) { // import github.com/shopspring/decimal x, _ := decimal.NewFromFloat32(p.X).Round(7).Float64() } ...</p>
+  </div>
+  <footer class="entry-footer">2021-10-16 · 6 分钟 · 约 1860 字</footer>
+  <a class="entry-link" aria-label="post link to 除 0 真的会 panic 吗？" href="https://luojiego.com/posts/divied-zero-panic/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">如何删除 MySQL 表中 2.5 亿条数据？
     </h2>
   </header>
@@ -169,7 +182,7 @@
 我一思索，这简单呀，就设计了如下的数据表。
 desc login_record; &#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43; | Field | Type | Null | Key | Default | Extra | &#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43; | user_id | int(10) unsigned | NO | MUL | NULL | | | ip | varchar(40) | YES | | | | | device_mark | varchar(500) | NO | | | | | time | timestamp | NO | MUL | CURRENT_TIMESTAMP | | &#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43; ...</p>
   </div>
-  <footer class="entry-footer"><span title='2021-05-25 21:57:32 +0000 UTC'>May 25, 2021</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>322 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
+  <footer class="entry-footer">2021-05-25 · 5 分钟 · 约 2659 字</footer>
   <a class="entry-link" aria-label="post link to 如何删除 MySQL 表中 2.5 亿条数据？" href="https://luojiego.com/posts/delete-mysql-250-million-items/"></a>
 </article>
 
@@ -182,7 +195,7 @@ desc login_record; &#43;-------------&#43;------------------&#43;------&#43;----
     <p>今年 6 月，公司喊了两年的搬家终于看起来要搬了，而且我的 IKBC C87 服役超过三个年头了，我想是时候换个新键盘了，毕竟已经相当用了三年零三个月了。
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2021-01-17 20:06:39 +0000 UTC'>January 17, 2021</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>104 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
+  <footer class="entry-footer">2021-01-17 · 6 分钟 · 约 3256 字</footer>
   <a class="entry-link" aria-label="post link to Filco Minila Air 使用体验" href="https://luojiego.com/posts/filco-minila-air-experience/"></a>
 </article>
 
@@ -201,7 +214,7 @@ AWS 云市场的份额高达 45 %。
 目前云计算本地部署高达 96%，而云上部署只有 4%，这个数字让我特别震惊。
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-12-27 11:45:53 +0000 UTC'>December 27, 2020</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>206 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
+  <footer class="entry-footer">2020-12-27 · 5 分钟 · 约 2683 字</footer>
   <a class="entry-link" aria-label="post link to AWS re-invent 12-23" href="https://luojiego.com/posts/aws-re-invent-12-23/"></a>
 </article>
 
@@ -215,7 +228,7 @@ AWS 云市场的份额高达 45 %。
 AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设施
 安全可视化和安全可控 服务之间高度集成，达到自动化布署 Macie 。。 建立隐私数据保护 丰富的使用场景 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-10-25 10:30:11 +0000 UTC'>October 25, 2020</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>139 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
+  <footer class="entry-footer">2020-10-25 · 3 分钟 · 约 1637 字</footer>
   <a class="entry-link" aria-label="post link to aws secrity day 10 月 23 日笔记" href="https://luojiego.com/posts/aws-secrity-day/"></a>
 </article>
 
@@ -227,7 +240,7 @@ AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设
   <div class="entry-content">
     <p>go 代码 package main import ( &#34;fmt&#34; &#34;math&#34; ) func main() { var count uint32 fmt.Printf(&#34;count: %d\n&#34;, count) fmt.Printf(&#34;count - 1: %d\n&#34;, count - 1) // num := math.Pow(2, float64(count-1)) fmt.Printf(&#34;math.Pow(2, float64(count-1)): %f\n&#34;, math.Pow(2, float64(count-1))) fmt.Printf(&#34;int(math.Pow(2, float64(count-1))): %d\n&#34;, int(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;uint32(math.Pow(2, float64(count-1))): %d\n&#34;, uint32(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;int32(math.Pow(2, float64(count-1))): %d\n&#34;, int32(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;uint64(math.Pow(2, float64(count-1))): %d\n&#34;, uint64(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;int64(pow(2,1023): %d\n&#34;, int64(math.Pow(2, 1023))) fmt.Printf(&#34;uint64(pow(2,1023): %d\n&#34;, uint64(math.Pow(2, 1023))) } ...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-09-20 00:34:56 +0000 UTC'>September 20, 2020</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>239 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
+  <footer class="entry-footer">2020-09-20 · 4 分钟 · 约 1772 字</footer>
   <a class="entry-link" aria-label="post link to Go 中&#34;坑爹&#34;的类型转换" href="https://luojiego.com/posts/the-convert-in-go/"></a>
 </article>
 
@@ -240,7 +253,7 @@ AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设
     <p>做对的事情 我始终觉得，程序员应该将更多的精力花费在自己的专业上。如果在自己可接受的范围里面，花钱去支持正版软件，节约自己的时间，提高幸福感，才是正确的事情。
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-08-29 08:45:22 +0000 UTC'>August 29, 2020</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>44 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
+  <footer class="entry-footer">2020-08-29 · 5 分钟 · 约 2586 字</footer>
   <a class="entry-link" aria-label="post link to 为什么程序员更应该支持正版软件？" href="https://luojiego.com/posts/why-should-programmers-support-genuine-software/"></a>
 </article>
 
@@ -255,7 +268,7 @@ AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设
 建议详细阅读官方文档，不然将会和我一样遇到一车子的坑。
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-07-01 08:43:41 +0000 UTC'>July 1, 2020</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>201 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
+  <footer class="entry-footer">2020-07-01 · 4 分钟 · 约 1947 字</footer>
   <a class="entry-link" aria-label="post link to MantisBT 安装" href="https://luojiego.com/posts/install-mantisbt/"></a>
 </article>
 
@@ -270,7 +283,7 @@ AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设
 Mac 拷贝代理地址 如图，右键选择菜单项，地址就会被拷贝，然后在终端执行就 OK 了。
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-07-01 08:40:09 +0000 UTC'>July 1, 2020</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>121 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
+  <footer class="entry-footer">2020-07-01 · 4 分钟 · 约 1753 字</footer>
   <a class="entry-link" aria-label="post link to V2ray 终端代理" href="https://luojiego.com/posts/v2ray-proxy-setting/"></a>
 </article>
 
@@ -284,25 +297,8 @@ Mac 拷贝代理地址 如图，右键选择菜单项，地址就会被拷贝，
 一直闲置的机器 讲道理，上班一直用的 Windows 开发，下班也比较累，几乎用笔记本在家解决一下线上的问题。对于 Mac 真的就是有啥问题，反正凑合能用即可，Mac 上的快捷键到最近我都认不全。
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-06-27 10:48:46 +0000 UTC'>June 27, 2020</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>90 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
+  <footer class="entry-footer">2020-06-27 · 6 分钟 · 约 3324 字</footer>
   <a class="entry-link" aria-label="post link to 谈谈我对 Mac 的看法" href="https://luojiego.com/posts/about-mac/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Mac 重装之后,删除容器中的其它卷宗
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>问题 128GB 的机器，重新安装机器之后，安装完一些必备的软件，发现只有 8GB 可用了，要知道我是为了节省一个空间才重新安装的，结果成这样，恶心程度可想而知啊。
-如图：
-存储空间查看 关于本机 -&gt; 存储空间
-发现『容器中的其它卷宗』占用了 70GB&#43;
-一番谷歌 Apple 论坛上并没有找到解决方案，让我重启，重启并没有任何改善。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2020-06-27 10:44:10 +0000 UTC'>June 27, 2020</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>27 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
-  <a class="entry-link" aria-label="post link to Mac 重装之后,删除容器中的其它卷宗" href="https://luojiego.com/posts/mac-delete-container/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
