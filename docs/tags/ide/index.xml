@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>IDE on Roger&#39;s Blog</title>
     <link>https://luojiego.com/tags/ide/</link>
     <description>Recent content in IDE on Roger&#39;s Blog</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Jun 2025 22:31:14 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/tags/ide/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>换了8款IDE后，我悟出了什么</title>
+      <title>这些年我用过的 IDE</title>
       <link>https://luojiego.com/posts/key-takeaway-after-switching-8-ides/</link>
       <pubDate>Mon, 16 Jun 2025 22:31:14 +0800</pubDate>
       <guid>https://luojiego.com/posts/key-takeaway-after-switching-8-ides/</guid>

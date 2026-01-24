@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Music on Roger&#39;s Blog</title>
     <link>https://luojiego.com/tags/music/</link>
     <description>Recent content in Music on Roger&#39;s Blog</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Jan 2025 21:34:46 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/tags/music/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,10 @@
       <link>https://luojiego.com/posts/2024-movie-music/</link>
       <pubDate>Wed, 01 Jan 2025 21:34:46 +0800</pubDate>
       <guid>https://luojiego.com/posts/2024-movie-music/</guid>
-      <description>&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;&#xA;&lt;p&gt;今年花在影视娱乐上的时间大幅下降，主要时间都用来看书了。越去花费时间去学习，越觉得大部分的电影都不值得。还是静下心来看书比较有意义。&lt;br&gt;&#xA;今年看了三十四部电影，一部美剧。五部在电影院看的电影，一部跟大宝，两部跟媳妇，两部是大宝上街舞表演课的时候，我去看的。&lt;br&gt;&#xA;音乐花在 Apple Music 上的时间比较长，年度报告中提到我的最爱艺人是周花健，最爱的歌曲是《活在回忆里》。可能因为“我相信我爱你，蒙上眼，手交给你，慢慢的安心在黑暗中共有一双眼睛，我要不断的爱你，不断拼凑了自己……”以及“只要你幸福我真的愿意，哪怕最后不是我没关系”。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
+&lt;p&gt;今年花在影视娱乐上的时间大幅下降，主要时间都用来看书了。越去花费时间去学习，越觉得大部分的电影都不值得。还是静下心来看书比较有意义。&lt;br&gt;
+今年看了三十四部电影，一部美剧。五部在电影院看的电影，一部跟大宝，两部跟媳妇，两部是大宝上街舞表演课的时候，我去看的。&lt;br&gt;
+音乐花在 Apple Music 上的时间比较长，年度报告中提到我的最爱艺人是周花健，最爱的歌曲是《活在回忆里》。可能因为“我相信我爱你，蒙上眼，手交给你，慢慢的安心在黑暗中共有一双眼睛，我要不断的爱你，不断拼凑了自己……”以及“只要你幸福我真的愿意，哪怕最后不是我没关系”。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

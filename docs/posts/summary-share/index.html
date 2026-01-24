@@ -1,125 +1,79 @@
-
-
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
-  <head>
-    
+<html lang="en" dir="auto" data-theme="auto">
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
- 
-
-
-      <title>改变从学习开始 - </title>
-
-  <meta name="description" content="以下内容是我在 陈天 · Rust 编程第一课的分享用户故事｜绝望之谷：罗杰，改变从学习开始
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>改变从学习开始 | Roger&#39;s Blog</title>
+<meta name="keywords" content="Rust, Share, Summary">
+<meta name="description" content="以下内容是我在 陈天 · Rust 编程第一课的分享用户故事｜绝望之谷：罗杰，改变从学习开始
 你好，我是罗杰，目前在一家游戏公司担任后端开发主程。
 到现在我也快工作十年了，作为一个从小学习能力很一般的人，这中间的打怪升级史可以说是相当惨痛。
 我是13 年毕业的，在师范类院校学的软件工程专业。大四参加校招，历时三个月不断面试、笔试，勉强找到一份工作，做棋牌游戏后端开发，签到了深圳。这份工作实习不到半个月，我就开始失眠，因为在学校里从来没有深入学习，专业知识非常欠缺，代码几乎看不懂，当时也没有太多可以寻求帮助的途径，进入不了工作状态，非常痛苦。">
-  <meta name="author" content="Roger"/><script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "WebSite",
-    "name": "Roger\u0027s Blog",
-    
-    "url": "https:\/\/luojiego.com\/"
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "",
-  "url": "https:\/\/luojiego.com\/"
-  
-  
-  
-  
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@id": "https:\/\/luojiego.com\/",
-          "name": "home"
+<meta name="author" content="Roger">
+<link rel="canonical" href="https://luojiego.com/posts/summary-share/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.0e5d6dc76b835c8dd8952a3e208138272856ca7781a17e058123153dbcd6a4c8.css" integrity="sha256-Dl1tx2uDXI3YlSo&#43;IIE4JyhWyneBoX4FgSMVPbzWpMg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://luojiego.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://luojiego.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://luojiego.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://luojiego.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://luojiego.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://luojiego.com/posts/summary-share/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
         }
-    },{
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@id": "https:\/\/luojiego.com\/posts\/summary-share\/",
-          "name": "改变从学习开始"
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
         }
-    }]
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "author": {
-    "name" : "Roger"
-  },
-  "headline": "改变从学习开始",
-  "description" : "以下内容是我在 陈天 · Rust 编程第一课的分享用户故事｜绝望之谷：罗杰，改变从学习开始\n你好，我是罗杰，目前在一家游戏公司担任后端开发主程。\n到现在我也快工作十年了，作为一个从小学习能力很一般的人，这中间的打怪升级史可以说是相当惨痛。\n我是13 年毕业的，在师范类院校学的软件工程专业。大四参加校招，历时三个月不断面试、笔试，勉强找到一份工作，做棋牌游戏后端开发，签到了深圳。这份工作实习不到半个月，我就开始失眠，因为在学校里从来没有深入学习，专业知识非常欠缺，代码几乎看不懂，当时也没有太多可以寻求帮助的途径，进入不了工作状态，非常痛苦。\n",
-  "inLanguage" : "en",
-  "wordCount":  55 ,
-  "datePublished" : "2021-11-19T13:36:10\u002b00:00",
-  "dateModified" : "2021-11-19T13:36:10\u002b00:00",
-  "image" : "https:\/\/luojiego.com\/",
-  "keywords" : [ "Rust, Share, Summary" ],
-  "mainEntityOfPage" : "https:\/\/luojiego.com\/posts\/summary-share\/",
-  "publisher" : {
-    "@type": "Organization",
-    "name" : "https:\/\/luojiego.com\/",
-    "logo" : {
-        "@type" : "ImageObject",
-        "url" : "https:\/\/luojiego.com\/",
-        "height" :  60 ,
-        "width" :  60
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
     }
-  }
-}
+
 </script>
-
-
-<meta property="og:title" content="改变从学习开始" />
-<meta property="og:description" content="以下内容是我在 陈天 · Rust 编程第一课的分享用户故事｜绝望之谷：罗杰，改变从学习开始
-你好，我是罗杰，目前在一家游戏公司担任后端开发主程。
-到现在我也快工作十年了，作为一个从小学习能力很一般的人，这中间的打怪升级史可以说是相当惨痛。
-我是13 年毕业的，在师范类院校学的软件工程专业。大四参加校招，历时三个月不断面试、笔试，勉强找到一份工作，做棋牌游戏后端开发，签到了深圳。这份工作实习不到半个月，我就开始失眠，因为在学校里从来没有深入学习，专业知识非常欠缺，代码几乎看不懂，当时也没有太多可以寻求帮助的途径，进入不了工作状态，非常痛苦。">
-<meta property="og:url" content="https://luojiego.com/posts/summary-share/" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Roger&#39;s Blog" />
-
-  <meta name="twitter:title" content="改变从学习开始" />
-  <meta name="twitter:description" content="以下内容是我在 陈天 · Rust 编程第一课的分享用户故事｜绝望之谷：罗杰，改变从学习开始
-你好，我是罗杰，目前在一家游戏公司担任后端开发主程。
-到现在我也快工作十年了，作为一个从小学习能力很一般的人，这中间的打怪升级史可以说是相当惨痛。
-我是13 年毕业的，在师范类院校学的软件工程专业。大四参加校招，历时三个月不断面试、笔试，勉强找到一份工作，做棋牌游戏后端开发，签到了深圳。这份工作实习不到半 …">
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@luojie710" />
-  <meta name="twitter:creator" content="@luojie710" />
-  <meta name="generator" content="Hugo 0.154.5">
-  <link rel="alternate" href="https://luojiego.com/index.xml" type="application/rss+xml" title="Roger&#39;s Blog"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/brands.css" integrity="sha384-+eXGm6TmVoCZR1gX03US+L++L2mJIfOvp2X0+luTuEktXaF5F+e3zn0sO0HBvOyT" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/fontawesome.css" integrity="sha384-B5nyPZa7e84uCJEYHtevCdVYtQosWsbDSRtq3cy/jeSVtQW05GL8CKXO7waXsjPK" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/regular.css" integrity="sha384-V71z/A/p/DGaZAryHhiSXRQj8HdQmK2nBgL2bX23MGD+h6ZKpyxOO76f5eSXmIaj" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/solid.css" integrity="sha384-1IIShlrK5iYgvS7OAgIH3prz4RAFP7hHZ2MaLIb9l3+trFwwnw/NdCWcUHlymZDU" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/svg.css" integrity="sha384-iBa7uugTOHXqQ2ngvDYJyKrPPQbd9n2P3EQe+o/0+HZe5TNvV+LO5X0lLLUrXLHP" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/svg-with-js.css" integrity="sha384-STWnS5AGz6M2YxsnGAd536EqcE2y+ktGovMMuhtXLsCBtl7lujeQj2eN4eDxa57x" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/v4-font-face.css" integrity="sha384-fH83IkgQi7kturzlxpXfNdsR8aUOcqj5HUORRVnSvJgObZkIw6aqKAaQx20IWyB/" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/v4-shims.css" integrity="sha384-cCODJHSivNBsaHei/8LC0HUD58kToSbDU+xT7Rs51BO1v/IvgT/uM0W6xMoUqKfn" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.1/css/v5-font-face.css" integrity="sha384-atSdF89mIn15dv+o2LKkDM6mCh3hwh6A7mwZ6F2it/kenqZbMu+QW/ye1OG4XSWV" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><link rel="stylesheet" href="https://luojiego.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://luojiego.com/css/syntax.css" /><link rel="stylesheet" href="https://luojiego.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
-
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-BEV0Q1G3S5"></script>
       <script>
         var doNotTrack = false;
@@ -133,141 +87,143 @@
           gtag('js', new Date());
           gtag('config', 'G-BEV0Q1G3S5');
         }
-      </script>
-  </head>
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://luojiego.com/">Roger&#39;s Blog</a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        
-          
-            <li>
-              <a title="关于" href="/about/">关于</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="搜索" href="/search/">搜索</a>
-            </li>
-          
-        
-
-        
-
-        
-      </ul>
-    </div>
-
-    
-
-  </div>
-</nav>
+      </script><meta property="og:url" content="https://luojiego.com/posts/summary-share/">
+  <meta property="og:site_name" content="Roger&#39;s Blog">
+  <meta property="og:title" content="改变从学习开始">
+  <meta property="og:description" content="以下内容是我在 陈天 · Rust 编程第一课的分享用户故事｜绝望之谷：罗杰，改变从学习开始
+你好，我是罗杰，目前在一家游戏公司担任后端开发主程。
+到现在我也快工作十年了，作为一个从小学习能力很一般的人，这中间的打怪升级史可以说是相当惨痛。
+我是13 年毕业的，在师范类院校学的软件工程专业。大四参加校招，历时三个月不断面试、笔试，勉强找到一份工作，做棋牌游戏后端开发，签到了深圳。这份工作实习不到半个月，我就开始失眠，因为在学校里从来没有深入学习，专业知识非常欠缺，代码几乎看不懂，当时也没有太多可以寻求帮助的途径，进入不了工作状态，非常痛苦。">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2021-11-19T13:36:10+00:00">
+    <meta property="article:modified_time" content="2021-11-19T13:36:10+00:00">
+    <meta property="article:tag" content="Rust">
+    <meta property="article:tag" content="Share">
+    <meta property="article:tag" content="Summary">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="改变从学习开始">
+<meta name="twitter:description" content="以下内容是我在 陈天 · Rust 编程第一课的分享用户故事｜绝望之谷：罗杰，改变从学习开始
+你好，我是罗杰，目前在一家游戏公司担任后端开发主程。
+到现在我也快工作十年了，作为一个从小学习能力很一般的人，这中间的打怪升级史可以说是相当惨痛。
+我是13 年毕业的，在师范类院校学的软件工程专业。大四参加校招，历时三个月不断面试、笔试，勉强找到一份工作，做棋牌游戏后端开发，签到了深圳。这份工作实习不到半个月，我就开始失眠，因为在学校里从来没有深入学习，专业知识非常欠缺，代码几乎看不懂，当时也没有太多可以寻求帮助的途径，进入不了工作状态，非常痛苦。">
 
 
-
-
-    
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
-
-
-  
-  
-  
-
-
-
-
-
-
-  
-
-  <header class="header-section ">
-    
-    
-    <div class="intro-header no-img">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="posts-heading">
-              
-                <h1>改变从学习开始</h1>
-              
-              
-                <hr class="small">
-              
-              
-              
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://luojiego.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "改变从学习开始",
+      "item": "https://luojiego.com/posts/summary-share/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "改变从学习开始",
+  "name": "改变从学习开始",
+  "description": "以下内容是我在 陈天 · Rust 编程第一课的分享用户故事｜绝望之谷：罗杰，改变从学习开始\n你好，我是罗杰，目前在一家游戏公司担任后端开发主程。\n到现在我也快工作十年了，作为一个从小学习能力很一般的人，这中间的打怪升级史可以说是相当惨痛。\n我是13 年毕业的，在师范类院校学的软件工程专业。大四参加校招，历时三个月不断面试、笔试，勉强找到一份工作，做棋牌游戏后端开发，签到了深圳。这份工作实习不到半个月，我就开始失眠，因为在学校里从来没有深入学习，专业知识非常欠缺，代码几乎看不懂，当时也没有太多可以寻求帮助的途径，进入不了工作状态，非常痛苦。\n",
+  "keywords": [
+    "Rust", "Share", "Summary"
+  ],
+  "articleBody": "以下内容是我在 陈天 · Rust 编程第一课的分享用户故事｜绝望之谷：罗杰，改变从学习开始\n你好，我是罗杰，目前在一家游戏公司担任后端开发主程。\n到现在我也快工作十年了，作为一个从小学习能力很一般的人，这中间的打怪升级史可以说是相当惨痛。\n我是13 年毕业的，在师范类院校学的软件工程专业。大四参加校招，历时三个月不断面试、笔试，勉强找到一份工作，做棋牌游戏后端开发，签到了深圳。这份工作实习不到半个月，我就开始失眠，因为在学校里从来没有深入学习，专业知识非常欠缺，代码几乎看不懂，当时也没有太多可以寻求帮助的途径，进入不了工作状态，非常痛苦。\n其实即使我们有再多的知识储备，换家公司，一定会有特别多的内容需要去学习和掌握，而且学习的过程一定是相当痛苦且枯燥的，之后每次换工作这种体会都会相当明显。\n当时失眠了半个月之后，我找到部门领导提出换岗，告诉他觉得自己不太适合做开发。领导耐心地开导了我，也让当时的导师加强对我的关注。领导告诉我：虽然我的技术相对薄弱，但相比零经验的策划岗位而言，显然技术更加适合我，在犹豫之下我决定再尝试一段时间。\n但是当时整个部门特别忙，其他同事根本没有时间理会我的困惑。实在没办法了，我开始直接在公司技术群里面寻求解决方案，刚开始没有人愿意搭理我，当然心理也会不舒服，但我还是坚持了，可能是问的太多了，有时候会有一些热心的同事愿意帮我解答。我默默记下了一些大佬的名字，后来有时候遇到问题直接去找他们，基本上问题很快就能解决。\n难题可以去向大佬们请教，但是那些之前欠下来的基础知识还是得自己一点点啃，对于一个毕业生而言，要学的东西太多了。\n对那些将要用到的技术，我会优先快速学习。印象比较深刻的一个案例是当时项目要使用 Redis，我利用晚上不到四个小时的时间，通过视频学习，加上课后立刻动手的好习惯，就基本掌握了所有高频的命令使用方法。那是我第一次意识到，课后立刻动手是如何加深自己的记忆的。之前觉得非常困难的任务，带着兴趣，加上良好的学习习惯，很快就掌握了。\n除了常用工具，还有数据结构与算法、计算机网络、计算机组成原理、编译原理等一系列的基本功，这些内容学习之后反馈周期都会特别长。在实际工作中，你的工龄越高，这些知识的重要性一定会越发体现出来，我们需要有 N 年的工作经验，而不是把一个工作经验重复了 N 年。\n我听过很多人抱怨：“这些基础知识大佬早在大学的时候都掌握了，我们到工作多少年了才想起来补，学了又记不住，平时也用不上，还不如去摸鱼”。其实即使是科班出身，在学校，教的几乎全都是皮毛，动手真正动手的机会也相对较少，都是在工作中不断栽了跟头之后，才会意识到这些基本功的重要性。\n对于基本功，我的规划是在年初每项都制定目标，年底进行回顾。《三体》说：“一队蚂蚁不停搬运米粒大小的石块，给它们十亿年，就能把泰山搬走。只要把时间拉得足够长，生命比岩石和金属都强壮得多，比飓风和火山更有力。”\n但良好的习惯坚持下去非常不容易，所以在开始的时候，不要制定太困难的目标。将大目标拆成小目标，依次去实现，不要死磕在一项任务中，容易自闭，然后放弃。在学习的过程中，灵活调整要学习的内容。\n我个人比较喜欢阅读相关的经典书籍，或者去中国大学慕课学习各个名校的相关课程，优点就是课程资源丰富，可以任意切换自己喜爱的名校课程，但这些课程的缺陷是比较古老，好在极客时间能完美解决这些问题。\n不过像这种时间跨度比较长的计划，很容易丧失学习的兴趣。让自己长久保持兴趣的一个好办法是，在巩固基本功的同时，也制定学习新知识的计划，比如每一两年可以给自己制定一个计划，学习最热门的编程语言或者新技术，紧跟新趋势。关心自己，也关心这个世界。君子不器，全面发展，提高自身的韧性，能更加有反脆弱的能力。\n聊到这里，你不会以为我已经升级成大佬了吧，哪有那么简单。前面说的都是我快十年来学习的心路总结。\n好不容易在深圳三年过去，工作大致上了正轨，因为和媳妇两地分居也不是长久之计，所以我选择从深圳回到西安。\n换了新工作，新的痛苦又来了，我发现又有很多新内容需要重新学。工作环境也完全不是我想象的样子，同事们的不专业、不理解的企业文化，再加上三个小时的通勤时间，我每天充满了怨气，跟家人的关系相当糟糕，整个人处于游离状态，甚至一度压力过大，频繁发烧，还在医院休息过半个月。\n不过我很感谢住院的经历，每天晚上十点休息，早晨六点起床，有充足的睡眠，没有工作的压力，我有大把的时光反思自己的各种问题。这是我从开始工作最安逸的一段时光了，媳妇全程在医院陪护，尤其让我意外的是，平时处得非常糟糕的同事们都来医院看望。\n出院之后，我决定改变：要改善和同事的关系、更加照顾家人的感受、尝试戒烟。但是切身感受就是有心无力，虽然努力了，同事们跟我还是充满距离，孩子几乎不愿意和我待在一起、戒烟也还是失败了。\n一年又过去了，因为扁桃体手术，又在医院休息了一段时间。我突然领悟到虽然努力了，但是可能方法依然不得当。我要寻找自救的方法。这个时候机缘巧合，媳妇推荐给我一门樊登的课程《可复制的沟通力》，让我试着看看，还挺有意思的。听了这节课，我就彻底改变了接下来的生活。\n因为平时时间不够，我开始听各种经典书籍的解读课，学到了很多有用的理论和方法，比如对我影响比较大的一些书籍如《非暴力沟通》、《掌控谈话》、《终身成长》、《刻意练习》、《考试脑科学》、《亲密关系》等等。\n有了意愿，也有了理论和方法，之后剩下就是执行。与家人有了更多相处时间，他们给了我爱与包容，让我每天多了更多快乐和动力，陪伴他们也会让我对工作和学习充满热情。把陪伴孩子学到的耐心应用在跟同事的相处里，工作氛围和谐了很多。家庭和工作是不冲突的，平衡好它们，我觉得自己每天都比前一天更加幸福。\n但生活总是充满了各种挑战，在我以为已经掌握了控制自己的情绪并且知道如何跟人相处之后，依然跟一位新同事闹了很大的矛盾。即使这样，我也依然相信自己能迅速把心态调整好，通过再次去复习一些书，我很快从崩溃边缘把自己拉了回来。也正因为这一点，我也戒烟成功了。\n在后来不停打怪升级的过程中，我遇到过很多问题。好多时候，由于工作安排得满满当当，甚至都找不到学习的时间。但是这并不能成为我不成长的理由，学习的方法太多了，**要寻找属于当前、最适合自己的，**看书、看视频、阅读专栏、看源码、参加线上线下各种分享活动等等。甚至写下这段话的时候，我怀里还抱着刚满五个月的小儿子，媳妇在辅导大儿子作业。\n之前说我会在年初每项都制定目标，今年我制定的新语言学习目标是 Rust。如果你觉得作为一个工作快十年的人，肯定积累不少，学习Rust一定比较顺畅吧？其实并不是，很多知识点都需要反复去琢磨，不断去消化。\n年初我读了一遍 The Book 的中文翻译版，尝试写过一个非常简单的命令行程序，结果花了三四个小时，净跟编译器斗争了。三月份又重新读了一遍英文版本，书上所有的源码也都自己动手执行了。但是做完这些，依然没有很好的掌握，无法流畅地写 Rust 代码。\n九月份在 B 站上学习了“软件工艺师”的视频课，相当于把之前看书的内容通过视频课又复习了一遍，这次改善比较明显，对一些之前不太理解的点有了进一步认知。我个人更喜欢视频讲解，虽然学习的时间周期比较长，但通过视觉跟听觉的双重作用，我的记忆比较深刻。\n基础虽然掌握的差不多了，但是想要将 Rust 应用于工作，还太远了。\n后面就是非常幸运地看到陈老师的专栏，看了目录之后果断入手，该专栏里面的内容几乎都能与实际工作完美地结合，配合上动手环节，学习的效果会非常明显。相信在课程学完之后，我就可以在项目中尝试去使用 Rust 了。\n最后我想说，学习 Rust 一定是一场漫长的旅途，过程会相当艰难，但只要不放弃，暂时未掌握内容通过反复学习，多动手，相信我们都能顺利抵达终点。加油，共勉！\n",
+  "wordCount" : "55",
+  "inLanguage": "en",
+  "datePublished": "2021-11-19T13:36:10Z",
+  "dateModified": "2021-11-19T13:36:10Z",
+  "author":{
+    "@type": "Person",
+    "name": "Roger"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://luojiego.com/posts/summary-share/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Roger's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://luojiego.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://luojiego.com/" accesskey="h" title="Roger&#39;s Blog (Alt + H)">Roger&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  
-  </header>
+        <ul id="menu">
+            <li>
+                <a href="https://luojiego.com/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://luojiego.com/tags/" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://luojiego.com/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
 
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://luojiego.com/">Home</a>&nbsp;»&nbsp;<a href="https://luojiego.com/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      改变从学习开始
+    </h1>
+    <div class="post-meta"><span title='2021-11-19 13:36:10 +0000 UTC'>November 19, 2021</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>55 words</span>&nbsp;·&nbsp;<span>Roger</span>
 
-    
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
-        <p><strong>以下内容是我在 <a href="https://time.geekbang.org/column/intro/100085301?tab=catalog">陈天 · Rust 编程第一课</a>的分享<a href="https://time.geekbang.org/column/article/445818?cid=100085301">用户故事｜绝望之谷：罗杰，改变从学习开始</a></strong></p>
+</div>
+  </header> 
+  <div class="post-content"><p><strong>以下内容是我在 <a href="https://time.geekbang.org/column/intro/100085301?tab=catalog">陈天 · Rust 编程第一课</a>的分享<a href="https://time.geekbang.org/column/article/445818?cid=100085301">用户故事｜绝望之谷：罗杰，改变从学习开始</a></strong></p>
 <p>你好，我是罗杰，目前在一家游戏公司担任后端开发主程。</p>
 <p>到现在我也快工作十年了，作为一个从小学习能力很一般的人，这中间的打怪升级史可以说是相当惨痛。</p>
 <p>我是13 年毕业的，在师范类院校学的软件工程专业。大四参加校招，历时三个月不断面试、笔试，勉强找到一份工作，做棋牌游戏后端开发，签到了深圳。这份工作实习不到半个月，我就开始失眠，因为在学校里从来没有深入学习，专业知识非常欠缺，代码几乎看不懂，当时也没有太多可以寻求帮助的途径，进入不了工作状态，非常痛苦。</p>
@@ -299,120 +255,221 @@
 <p>后面就是非常幸运地看到陈老师的专栏，看了目录之后果断入手，该专栏里面的内容几乎都能与实际工作完美地结合，配合上动手环节，学习的效果会非常明显。相信在课程学完之后，我就可以在项目中尝试去使用 Rust 了。</p>
 <p>最后我想说，学习 Rust 一定是一场漫长的旅途，过程会相当艰难，但只要不放弃，暂时未掌握内容通过反复学习，多动手，相信我们都能顺利抵达终点。加油，共勉！</p>
 
-        
-          <div class="blog-tags">
-            
-              
-              <a href="https://luojiego.com/tags/rust/">Rust</a>&nbsp;
-            
-              
-              <a href="https://luojiego.com/tags/share/">Share</a>&nbsp;
-            
-              
-              <a href="https://luojiego.com/tags/summary/">Summary</a>&nbsp;
-            
-          </div>
-        
-
-        
-
-        
-      </article>
-
-      
-        <ul class="pager blog-pager">
-          
-            <li class="previous">
-              <a href="https://luojiego.com/posts/rust-install/" data-toggle="tooltip" data-placement="top" title="Rust 超快安装方法">&larr; Previous Post</a>
-            </li>
-          
-          
-            <li class="next">
-              <a href="https://luojiego.com/posts/geek-time-go-first-course-share/" data-toggle="tooltip" data-placement="top" title="我的 Go 语言学习之路">Next Post &rarr;</a>
-            </li>
-          
-        </ul>
-      
-
-
-      
-
-    </div>
   </div>
-</div>
 
-      <footer>
-  <div class="container">
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://luojiego.com/tags/rust/">Rust</a></li>
+      <li><a href="https://luojiego.com/tags/share/">Share</a></li>
+      <li><a href="https://luojiego.com/tags/summary/">Summary</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://luojiego.com/posts/geek-time-go-first-course-share/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>我的 Go 语言学习之路</span>
+  </a>
+  <a class="next" href="https://luojiego.com/posts/rust-install/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Rust 超快安装方法</span>
+  </a>
+</nav>
+
+
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 改变从学习开始 on x"
+            href="https://x.com/intent/tweet/?text=%e6%94%b9%e5%8f%98%e4%bb%8e%e5%ad%a6%e4%b9%a0%e5%bc%80%e5%a7%8b&amp;url=https%3a%2f%2fluojiego.com%2fposts%2fsummary-share%2f&amp;hashtags=Rust%2cShare%2cSummary">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 改变从学习开始 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fluojiego.com%2fposts%2fsummary-share%2f&amp;title=%e6%94%b9%e5%8f%98%e4%bb%8e%e5%ad%a6%e4%b9%a0%e5%bc%80%e5%a7%8b&amp;summary=%e6%94%b9%e5%8f%98%e4%bb%8e%e5%ad%a6%e4%b9%a0%e5%bc%80%e5%a7%8b&amp;source=https%3a%2f%2fluojiego.com%2fposts%2fsummary-share%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 改变从学习开始 on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fluojiego.com%2fposts%2fsummary-share%2f&title=%e6%94%b9%e5%8f%98%e4%bb%8e%e5%ad%a6%e4%b9%a0%e5%bc%80%e5%a7%8b">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 改变从学习开始 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fluojiego.com%2fposts%2fsummary-share%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 改变从学习开始 on whatsapp"
+            href="https://api.whatsapp.com/send?text=%e6%94%b9%e5%8f%98%e4%bb%8e%e5%ad%a6%e4%b9%a0%e5%bc%80%e5%a7%8b%20-%20https%3a%2f%2fluojiego.com%2fposts%2fsummary-share%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 改变从学习开始 on telegram"
+            href="https://telegram.me/share/url?text=%e6%94%b9%e5%8f%98%e4%bb%8e%e5%ad%a6%e4%b9%a0%e5%bc%80%e5%a7%8b&amp;url=https%3a%2f%2fluojiego.com%2fposts%2fsummary-share%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share 改变从学习开始 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=%e6%94%b9%e5%8f%98%e4%bb%8e%e5%ad%a6%e4%b9%a0%e5%bc%80%e5%a7%8b&u=https%3a%2f%2fluojiego.com%2fposts%2fsummary-share%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
+
+  </footer>
+</article>
+    </main>
     
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center footer-links">
-          
-              <li>
-		
-		  <a href="https://github.com/luojiego" title="GitHub">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-		
-		  <a href="https://twitter.com/luojie710" title="Twitter">
-		
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-x-twitter fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-          
-        </ul>
-        <p class="credits copyright text-muted">
-          
-            
-              <a href="https://luojiego.com">Roger</a>
-            
-          
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://luojiego.com/">Roger&#39;s Blog</a></span> · 
 
-          &nbsp;&bull;&nbsp;&copy;
-          
-            2026
-          
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
-          
-            &nbsp;&bull;&nbsp;
-            <a href="https://luojiego.com/">Roger&#39;s Blog</a>
-          
-        </p>
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
         
-        <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.154.5</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
-          
-        </p>
-      </div>
-    </div>
-  </div>
-</footer><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
-<script src="https://code.jquery.com/jquery-3.7.0.slim.min.js" integrity="sha384-w5y/xIeYixWvfM+A1cEbmHPURnvyqmVg5eVENruEdDjcyRLUSNej7512JQGspFUr" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
-<script src="https://luojiego.com/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://luojiego.com/js/load-photoswipe.js"></script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
 
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
 
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
 
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
 
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
 
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
 
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
 
-
-    
-  </body>
 </html>
-

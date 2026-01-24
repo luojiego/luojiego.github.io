@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>数据 on Roger&#39;s Blog</title>
     <link>https://luojiego.com/tags/%E6%95%B0%E6%8D%AE/</link>
     <description>Recent content in 数据 on Roger&#39;s Blog</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Jan 2026 21:23:42 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/tags/%E6%95%B0%E6%8D%AE/index.xml" rel="self" type="application/rss+xml" />
@@ -13,14 +13,135 @@
       <link>https://luojiego.com/posts/my-coding/</link>
       <pubDate>Thu, 08 Jan 2026 21:23:42 +0800</pubDate>
       <guid>https://luojiego.com/posts/my-coding/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://wakatime.com/@3e8762fa-affe-4081-ba06-0ba2ad661306&#34;&gt;&lt;img src=&#34;https://wakatime.com/badge/user/3e8762fa-affe-4081-ba06-0ba2ad661306.svg&#34; alt=&#34;wakatime&#34;&gt;&lt;/a&gt;&lt;br&gt;&#xA;我是 2013 年开始工作的，但是是从 2015 年 7 月 16 日开始使用 &lt;a href=&#34;https://wakatime.com/@RogerLuo&#34;&gt;wakatime&lt;/a&gt; 统计我的编码数据的。之前几乎都是使用 C++，在 2016 年中有近八个月的时间在华为，也没有统计。粗略计算，按照 1500 个小时计算 C++ 的编码时间。&lt;br&gt;&#xA;后续每年在 Wakatime 年度数据出来，我会及时更新一下统计数据。&lt;/p&gt;&#xA;&lt;h1 id=&#34;年度-top-数据&#34;&gt;年度 Top 数据&lt;/h1&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;年度&lt;/th&gt;&#xA;          &lt;th&gt;语言&lt;/th&gt;&#xA;          &lt;th&gt;IDE&lt;/th&gt;&#xA;          &lt;th&gt;编码时长(H)&lt;/th&gt;&#xA;          &lt;th&gt;WakaTime&lt;/th&gt;&#xA;          &lt;th&gt;OS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2025&lt;/td&gt;&#xA;          &lt;td&gt;Go&lt;/td&gt;&#xA;          &lt;td&gt;Cursor&lt;/td&gt;&#xA;          &lt;td&gt;1166&lt;/td&gt;&#xA;          &lt;td&gt;2%&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2024&lt;/td&gt;&#xA;          &lt;td&gt;Lua&lt;/td&gt;&#xA;          &lt;td&gt;VS Code&lt;/td&gt;&#xA;          &lt;td&gt;1569&lt;/td&gt;&#xA;          &lt;td&gt;1%&lt;/td&gt;&#xA;          &lt;td&gt;Mac&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2023&lt;/td&gt;&#xA;          &lt;td&gt;Go&lt;/td&gt;&#xA;          &lt;td&gt;VS Code&lt;/td&gt;&#xA;          &lt;td&gt;1056&lt;/td&gt;&#xA;          &lt;td&gt;2%&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2022&lt;/td&gt;&#xA;          &lt;td&gt;Go&lt;/td&gt;&#xA;          &lt;td&gt;VS Code&lt;/td&gt;&#xA;          &lt;td&gt;897&lt;/td&gt;&#xA;          &lt;td&gt;3%&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2021&lt;/td&gt;&#xA;          &lt;td&gt;Go&lt;/td&gt;&#xA;          &lt;td&gt;VS Code&lt;/td&gt;&#xA;          &lt;td&gt;844&lt;/td&gt;&#xA;          &lt;td&gt;4%&lt;/td&gt;&#xA;          &lt;td&gt;Windows&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2020&lt;/td&gt;&#xA;          &lt;td&gt;Go&lt;/td&gt;&#xA;          &lt;td&gt;GoLand&lt;/td&gt;&#xA;          &lt;td&gt;1105&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;          &lt;td&gt;Windows&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2019&lt;/td&gt;&#xA;          &lt;td&gt;Go&lt;/td&gt;&#xA;          &lt;td&gt;GoLand&lt;/td&gt;&#xA;          &lt;td&gt;942&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;          &lt;td&gt;Windows&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2018&lt;/td&gt;&#xA;          &lt;td&gt;C++&lt;/td&gt;&#xA;          &lt;td&gt;Vim&lt;/td&gt;&#xA;          &lt;td&gt;1007&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2017&lt;/td&gt;&#xA;          &lt;td&gt;C++&lt;/td&gt;&#xA;          &lt;td&gt;Vim&lt;/td&gt;&#xA;          &lt;td&gt;671&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2016&lt;/td&gt;&#xA;          &lt;td&gt;C++&lt;/td&gt;&#xA;          &lt;td&gt;Vim&lt;/td&gt;&#xA;          &lt;td&gt;212&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2015&lt;/td&gt;&#xA;          &lt;td&gt;C++&lt;/td&gt;&#xA;          &lt;td&gt;Vim&lt;/td&gt;&#xA;          &lt;td&gt;240&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://wakatime.com/@3e8762fa-affe-4081-ba06-0ba2ad661306&#34;&gt;&lt;img alt=&#34;wakatime&#34; loading=&#34;lazy&#34; src=&#34;https://wakatime.com/badge/user/3e8762fa-affe-4081-ba06-0ba2ad661306.svg&#34;&gt;&lt;/a&gt;&lt;br&gt;
+我是 2013 年开始工作的，但是是从 2015 年 7 月 16 日开始使用 &lt;a href=&#34;https://wakatime.com/@RogerLuo&#34;&gt;wakatime&lt;/a&gt; 统计我的编码数据的。之前几乎都是使用 C++，在 2016 年中有近八个月的时间在华为，也没有统计。粗略计算，按照 1500 个小时计算 C++ 的编码时间。&lt;br&gt;
+后续每年在 Wakatime 年度数据出来，我会及时更新一下统计数据。&lt;/p&gt;
+&lt;h1 id=&#34;年度-top-数据&#34;&gt;年度 Top 数据&lt;/h1&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;年度&lt;/th&gt;
+          &lt;th&gt;语言&lt;/th&gt;
+          &lt;th&gt;IDE&lt;/th&gt;
+          &lt;th&gt;编码时长(H)&lt;/th&gt;
+          &lt;th&gt;WakaTime&lt;/th&gt;
+          &lt;th&gt;OS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2025&lt;/td&gt;
+          &lt;td&gt;Go&lt;/td&gt;
+          &lt;td&gt;Cursor&lt;/td&gt;
+          &lt;td&gt;1166&lt;/td&gt;
+          &lt;td&gt;2%&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2024&lt;/td&gt;
+          &lt;td&gt;Lua&lt;/td&gt;
+          &lt;td&gt;VS Code&lt;/td&gt;
+          &lt;td&gt;1569&lt;/td&gt;
+          &lt;td&gt;1%&lt;/td&gt;
+          &lt;td&gt;Mac&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2023&lt;/td&gt;
+          &lt;td&gt;Go&lt;/td&gt;
+          &lt;td&gt;VS Code&lt;/td&gt;
+          &lt;td&gt;1056&lt;/td&gt;
+          &lt;td&gt;2%&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2022&lt;/td&gt;
+          &lt;td&gt;Go&lt;/td&gt;
+          &lt;td&gt;VS Code&lt;/td&gt;
+          &lt;td&gt;897&lt;/td&gt;
+          &lt;td&gt;3%&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2021&lt;/td&gt;
+          &lt;td&gt;Go&lt;/td&gt;
+          &lt;td&gt;VS Code&lt;/td&gt;
+          &lt;td&gt;844&lt;/td&gt;
+          &lt;td&gt;4%&lt;/td&gt;
+          &lt;td&gt;Windows&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2020&lt;/td&gt;
+          &lt;td&gt;Go&lt;/td&gt;
+          &lt;td&gt;GoLand&lt;/td&gt;
+          &lt;td&gt;1105&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Windows&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2019&lt;/td&gt;
+          &lt;td&gt;Go&lt;/td&gt;
+          &lt;td&gt;GoLand&lt;/td&gt;
+          &lt;td&gt;942&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Windows&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2018&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;Vim&lt;/td&gt;
+          &lt;td&gt;1007&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2017&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;Vim&lt;/td&gt;
+          &lt;td&gt;671&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2016&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;Vim&lt;/td&gt;
+          &lt;td&gt;212&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2015&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;Vim&lt;/td&gt;
+          &lt;td&gt;240&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</description>
     </item>
     <item>
       <title>基于休闲合成游戏的数据同步方案实践</title>
       <link>https://luojiego.com/posts/prediction-rollback-with-merge-games/</link>
       <pubDate>Fri, 27 Dec 2024 06:45:15 +0800</pubDate>
       <guid>https://luojiego.com/posts/prediction-rollback-with-merge-games/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;本文将以一个休闲合成类游戏的实践经验为切入点，探讨游戏开发中的数据同步方案。在这个合成游戏中，玩家需要在地图上移动和合成物体，涉及复杂的验证逻辑和数据同步问题。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一合成游戏的核心玩法&#34;&gt;一、合成游戏的核心玩法&lt;/h2&gt;&#xA;&lt;p&gt;在这款休闲合成游戏中，玩家主要进行两种操作：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;移动物体：在地图格子间移动不同大小的物体&lt;/li&gt;&#xA;&lt;li&gt;合成物体：将多个相同物体合成为新的物体，可能触发额外产出&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;这些看似简单的操作，实际上涉及复杂的验证逻辑和状态同步问题。&lt;/p&gt;&#xA;&lt;h2 id=&#34;二同步方案的选择&#34;&gt;二、同步方案的选择&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-我们的选择预测回滚&#34;&gt;2.1 我们的选择：预测回滚&lt;/h3&gt;&#xA;&lt;p&gt;在开发这款游戏时，我们选择了预测回滚(Prediction Rollback)同步方案。主要考虑因素是：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;需要保证游戏操作的流畅性&lt;/li&gt;&#xA;&lt;li&gt;对网络延迟有一定的容忍度&lt;/li&gt;&#xA;&lt;li&gt;需要严格的服务器验证&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;本文将以一个休闲合成类游戏的实践经验为切入点，探讨游戏开发中的数据同步方案。在这个合成游戏中，玩家需要在地图上移动和合成物体，涉及复杂的验证逻辑和数据同步问题。&lt;/p&gt;
+&lt;h2 id=&#34;一合成游戏的核心玩法&#34;&gt;一、合成游戏的核心玩法&lt;/h2&gt;
+&lt;p&gt;在这款休闲合成游戏中，玩家主要进行两种操作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;移动物体：在地图格子间移动不同大小的物体&lt;/li&gt;
+&lt;li&gt;合成物体：将多个相同物体合成为新的物体，可能触发额外产出&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这些看似简单的操作，实际上涉及复杂的验证逻辑和状态同步问题。&lt;/p&gt;
+&lt;h2 id=&#34;二同步方案的选择&#34;&gt;二、同步方案的选择&lt;/h2&gt;
+&lt;h3 id=&#34;21-我们的选择预测回滚&#34;&gt;2.1 我们的选择：预测回滚&lt;/h3&gt;
+&lt;p&gt;在开发这款游戏时，我们选择了预测回滚(Prediction Rollback)同步方案。主要考虑因素是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;需要保证游戏操作的流畅性&lt;/li&gt;
+&lt;li&gt;对网络延迟有一定的容忍度&lt;/li&gt;
+&lt;li&gt;需要严格的服务器验证&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

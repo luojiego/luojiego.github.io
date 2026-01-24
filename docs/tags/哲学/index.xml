@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>哲学 on Roger&#39;s Blog</title>
     <link>https://luojiego.com/tags/%E5%93%B2%E5%AD%A6/</link>
     <description>Recent content in 哲学 on Roger&#39;s Blog</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 04 Jan 2025 21:49:03 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/tags/%E5%93%B2%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,8 @@
       <link>https://luojiego.com/posts/jing-jie/</link>
       <pubDate>Sat, 04 Jan 2025 21:49:03 +0800</pubDate>
       <guid>https://luojiego.com/posts/jing-jie/</guid>
-      <description>&lt;p&gt;最早接触“哲学”这个词语，竟然是在学习 Go 语言的时候，有人提到 XXX 是这个语言的设计哲学。&lt;br&gt;&#xA;然后是在 19 年，听了《悲剧的诞生》这本书，也算是开始对哲学有了关注，后来断断续续在樊登读书上听了几本哲学相关的书籍，但是没有像这本书一样，一次讲到好多哲学的大家。虽然讲了这么多哲学相关的内容，但是我对哲学是什么还没有一个清晰的概念，需要我后续学习更多的书籍，去体会什么是哲学。&lt;/p&gt;</description>
+      <description>&lt;p&gt;最早接触“哲学”这个词语，竟然是在学习 Go 语言的时候，有人提到 XXX 是这个语言的设计哲学。&lt;br&gt;
+然后是在 19 年，听了《悲剧的诞生》这本书，也算是开始对哲学有了关注，后来断断续续在樊登读书上听了几本哲学相关的书籍，但是没有像这本书一样，一次讲到好多哲学的大家。虽然讲了这么多哲学相关的内容，但是我对哲学是什么还没有一个清晰的概念，需要我后续学习更多的书籍，去体会什么是哲学。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,47 +1,206 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Roger&#39;s Blog</title>
     <link>https://luojiego.com/</link>
     <description>Recent content on Roger&#39;s Blog</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Jan 2026 12:38:34 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 24 Jan 2026 11:51:36 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Obsidian 智能工作日志：自动编号 &#43; 每日英语</title>
+      <link>https://luojiego.com/posts/obsidian-workday-counter-and-daily-english/</link>
+      <pubDate>Sat, 24 Jan 2026 11:51:36 +0800</pubDate>
+      <guid>https://luojiego.com/posts/obsidian-workday-counter-and-daily-english/</guid>
+      <description>&lt;p&gt;从开始工作起，我就习惯了记录工作日志。最开始的方式非常简单，在本子上写个日期，今天是在这家公司的第多少天，顺便记录一句鼓励自己的话。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;翻看前一天的记录确定今天是第几个工作日&lt;/li&gt;
+&lt;li&gt;手动找一个英语学习的网站，基本上抄个每日英语什么的，算是今天跟英语单词又说 hello 了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这是一个比较机械的活，也是我每日上班前的重要仪式，虽然有时候会因为业务比较繁忙，而忘记记录，后续我都会将空缺的那几日的工作日计算进去。&lt;/p&gt;
+&lt;p&gt;后面随着更换工作，有些公司连个本子都不发的时候，我就开始用尝试用笔记工具来记录，最后在经历了各种笔记工具的折腾之后，我开始使用 Obsidian 来记录工作日志和 TODO list。&lt;/p&gt;
+&lt;p&gt;这些重复性的操作虽然是个仪式，但是要回看前一日的计数，然后 + 1 变成今天的索引，还是挺让人烦恼的。&lt;/p&gt;
+&lt;p&gt;直到我发现了 Obsidian 的 Templater 插件，我先是是解决了自动编号的问题，后面又思考每日英语句子的获取，是不是也可以完成呢？最终在 AI 的加持下，这个脚本很快就完成了。&lt;/p&gt;
+&lt;h2 id=&#34;最终效果&#34;&gt;最终效果&lt;/h2&gt;
+&lt;p&gt;现在，每次创建新的工作日志时，模板会自动生成：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;#workday 2
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;The quieter you become, the more you can hear. 你越是安静，能听到的便越多。——拉姆·达斯
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;#home
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;光标在这里，可以立即开始记录&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;一切都是自动的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ 工作日编号自动计算（支持归档文件夹）&lt;/li&gt;
+&lt;li&gt;✅ 每日英语句子自动获取（来自欧路词典）&lt;/li&gt;
+&lt;li&gt;✅ 光标自动定位到内容区域&lt;/li&gt;
+&lt;li&gt;✅ 开箱即用，无需手动操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;文件结构&#34;&gt;文件结构&lt;/h2&gt;
+&lt;p&gt;我的工作日志组织方式如下：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;workday/
+├── template/
+│   └── journal-template.md  # 模板文件
+├── 2024-archive/            # 归档文件夹
+│   ├── 2024-01-15.md
+│   ├── 2024-01-16.md
+│   └── ...
+├── 2025-09-01.md
+├── 2025-09-02.md
+└── 2025-09-24.md
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;每个日志都有 &lt;code&gt;#workday N&lt;/code&gt; 标签，记录这是在当前公司工作的第几天。由于会定期归档，简单的文件计数无法满足需求，必须遍历所有子目录。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>2025 年度总结：健康</title>
       <link>https://luojiego.com/posts/2025-annual-summary-health/</link>
       <pubDate>Sat, 10 Jan 2026 12:38:34 +0800</pubDate>
       <guid>https://luojiego.com/posts/2025-annual-summary-health/</guid>
-      <description>&lt;p&gt;一年匆匆又过去了，回首好似昨天还是 2025 年的元旦。&lt;br&gt;&#xA;在经历了近两年的折腾之后，最终发现还是正常休息的工作更能感受内心的平静。去年近一年几乎都是单休，虽然工资是高了些，但时薪反而降低了。今年前半年是大小周，工资降了挺多。直到九月份开始了新的旅程，终于回归了正常。&lt;br&gt;&#xA;十月份，在经历了一次普通的感冒之后，我停止了运动、多领国和每日的总结，开始摆烂了近两个月。不再早起、不想再写总结。精神在这两年间其实崩的太紧了，总想要更好的生活，却忘了享受当下才是最重要的。做事情比较着急，心情难以平静。通过放缓节奏，给自己放个假。不仅要追求身体上的健康，心理上的健康同样重要。&lt;br&gt;&#xA;我不想再给自己贴上自律的标签，我是谁，应该由我自己定义。&lt;br&gt;&#xA;新的一年，掌握生活和工作的节奏，慢慢来。&lt;/p&gt;</description>
+      <description>&lt;p&gt;一年匆匆又过去了，回首好似昨天还是 2025 年的元旦。&lt;br&gt;
+在经历了近两年的折腾之后，最终发现还是正常休息的工作更能感受内心的平静。去年近一年几乎都是单休，虽然工资是高了些，但时薪反而降低了。今年前半年是大小周，工资降了挺多。直到九月份开始了新的旅程，终于回归了正常。&lt;br&gt;
+十月份，在经历了一次普通的感冒之后，我停止了运动、多领国和每日的总结，开始摆烂了近两个月。不再早起、不想再写总结。精神在这两年间其实崩的太紧了，总想要更好的生活，却忘了享受当下才是最重要的。做事情比较着急，心情难以平静。通过放缓节奏，给自己放个假。不仅要追求身体上的健康，心理上的健康同样重要。&lt;br&gt;
+我不想再给自己贴上自律的标签，我是谁，应该由我自己定义。&lt;br&gt;
+新的一年，掌握生活和工作的节奏，慢慢来。&lt;/p&gt;</description>
     </item>
     <item>
       <title>我的编码统计</title>
       <link>https://luojiego.com/posts/my-coding/</link>
       <pubDate>Thu, 08 Jan 2026 21:23:42 +0800</pubDate>
       <guid>https://luojiego.com/posts/my-coding/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://wakatime.com/@3e8762fa-affe-4081-ba06-0ba2ad661306&#34;&gt;&lt;img src=&#34;https://wakatime.com/badge/user/3e8762fa-affe-4081-ba06-0ba2ad661306.svg&#34; alt=&#34;wakatime&#34;&gt;&lt;/a&gt;&lt;br&gt;&#xA;我是 2013 年开始工作的，但是是从 2015 年 7 月 16 日开始使用 &lt;a href=&#34;https://wakatime.com/@RogerLuo&#34;&gt;wakatime&lt;/a&gt; 统计我的编码数据的。之前几乎都是使用 C++，在 2016 年中有近八个月的时间在华为，也没有统计。粗略计算，按照 1500 个小时计算 C++ 的编码时间。&lt;br&gt;&#xA;后续每年在 Wakatime 年度数据出来，我会及时更新一下统计数据。&lt;/p&gt;&#xA;&lt;h1 id=&#34;年度-top-数据&#34;&gt;年度 Top 数据&lt;/h1&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;年度&lt;/th&gt;&#xA;          &lt;th&gt;语言&lt;/th&gt;&#xA;          &lt;th&gt;IDE&lt;/th&gt;&#xA;          &lt;th&gt;编码时长(H)&lt;/th&gt;&#xA;          &lt;th&gt;WakaTime&lt;/th&gt;&#xA;          &lt;th&gt;OS&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2025&lt;/td&gt;&#xA;          &lt;td&gt;Go&lt;/td&gt;&#xA;          &lt;td&gt;Cursor&lt;/td&gt;&#xA;          &lt;td&gt;1166&lt;/td&gt;&#xA;          &lt;td&gt;2%&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2024&lt;/td&gt;&#xA;          &lt;td&gt;Lua&lt;/td&gt;&#xA;          &lt;td&gt;VS Code&lt;/td&gt;&#xA;          &lt;td&gt;1569&lt;/td&gt;&#xA;          &lt;td&gt;1%&lt;/td&gt;&#xA;          &lt;td&gt;Mac&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2023&lt;/td&gt;&#xA;          &lt;td&gt;Go&lt;/td&gt;&#xA;          &lt;td&gt;VS Code&lt;/td&gt;&#xA;          &lt;td&gt;1056&lt;/td&gt;&#xA;          &lt;td&gt;2%&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2022&lt;/td&gt;&#xA;          &lt;td&gt;Go&lt;/td&gt;&#xA;          &lt;td&gt;VS Code&lt;/td&gt;&#xA;          &lt;td&gt;897&lt;/td&gt;&#xA;          &lt;td&gt;3%&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2021&lt;/td&gt;&#xA;          &lt;td&gt;Go&lt;/td&gt;&#xA;          &lt;td&gt;VS Code&lt;/td&gt;&#xA;          &lt;td&gt;844&lt;/td&gt;&#xA;          &lt;td&gt;4%&lt;/td&gt;&#xA;          &lt;td&gt;Windows&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2020&lt;/td&gt;&#xA;          &lt;td&gt;Go&lt;/td&gt;&#xA;          &lt;td&gt;GoLand&lt;/td&gt;&#xA;          &lt;td&gt;1105&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;          &lt;td&gt;Windows&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2019&lt;/td&gt;&#xA;          &lt;td&gt;Go&lt;/td&gt;&#xA;          &lt;td&gt;GoLand&lt;/td&gt;&#xA;          &lt;td&gt;942&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;          &lt;td&gt;Windows&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2018&lt;/td&gt;&#xA;          &lt;td&gt;C++&lt;/td&gt;&#xA;          &lt;td&gt;Vim&lt;/td&gt;&#xA;          &lt;td&gt;1007&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2017&lt;/td&gt;&#xA;          &lt;td&gt;C++&lt;/td&gt;&#xA;          &lt;td&gt;Vim&lt;/td&gt;&#xA;          &lt;td&gt;671&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2016&lt;/td&gt;&#xA;          &lt;td&gt;C++&lt;/td&gt;&#xA;          &lt;td&gt;Vim&lt;/td&gt;&#xA;          &lt;td&gt;212&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2015&lt;/td&gt;&#xA;          &lt;td&gt;C++&lt;/td&gt;&#xA;          &lt;td&gt;Vim&lt;/td&gt;&#xA;          &lt;td&gt;240&lt;/td&gt;&#xA;          &lt;td&gt;-&lt;/td&gt;&#xA;          &lt;td&gt;Linux&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://wakatime.com/@3e8762fa-affe-4081-ba06-0ba2ad661306&#34;&gt;&lt;img alt=&#34;wakatime&#34; loading=&#34;lazy&#34; src=&#34;https://wakatime.com/badge/user/3e8762fa-affe-4081-ba06-0ba2ad661306.svg&#34;&gt;&lt;/a&gt;&lt;br&gt;
+我是 2013 年开始工作的，但是是从 2015 年 7 月 16 日开始使用 &lt;a href=&#34;https://wakatime.com/@RogerLuo&#34;&gt;wakatime&lt;/a&gt; 统计我的编码数据的。之前几乎都是使用 C++，在 2016 年中有近八个月的时间在华为，也没有统计。粗略计算，按照 1500 个小时计算 C++ 的编码时间。&lt;br&gt;
+后续每年在 Wakatime 年度数据出来，我会及时更新一下统计数据。&lt;/p&gt;
+&lt;h1 id=&#34;年度-top-数据&#34;&gt;年度 Top 数据&lt;/h1&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;年度&lt;/th&gt;
+          &lt;th&gt;语言&lt;/th&gt;
+          &lt;th&gt;IDE&lt;/th&gt;
+          &lt;th&gt;编码时长(H)&lt;/th&gt;
+          &lt;th&gt;WakaTime&lt;/th&gt;
+          &lt;th&gt;OS&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2025&lt;/td&gt;
+          &lt;td&gt;Go&lt;/td&gt;
+          &lt;td&gt;Cursor&lt;/td&gt;
+          &lt;td&gt;1166&lt;/td&gt;
+          &lt;td&gt;2%&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2024&lt;/td&gt;
+          &lt;td&gt;Lua&lt;/td&gt;
+          &lt;td&gt;VS Code&lt;/td&gt;
+          &lt;td&gt;1569&lt;/td&gt;
+          &lt;td&gt;1%&lt;/td&gt;
+          &lt;td&gt;Mac&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2023&lt;/td&gt;
+          &lt;td&gt;Go&lt;/td&gt;
+          &lt;td&gt;VS Code&lt;/td&gt;
+          &lt;td&gt;1056&lt;/td&gt;
+          &lt;td&gt;2%&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2022&lt;/td&gt;
+          &lt;td&gt;Go&lt;/td&gt;
+          &lt;td&gt;VS Code&lt;/td&gt;
+          &lt;td&gt;897&lt;/td&gt;
+          &lt;td&gt;3%&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2021&lt;/td&gt;
+          &lt;td&gt;Go&lt;/td&gt;
+          &lt;td&gt;VS Code&lt;/td&gt;
+          &lt;td&gt;844&lt;/td&gt;
+          &lt;td&gt;4%&lt;/td&gt;
+          &lt;td&gt;Windows&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2020&lt;/td&gt;
+          &lt;td&gt;Go&lt;/td&gt;
+          &lt;td&gt;GoLand&lt;/td&gt;
+          &lt;td&gt;1105&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Windows&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2019&lt;/td&gt;
+          &lt;td&gt;Go&lt;/td&gt;
+          &lt;td&gt;GoLand&lt;/td&gt;
+          &lt;td&gt;942&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Windows&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2018&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;Vim&lt;/td&gt;
+          &lt;td&gt;1007&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2017&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;Vim&lt;/td&gt;
+          &lt;td&gt;671&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2016&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;Vim&lt;/td&gt;
+          &lt;td&gt;212&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2015&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;Vim&lt;/td&gt;
+          &lt;td&gt;240&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;Linux&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</description>
     </item>
     <item>
       <title>从Grep 到 Grafana Loki 的日志分析之路</title>
       <link>https://luojiego.com/posts/goodbye-grep-transition-from-cli-grafana-loki/</link>
       <pubDate>Sun, 21 Dec 2025 22:15:17 +0800</pubDate>
       <guid>https://luojiego.com/posts/goodbye-grep-transition-from-cli-grafana-loki/</guid>
-      <description>&lt;h1 id=&#34;我走了太多弯路&#34;&gt;我走了太多弯路&lt;/h1&gt;&#xA;&lt;p&gt;说实话，在日志处理这件事上，我被“知识陷阱”困了很久。&lt;/p&gt;&#xA;&lt;p&gt;因为我太熟悉命令行了，grep、rg、awk 玩得飞起，所以过去很长一段时间，我都固执地认为这就是分析日志的“正统”方式。但现实经常打脸：当日志散落在不同服务器、不同路径下时，我得开无数个终端窗口跳来跳去，查个链路问题跟查案一样。&lt;/p&gt;&#xA;&lt;p&gt;更惨的是，以前公司不给硬件资源，我根本不敢想 Elasticsearch 这种“吞金兽”。为了解决查询问题，我还自己折腾过一套特原始的方案：写脚本去 OSS 上拉压缩包，下载、解压、再用 rg 扫。还能只查找固定时间短的日志，使用者必须先在 GM 后台上查询到用户的登录记录，再根据日期查询具体时间的日志。&lt;/p&gt;&#xA;&lt;p&gt;后来入职新公司，我这套“土法炼钢”的操作甚至被同事吐槽过：“你怎么还在当原始人？我们早都用 Grafana 查了。”&lt;/p&gt;&#xA;&lt;p&gt;直到最近，我硬着头皮自己试着搭了一套 Grafana + Loki + Promtail，真的感觉推开了新世界的大门。那种震撼感在于：我只花了不到三十分钟部署，那种多机协同、可视化检索的爽感，瞬间就秒杀了过去几年的肉搏操作。&lt;/p&gt;&#xA;&lt;p&gt;现在回头看，天天蹲在黑框框里人肉搜索，确实像个原始人。这篇文章就记录一下这个让我“走出石器时代”的工具组合，以及我的安装过程。讲真，以后哪怕项目再小、只有一个服务，我也要把日志接入 Loki。&lt;strong&gt;人生苦短，不要把生命浪费在 cd 和 grep 上。&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;我走了太多弯路&#34;&gt;我走了太多弯路&lt;/h1&gt;
+&lt;p&gt;说实话，在日志处理这件事上，我被“知识陷阱”困了很久。&lt;/p&gt;
+&lt;p&gt;因为我太熟悉命令行了，grep、rg、awk 玩得飞起，所以过去很长一段时间，我都固执地认为这就是分析日志的“正统”方式。但现实经常打脸：当日志散落在不同服务器、不同路径下时，我得开无数个终端窗口跳来跳去，查个链路问题跟查案一样。&lt;/p&gt;
+&lt;p&gt;更惨的是，以前公司不给硬件资源，我根本不敢想 Elasticsearch 这种“吞金兽”。为了解决查询问题，我还自己折腾过一套特原始的方案：写脚本去 OSS 上拉压缩包，下载、解压、再用 rg 扫。还能只查找固定时间短的日志，使用者必须先在 GM 后台上查询到用户的登录记录，再根据日期查询具体时间的日志。&lt;/p&gt;
+&lt;p&gt;后来入职新公司，我这套“土法炼钢”的操作甚至被同事吐槽过：“你怎么还在当原始人？我们早都用 Grafana 查了。”&lt;/p&gt;
+&lt;p&gt;直到最近，我硬着头皮自己试着搭了一套 Grafana + Loki + Promtail，真的感觉推开了新世界的大门。那种震撼感在于：我只花了不到三十分钟部署，那种多机协同、可视化检索的爽感，瞬间就秒杀了过去几年的肉搏操作。&lt;/p&gt;
+&lt;p&gt;现在回头看，天天蹲在黑框框里人肉搜索，确实像个原始人。这篇文章就记录一下这个让我“走出石器时代”的工具组合，以及我的安装过程。讲真，以后哪怕项目再小、只有一个服务，我也要把日志接入 Loki。&lt;strong&gt;人生苦短，不要把生命浪费在 cd 和 grep 上。&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>换了8款IDE后，我悟出了什么</title>
+      <title>这些年我用过的 IDE</title>
       <link>https://luojiego.com/posts/key-takeaway-after-switching-8-ides/</link>
       <pubDate>Mon, 16 Jun 2025 22:31:14 +0800</pubDate>
       <guid>https://luojiego.com/posts/key-takeaway-after-switching-8-ides/</guid>
       <description>&lt;p&gt;又翻开了尘封的代码，突然想不起第一个用的编辑器叫啥了，这才意识到是时候记录下这些年我和各种 IDE 的爱恨情仇了。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>后端老兵的前端突围：从 C&#43;&#43; 到全栈的进化之路</title>
+      <title>从 C&#43;&#43; 向全栈方向迈进</title>
       <link>https://luojiego.com/posts/from-cplusplus-to-full-stack/</link>
       <pubDate>Mon, 16 Jun 2025 22:20:34 +0800</pubDate>
       <guid>https://luojiego.com/posts/from-cplusplus-to-full-stack/</guid>
-      <description>&lt;p&gt;2017 年之前我是一名拥有四年多 C++ 开发经验的“老”后端。如果你也曾像我一样，在后端的世界里挥洒青春，却因为工作需要不得不硬着头皮踏入前端这片“新大陆”，那么这篇文章或许能给你一些共鸣和启发。&lt;/p&gt;&#xA;&lt;p&gt;在我的职业生涯早期，C++ 是我的主要武器。我习惯了它的严谨、高效，以及对底层细节的掌控。Python 和 Go 也曾涉猎，但始终未能成为工作中的主力。至于 Shell 脚本，简单的操作尚可应付，一旦遇到复杂的安装脚本，就如同天书一般，让我一头雾水。&lt;/p&gt;&#xA;&lt;p&gt;转折点出现在 2018 年，当时我作为后端主程负责一款新游戏的开发。其中一项重要的任务就是构建管理后台以及设计相关的 HTTP 接口。起初，我们自然而然地考虑过使用熟悉的 C++ 来实现这些需求。然而，C++ 在提供 HTTP 接口方面的复杂性让我望而却步，这个方案很快就被否决了。&lt;/p&gt;&#xA;&lt;p&gt;最终，我们选择了 Go 来实现游戏登录前的数据获取等服务。不得不承认，Go 在构建 Web 服务方面确实有着得天独厚的优势，开发效率也相对较高。然而，真正的挑战还在后面——前端页面的开发。&lt;/p&gt;</description>
+      <description>&lt;p&gt;2017 年之前我是一名拥有四年多 C++ 开发经验的“老”后端。如果你也曾像我一样，在后端的世界里挥洒青春，却因为工作需要不得不硬着头皮踏入前端这片“新大陆”，那么这篇文章或许能给你一些共鸣和启发。&lt;/p&gt;
+&lt;p&gt;在我的职业生涯早期，C++ 是我的主要武器。我习惯了它的严谨、高效，以及对底层细节的掌控。Python 和 Go 也曾涉猎，但始终未能成为工作中的主力。至于 Shell 脚本，简单的操作尚可应付，一旦遇到复杂的安装脚本，就如同天书一般，让我一头雾水。&lt;/p&gt;
+&lt;p&gt;转折点出现在 2018 年，当时我作为后端主程负责一款新游戏的开发。其中一项重要的任务就是构建管理后台以及设计相关的 HTTP 接口。起初，我们自然而然地考虑过使用熟悉的 C++ 来实现这些需求。然而，C++ 在提供 HTTP 接口方面的复杂性让我望而却步，这个方案很快就被否决了。&lt;/p&gt;
+&lt;p&gt;最终，我们选择了 Go 来实现游戏登录前的数据获取等服务。不得不承认，Go 在构建 Web 服务方面确实有着得天独厚的优势，开发效率也相对较高。然而，真正的挑战还在后面——前端页面的开发。&lt;/p&gt;</description>
     </item>
     <item>
       <title>远程控制完整指南：从局域网到云端的全方位解决方案</title>
@@ -55,119 +214,225 @@
       <link>https://luojiego.com/posts/my-father-before-me/</link>
       <pubDate>Wed, 11 Jun 2025 23:05:44 +0800</pubDate>
       <guid>https://luojiego.com/posts/my-father-before-me/</guid>
-      <description>&lt;p&gt;作为两个儿子的父亲，这本书触动了我内心深处的共鸣。24 岁那年，我们家老大出生，而我的父亲也是在 24 岁时有了我——这种代际的巧合让我深思父子关系的传承与断裂。&lt;/p&gt;&#xA;&lt;p&gt;我选择从深圳回到西安，只为一个朴素而深刻的愿望：陪伴孩子成长。我的童年记忆中，父亲总是缺席的身影——即使过年回家，他不是在喝酒就是在打牌。正是这种缺失的痛楚，让我更加珍惜与孩子相处的每一个时光。&lt;/p&gt;&#xA;&lt;p&gt;然而，陪伴并不等同于称职。在老大四岁之前，我也曾是个失格的父亲。虽然人在身边，但状态糟糕、身体不佳，经常对孩子发脾气。2018 年底的扁桃体手术成了一个转折点，身体状态的改善为心理成长铺平了道路。&lt;/p&gt;&#xA;&lt;p&gt;2019 年 9 月，在妻子的建议下，我开始听《樊登读书》。两个月内听完超过 100 本书，专注于教育、亲密关系和心灵成长类书籍。短短一个月，我与孩子的关系就发生了质的飞跃。尽管疫情期间居家办公时有所反复，但这次觉醒为我后续的父亲之路奠定了基础。&lt;/p&gt;&#xA;&lt;p&gt;2021 年中，二宝出生，大宝也步入小学。这四年来，我们一家四口几乎形影不离，看着二宝一天天长大。对比之下，我深深遗憾当初没有如此用心地陪伴大宝。由于我们情绪更加稳定，二宝显得更加活泼可爱，情绪也更稳定——这印证了父母状态对孩子的深刻影响。&lt;/p&gt;&#xA;&lt;p&gt;作为父亲，要从固有的错误观念中走出来确实不易，原生家庭的影响根深蒂固。但我坚信，认定是错误的东西，就要用强大的信念将其纠正。成为合格父母需要一点一滴的学习和努力，活到老学到老。&lt;/p&gt;&#xA;&lt;p&gt;这本书让我更清楚地认识到：&lt;strong&gt;孩子其实是来教育父母的，是让我们人生更加完善的存在，是修补我们受伤心灵的良药&lt;/strong&gt;。我需要思考如何更好地引导孩子，同时也要思考如何面对我的父亲——这个一直让我头疼却无法回避的命题。&lt;/p&gt;&#xA;&lt;p&gt;成为父亲不仅是角色的转换，更是人生的重新定义。在陪伴孩子成长的过程中，我们其实也在重新养育那个内在的小男孩，修复童年的创伤，完成未完成的成长任务。这是一场关于爱、责任、智慧与勇气的修行之旅。&lt;/p&gt;</description>
+      <description>&lt;p&gt;作为两个儿子的父亲，这本书触动了我内心深处的共鸣。24 岁那年，我们家老大出生，而我的父亲也是在 24 岁时有了我——这种代际的巧合让我深思父子关系的传承与断裂。&lt;/p&gt;
+&lt;p&gt;我选择从深圳回到西安，只为一个朴素而深刻的愿望：陪伴孩子成长。我的童年记忆中，父亲总是缺席的身影——即使过年回家，他不是在喝酒就是在打牌。正是这种缺失的痛楚，让我更加珍惜与孩子相处的每一个时光。&lt;/p&gt;
+&lt;p&gt;然而，陪伴并不等同于称职。在老大四岁之前，我也曾是个失格的父亲。虽然人在身边，但状态糟糕、身体不佳，经常对孩子发脾气。2018 年底的扁桃体手术成了一个转折点，身体状态的改善为心理成长铺平了道路。&lt;/p&gt;
+&lt;p&gt;2019 年 9 月，在妻子的建议下，我开始听《樊登读书》。两个月内听完超过 100 本书，专注于教育、亲密关系和心灵成长类书籍。短短一个月，我与孩子的关系就发生了质的飞跃。尽管疫情期间居家办公时有所反复，但这次觉醒为我后续的父亲之路奠定了基础。&lt;/p&gt;
+&lt;p&gt;2021 年中，二宝出生，大宝也步入小学。这四年来，我们一家四口几乎形影不离，看着二宝一天天长大。对比之下，我深深遗憾当初没有如此用心地陪伴大宝。由于我们情绪更加稳定，二宝显得更加活泼可爱，情绪也更稳定——这印证了父母状态对孩子的深刻影响。&lt;/p&gt;
+&lt;p&gt;作为父亲，要从固有的错误观念中走出来确实不易，原生家庭的影响根深蒂固。但我坚信，认定是错误的东西，就要用强大的信念将其纠正。成为合格父母需要一点一滴的学习和努力，活到老学到老。&lt;/p&gt;
+&lt;p&gt;这本书让我更清楚地认识到：&lt;strong&gt;孩子其实是来教育父母的，是让我们人生更加完善的存在，是修补我们受伤心灵的良药&lt;/strong&gt;。我需要思考如何更好地引导孩子，同时也要思考如何面对我的父亲——这个一直让我头疼却无法回避的命题。&lt;/p&gt;
+&lt;p&gt;成为父亲不仅是角色的转换，更是人生的重新定义。在陪伴孩子成长的过程中，我们其实也在重新养育那个内在的小男孩，修复童年的创伤，完成未完成的成长任务。这是一场关于爱、责任、智慧与勇气的修行之旅。&lt;/p&gt;</description>
     </item>
     <item>
       <title>在AI时代寻找自我 - 《预测之书》读书笔记</title>
       <link>https://luojiego.com/posts/pridictions-for-2025/</link>
       <pubDate>Sun, 02 Feb 2025 21:12:21 +0800</pubDate>
       <guid>https://luojiego.com/posts/pridictions-for-2025/</guid>
-      <description>&lt;p&gt;在这本内容丰富的书中，我提炼出四个关键词：AI、游戏、表达、活出自我。这些词汇不仅概括了书中的核心思想，也映射出我对当下的思考与未来的展望。&lt;/p&gt;&#xA;&lt;h2 id=&#34;ai-革新浪潮中的思考&#34;&gt;AI 革新浪潮中的思考&lt;/h2&gt;&#xA;&lt;p&gt;2024 年被称为 AI 元年诚非偶然。当下 AI 领域正处于群雄逐鹿的态势，尚未出现真正的&amp;quot;赢家&amp;quot;。作为普通人，积极拥抱 AI 显然是明智之选。然而，我观察到身边仍有不少人持观望态度，有的执着于&amp;quot;手写代码&amp;quot;的纯粹性，有的因初次使用遇到瑕疵就完全放弃。这些态度或许都值得商榷——在技术革新的浪潮中，保持开放和学习的心态才是关键。&lt;/p&gt;&#xA;&lt;h2 id=&#34;游戏行业的职业思考&#34;&gt;游戏行业的职业思考&lt;/h2&gt;&#xA;&lt;p&gt;身在西安，游戏相关的工作机会确实相对有限，远程工作机会也多局限于 Web3 领域。但正如书中所言，未来的&amp;quot;游戏&amp;quot;概念可能会更加宽泛。这给了我新的启发：作为一名后端开发者，不应该局限于现有的技能范畴，而是要积极拓展视野，尝试掌握客户端开发知识，通过实践小型 demo 来丰富自己的技术储备。&lt;/p&gt;&#xA;&lt;h2 id=&#34;表达的力量&#34;&gt;表达的力量&lt;/h2&gt;&#xA;&lt;p&gt;回想之前，我并不热衷于写作。但在阅读积累的过程中，我发现记录和表达的重要性。现在，我坚持每天记录思考，通过博客分享个人见解。这不仅是一种自我督促的方式，更期待能够和他人产生共鸣，或许还能找到志同道合的朋友。&lt;/p&gt;&#xA;&lt;h2 id=&#34;在-ai-时代活出自我&#34;&gt;在 AI 时代活出自我&lt;/h2&gt;&#xA;&lt;p&gt;在 AI 技术日益渗透生活的今天，&amp;ldquo;活出自我&amp;quot;的重要性愈发凸显。每个人都是独特的个体，幸福的关键在于走出属于自己的人生道路。我们可以借鉴他人的经验，但不必盲目模仿。正如那句老话：&amp;ldquo;走自己的路，让别人去说吧。&amp;rdquo;&lt;/p&gt;&#xA;&lt;p&gt;这些思考不仅是对书中内容的总结，更是对个人发展道路的一次重新审视。在 AI 时代，保持开放和进取的心态，同时坚守个人本真，或许正是立足未来的重要基石。&lt;/p&gt;</description>
+      <description>&lt;p&gt;在这本内容丰富的书中，我提炼出四个关键词：AI、游戏、表达、活出自我。这些词汇不仅概括了书中的核心思想，也映射出我对当下的思考与未来的展望。&lt;/p&gt;
+&lt;h2 id=&#34;ai-革新浪潮中的思考&#34;&gt;AI 革新浪潮中的思考&lt;/h2&gt;
+&lt;p&gt;2024 年被称为 AI 元年诚非偶然。当下 AI 领域正处于群雄逐鹿的态势，尚未出现真正的&amp;quot;赢家&amp;quot;。作为普通人，积极拥抱 AI 显然是明智之选。然而，我观察到身边仍有不少人持观望态度，有的执着于&amp;quot;手写代码&amp;quot;的纯粹性，有的因初次使用遇到瑕疵就完全放弃。这些态度或许都值得商榷——在技术革新的浪潮中，保持开放和学习的心态才是关键。&lt;/p&gt;
+&lt;h2 id=&#34;游戏行业的职业思考&#34;&gt;游戏行业的职业思考&lt;/h2&gt;
+&lt;p&gt;身在西安，游戏相关的工作机会确实相对有限，远程工作机会也多局限于 Web3 领域。但正如书中所言，未来的&amp;quot;游戏&amp;quot;概念可能会更加宽泛。这给了我新的启发：作为一名后端开发者，不应该局限于现有的技能范畴，而是要积极拓展视野，尝试掌握客户端开发知识，通过实践小型 demo 来丰富自己的技术储备。&lt;/p&gt;
+&lt;h2 id=&#34;表达的力量&#34;&gt;表达的力量&lt;/h2&gt;
+&lt;p&gt;回想之前，我并不热衷于写作。但在阅读积累的过程中，我发现记录和表达的重要性。现在，我坚持每天记录思考，通过博客分享个人见解。这不仅是一种自我督促的方式，更期待能够和他人产生共鸣，或许还能找到志同道合的朋友。&lt;/p&gt;
+&lt;h2 id=&#34;在-ai-时代活出自我&#34;&gt;在 AI 时代活出自我&lt;/h2&gt;
+&lt;p&gt;在 AI 技术日益渗透生活的今天，&amp;ldquo;活出自我&amp;quot;的重要性愈发凸显。每个人都是独特的个体，幸福的关键在于走出属于自己的人生道路。我们可以借鉴他人的经验，但不必盲目模仿。正如那句老话：&amp;ldquo;走自己的路，让别人去说吧。&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;这些思考不仅是对书中内容的总结，更是对个人发展道路的一次重新审视。在 AI 时代，保持开放和进取的心态，同时坚守个人本真，或许正是立足未来的重要基石。&lt;/p&gt;</description>
     </item>
     <item>
       <title>AI时代的引擎 - 《黄仁勋·英伟达之芯》读书笔记</title>
       <link>https://luojiego.com/posts/the-thinking-machine/</link>
       <pubDate>Fri, 24 Jan 2025 10:41:35 +0800</pubDate>
       <guid>https://luojiego.com/posts/the-thinking-machine/</guid>
-      <description>&lt;p&gt;虽然二十一世纪仅过去了不到四分之一，但英伟达已经可以被称为本世纪最伟大的企业之一。&lt;br&gt;&#xA;我第一次注意到英伟达（Nvidia）这个品牌是在我的第一台笔记本电脑上，当时对其了解有限，甚至一直误以为它是一家纯粹的硬件公司。直到今年阅读了这本书，我才对英伟达有了更全面的认识——它本质上是一家以软件为核心的公司，尽管大多数人可能和我一样，曾将其归类为硬件制造商。&lt;/p&gt;&#xA;&lt;p&gt;作为人工智能（AI）发展的幕后推手，英伟达无疑加速了 AI 技术的爆发式增长。然而，AI 的潜在威胁仍然是一个悬而未决的问题。马斯克等人对 AI 的担忧是否会成为现实，目前尚无定论。&lt;/p&gt;&#xA;&lt;p&gt;书中对 CPU 和 GPU 的比喻非常生动形象，即使是非专业人士也能轻松理解两者之间的区别。这种通俗易懂的解释方式让我对技术细节有了更清晰的认识。&lt;/p&gt;&#xA;&lt;p&gt;此外，书中提到了李飞飞，这位 AI 领域的杰出人物。今年我在多个场合看到她的名字，这促使我开始阅读她的著作《我看见的世界》，进一步了解她的思想和贡献。&lt;/p&gt;</description>
+      <description>&lt;p&gt;虽然二十一世纪仅过去了不到四分之一，但英伟达已经可以被称为本世纪最伟大的企业之一。&lt;br&gt;
+我第一次注意到英伟达（Nvidia）这个品牌是在我的第一台笔记本电脑上，当时对其了解有限，甚至一直误以为它是一家纯粹的硬件公司。直到今年阅读了这本书，我才对英伟达有了更全面的认识——它本质上是一家以软件为核心的公司，尽管大多数人可能和我一样，曾将其归类为硬件制造商。&lt;/p&gt;
+&lt;p&gt;作为人工智能（AI）发展的幕后推手，英伟达无疑加速了 AI 技术的爆发式增长。然而，AI 的潜在威胁仍然是一个悬而未决的问题。马斯克等人对 AI 的担忧是否会成为现实，目前尚无定论。&lt;/p&gt;
+&lt;p&gt;书中对 CPU 和 GPU 的比喻非常生动形象，即使是非专业人士也能轻松理解两者之间的区别。这种通俗易懂的解释方式让我对技术细节有了更清晰的认识。&lt;/p&gt;
+&lt;p&gt;此外，书中提到了李飞飞，这位 AI 领域的杰出人物。今年我在多个场合看到她的名字，这促使我开始阅读她的著作《我看见的世界》，进一步了解她的思想和贡献。&lt;/p&gt;</description>
     </item>
     <item>
       <title>远离受害者天堂 - 《拆掉思维里的墙》读书笔记</title>
       <link>https://luojiego.com/posts/change-your-mindset/</link>
       <pubDate>Thu, 16 Jan 2025 07:33:07 +0800</pubDate>
       <guid>https://luojiego.com/posts/change-your-mindset/</guid>
-      <description>&lt;p&gt;把一切的错误和责任都怪罪到别人身上，可能会让自己“舒服”一些。但是如果诉说给一个陌生人或者面试官，那么他们肯定会想难道你一点问题都没有吗？&lt;br&gt;&#xA;从自己出发，去深刻思考，选择离开的原因是什么。不要在离职的时候，吐槽一堆。因为知道无法改变环境，所以选择改变自己。面对老板的客套，我只能说，都是打工的那些事，没必要再提了。&lt;br&gt;&#xA;通过反思去年的两个选择，我明白了对环境或者对他人的不满，均是因为自己的最重要的诉求无法被满足。无法获得更好的成长以及感受不到尊重。吐槽具体的事都停留在表面，而且这样的事数不胜数。所以想要表达，直接说最终诉求，开门见山。&lt;br&gt;&#xA;作为一个成年人，我得时刻提醒自己，吐槽环境或者他人时，想想最深层次的原因，有些伤人的话就不会说出来了，想要被尊重也得先尊重别人。同时要教育自己的两个小男孩，勇敢做出自己的选择，尽可能不受环境的影响。&lt;/p&gt;</description>
+      <description>&lt;p&gt;把一切的错误和责任都怪罪到别人身上，可能会让自己“舒服”一些。但是如果诉说给一个陌生人或者面试官，那么他们肯定会想难道你一点问题都没有吗？&lt;br&gt;
+从自己出发，去深刻思考，选择离开的原因是什么。不要在离职的时候，吐槽一堆。因为知道无法改变环境，所以选择改变自己。面对老板的客套，我只能说，都是打工的那些事，没必要再提了。&lt;br&gt;
+通过反思去年的两个选择，我明白了对环境或者对他人的不满，均是因为自己的最重要的诉求无法被满足。无法获得更好的成长以及感受不到尊重。吐槽具体的事都停留在表面，而且这样的事数不胜数。所以想要表达，直接说最终诉求，开门见山。&lt;br&gt;
+作为一个成年人，我得时刻提醒自己，吐槽环境或者他人时，想想最深层次的原因，有些伤人的话就不会说出来了，想要被尊重也得先尊重别人。同时要教育自己的两个小男孩，勇敢做出自己的选择，尽可能不受环境的影响。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2024 年度总结：勇气</title>
       <link>https://luojiego.com/posts/2024-annual-summary-courage/</link>
       <pubDate>Sun, 05 Jan 2025 23:10:21 +0800</pubDate>
       <guid>https://luojiego.com/posts/2024-annual-summary-courage/</guid>
-      <description>&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;&#xA;&lt;p&gt;勇敢迈出一步，离开了工作七年的地方，开始寻找更多的可能性，也为寻找内心的安宁。&lt;br&gt;&#xA;说实话我在没有离开自己的舒适区时，我非常没有安全感，因为不知道自己的能力边界在哪里，所以换了一家公司之后，我承担了大部分的模块，是太想证明自己的能力了。在项目上线并且稳定之后，我选择了离开，是我已经证明了自己的能力边界在哪里。&lt;br&gt;&#xA;二宝已经开始上小班了，从最初不能离开妈妈的陪伴，到现在能跟老父亲吃喝玩乐一整天，我又要积极参与到他成长的关键周期了。&lt;br&gt;&#xA;今年从最初的不安全，到现在明白了我不需要给任何人证明自己，我觉得是收获满满的一年。工作如果不能带给自己平和的心态，如果需要舍弃掉家人的陪伴，这样的工作对我而言意义不大。&lt;br&gt;&#xA;新的一年，希望可以跟小宝一起睡觉，不熬夜。坚持阅读，写博客，坚持运动，工作顺心。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
+&lt;p&gt;勇敢迈出一步，离开了工作七年的地方，开始寻找更多的可能性，也为寻找内心的安宁。&lt;br&gt;
+说实话我在没有离开自己的舒适区时，我非常没有安全感，因为不知道自己的能力边界在哪里，所以换了一家公司之后，我承担了大部分的模块，是太想证明自己的能力了。在项目上线并且稳定之后，我选择了离开，是我已经证明了自己的能力边界在哪里。&lt;br&gt;
+二宝已经开始上小班了，从最初不能离开妈妈的陪伴，到现在能跟老父亲吃喝玩乐一整天，我又要积极参与到他成长的关键周期了。&lt;br&gt;
+今年从最初的不安全，到现在明白了我不需要给任何人证明自己，我觉得是收获满满的一年。工作如果不能带给自己平和的心态，如果需要舍弃掉家人的陪伴，这样的工作对我而言意义不大。&lt;br&gt;
+新的一年，希望可以跟小宝一起睡觉，不熬夜。坚持阅读，写博客，坚持运动，工作顺心。&lt;/p&gt;</description>
     </item>
     <item>
       <title>提高抽象思维能力 - 《数学通识 50 讲》笔记</title>
       <link>https://luojiego.com/posts/50-lecture-general-mathematics/</link>
       <pubDate>Sun, 05 Jan 2025 22:20:17 +0800</pubDate>
       <guid>https://luojiego.com/posts/50-lecture-general-mathematics/</guid>
-      <description>&lt;p&gt;从高中数学、物理上是很明显能体现出来自己的抽象思维挺差劲。上初中的时候，我觉得这些科目简直都是小儿科，但在高中我傻眼了，数学和物理都跟不上。特别是物理，涉及到电磁力相关的我完全想象不来，高考物理简直就是我的噩梦。数学虽然可以通过努力让成绩显得不是那么差，但是到底学了个啥，只有自己清楚。大学的微积分更有些听天书的感觉了，虽然最后的考试能过关，但离理解还差的太远了。&lt;br&gt;&#xA;在学了这个专栏之后，我知道具体的原因在哪里了，就是自己的抽象能力太差了。这如同原始人刚有数字的概念，能理解 1，2，3。但是 0 是什么，太难了。因为微积分已经从静态转向了动态，如果没有更加抽象的思维，是很难理解微积分的。&lt;br&gt;&#xA;对于算法，我很头疼，好多次拿起书，或者看视频都觉得离掌握太远了。学习数学是要弥补这方面的缺陷，为了能更好把自己的专业知识理解的更加透切。工作了这么多年，我已经可以在大脑中模拟代码的运行，精通命令行的使用精髓，文件系统中的在大脑中井井有条。但是算法以及数据结构的离到这种地步差的还是太远，我需要有更高的抽象思维能力来提升自己的能力。&lt;/p&gt;</description>
+      <description>&lt;p&gt;从高中数学、物理上是很明显能体现出来自己的抽象思维挺差劲。上初中的时候，我觉得这些科目简直都是小儿科，但在高中我傻眼了，数学和物理都跟不上。特别是物理，涉及到电磁力相关的我完全想象不来，高考物理简直就是我的噩梦。数学虽然可以通过努力让成绩显得不是那么差，但是到底学了个啥，只有自己清楚。大学的微积分更有些听天书的感觉了，虽然最后的考试能过关，但离理解还差的太远了。&lt;br&gt;
+在学了这个专栏之后，我知道具体的原因在哪里了，就是自己的抽象能力太差了。这如同原始人刚有数字的概念，能理解 1，2，3。但是 0 是什么，太难了。因为微积分已经从静态转向了动态，如果没有更加抽象的思维，是很难理解微积分的。&lt;br&gt;
+对于算法，我很头疼，好多次拿起书，或者看视频都觉得离掌握太远了。学习数学是要弥补这方面的缺陷，为了能更好把自己的专业知识理解的更加透切。工作了这么多年，我已经可以在大脑中模拟代码的运行，精通命令行的使用精髓，文件系统中的在大脑中井井有条。但是算法以及数据结构的离到这种地步差的还是太远，我需要有更高的抽象思维能力来提升自己的能力。&lt;/p&gt;</description>
     </item>
     <item>
       <title>什么是哲学 - 《境界》读书笔记</title>
       <link>https://luojiego.com/posts/jing-jie/</link>
       <pubDate>Sat, 04 Jan 2025 21:49:03 +0800</pubDate>
       <guid>https://luojiego.com/posts/jing-jie/</guid>
-      <description>&lt;p&gt;最早接触“哲学”这个词语，竟然是在学习 Go 语言的时候，有人提到 XXX 是这个语言的设计哲学。&lt;br&gt;&#xA;然后是在 19 年，听了《悲剧的诞生》这本书，也算是开始对哲学有了关注，后来断断续续在樊登读书上听了几本哲学相关的书籍，但是没有像这本书一样，一次讲到好多哲学的大家。虽然讲了这么多哲学相关的内容，但是我对哲学是什么还没有一个清晰的概念，需要我后续学习更多的书籍，去体会什么是哲学。&lt;/p&gt;</description>
+      <description>&lt;p&gt;最早接触“哲学”这个词语，竟然是在学习 Go 语言的时候，有人提到 XXX 是这个语言的设计哲学。&lt;br&gt;
+然后是在 19 年，听了《悲剧的诞生》这本书，也算是开始对哲学有了关注，后来断断续续在樊登读书上听了几本哲学相关的书籍，但是没有像这本书一样，一次讲到好多哲学的大家。虽然讲了这么多哲学相关的内容，但是我对哲学是什么还没有一个清晰的概念，需要我后续学习更多的书籍，去体会什么是哲学。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2024 影视娱乐</title>
       <link>https://luojiego.com/posts/2024-movie-music/</link>
       <pubDate>Wed, 01 Jan 2025 21:34:46 +0800</pubDate>
       <guid>https://luojiego.com/posts/2024-movie-music/</guid>
-      <description>&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;&#xA;&lt;p&gt;今年花在影视娱乐上的时间大幅下降，主要时间都用来看书了。越去花费时间去学习，越觉得大部分的电影都不值得。还是静下心来看书比较有意义。&lt;br&gt;&#xA;今年看了三十四部电影，一部美剧。五部在电影院看的电影，一部跟大宝，两部跟媳妇，两部是大宝上街舞表演课的时候，我去看的。&lt;br&gt;&#xA;音乐花在 Apple Music 上的时间比较长，年度报告中提到我的最爱艺人是周花健，最爱的歌曲是《活在回忆里》。可能因为“我相信我爱你，蒙上眼，手交给你，慢慢的安心在黑暗中共有一双眼睛，我要不断的爱你，不断拼凑了自己……”以及“只要你幸福我真的愿意，哪怕最后不是我没关系”。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
+&lt;p&gt;今年花在影视娱乐上的时间大幅下降，主要时间都用来看书了。越去花费时间去学习，越觉得大部分的电影都不值得。还是静下心来看书比较有意义。&lt;br&gt;
+今年看了三十四部电影，一部美剧。五部在电影院看的电影，一部跟大宝，两部跟媳妇，两部是大宝上街舞表演课的时候，我去看的。&lt;br&gt;
+音乐花在 Apple Music 上的时间比较长，年度报告中提到我的最爱艺人是周花健，最爱的歌曲是《活在回忆里》。可能因为“我相信我爱你，蒙上眼，手交给你，慢慢的安心在黑暗中共有一双眼睛，我要不断的爱你，不断拼凑了自己……”以及“只要你幸福我真的愿意，哪怕最后不是我没关系”。&lt;/p&gt;</description>
     </item>
     <item>
       <title>在时光长河中寻找平衡 - 《脉胳》读书笔记</title>
       <link>https://luojiego.com/posts/mai-luo/</link>
       <pubDate>Wed, 01 Jan 2025 14:01:28 +0800</pubDate>
       <guid>https://luojiego.com/posts/mai-luo/</guid>
-      <description>&lt;p&gt;如果把时间拉长，我们在某一时刻的痛苦则就显得那样的无关痛痒。把时间拉长之后，个性的存在也几乎可以忽略不计了。&lt;br&gt;&#xA;学习的目的就是让自己如何以一个健康的心态去看待眼中的这个世界。&lt;br&gt;&#xA;很早之前的我体会不到历史的意义，现在慢慢能体会到了。跟作者提到的那句“&lt;strong&gt;人类从历史中尝到的唯一教训，就是人类无法从历史中学到任何教训&lt;/strong&gt;”。&lt;br&gt;&#xA;在历史的浪潮中做个平凡人，但也不能完全放弃挣扎，去学习如何应对这个世界的日新月异，去提前布局。&lt;/p&gt;</description>
+      <description>&lt;p&gt;如果把时间拉长，我们在某一时刻的痛苦则就显得那样的无关痛痒。把时间拉长之后，个性的存在也几乎可以忽略不计了。&lt;br&gt;
+学习的目的就是让自己如何以一个健康的心态去看待眼中的这个世界。&lt;br&gt;
+很早之前的我体会不到历史的意义，现在慢慢能体会到了。跟作者提到的那句“&lt;strong&gt;人类从历史中尝到的唯一教训，就是人类无法从历史中学到任何教训&lt;/strong&gt;”。&lt;br&gt;
+在历史的浪潮中做个平凡人，但也不能完全放弃挣扎，去学习如何应对这个世界的日新月异，去提前布局。&lt;/p&gt;</description>
     </item>
     <item>
       <title>走出人际关系的困境 - 《被讨厌的勇气》读书笔记</title>
       <link>https://luojiego.com/posts/the-courage-to-be-yourself/</link>
       <pubDate>Wed, 01 Jan 2025 07:37:44 +0800</pubDate>
       <guid>https://luojiego.com/posts/the-courage-to-be-yourself/</guid>
-      <description>&lt;p&gt;按照自己的节奏工作生活是至关重要的，但是我们却太过缺乏勇气。&lt;br&gt;&#xA;生活中的痛苦都来自人际关系，想要满足更多人的期待，本身就不现实，还容易先让自己崩溃。想要享受生活，则一定要学会“被讨厌”。&lt;br&gt;&#xA;关于课题分离，更是直击我的内心。我们只需要做好我们应该做的，至于别人有何反馈，有何种评价，不是我应该去关注的，更不应该被别人的反应所控制。&lt;br&gt;&#xA;无论何时，不要妄图取悦别人。&lt;/p&gt;</description>
+      <description>&lt;p&gt;按照自己的节奏工作生活是至关重要的，但是我们却太过缺乏勇气。&lt;br&gt;
+生活中的痛苦都来自人际关系，想要满足更多人的期待，本身就不现实，还容易先让自己崩溃。想要享受生活，则一定要学会“被讨厌”。&lt;br&gt;
+关于课题分离，更是直击我的内心。我们只需要做好我们应该做的，至于别人有何反馈，有何种评价，不是我应该去关注的，更不应该被别人的反应所控制。&lt;br&gt;
+无论何时，不要妄图取悦别人。&lt;/p&gt;</description>
     </item>
     <item>
       <title>不断提升自律水平 - 《早起的奇迹》读书笔记</title>
       <link>https://luojiego.com/posts/the-miracal-morning/</link>
       <pubDate>Sun, 29 Dec 2024 11:10:43 +0800</pubDate>
       <guid>https://luojiego.com/posts/the-miracal-morning/</guid>
-      <description>&lt;p&gt;最初的记忆是学习五笔输入法，从小学五年级每个暑假都会把五笔字根学习一遍，但是直到到了高二，好多字不会打。当时上课觉得没有意思，就将词典上每个汉字的编码先尝试写出来，再跟词典对照，之后几乎就能准确打出百分之八十的汉字。后面工作之后，唯一坚持好的事情就是每年都会学学 Python，但是每次都是没有很好的应用于工作。这应该也算是一种自律，但是效果嘛，随缘。只是避免了自己的生活太过无聊罢了。&lt;br&gt;&#xA;后来在 19 年之后，我听了很多书，觉得是时候要提升自己的自尊水平，也同样要提升自律水平。于是从 20 年开始，我基本上一直处于一个比较规律的学习状态。&lt;br&gt;&#xA;早起这个计划我也尝试过两三次，但是最后没有坚持下去。这次这个书名一下子就吸引了我，因为我发现晚上好多时候，都要照顾孩子，没有办法去坚持自己的微习惯。所以又重拾了早起的习惯，基本上每天比孩子早起 30 分钟，可以专心的洗脸、刷牙之后，喝水然后开始做十五个俯卧撑，然后冥想两三分钟，接着写个简单的反思。然后叫孩子起床，准备早饭或者带孩子去外面吃早饭再去学校。&lt;br&gt;&#xA;关于睡眠时间问题，我发现我个人属于精力比较旺盛的人，可以在平均只有六个小时的情况下保持比较稳定的情绪。但是好些人做不到。那就不要强行要求自己一下子改变太多，要想早起，可以先在保证自己睡眠时间的情况下，早睡早起。平稳过度，慢慢来。&lt;br&gt;&#xA;随着认知水平的不断提高，人的自律水平也会不断提高。&lt;/p&gt;</description>
+      <description>&lt;p&gt;最初的记忆是学习五笔输入法，从小学五年级每个暑假都会把五笔字根学习一遍，但是直到到了高二，好多字不会打。当时上课觉得没有意思，就将词典上每个汉字的编码先尝试写出来，再跟词典对照，之后几乎就能准确打出百分之八十的汉字。后面工作之后，唯一坚持好的事情就是每年都会学学 Python，但是每次都是没有很好的应用于工作。这应该也算是一种自律，但是效果嘛，随缘。只是避免了自己的生活太过无聊罢了。&lt;br&gt;
+后来在 19 年之后，我听了很多书，觉得是时候要提升自己的自尊水平，也同样要提升自律水平。于是从 20 年开始，我基本上一直处于一个比较规律的学习状态。&lt;br&gt;
+早起这个计划我也尝试过两三次，但是最后没有坚持下去。这次这个书名一下子就吸引了我，因为我发现晚上好多时候，都要照顾孩子，没有办法去坚持自己的微习惯。所以又重拾了早起的习惯，基本上每天比孩子早起 30 分钟，可以专心的洗脸、刷牙之后，喝水然后开始做十五个俯卧撑，然后冥想两三分钟，接着写个简单的反思。然后叫孩子起床，准备早饭或者带孩子去外面吃早饭再去学校。&lt;br&gt;
+关于睡眠时间问题，我发现我个人属于精力比较旺盛的人，可以在平均只有六个小时的情况下保持比较稳定的情绪。但是好些人做不到。那就不要强行要求自己一下子改变太多，要想早起，可以先在保证自己睡眠时间的情况下，早睡早起。平稳过度，慢慢来。&lt;br&gt;
+随着认知水平的不断提高，人的自律水平也会不断提高。&lt;/p&gt;</description>
     </item>
     <item>
       <title>提高自己的财商 - 《富爸爸穷爸爸》读书笔记</title>
       <link>https://luojiego.com/posts/rich-dad-poor-dad/</link>
       <pubDate>Sat, 28 Dec 2024 16:45:07 +0800</pubDate>
       <guid>https://luojiego.com/posts/rich-dad-poor-dad/</guid>
-      <description>&lt;p&gt;正如作者提到的那样，财商在学校是不教授的。所以大多数人一生都活在对于钱的恐惧之中，这种恐惧让他们碌碌无为，跳不出作者提到的“老鼠赛跑”的陷阱。&lt;br&gt;&#xA;书中好多话可以让我受用一生，例如：&lt;strong&gt;工作只是试图用暂时的办法来解决长期的问题&lt;/strong&gt;、&lt;strong&gt;富人获得资产，而穷人和中产阶级获得负债，只不过他们以为那些负债就是资产&lt;/strong&gt;、&lt;strong&gt;工人付出最大努力以免于被解雇，而雇主提供最低工资以防止工人辞职&lt;/strong&gt;。&lt;br&gt;&#xA;工作了十多年，虽说没有挣到多少钱，但是好在媳妇对于金钱的管理比较好。从来不买奢侈品，花钱比较有节制，养育着两个孩子，在最合适的时机买了房子，并且在有了积蓄之后，直接还清了所有贷款。没有车，几乎是没有负债的状态。&lt;br&gt;&#xA;现在这个时间节点，我仍然比较迷茫。互联网泡沫的确比较明显，而且我也鼓起勇气离开了稳定的环境，去尝试新的可能性。尝试不对种类的产品确实比较有新鲜感，但是西安着实没有靠谱的游戏公司，并且目前游戏市场也不容乐观。未来的确充满了不确定性，目前唯一能做的是，就是积极学习，没有合适的职业，那投资自己就是最正确的选择。&lt;br&gt;&#xA;财商这个关键词，我也是今年第一次听说，未来每年都需要去学习相关的知识，以弥补我在这方面的不足。&lt;/p&gt;</description>
+      <description>&lt;p&gt;正如作者提到的那样，财商在学校是不教授的。所以大多数人一生都活在对于钱的恐惧之中，这种恐惧让他们碌碌无为，跳不出作者提到的“老鼠赛跑”的陷阱。&lt;br&gt;
+书中好多话可以让我受用一生，例如：&lt;strong&gt;工作只是试图用暂时的办法来解决长期的问题&lt;/strong&gt;、&lt;strong&gt;富人获得资产，而穷人和中产阶级获得负债，只不过他们以为那些负债就是资产&lt;/strong&gt;、&lt;strong&gt;工人付出最大努力以免于被解雇，而雇主提供最低工资以防止工人辞职&lt;/strong&gt;。&lt;br&gt;
+工作了十多年，虽说没有挣到多少钱，但是好在媳妇对于金钱的管理比较好。从来不买奢侈品，花钱比较有节制，养育着两个孩子，在最合适的时机买了房子，并且在有了积蓄之后，直接还清了所有贷款。没有车，几乎是没有负债的状态。&lt;br&gt;
+现在这个时间节点，我仍然比较迷茫。互联网泡沫的确比较明显，而且我也鼓起勇气离开了稳定的环境，去尝试新的可能性。尝试不对种类的产品确实比较有新鲜感，但是西安着实没有靠谱的游戏公司，并且目前游戏市场也不容乐观。未来的确充满了不确定性，目前唯一能做的是，就是积极学习，没有合适的职业，那投资自己就是最正确的选择。&lt;br&gt;
+财商这个关键词，我也是今年第一次听说，未来每年都需要去学习相关的知识，以弥补我在这方面的不足。&lt;/p&gt;</description>
     </item>
     <item>
       <title>用阅读来理解世界 - 《人类群星闪耀时》读书笔记</title>
       <link>https://luojiego.com/posts/star-hours-of-mankind/</link>
       <pubDate>Fri, 27 Dec 2024 20:42:18 +0800</pubDate>
       <guid>https://luojiego.com/posts/star-hours-of-mankind/</guid>
-      <description>&lt;p&gt;如果不知道读什么书，那就从最经典的书籍开始。这本书名萦绕在我的耳边已经好久了，&lt;br&gt;&#xA;读这本书，惊叹作者对于一件自己未曾经历的事情能描述的这么详尽，将一个人内心活动可以写的如此细腻。不管对于历史还是写作，这本书都是一本可以时常拿在手边不停翻开的著作。书中更是金名频出。&lt;br&gt;&#xA;我自认为自己是一个学渣，因为除了考试要考的这些科目勉强过关以外。像历史、地理和政治这些几乎一窍不通。差到什么程度呢，30 岁之前我几乎连中国历史这些朝代顺序都搞不清楚。中国以外的历史就更加陌生，随便说个历史人物，我猜个年代，可能会让稍微有些常识的人笑掉大牙。&lt;br&gt;&#xA;最初促进我重拾这些东西的原因是孩子，因为要讲给孩子。慢慢发现这些曾经觉得无聊透顶的内容是多么有趣。&lt;br&gt;&#xA;我是先接触的听书，然后开始读书。从最初的一年读不了一本，现在一年竟然可以阅读二十多本，而且越往后，只会不停的增加。&lt;br&gt;&#xA;通过阅读我将这些断断续续的历史以及人物慢慢串在了一起，也是因为了解的这些伟人的事迹，才会平静的面对生活中的小事。因为相比他们曾经面对的，我们遇到的几乎都只能算是小事。&lt;/p&gt;</description>
+      <description>&lt;p&gt;如果不知道读什么书，那就从最经典的书籍开始。这本书名萦绕在我的耳边已经好久了，&lt;br&gt;
+读这本书，惊叹作者对于一件自己未曾经历的事情能描述的这么详尽，将一个人内心活动可以写的如此细腻。不管对于历史还是写作，这本书都是一本可以时常拿在手边不停翻开的著作。书中更是金名频出。&lt;br&gt;
+我自认为自己是一个学渣，因为除了考试要考的这些科目勉强过关以外。像历史、地理和政治这些几乎一窍不通。差到什么程度呢，30 岁之前我几乎连中国历史这些朝代顺序都搞不清楚。中国以外的历史就更加陌生，随便说个历史人物，我猜个年代，可能会让稍微有些常识的人笑掉大牙。&lt;br&gt;
+最初促进我重拾这些东西的原因是孩子，因为要讲给孩子。慢慢发现这些曾经觉得无聊透顶的内容是多么有趣。&lt;br&gt;
+我是先接触的听书，然后开始读书。从最初的一年读不了一本，现在一年竟然可以阅读二十多本，而且越往后，只会不停的增加。&lt;br&gt;
+通过阅读我将这些断断续续的历史以及人物慢慢串在了一起，也是因为了解的这些伟人的事迹，才会平静的面对生活中的小事。因为相比他们曾经面对的，我们遇到的几乎都只能算是小事。&lt;/p&gt;</description>
     </item>
     <item>
       <title>基于休闲合成游戏的数据同步方案实践</title>
       <link>https://luojiego.com/posts/prediction-rollback-with-merge-games/</link>
       <pubDate>Fri, 27 Dec 2024 06:45:15 +0800</pubDate>
       <guid>https://luojiego.com/posts/prediction-rollback-with-merge-games/</guid>
-      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;&#xA;&lt;p&gt;本文将以一个休闲合成类游戏的实践经验为切入点，探讨游戏开发中的数据同步方案。在这个合成游戏中，玩家需要在地图上移动和合成物体，涉及复杂的验证逻辑和数据同步问题。&lt;/p&gt;&#xA;&lt;h2 id=&#34;一合成游戏的核心玩法&#34;&gt;一、合成游戏的核心玩法&lt;/h2&gt;&#xA;&lt;p&gt;在这款休闲合成游戏中，玩家主要进行两种操作：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;移动物体：在地图格子间移动不同大小的物体&lt;/li&gt;&#xA;&lt;li&gt;合成物体：将多个相同物体合成为新的物体，可能触发额外产出&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;这些看似简单的操作，实际上涉及复杂的验证逻辑和状态同步问题。&lt;/p&gt;&#xA;&lt;h2 id=&#34;二同步方案的选择&#34;&gt;二、同步方案的选择&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-我们的选择预测回滚&#34;&gt;2.1 我们的选择：预测回滚&lt;/h3&gt;&#xA;&lt;p&gt;在开发这款游戏时，我们选择了预测回滚(Prediction Rollback)同步方案。主要考虑因素是：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;需要保证游戏操作的流畅性&lt;/li&gt;&#xA;&lt;li&gt;对网络延迟有一定的容忍度&lt;/li&gt;&#xA;&lt;li&gt;需要严格的服务器验证&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;本文将以一个休闲合成类游戏的实践经验为切入点，探讨游戏开发中的数据同步方案。在这个合成游戏中，玩家需要在地图上移动和合成物体，涉及复杂的验证逻辑和数据同步问题。&lt;/p&gt;
+&lt;h2 id=&#34;一合成游戏的核心玩法&#34;&gt;一、合成游戏的核心玩法&lt;/h2&gt;
+&lt;p&gt;在这款休闲合成游戏中，玩家主要进行两种操作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;移动物体：在地图格子间移动不同大小的物体&lt;/li&gt;
+&lt;li&gt;合成物体：将多个相同物体合成为新的物体，可能触发额外产出&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这些看似简单的操作，实际上涉及复杂的验证逻辑和状态同步问题。&lt;/p&gt;
+&lt;h2 id=&#34;二同步方案的选择&#34;&gt;二、同步方案的选择&lt;/h2&gt;
+&lt;h3 id=&#34;21-我们的选择预测回滚&#34;&gt;2.1 我们的选择：预测回滚&lt;/h3&gt;
+&lt;p&gt;在开发这款游戏时，我们选择了预测回滚(Prediction Rollback)同步方案。主要考虑因素是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;需要保证游戏操作的流畅性&lt;/li&gt;
+&lt;li&gt;对网络延迟有一定的容忍度&lt;/li&gt;
+&lt;li&gt;需要严格的服务器验证&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>顺心而活，平静前行 - 《人间值得》读书笔记</title>
       <link>https://luojiego.com/posts/never-give-up/</link>
       <pubDate>Wed, 25 Dec 2024 23:23:41 +0800</pubDate>
       <guid>https://luojiego.com/posts/never-give-up/</guid>
-      <description>&lt;p&gt;这本薄薄的小书其实给了我很多的勇气，作者多次提到人生其实就是一个人在生活。不要按照别人的样子来过自己的人生，更不用去追求太多身外之物，遵从本心，每天努力的工作就好。&lt;br&gt;&#xA;我这几年的问题就是在工作太使劲，太着急，因而很难处理好人际关系，所以痛苦。我应该多去体会作者说的那句：“人生不要太用力”。我需要慢下来，活出自己的人生，不应该一直向外寻找。&lt;/p&gt;</description>
+      <description>&lt;p&gt;这本薄薄的小书其实给了我很多的勇气，作者多次提到人生其实就是一个人在生活。不要按照别人的样子来过自己的人生，更不用去追求太多身外之物，遵从本心，每天努力的工作就好。&lt;br&gt;
+我这几年的问题就是在工作太使劲，太着急，因而很难处理好人际关系，所以痛苦。我应该多去体会作者说的那句：“人生不要太用力”。我需要慢下来，活出自己的人生，不应该一直向外寻找。&lt;/p&gt;</description>
     </item>
     <item>
       <title>人生是一场追求幸福的旅程 -《卓越》读书笔记</title>
       <link>https://luojiego.com/posts/zhuo-yue-notes/</link>
       <pubDate>Tue, 24 Dec 2024 23:50:08 +0800</pubDate>
       <guid>https://luojiego.com/posts/zhuo-yue-notes/</guid>
-      <description>&lt;p&gt;《幸福的方法》中提到，人究竟是因为成功才幸福还是因为幸福才成功。这个问题的答案是显而易见的，当然是因为幸福才成功的。这本书的主题虽然在讲教育，但是实际上也是在讲幸福的方法。首先，家长要让自己变得足够幸福，才能教会子女幸福的方法。&lt;br&gt;&#xA;我们终其一生的目标就是让自己变得更加幸福，因为子女如果没有教育好，我们的幸福也是会打折扣的。我们要将自己变得通透，不断去追求正确的东西，给孩子做好榜样。让他们看到父母是如何学习如何生活的。&lt;/p&gt;</description>
+      <description>&lt;p&gt;《幸福的方法》中提到，人究竟是因为成功才幸福还是因为幸福才成功。这个问题的答案是显而易见的，当然是因为幸福才成功的。这本书的主题虽然在讲教育，但是实际上也是在讲幸福的方法。首先，家长要让自己变得足够幸福，才能教会子女幸福的方法。&lt;br&gt;
+我们终其一生的目标就是让自己变得更加幸福，因为子女如果没有教育好，我们的幸福也是会打折扣的。我们要将自己变得通透，不断去追求正确的东西，给孩子做好榜样。让他们看到父母是如何学习如何生活的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>游戏 GM 指令系统设计与优化指南：从复杂到简单的演进之路</title>
       <link>https://luojiego.com/posts/gm-add-item-design/</link>
       <pubDate>Mon, 23 Dec 2024 23:07:50 +0800</pubDate>
       <guid>https://luojiego.com/posts/gm-add-item-design/</guid>
-      <description>&lt;h2 id=&#34;1-系统概述&#34;&gt;1. 系统概述&lt;/h2&gt;&#xA;&lt;p&gt;本文档详细描述了游戏 GM 指令系统的设计演进过程，重点关注如何通过持续优化提升使用体验。该系统主要用于管理游戏中的道具和货币添加操作，展现了从最初的复杂设计到最终的智能化处理的完整优化历程。&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-系统演进阶段&#34;&gt;2. 系统演进阶段&lt;/h2&gt;&#xA;&lt;h3 id=&#34;21-初始版本add_category&#34;&gt;2.1 初始版本（add_category）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;指令格式&lt;/strong&gt;：&lt;code&gt;add_category &amp;lt;类型枚举&amp;gt; &amp;lt;配置表ID&amp;gt; &amp;lt;数量&amp;gt;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;存在问题&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;参数过多，使用复杂&lt;/li&gt;&#xA;&lt;li&gt;枚举值容易拼写错误&lt;/li&gt;&#xA;&lt;li&gt;用户需要记忆物品类型&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;使用示例&lt;/strong&gt;：&lt;code&gt;add_category ITEM 10001 1&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;22-第一次优化指令拆分&#34;&gt;2.2 第一次优化（指令拆分）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;新增指令&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;add_cur&lt;/code&gt;：专门用于添加货币&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;add_item&lt;/code&gt;：专门用于添加道具&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;改进点&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;减少参数数量（仅需ID和数量）&lt;/li&gt;&#xA;&lt;li&gt;明确指令用途&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;存在问题&lt;/strong&gt;：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;用户仍会混淆物品类型&lt;/li&gt;&#xA;&lt;li&gt;经常出现货币指令误输入道具ID的情况&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h2 id=&#34;1-系统概述&#34;&gt;1. 系统概述&lt;/h2&gt;
+&lt;p&gt;本文档详细描述了游戏 GM 指令系统的设计演进过程，重点关注如何通过持续优化提升使用体验。该系统主要用于管理游戏中的道具和货币添加操作，展现了从最初的复杂设计到最终的智能化处理的完整优化历程。&lt;/p&gt;
+&lt;h2 id=&#34;2-系统演进阶段&#34;&gt;2. 系统演进阶段&lt;/h2&gt;
+&lt;h3 id=&#34;21-初始版本add_category&#34;&gt;2.1 初始版本（add_category）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;指令格式&lt;/strong&gt;：&lt;code&gt;add_category &amp;lt;类型枚举&amp;gt; &amp;lt;配置表ID&amp;gt; &amp;lt;数量&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;存在问题&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;参数过多，使用复杂&lt;/li&gt;
+&lt;li&gt;枚举值容易拼写错误&lt;/li&gt;
+&lt;li&gt;用户需要记忆物品类型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;使用示例&lt;/strong&gt;：&lt;code&gt;add_category ITEM 10001 1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;22-第一次优化指令拆分&#34;&gt;2.2 第一次优化（指令拆分）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;新增指令&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;add_cur&lt;/code&gt;：专门用于添加货币&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;add_item&lt;/code&gt;：专门用于添加道具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;改进点&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;减少参数数量（仅需ID和数量）&lt;/li&gt;
+&lt;li&gt;明确指令用途&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;存在问题&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;用户仍会混淆物品类型&lt;/li&gt;
+&lt;li&gt;经常出现货币指令误输入道具ID的情况&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>选择大于努力 -《底层逻辑》读书笔记</title>
@@ -181,182 +446,381 @@
       <link>https://luojiego.com/posts/ancient-capital/</link>
       <pubDate>Sun, 22 Dec 2024 23:07:34 +0800</pubDate>
       <guid>https://luojiego.com/posts/ancient-capital/</guid>
-      <description>&lt;p&gt;很意外的结局。究竟千重子是选择了真一还是龙助？到底秀男喜欢的是千重子还是秀子认为的幻影，这个结局太开放了。&lt;br&gt;&#xA;当然，从本书的阅读体验上而言，看到的都是美景，影射以及日本的文化。从开始的老枫树干上的紫花地丁开了花，到紫花地丁的凋谢，最后真一指给哥哥龙助看树干上的紫花地丁。全篇总计出现 32 次紫花地丁。千重子感觉就是寄生在这颗老枫树干上，思念着自己的姐妹。本书讲了日本的许多风俗、节日。&lt;/p&gt;</description>
+      <description>&lt;p&gt;很意外的结局。究竟千重子是选择了真一还是龙助？到底秀男喜欢的是千重子还是秀子认为的幻影，这个结局太开放了。&lt;br&gt;
+当然，从本书的阅读体验上而言，看到的都是美景，影射以及日本的文化。从开始的老枫树干上的紫花地丁开了花，到紫花地丁的凋谢，最后真一指给哥哥龙助看树干上的紫花地丁。全篇总计出现 32 次紫花地丁。千重子感觉就是寄生在这颗老枫树干上，思念着自己的姐妹。本书讲了日本的许多风俗、节日。&lt;/p&gt;</description>
     </item>
     <item>
       <title>学习阅读的重要性 - 《阅读与写作 50 讲》笔记</title>
       <link>https://luojiego.com/posts/read_and_writing_notes/</link>
       <pubDate>Tue, 06 Aug 2024 23:51:30 +0800</pubDate>
       <guid>https://luojiego.com/posts/read_and_writing_notes/</guid>
-      <description>&lt;p&gt;正如吴军老师说的：因为我们高考之后几乎不会参加语文水平考试，所以很多人都有错觉，觉得自己的“语文”水平不错。然而事实并非如此，仔细去审视一下，我们很难在工作中写一封合格的邮件、无法准确表达，甚至连简单的评论也写不好。&lt;/p&gt;&#xA;&lt;p&gt;因为今年减少了在视频平台花费的时间，看的书稍微多了一些。但我发觉我的阅读水平需要提升。例如今天晚上听李蕾讲经典，解读《白鹿原》的时候，明明这本书在十年前读过，可几乎没有多少印象了。在读小说《古都》的时候，关于太吉郞的一些描写我搞不清楚作者的意图。&lt;/p&gt;&#xA;&lt;p&gt;去年看了三分之一的《如何阅读一本书》，最大的收获的是：不用完整的看完一书。显然阅读不是天生就会，甚至我们在学校习得的好多习惯是错误的。&lt;/p&gt;&#xA;&lt;p&gt;在读《人人都能用英语》时，李老师说：写作的时候，没有想清楚，连写出来的必要都没有。其实不仅是写作，说话或者沟通的时候，最好是先想清楚，尽可能避免张口就来。&lt;/p&gt;&#xA;&lt;p&gt;吴军老师的专栏用了超过一半的篇幅来解读如何阅读经典。恰好去年年底，我用了近一个月的通勤及打扫家务的时间，听了近百本李蕾解读的经典，小说中的人物及经历，让我的心变得更加柔软，这些著作彼此互补了。&lt;/p&gt;&#xA;&lt;p&gt;阅读完专栏之后，我读完了川端康成的小说《古都》，仔细感受了一下日本作家的那种“物哀”。读了茨威格的《人类群星闪耀时》，跟我正在读的吴军老师的《脉络》，以及罗胖得到的节目《文明》彼此补充，恶补一下我这个历史文盲。&lt;/p&gt;&#xA;&lt;p&gt;未来，我还会花更多的时间阅读，但依然要注意阅读的技巧，还要不停学习如何阅读。&lt;/p&gt;</description>
+      <description>&lt;p&gt;正如吴军老师说的：因为我们高考之后几乎不会参加语文水平考试，所以很多人都有错觉，觉得自己的“语文”水平不错。然而事实并非如此，仔细去审视一下，我们很难在工作中写一封合格的邮件、无法准确表达，甚至连简单的评论也写不好。&lt;/p&gt;
+&lt;p&gt;因为今年减少了在视频平台花费的时间，看的书稍微多了一些。但我发觉我的阅读水平需要提升。例如今天晚上听李蕾讲经典，解读《白鹿原》的时候，明明这本书在十年前读过，可几乎没有多少印象了。在读小说《古都》的时候，关于太吉郞的一些描写我搞不清楚作者的意图。&lt;/p&gt;
+&lt;p&gt;去年看了三分之一的《如何阅读一本书》，最大的收获的是：不用完整的看完一书。显然阅读不是天生就会，甚至我们在学校习得的好多习惯是错误的。&lt;/p&gt;
+&lt;p&gt;在读《人人都能用英语》时，李老师说：写作的时候，没有想清楚，连写出来的必要都没有。其实不仅是写作，说话或者沟通的时候，最好是先想清楚，尽可能避免张口就来。&lt;/p&gt;
+&lt;p&gt;吴军老师的专栏用了超过一半的篇幅来解读如何阅读经典。恰好去年年底，我用了近一个月的通勤及打扫家务的时间，听了近百本李蕾解读的经典，小说中的人物及经历，让我的心变得更加柔软，这些著作彼此互补了。&lt;/p&gt;
+&lt;p&gt;阅读完专栏之后，我读完了川端康成的小说《古都》，仔细感受了一下日本作家的那种“物哀”。读了茨威格的《人类群星闪耀时》，跟我正在读的吴军老师的《脉络》，以及罗胖得到的节目《文明》彼此补充，恶补一下我这个历史文盲。&lt;/p&gt;
+&lt;p&gt;未来，我还会花更多的时间阅读，但依然要注意阅读的技巧，还要不停学习如何阅读。&lt;/p&gt;</description>
     </item>
     <item>
       <title>多学一门理解世界的语言 - 《人人都能用英语》读书笔记</title>
       <link>https://luojiego.com/posts/everyone-can-use-english-notes/</link>
       <pubDate>Thu, 18 Jul 2024 23:36:55 +0800</pubDate>
       <guid>https://luojiego.com/posts/everyone-can-use-english-notes/</guid>
-      <description>&lt;p&gt;高中时期我的英语水平还过得去，甚至高考还取得了不错的成绩。但是上了大学之后，几乎再也没有心思学习英语，四级考试参加了五次，最后一次 421，离及格差 4 分。查分数的时候，我已经找到了工作，所以也没再想去尝试考一次。&lt;br&gt;&#xA;工作之后，英语的重要性还是慢慢体现会来，许多文档如果不看英语，就得搜索中文内容，但是中文博客内容大多数人都没有打算为内容负责，质量比较差。&lt;br&gt;&#xA;印象比较深刻是在 2014 年年底的时候，有想法好好补一下英语，但是当时根本也没有心思学习。回头想想，在深圳的那几年，有大把的周末空闲时光，但是从来没有静下心思学习，时间几乎都浪费掉了。&lt;br&gt;&#xA;时间一年一年过去，我总在不断的尝试，但是从未有过实质性的变化，甚至为了提升英语水平，我订阅过两年 Medium 会员。但也没有花费多少功夫去看。&lt;br&gt;&#xA;2022 年，在极客时间上学习了专栏&lt;a href=&#34;https://time.geekbang.org/column/intro/100051901&#34;&gt;《互联网人的英语私教课》&lt;/a&gt;，我意识到自己的单词积累太薄弱了。开始在欧路词典上背单词，坚持到了今天，总花学习了 802 天，共学习 19535 分钟，大约为 325 小时。&lt;br&gt;&#xA;效果还是比较明显的，去年我上班通勤路上看英文版的 《Code Compelete 2》，到家看中文版，大概花了两个多月。&lt;br&gt;&#xA;在读了李笑来的《做时间的朋友》，我才意识到为什么我会坚持下来背单词。因为每天的单词量只有 10 个，没有制定高不可攀的目标，做时间的朋友，日积月累，很容易就坚持了下来。如今，我每天都会熟练打开词典背单词。英语带给我的收获比我想像中的还要大。&lt;br&gt;&#xA;由于政治的原因，我们看到的都是别人希望我们看到的。所以，尽可能多学习一门语言。&lt;br&gt;&#xA;对我而言，最简单的肯定是英语，不需要翻译去阅读英语书籍，带给我相当多的便利，也节省了不少时间。未来还需要每天坚持学习英语，坚持阅读，让自己不断的拓宽自己的知识边界。&lt;/p&gt;</description>
+      <description>&lt;p&gt;高中时期我的英语水平还过得去，甚至高考还取得了不错的成绩。但是上了大学之后，几乎再也没有心思学习英语，四级考试参加了五次，最后一次 421，离及格差 4 分。查分数的时候，我已经找到了工作，所以也没再想去尝试考一次。&lt;br&gt;
+工作之后，英语的重要性还是慢慢体现会来，许多文档如果不看英语，就得搜索中文内容，但是中文博客内容大多数人都没有打算为内容负责，质量比较差。&lt;br&gt;
+印象比较深刻是在 2014 年年底的时候，有想法好好补一下英语，但是当时根本也没有心思学习。回头想想，在深圳的那几年，有大把的周末空闲时光，但是从来没有静下心思学习，时间几乎都浪费掉了。&lt;br&gt;
+时间一年一年过去，我总在不断的尝试，但是从未有过实质性的变化，甚至为了提升英语水平，我订阅过两年 Medium 会员。但也没有花费多少功夫去看。&lt;br&gt;
+2022 年，在极客时间上学习了专栏&lt;a href=&#34;https://time.geekbang.org/column/intro/100051901&#34;&gt;《互联网人的英语私教课》&lt;/a&gt;，我意识到自己的单词积累太薄弱了。开始在欧路词典上背单词，坚持到了今天，总花学习了 802 天，共学习 19535 分钟，大约为 325 小时。&lt;br&gt;
+效果还是比较明显的，去年我上班通勤路上看英文版的 《Code Compelete 2》，到家看中文版，大概花了两个多月。&lt;br&gt;
+在读了李笑来的《做时间的朋友》，我才意识到为什么我会坚持下来背单词。因为每天的单词量只有 10 个，没有制定高不可攀的目标，做时间的朋友，日积月累，很容易就坚持了下来。如今，我每天都会熟练打开词典背单词。英语带给我的收获比我想像中的还要大。&lt;br&gt;
+由于政治的原因，我们看到的都是别人希望我们看到的。所以，尽可能多学习一门语言。&lt;br&gt;
+对我而言，最简单的肯定是英语，不需要翻译去阅读英语书籍，带给我相当多的便利，也节省了不少时间。未来还需要每天坚持学习英语，坚持阅读，让自己不断的拓宽自己的知识边界。&lt;/p&gt;</description>
     </item>
     <item>
       <title>正确方法的重要性 - 《把时间当朋友》读书笔记</title>
       <link>https://luojiego.com/posts/treat-time-as-a-friend/</link>
       <pubDate>Wed, 10 Jul 2024 23:23:23 +0800</pubDate>
       <guid>https://luojiego.com/posts/treat-time-as-a-friend/</guid>
-      <description>&lt;p&gt;“只要方向是对的，哪怕道路再曲折，也终将能够走到我们心中的目的地”。&lt;br&gt;&#xA;活了三十多年，终于明白做事的方法或者说方向有多重要。我们痛苦的根源就是把简单的事情做不好，从而影响了接下来的每一件事。&lt;br&gt;&#xA;就像本书提到的那样，时间根本不可能管理。要深信积累的力量，时间才会成为我们的朋友。二十多岁的时候，曾经劝告过别人，不要太有功利心，特别是在学习上，要深信积累的力量。&lt;br&gt;&#xA;书到提到一些观点会让我做事更加有力量感。只要做事，肯定会出错。出错之后，一定会有人来嘲笑你。但是嘲笑你的人，一般都不怎么样。只有认真做事的人，才能明白做好会有多么的不容易。这些人更多的可能是会鼓励你。&lt;br&gt;&#xA;作者提到自己很早拿了驾照，却从来没有开过车，因为打车更方便。我到现在还没有考驾照，一是工作的确比较忙，抽不出时间；其次的确没有买车的需求；最后如果决定要买车，再专心把开车的技术学好，会更加的实用。&lt;/p&gt;</description>
+      <description>&lt;p&gt;“只要方向是对的，哪怕道路再曲折，也终将能够走到我们心中的目的地”。&lt;br&gt;
+活了三十多年，终于明白做事的方法或者说方向有多重要。我们痛苦的根源就是把简单的事情做不好，从而影响了接下来的每一件事。&lt;br&gt;
+就像本书提到的那样，时间根本不可能管理。要深信积累的力量，时间才会成为我们的朋友。二十多岁的时候，曾经劝告过别人，不要太有功利心，特别是在学习上，要深信积累的力量。&lt;br&gt;
+书到提到一些观点会让我做事更加有力量感。只要做事，肯定会出错。出错之后，一定会有人来嘲笑你。但是嘲笑你的人，一般都不怎么样。只有认真做事的人，才能明白做好会有多么的不容易。这些人更多的可能是会鼓励你。&lt;br&gt;
+作者提到自己很早拿了驾照，却从来没有开过车，因为打车更方便。我到现在还没有考驾照，一是工作的确比较忙，抽不出时间；其次的确没有买车的需求；最后如果决定要买车，再专心把开车的技术学好，会更加的实用。&lt;/p&gt;</description>
     </item>
     <item>
       <title>追寻生命的意义 -《活出生命的意义》读书笔记</title>
       <link>https://luojiego.com/posts/mans-search-for-meaning-notes/</link>
       <pubDate>Sun, 23 Jun 2024 22:28:23 +0800</pubDate>
       <guid>https://luojiego.com/posts/mans-search-for-meaning-notes/</guid>
-      <description>&lt;p&gt;今天是我三十四岁的生日，赶巧今天有时间写这本书的总结。&lt;br&gt;&#xA;关于意义，印象比较深刻的一句话来自尼采：“人生本来没有意义，追寻人生意义的过程才是有意义的。”&lt;br&gt;&#xA;作者弗兰克尔经历了那么多的磨难，还能从容面对，显然跟他早年间就思考人生的意义有比较大的关联。&lt;br&gt;&#xA;作者坚信，每件事情都有其存在或者发生的意义，也是他提出意义疗法的核心。正是由于对所发生的每件事情，特别是苦难，若是去深入思考其积极意义，才能更快的从这种痛苦中走出来。&lt;br&gt;&#xA;最后我想说，思考生命的意义就充满了意义，这种思考会让我们远离低级趣味，远离那些嘈杂的声音，在凡尘俗世中可以平静的过一生。&lt;/p&gt;</description>
+      <description>&lt;p&gt;今天是我三十四岁的生日，赶巧今天有时间写这本书的总结。&lt;br&gt;
+关于意义，印象比较深刻的一句话来自尼采：“人生本来没有意义，追寻人生意义的过程才是有意义的。”&lt;br&gt;
+作者弗兰克尔经历了那么多的磨难，还能从容面对，显然跟他早年间就思考人生的意义有比较大的关联。&lt;br&gt;
+作者坚信，每件事情都有其存在或者发生的意义，也是他提出意义疗法的核心。正是由于对所发生的每件事情，特别是苦难，若是去深入思考其积极意义，才能更快的从这种痛苦中走出来。&lt;br&gt;
+最后我想说，思考生命的意义就充满了意义，这种思考会让我们远离低级趣味，远离那些嘈杂的声音，在凡尘俗世中可以平静的过一生。&lt;/p&gt;</description>
     </item>
     <item>
       <title>我生命中的光 -《你就是孩子最好的玩具》读书笔记</title>
       <link>https://luojiego.com/posts/the-go-to-moms-parents-guid/</link>
       <pubDate>Tue, 18 Jun 2024 23:27:18 +0800</pubDate>
       <guid>https://luojiego.com/posts/the-go-to-moms-parents-guid/</guid>
-      <description>&lt;p&gt;媳妇建议我的总结可以更加丰富一些，所以从这本书开始，我决定给每个总结加个标题。&lt;br&gt;&#xA;在没有遇到媳妇之前，我的世界是灰暗的，仿佛如深海，没有光照。&lt;br&gt;&#xA;在最美的年华我们相遇，她把最美的青春给了我。&lt;br&gt;&#xA;在不到 20 岁的年纪我尝试去爱一个人，这带给我生命的第一次转机。&lt;br&gt;&#xA;但人却是很难变化的，我还是太固执了。30 岁之前，媳妇要用爱、耐心和陪伴来感化我。&lt;br&gt;&#xA;19 年国庆前，媳妇给我推荐了樊登的沟通课。接下来在一个多月的时间听了樊登读书 APP 近百本书籍，我迷茫的人生又有光照进来了。&lt;br&gt;&#xA;这两次的光芒都是媳妇带给我的，时常在想，到底是上辈子做了多大的好事，才能遇到她。&lt;br&gt;&#xA;关于亲子关系，没有接触之前，我根本无法跟孩子友好相处。在听了亲子系列书籍的半年之内，我跟灿灿的相处的相当融洽。其中最具代表性的当属《你就是孩子最好的玩具》。&lt;br&gt;&#xA;当未将书籍的精髓内化之前，它的力量会维持一段时间，但会慢慢失去作用，所以我开始阅读电子书，详细而完整的读一遍。&lt;br&gt;&#xA;我知道，要跟孩子和谐相处，一本书肯定不够，我还是会抽出时间读更多的相关书籍，特别是我还有两个孩子要培养。&lt;br&gt;&#xA;这是一本相当薄的书，但却是开启亲子关系最好的钥匙。&lt;/p&gt;</description>
+      <description>&lt;p&gt;媳妇建议我的总结可以更加丰富一些，所以从这本书开始，我决定给每个总结加个标题。&lt;br&gt;
+在没有遇到媳妇之前，我的世界是灰暗的，仿佛如深海，没有光照。&lt;br&gt;
+在最美的年华我们相遇，她把最美的青春给了我。&lt;br&gt;
+在不到 20 岁的年纪我尝试去爱一个人，这带给我生命的第一次转机。&lt;br&gt;
+但人却是很难变化的，我还是太固执了。30 岁之前，媳妇要用爱、耐心和陪伴来感化我。&lt;br&gt;
+19 年国庆前，媳妇给我推荐了樊登的沟通课。接下来在一个多月的时间听了樊登读书 APP 近百本书籍，我迷茫的人生又有光照进来了。&lt;br&gt;
+这两次的光芒都是媳妇带给我的，时常在想，到底是上辈子做了多大的好事，才能遇到她。&lt;br&gt;
+关于亲子关系，没有接触之前，我根本无法跟孩子友好相处。在听了亲子系列书籍的半年之内，我跟灿灿的相处的相当融洽。其中最具代表性的当属《你就是孩子最好的玩具》。&lt;br&gt;
+当未将书籍的精髓内化之前，它的力量会维持一段时间，但会慢慢失去作用，所以我开始阅读电子书，详细而完整的读一遍。&lt;br&gt;
+我知道，要跟孩子和谐相处，一本书肯定不够，我还是会抽出时间读更多的相关书籍，特别是我还有两个孩子要培养。&lt;br&gt;
+这是一本相当薄的书，但却是开启亲子关系最好的钥匙。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《只有偏执狂才能生存》读书笔记</title>
       <link>https://luojiego.com/posts/only-the-paranoid-survive/</link>
       <pubDate>Thu, 13 Jun 2024 23:23:45 +0800</pubDate>
       <guid>https://luojiego.com/posts/only-the-paranoid-survive/</guid>
-      <description>&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;&#xA;&lt;p&gt;管理人员如何应对十倍速变化，并且带领公司走过死亡之谷。&lt;br&gt;&#xA;”如果你是一名中层管理，别做一名懦夫。“我被震惊到了，我跟更高一层的人员并未谈过我的看法，而是在经过一段时间的内心挣扎之后，选择了离职。作为一名中层，看到上层已经远离了员工，脏事接二连三，我没有勇气去谈自己的看法。&lt;/p&gt;&#xA;&lt;h1 id=&#34;读书笔记&#34;&gt;读书笔记&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;你知道有变化，却不知道什么在变&lt;/strong&gt;。&lt;br&gt;&#xA;战略转折点虽然常由技术事件所引起，却不仅仅局限于技术工业范围。&lt;br&gt;&#xA;无论谁，都有可能成为我们每个人的合作者或竞争者，他们与在我们楼下工作的同事并无二致。&lt;strong&gt;技术的变化迟早会触及和改变你的企业中的根本部分&lt;/strong&gt;。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
+&lt;p&gt;管理人员如何应对十倍速变化，并且带领公司走过死亡之谷。&lt;br&gt;
+”如果你是一名中层管理，别做一名懦夫。“我被震惊到了，我跟更高一层的人员并未谈过我的看法，而是在经过一段时间的内心挣扎之后，选择了离职。作为一名中层，看到上层已经远离了员工，脏事接二连三，我没有勇气去谈自己的看法。&lt;/p&gt;
+&lt;h1 id=&#34;读书笔记&#34;&gt;读书笔记&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;你知道有变化，却不知道什么在变&lt;/strong&gt;。&lt;br&gt;
+战略转折点虽然常由技术事件所引起，却不仅仅局限于技术工业范围。&lt;br&gt;
+无论谁，都有可能成为我们每个人的合作者或竞争者，他们与在我们楼下工作的同事并无二致。&lt;strong&gt;技术的变化迟早会触及和改变你的企业中的根本部分&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《家庭教育指南》读书笔记</title>
       <link>https://luojiego.com/posts/family-education-guide/</link>
       <pubDate>Sun, 02 Jun 2024 22:03:19 +0800</pubDate>
       <guid>https://luojiego.com/posts/family-education-guide/</guid>
-      <description>&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;很快就能读完的一本工具书籍，从中学到不少方法和孩子互动的小任务，每一页的金句给我提供了好多写作的资源。&lt;/li&gt;&#xA;&lt;li&gt;我需要把家庭会议执行起来。&lt;/li&gt;&#xA;&lt;li&gt;关于孩子的教育问题，我需要花费更多的心思。听书+精读来提升自己的能力。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;读书笔记&#34;&gt;读书笔记&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;“体验相当于笃行；看书、求师、访友相当于博学；思考相当于审问、慎思、明辩。我们的治学次序是‘行是知之始’及自动的原则排列，可以说是把传统的道理颠倒过来。” —— 陶行知，人民教育家&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;只有父母的改变，才能带来孩子的改变，只是你的改变比较艰难，孩子的改变则出人意料。&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;“&lt;strong&gt;教育意味着一棵树摇动另一棵树，一朵云推动另一朵云。&lt;/strong&gt;” —— 卡尔·西奥多·雅斯贝尔斯，德国哲学家&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;教育是迷恋孩子成长的学问。&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;很快就能读完的一本工具书籍，从中学到不少方法和孩子互动的小任务，每一页的金句给我提供了好多写作的资源。&lt;/li&gt;
+&lt;li&gt;我需要把家庭会议执行起来。&lt;/li&gt;
+&lt;li&gt;关于孩子的教育问题，我需要花费更多的心思。听书+精读来提升自己的能力。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;读书笔记&#34;&gt;读书笔记&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;“体验相当于笃行；看书、求师、访友相当于博学；思考相当于审问、慎思、明辩。我们的治学次序是‘行是知之始’及自动的原则排列，可以说是把传统的道理颠倒过来。” —— 陶行知，人民教育家&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;只有父母的改变，才能带来孩子的改变，只是你的改变比较艰难，孩子的改变则出人意料。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;“&lt;strong&gt;教育意味着一棵树摇动另一棵树，一朵云推动另一朵云。&lt;/strong&gt;” —— 卡尔·西奥多·雅斯贝尔斯，德国哲学家&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;教育是迷恋孩子成长的学问。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>《穷查理宝典：查理·芒格智慧箴言录》读书笔记</title>
       <link>https://luojiego.com/posts/poor-charlies-almanack-notes/</link>
       <pubDate>Tue, 28 May 2024 23:19:12 +0800</pubDate>
       <guid>https://luojiego.com/posts/poor-charlies-almanack-notes/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;总结&#xA;&lt;ul&gt;&#xA;&lt;li&gt;这是一本越早看越有收益的一本书。&lt;/li&gt;&#xA;&lt;li&gt;我看完这本书的三分之一的时候，我鼓起勇气提出了辞职。因为人生太长，我要去认识更多的人，做更有意义的事情。&lt;/li&gt;&#xA;&lt;li&gt;我要像芒格学习，终身学习，终身成长。做正确的事情，不迎合他人。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;前言&#xA;&lt;ul&gt;&#xA;&lt;li&gt;即使你的特立独行让你在人群中不受欢迎……那就随他们去吧。&lt;/li&gt;&#xA;&lt;li&gt;巴菲特说股票本质上是公司的部分所有权，股票的价格就是由股票的价值，也就是公司的价值所决定的。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;ul&gt;
+&lt;li&gt;总结
+&lt;ul&gt;
+&lt;li&gt;这是一本越早看越有收益的一本书。&lt;/li&gt;
+&lt;li&gt;我看完这本书的三分之一的时候，我鼓起勇气提出了辞职。因为人生太长，我要去认识更多的人，做更有意义的事情。&lt;/li&gt;
+&lt;li&gt;我要像芒格学习，终身学习，终身成长。做正确的事情，不迎合他人。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;前言
+&lt;ul&gt;
+&lt;li&gt;即使你的特立独行让你在人群中不受欢迎……那就随他们去吧。&lt;/li&gt;
+&lt;li&gt;巴菲特说股票本质上是公司的部分所有权，股票的价格就是由股票的价值，也就是公司的价值所决定的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>开始使用 GitHub Pages</title>
       <link>https://luojiego.com/posts/start_use_github_pages/</link>
       <pubDate>Thu, 11 Apr 2024 11:47:25 +0800</pubDate>
       <guid>https://luojiego.com/posts/start_use_github_pages/</guid>
-      <description>&lt;p&gt;买个服务器单纯用来部署个博客挺浪费的，既然 GitHub 提供了，那就安心使用吧。&lt;br&gt;&#xA;后续直接使用 GitHub Pages，不再考虑单独使用服务器，浪费时间和精力。&lt;/p&gt;</description>
+      <description>&lt;p&gt;买个服务器单纯用来部署个博客挺浪费的，既然 GitHub 提供了，那就安心使用吧。&lt;br&gt;
+后续直接使用 GitHub Pages，不再考虑单独使用服务器，浪费时间和精力。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《别想太多啦》读书笔记</title>
       <link>https://luojiego.com/posts/stop-overthinking-reading-notes/</link>
       <pubDate>Sat, 17 Feb 2024 21:38:17 +0000</pubDate>
       <guid>https://luojiego.com/posts/stop-overthinking-reading-notes/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;不苛求自己，也别要求别人，活出自己喜欢的人生&lt;/strong&gt;。&lt;/li&gt;&#xA;&lt;li&gt;读书笔记&#xA;&lt;ul&gt;&#xA;&lt;li&gt;当你问“把这个东西放在哪里”，对方回复说“只要放在合适的位置就可以”。千万不要解读为“放在哪里都没关系”，而是要明白对方是希望你“根据自己的判断，放在适当的地方”&lt;/li&gt;&#xA;&lt;li&gt;人生漫漫，它是教会我们如何“适度”的老师。&lt;/li&gt;&#xA;&lt;li&gt;因为比起别人的评价，我更在意自己对所做的事情是否满意。&lt;/li&gt;&#xA;&lt;li&gt;被夸奖的猪能上树，被夸奖的和尚会跳舞。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;无意识帮助就是帮助时无意识，帮助后想不想来。如果想太多，那就不是帮助&lt;/strong&gt;。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;自己的方式使用时非常顺利，一旦强加给做事方式不同的人，就容易产生摩擦&lt;/strong&gt;。&lt;/li&gt;&#xA;&lt;li&gt;我们学习未知的领域，查阅、储备新知识。这些丰富的知识，总有一天会派上用场。&lt;/li&gt;&#xA;&lt;li&gt;只要保持好奇心与挑战精神，储备知识、朋友、梦想，永远保持第一次的心情，展现在眼前的人生就会像绿色的草原一样广阔而新鲜。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;不苛求自己，也别要求别人，活出自己喜欢的人生&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;读书笔记
+&lt;ul&gt;
+&lt;li&gt;当你问“把这个东西放在哪里”，对方回复说“只要放在合适的位置就可以”。千万不要解读为“放在哪里都没关系”，而是要明白对方是希望你“根据自己的判断，放在适当的地方”&lt;/li&gt;
+&lt;li&gt;人生漫漫，它是教会我们如何“适度”的老师。&lt;/li&gt;
+&lt;li&gt;因为比起别人的评价，我更在意自己对所做的事情是否满意。&lt;/li&gt;
+&lt;li&gt;被夸奖的猪能上树，被夸奖的和尚会跳舞。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;无意识帮助就是帮助时无意识，帮助后想不想来。如果想太多，那就不是帮助&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自己的方式使用时非常顺利，一旦强加给做事方式不同的人，就容易产生摩擦&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;我们学习未知的领域，查阅、储备新知识。这些丰富的知识，总有一天会派上用场。&lt;/li&gt;
+&lt;li&gt;只要保持好奇心与挑战精神，储备知识、朋友、梦想，永远保持第一次的心情，展现在眼前的人生就会像绿色的草原一样广阔而新鲜。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>《自学是门手艺》读书笔记</title>
       <link>https://luojiego.com/posts/the-craft-of-selfteaching-reading-notes/</link>
       <pubDate>Wed, 14 Feb 2024 22:49:26 +0000</pubDate>
       <guid>https://luojiego.com/posts/the-craft-of-selfteaching-reading-notes/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;没有自学能力的人，没有未来&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;从各国的历史上来看，自学技巧这个话题从未涉及到政治，无论是在东方还是西方都是如此。结果就是，在自学能力这个小领域中，留下并流传下来的信息，几乎从未被审查，从未被摧毁，从未被侵犯，从未被扭曲 ———— 真的是个特别罕见的“纯净的领域”  ———— 这真的是整个人类不可想像之意外好运。&lt;br&gt;&#xA;时间从来都是匀速的。最大的幻觉在于，总是以为“时间不够了” ———— 这个幻觉最坑人。&lt;br&gt;&#xA;无论学什么，都要耗费时间和精力，与此同时，更难的是保持耐心。&lt;br&gt;&#xA;&lt;strong&gt;过早引用&lt;/strong&gt;：对当前知识点的理解，依赖于对以后才能开始学习的某个甚至多个知识点的深入理解。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;没有自学能力的人，没有未来&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;从各国的历史上来看，自学技巧这个话题从未涉及到政治，无论是在东方还是西方都是如此。结果就是，在自学能力这个小领域中，留下并流传下来的信息，几乎从未被审查，从未被摧毁，从未被侵犯，从未被扭曲 ———— 真的是个特别罕见的“纯净的领域”  ———— 这真的是整个人类不可想像之意外好运。&lt;br&gt;
+时间从来都是匀速的。最大的幻觉在于，总是以为“时间不够了” ———— 这个幻觉最坑人。&lt;br&gt;
+无论学什么，都要耗费时间和精力，与此同时，更难的是保持耐心。&lt;br&gt;
+&lt;strong&gt;过早引用&lt;/strong&gt;：对当前知识点的理解，依赖于对以后才能开始学习的某个甚至多个知识点的深入理解。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《认知觉醒》读书笔记</title>
       <link>https://luojiego.com/posts/cognitive-awakening-reading-notes/</link>
       <pubDate>Sat, 03 Feb 2024 16:24:42 +0000</pubDate>
       <guid>https://luojiego.com/posts/cognitive-awakening-reading-notes/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;只取一个全书最触动自己的点，然后尽可能去实践、改变。这样读书不仅收获更大，而且也不会焦虑。&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;第一章大脑&#34;&gt;第一章：大脑&lt;/h1&gt;&#xA;&lt;p&gt;人们眼中的大脑虽然精密无比，堪称完美，科学技术发展至今也无法完全解开它的秘密。然后事实证明它并不完美，甚至问题重重，这些问题也正是让我们感到无能和痛苦的根源。&lt;br&gt;&#xA;我们当前遇到的几乎所有的成长问题都可以归结到目光短浅、即时满足的天性上，不过在现代社会，用避难趋易和急于求成来代指它们显然更加贴切。&lt;br&gt;&#xA;很多人在成长的过程中感到极度痛苦，就是因为他们总是用意志力去对抗本能和情绪，最后把自己搞得精疲力竭，却收效甚微。&lt;br&gt;&#xA;王小波说：&lt;strong&gt;人的一切痛苦，本质上都是对自己无能的愤怒&lt;/strong&gt;。&lt;br&gt;&#xA;不像武侠小说，现实生活中无论读书、考试，还是工作、赚钱，要想表现出色&lt;strong&gt;都必须经受长时间的磨练&lt;/strong&gt;。&lt;br&gt;&#xA;表层学习也是最能直接看到效果的，比如今天读了一本书、学习了五小时，背了 100 个单词……结果都立即可见，而底层的改变则不那么容易发生，所以急于求成的天性也会促使我们选择前者。&lt;br&gt;&#xA;如果你足够幸运，辛勤劳作之后产生的满足感也可能取代娱乐带来的直接快感&amp;ndash;既然有高层次的享受可选，你对低层次的享受自然就不那么依赖了。&lt;br&gt;&#xA;耐心就是这样，不能急于求成，允许自己缓慢地改变，甚至经常失败。无论结果如何，和自己对话都会产生效果。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;只取一个全书最触动自己的点，然后尽可能去实践、改变。这样读书不仅收获更大，而且也不会焦虑。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;第一章大脑&#34;&gt;第一章：大脑&lt;/h1&gt;
+&lt;p&gt;人们眼中的大脑虽然精密无比，堪称完美，科学技术发展至今也无法完全解开它的秘密。然后事实证明它并不完美，甚至问题重重，这些问题也正是让我们感到无能和痛苦的根源。&lt;br&gt;
+我们当前遇到的几乎所有的成长问题都可以归结到目光短浅、即时满足的天性上，不过在现代社会，用避难趋易和急于求成来代指它们显然更加贴切。&lt;br&gt;
+很多人在成长的过程中感到极度痛苦，就是因为他们总是用意志力去对抗本能和情绪，最后把自己搞得精疲力竭，却收效甚微。&lt;br&gt;
+王小波说：&lt;strong&gt;人的一切痛苦，本质上都是对自己无能的愤怒&lt;/strong&gt;。&lt;br&gt;
+不像武侠小说，现实生活中无论读书、考试，还是工作、赚钱，要想表现出色&lt;strong&gt;都必须经受长时间的磨练&lt;/strong&gt;。&lt;br&gt;
+表层学习也是最能直接看到效果的，比如今天读了一本书、学习了五小时，背了 100 个单词……结果都立即可见，而底层的改变则不那么容易发生，所以急于求成的天性也会促使我们选择前者。&lt;br&gt;
+如果你足够幸运，辛勤劳作之后产生的满足感也可能取代娱乐带来的直接快感&amp;ndash;既然有高层次的享受可选，你对低层次的享受自然就不那么依赖了。&lt;br&gt;
+耐心就是这样，不能急于求成，允许自己缓慢地改变，甚至经常失败。无论结果如何，和自己对话都会产生效果。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2023 年终总结</title>
       <link>https://luojiego.com/posts/2023-annual-summary/</link>
       <pubDate>Sun, 21 Jan 2024 12:17:34 +0000</pubDate>
       <guid>https://luojiego.com/posts/2023-annual-summary/</guid>
-      <description>&lt;h1 id=&#34;阅读&#34;&gt;阅读&lt;/h1&gt;&#xA;&lt;h2 id=&#34;阅读完的书籍&#34;&gt;阅读完的书籍&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;《代码大全2》&lt;/strong&gt;，实体书跟英语电子版完整的看了一遍。这本书算是一本程序员必读的书籍，但是真的是名字毁掉的是一本书。要我说这本书甚至可以翻译为程序员必读书籍 Top1。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;《浪潮之颠》&lt;/strong&gt;，大二就听过名字的一本书，但是没有看，一直拖到了今年。不过就是因为浪潮之颠，我要搜索中时候第一次听说了&lt;strong&gt;得到 App&lt;/strong&gt;，这让我又新增了一个学习的渠道。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;《别想太多啦》&lt;/strong&gt;，一本相当短，但是却充满了智慧的书籍。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;《夏洛的网》&lt;/strong&gt;，一本看似是写给小朋友的书籍，却跟《小王子》一样值得人反复揣摩的书籍。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;未完成&#34;&gt;未完成&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;《如何阅读一本书》：50%&lt;/li&gt;&#xA;&lt;li&gt;《人生只有一件事》：20%&lt;/li&gt;&#xA;&lt;li&gt;《敏捷开发》：10%&lt;/li&gt;&#xA;&lt;li&gt;《性能之巅》：10%&lt;/li&gt;&#xA;&lt;li&gt;《悉达多》：20%&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h1 id=&#34;阅读&#34;&gt;阅读&lt;/h1&gt;
+&lt;h2 id=&#34;阅读完的书籍&#34;&gt;阅读完的书籍&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;《代码大全2》&lt;/strong&gt;，实体书跟英语电子版完整的看了一遍。这本书算是一本程序员必读的书籍，但是真的是名字毁掉的是一本书。要我说这本书甚至可以翻译为程序员必读书籍 Top1。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;《浪潮之颠》&lt;/strong&gt;，大二就听过名字的一本书，但是没有看，一直拖到了今年。不过就是因为浪潮之颠，我要搜索中时候第一次听说了&lt;strong&gt;得到 App&lt;/strong&gt;，这让我又新增了一个学习的渠道。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;《别想太多啦》&lt;/strong&gt;，一本相当短，但是却充满了智慧的书籍。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;《夏洛的网》&lt;/strong&gt;，一本看似是写给小朋友的书籍，却跟《小王子》一样值得人反复揣摩的书籍。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;未完成&#34;&gt;未完成&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;《如何阅读一本书》：50%&lt;/li&gt;
+&lt;li&gt;《人生只有一件事》：20%&lt;/li&gt;
+&lt;li&gt;《敏捷开发》：10%&lt;/li&gt;
+&lt;li&gt;《性能之巅》：10%&lt;/li&gt;
+&lt;li&gt;《悉达多》：20%&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>2023-影视娱乐</title>
       <link>https://luojiego.com/posts/2023-movie/</link>
       <pubDate>Thu, 18 Jan 2024 21:55:04 +0000</pubDate>
       <guid>https://luojiego.com/posts/2023-movie/</guid>
-      <description>&lt;p&gt;1, 三个老枪手：开年第一部电影，一部老电影，之前看到过好几次，没有开始看。不免让我也开始思考我们的养老问题，到时候政府会不会给我们发养老金，我们会不会也要沦落到抢银行的地步？&lt;br&gt;&#xA;2, 十一罗汉：也是一部不错的抢银行的电影。&lt;br&gt;&#xA;3, 盗梦空间：回顾老电影，到底现在是不是在梦境中呢？陪媳妇做指甲过了凌晨，看到手机没有电了，第二天还要上班，这几天真累。&lt;br&gt;&#xA;4, 黑亚当：因为喜欢 DC 和漫威，所以找了阿里云资源。&lt;br&gt;&#xA;5, 满江红：非常喜欢，不停的反转，为主角一直在捏一把汉，跟媳妇在电影院看的，灿灿在游乐场玩，二宝老人在家照看。&lt;br&gt;&#xA;6, 黑豹：想找黑豹2 的资源，没有注意又把黑豹看了一遍，真的非常不错的一部漫威电影。&lt;br&gt;&#xA;7, 侏罗纪世界3: 看的时候感觉没什么，看完之后看了看影评，的确挺糟糕的一部电影，有太多糟心的东西在里面。&lt;br&gt;&#xA;8, 终结者·黑暗命运：最近的 ChatGPT 大火，真的感觉 AI 要统治人类了，我还是相当喜欢此类科幻片。&lt;br&gt;&#xA;9, 终结者·创世纪：感觉 Skynet 要开始啦&lt;br&gt;&#xA;10, 杀破狼2：我应该在电影院看过的电影，动作爽片，张晋真的非常帅，虽然他不是很火，但是真的帅。&lt;/p&gt;</description>
+      <description>&lt;p&gt;1, 三个老枪手：开年第一部电影，一部老电影，之前看到过好几次，没有开始看。不免让我也开始思考我们的养老问题，到时候政府会不会给我们发养老金，我们会不会也要沦落到抢银行的地步？&lt;br&gt;
+2, 十一罗汉：也是一部不错的抢银行的电影。&lt;br&gt;
+3, 盗梦空间：回顾老电影，到底现在是不是在梦境中呢？陪媳妇做指甲过了凌晨，看到手机没有电了，第二天还要上班，这几天真累。&lt;br&gt;
+4, 黑亚当：因为喜欢 DC 和漫威，所以找了阿里云资源。&lt;br&gt;
+5, 满江红：非常喜欢，不停的反转，为主角一直在捏一把汉，跟媳妇在电影院看的，灿灿在游乐场玩，二宝老人在家照看。&lt;br&gt;
+6, 黑豹：想找黑豹2 的资源，没有注意又把黑豹看了一遍，真的非常不错的一部漫威电影。&lt;br&gt;
+7, 侏罗纪世界3: 看的时候感觉没什么，看完之后看了看影评，的确挺糟糕的一部电影，有太多糟心的东西在里面。&lt;br&gt;
+8, 终结者·黑暗命运：最近的 ChatGPT 大火，真的感觉 AI 要统治人类了，我还是相当喜欢此类科幻片。&lt;br&gt;
+9, 终结者·创世纪：感觉 Skynet 要开始啦&lt;br&gt;
+10, 杀破狼2：我应该在电影院看过的电影，动作爽片，张晋真的非常帅，虽然他不是很火，但是真的帅。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2022 年终总结</title>
       <link>https://luojiego.com/posts/2022-annual-summary/</link>
       <pubDate>Sat, 14 Jan 2023 22:32:55 +0000</pubDate>
       <guid>https://luojiego.com/posts/2022-annual-summary/</guid>
-      <description>&lt;p&gt;迟到的年终总结，不想和去年一样，匆忙的总结，今年就多花了些时间，不过最主要还是写给我自己。&lt;/p&gt;&#xA;&lt;h1 id=&#34;最大的收获&#34;&gt;最大的收获&lt;/h1&gt;&#xA;&lt;h2 id=&#34;英语学习&#34;&gt;英语学习&lt;/h2&gt;&#xA;&lt;p&gt;去年的 11 月 30 日，我订阅了 Medium，花费 $50。虽然今年在 Medium 平台上花费的时间比较少，离自己制定的目标差了不少。但是我觉得至少督促了我加强了英语的学习，从三月份开始，我在 B 站的一个 Up 主的安利下，下载了欧路词典，说实话，我刚才购买了朗文词典 App，花费 128 元，转眼间就有购买了欧路的高级版，着实有点难受，但是至少我下载网上朗文词库时，心里没有负罪感了，毕竟我已经支持过正版了。从四月开始，我在学完极客时间课程《互联网人的英语私教课》后，意识到自己的单词量着实太着急了。无法高效的看完 Medium 上的文章，是英语水平太差了。如果不提高单词量，那么每一句对我来说都可能要使用翻译工具，效率有点差。所以我开始了平均每天的单词记忆，我选择了大学四词汇，对于每一个单词，我都会将朗文词库的每种释义的每个例名听一遍。这让我想起，高中的时候，为了记住五笔词根，把整个字典的每个字的编码都看了一遍，学完之后，果然一下子打字的速度就提上来了。虽然截止元旦前我还有接近 50% 的单词没有学完，但是我读英文书籍和听 Uncle Bob 关于 Clean Code 的演讲时，明显感觉压力没有那么大了。&lt;/p&gt;&#xA;&lt;h2 id=&#34;我选择&#34;&gt;“我选择”&lt;/h2&gt;&#xA;&lt;p&gt;之前在听樊登读书的时候，也曾对”我选择做 XXX，因为 XXX“。但是今年年初也有那么半个月内心真的是，我选择这样做，是因为你们逼我的。不过现在好多了，我已经清楚的意识，不论什么时候，我们都不能放弃选择的权力。时刻提醒我当前的所有选择，是因为我选择。&lt;/p&gt;&#xA;&lt;h2 id=&#34;编码水平提升&#34;&gt;编码水平提升&lt;/h2&gt;&#xA;&lt;p&gt;关于编码水平，直到我听完了 Uncle Bob 的激情演讲，读完 TCL 语言之父 John Ousterhout 的《软件设计哲学》，《人月神话》，《数据密集型应用系统设计》等书籍之后，我深刻意识到自己目前的水平还需要不断的提升。在今年的项目中，我虽然并未践行 TDD，但是对于我写的代码，基本上单元测试覆盖率已经达到了 80% 以上，对接的过程也是相当高效，终于不用再被别人频繁打断，能安心做事的感觉真好。未来的项目我依旧要不停的践行 Clean Code 的思想，借助 Copilot 及 ChatGPT ，将自己的编码水平可以提升到优秀开源代码的级别。&lt;/p&gt;</description>
+      <description>&lt;p&gt;迟到的年终总结，不想和去年一样，匆忙的总结，今年就多花了些时间，不过最主要还是写给我自己。&lt;/p&gt;
+&lt;h1 id=&#34;最大的收获&#34;&gt;最大的收获&lt;/h1&gt;
+&lt;h2 id=&#34;英语学习&#34;&gt;英语学习&lt;/h2&gt;
+&lt;p&gt;去年的 11 月 30 日，我订阅了 Medium，花费 $50。虽然今年在 Medium 平台上花费的时间比较少，离自己制定的目标差了不少。但是我觉得至少督促了我加强了英语的学习，从三月份开始，我在 B 站的一个 Up 主的安利下，下载了欧路词典，说实话，我刚才购买了朗文词典 App，花费 128 元，转眼间就有购买了欧路的高级版，着实有点难受，但是至少我下载网上朗文词库时，心里没有负罪感了，毕竟我已经支持过正版了。从四月开始，我在学完极客时间课程《互联网人的英语私教课》后，意识到自己的单词量着实太着急了。无法高效的看完 Medium 上的文章，是英语水平太差了。如果不提高单词量，那么每一句对我来说都可能要使用翻译工具，效率有点差。所以我开始了平均每天的单词记忆，我选择了大学四词汇，对于每一个单词，我都会将朗文词库的每种释义的每个例名听一遍。这让我想起，高中的时候，为了记住五笔词根，把整个字典的每个字的编码都看了一遍，学完之后，果然一下子打字的速度就提上来了。虽然截止元旦前我还有接近 50% 的单词没有学完，但是我读英文书籍和听 Uncle Bob 关于 Clean Code 的演讲时，明显感觉压力没有那么大了。&lt;/p&gt;
+&lt;h2 id=&#34;我选择&#34;&gt;“我选择”&lt;/h2&gt;
+&lt;p&gt;之前在听樊登读书的时候，也曾对”我选择做 XXX，因为 XXX“。但是今年年初也有那么半个月内心真的是，我选择这样做，是因为你们逼我的。不过现在好多了，我已经清楚的意识，不论什么时候，我们都不能放弃选择的权力。时刻提醒我当前的所有选择，是因为我选择。&lt;/p&gt;
+&lt;h2 id=&#34;编码水平提升&#34;&gt;编码水平提升&lt;/h2&gt;
+&lt;p&gt;关于编码水平，直到我听完了 Uncle Bob 的激情演讲，读完 TCL 语言之父 John Ousterhout 的《软件设计哲学》，《人月神话》，《数据密集型应用系统设计》等书籍之后，我深刻意识到自己目前的水平还需要不断的提升。在今年的项目中，我虽然并未践行 TDD，但是对于我写的代码，基本上单元测试覆盖率已经达到了 80% 以上，对接的过程也是相当高效，终于不用再被别人频繁打断，能安心做事的感觉真好。未来的项目我依旧要不停的践行 Clean Code 的思想，借助 Copilot 及 ChatGPT ，将自己的编码水平可以提升到优秀开源代码的级别。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2022 年我看过的电影</title>
       <link>https://luojiego.com/posts/2022-movie/</link>
       <pubDate>Fri, 13 Jan 2023 22:51:16 +0000</pubDate>
       <guid>https://luojiego.com/posts/2022-movie/</guid>
-      <description>&lt;ol&gt;&#xA;&lt;li&gt;沙丘：科幻巨作？没有太感觉出来&lt;/li&gt;&#xA;&lt;li&gt;爱情神话：究竟什么才是爱情，真的爱情真如神话那样一般吗？&lt;/li&gt;&#xA;&lt;li&gt;悬崖之上：谍战类型的片子，主要是因为主角光环才看的，质量还是过硬的。&lt;/li&gt;&#xA;&lt;li&gt;雄狮少年：去年口碑比较炸裂的作品，没有机会在电影院看。质量上乘，特别是看到媳妇能理解丈夫梦想的那一刻，我有点忍不住落泪了。&lt;/li&gt;&#xA;&lt;li&gt;怒火·重案：比较不错的港片，质量挺高。&lt;/li&gt;&#xA;&lt;li&gt;使徒行者：质量不错的港片。&lt;/li&gt;&#xA;&lt;li&gt;使徒行者2：谍影行动。19 年扁桃体手术住院期间，买了两次票，最终也没有去看成。质量不错。&lt;/li&gt;&#xA;&lt;li&gt;误杀2：感觉没有第一步那样引人入胜。&lt;/li&gt;&#xA;&lt;li&gt;升级：比较喜欢的科幻类电影。&lt;/li&gt;&#xA;&lt;li&gt;寒战2：质量不错的港片。&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+      <description>&lt;ol&gt;
+&lt;li&gt;沙丘：科幻巨作？没有太感觉出来&lt;/li&gt;
+&lt;li&gt;爱情神话：究竟什么才是爱情，真的爱情真如神话那样一般吗？&lt;/li&gt;
+&lt;li&gt;悬崖之上：谍战类型的片子，主要是因为主角光环才看的，质量还是过硬的。&lt;/li&gt;
+&lt;li&gt;雄狮少年：去年口碑比较炸裂的作品，没有机会在电影院看。质量上乘，特别是看到媳妇能理解丈夫梦想的那一刻，我有点忍不住落泪了。&lt;/li&gt;
+&lt;li&gt;怒火·重案：比较不错的港片，质量挺高。&lt;/li&gt;
+&lt;li&gt;使徒行者：质量不错的港片。&lt;/li&gt;
+&lt;li&gt;使徒行者2：谍影行动。19 年扁桃体手术住院期间，买了两次票，最终也没有去看成。质量不错。&lt;/li&gt;
+&lt;li&gt;误杀2：感觉没有第一步那样引人入胜。&lt;/li&gt;
+&lt;li&gt;升级：比较喜欢的科幻类电影。&lt;/li&gt;
+&lt;li&gt;寒战2：质量不错的港片。&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     <item>
       <title>Ultra PAYGO 实体卡折腾记录</title>
       <link>https://luojiego.com/posts/ultra-paygo-paypal-appleid/</link>
       <pubDate>Sun, 25 Dec 2022 11:47:25 +0800</pubDate>
       <guid>https://luojiego.com/posts/ultra-paygo-paypal-appleid/</guid>
-      <description>&lt;p&gt;2020 年时我想在手机上安装 ShadowRocket 以方便我的网络搜索，但是因为没有美区账号所以无法下载。网上提供的免费账号没有一个能使用的。&lt;br&gt;&#xA;当时看有人说可以自行注册，但当时也搜索到可以直接购买一个账号的网页，索性就直接购买了一个。购买了之后，一顿操作，把所有的信息都修改成了我自己的账号。但是还要付费 ShadowRocket 软件的费用，当时忘记怎么弄的了，总之这个美区账号的支付我一直没有搞，当时也担心账号安全问题。&lt;br&gt;&#xA;然而两年都快要过去了，我发现有一个美区账号还是相当幸福的。毕竟国区因为游戏版号问题，如果要在手机上体验竞品还是非常麻烦的，安卓因为有模拟器，非常容易。但是手机端因为我一直使用的是 iPhone，国区因为版号问题根本就不可能有，所以切换成美区账号进行下载，再切换回来。&lt;br&gt;&#xA;最近也看到一些关于 Apple TV 的视频，虽说国区不售卖，但是用美区账号可以正常使用，而且体验极好，虽然有想购买的打算，但是最终放弃了。主要是我根本没有时间看，其次呢，家里的电视品质也不高。&lt;br&gt;&#xA;某天我看到大家说美区的 iCloud 如何如何好，但是想想自己当初毫无意识就将数据迁入到了中国区，以为速度能快一点，实际上并没有明显的感觉。有次我登录的是美区的账号，打开了 Apple Music，发现可以兑换 6 个月，但需要订阅，我信心满满的输入了我的招行信用卡信息，结果竟然告诉我绑定失败。此时我才明白，原来美区账号是不能使用中国的信用卡。好在苹果提供了 PayPal 的绑定，可是我也没有 PayPal 呀。&lt;br&gt;&#xA;搜索一圈之后，发现可以使用 Paygo 美国的实体卡来注册 Paypal，就在淘宝上下单买了一张。&lt;/p&gt;</description>
+      <description>&lt;p&gt;2020 年时我想在手机上安装 ShadowRocket 以方便我的网络搜索，但是因为没有美区账号所以无法下载。网上提供的免费账号没有一个能使用的。&lt;br&gt;
+当时看有人说可以自行注册，但当时也搜索到可以直接购买一个账号的网页，索性就直接购买了一个。购买了之后，一顿操作，把所有的信息都修改成了我自己的账号。但是还要付费 ShadowRocket 软件的费用，当时忘记怎么弄的了，总之这个美区账号的支付我一直没有搞，当时也担心账号安全问题。&lt;br&gt;
+然而两年都快要过去了，我发现有一个美区账号还是相当幸福的。毕竟国区因为游戏版号问题，如果要在手机上体验竞品还是非常麻烦的，安卓因为有模拟器，非常容易。但是手机端因为我一直使用的是 iPhone，国区因为版号问题根本就不可能有，所以切换成美区账号进行下载，再切换回来。&lt;br&gt;
+最近也看到一些关于 Apple TV 的视频，虽说国区不售卖，但是用美区账号可以正常使用，而且体验极好，虽然有想购买的打算，但是最终放弃了。主要是我根本没有时间看，其次呢，家里的电视品质也不高。&lt;br&gt;
+某天我看到大家说美区的 iCloud 如何如何好，但是想想自己当初毫无意识就将数据迁入到了中国区，以为速度能快一点，实际上并没有明显的感觉。有次我登录的是美区的账号，打开了 Apple Music，发现可以兑换 6 个月，但需要订阅，我信心满满的输入了我的招行信用卡信息，结果竟然告诉我绑定失败。此时我才明白，原来美区账号是不能使用中国的信用卡。好在苹果提供了 PayPal 的绑定，可是我也没有 PayPal 呀。&lt;br&gt;
+搜索一圈之后，发现可以使用 Paygo 美国的实体卡来注册 Paypal，就在淘宝上下单买了一张。&lt;/p&gt;</description>
     </item>
     <item>
       <title>我的常用软件字体设置</title>
       <link>https://luojiego.com/posts/my-font-settings/</link>
       <pubDate>Fri, 23 Dec 2022 18:28:59 +0000</pubDate>
       <guid>https://luojiego.com/posts/my-font-settings/</guid>
-      <description>&lt;p&gt;由于“霞鹜文楷”这个字体太好看了，不得不想要设置成为，我所有的非常常用的软件字体。&lt;br&gt;&#xA;但是这款字体的英文着实不是太漂亮，所以我的常用软件的首选字体是 “Roboto Mono”，这样中文字体会使用“霞鹜文楷”&lt;br&gt;&#xA;github 地址：&lt;a href=&#34;https://github.com/lxgw/LxgwWenKai&#34;&gt;字体地址&lt;/a&gt;&lt;br&gt;&#xA;安装比较简单，VS Code 和 Typora 需要机器本身安装这两款字体。&lt;/p&gt;&#xA;&lt;h1 id=&#34;vs-code-设置&#34;&gt;VS Code 设置&lt;/h1&gt;&#xA;&lt;p&gt;就正常设置 “Font Family” 即可：&lt;code&gt;&#39;Roboto Mono&#39;,&#39;霞鹜文楷等宽&#39;&lt;/code&gt;。&lt;/p&gt;</description>
+      <description>&lt;p&gt;由于“霞鹜文楷”这个字体太好看了，不得不想要设置成为，我所有的非常常用的软件字体。&lt;br&gt;
+但是这款字体的英文着实不是太漂亮，所以我的常用软件的首选字体是 “Roboto Mono”，这样中文字体会使用“霞鹜文楷”&lt;br&gt;
+github 地址：&lt;a href=&#34;https://github.com/lxgw/LxgwWenKai&#34;&gt;字体地址&lt;/a&gt;&lt;br&gt;
+安装比较简单，VS Code 和 Typora 需要机器本身安装这两款字体。&lt;/p&gt;
+&lt;h1 id=&#34;vs-code-设置&#34;&gt;VS Code 设置&lt;/h1&gt;
+&lt;p&gt;就正常设置 “Font Family” 即可：&lt;code&gt;&#39;Roboto Mono&#39;,&#39;霞鹜文楷等宽&#39;&lt;/code&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>内存不足 Redis 获取数据出错引发的雪崩分析</title>
       <link>https://luojiego.com/posts/avalanche-caused-by-insufficient-machine-memory/</link>
       <pubDate>Sun, 06 Mar 2022 22:26:27 +0000</pubDate>
       <guid>https://luojiego.com/posts/avalanche-caused-by-insufficient-machine-memory/</guid>
-      <description>&lt;h2 id=&#34;异常回顾&#34;&gt;异常回顾&lt;/h2&gt;&#xA;&lt;p&gt;28 日凌晨机器警报拉响，某 Redis 服务出现“MISCONF Redis is configured to save RDB snapshots……”，接着活动服开始连续崩溃，大概十分钟之后，活动服正常拉起。&lt;/p&gt;&#xA;&lt;p&gt;经过分析，发现机器由于内存不足，Redis 服务无法正常 dump，导致写入失败引发的连环错误。但是看服务的日志时，我们发现一些特别诡异的问题，从 Redis 中获取出来的数据数据格式和请求的根本的不匹配。熟悉 C++ 的小伙伴深知，这大概率是内存出错了。但是仔细看了看，毫无头绪，主要由于服务&lt;strong&gt;使用的是单线程的模型，请求数据时，返回的数据格式就是错误的&lt;/strong&gt;。&lt;/p&gt;&#xA;&lt;p&gt;HSET 的时候，还会调用 EXPIRE 设置过期时间，调用了两次 &lt;code&gt;redisAppendCommand&lt;/code&gt; ，&lt;strong&gt;但却只调用了一次&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;redisGetReply&lt;/code&gt;&lt;/strong&gt; 命令，&lt;strong&gt;也即只获取了 hset 的返回，但是并未获取 expire 的返回&lt;/strong&gt;，&lt;strong&gt;这会导致后续的命令再调用&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;redisGetReply&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;时获取到是 expire 的返回，后续的命令就会连续错位。&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;异常回顾&#34;&gt;异常回顾&lt;/h2&gt;
+&lt;p&gt;28 日凌晨机器警报拉响，某 Redis 服务出现“MISCONF Redis is configured to save RDB snapshots……”，接着活动服开始连续崩溃，大概十分钟之后，活动服正常拉起。&lt;/p&gt;
+&lt;p&gt;经过分析，发现机器由于内存不足，Redis 服务无法正常 dump，导致写入失败引发的连环错误。但是看服务的日志时，我们发现一些特别诡异的问题，从 Redis 中获取出来的数据数据格式和请求的根本的不匹配。熟悉 C++ 的小伙伴深知，这大概率是内存出错了。但是仔细看了看，毫无头绪，主要由于服务&lt;strong&gt;使用的是单线程的模型，请求数据时，返回的数据格式就是错误的&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;HSET 的时候，还会调用 EXPIRE 设置过期时间，调用了两次 &lt;code&gt;redisAppendCommand&lt;/code&gt; ，&lt;strong&gt;但却只调用了一次&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;redisGetReply&lt;/code&gt;&lt;/strong&gt; 命令，&lt;strong&gt;也即只获取了 hset 的返回，但是并未获取 expire 的返回&lt;/strong&gt;，&lt;strong&gt;这会导致后续的命令再调用&lt;/strong&gt; &lt;strong&gt;&lt;code&gt;redisGetReply&lt;/code&gt;&lt;/strong&gt; &lt;strong&gt;时获取到是 expire 的返回，后续的命令就会连续错位。&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>2021 年度总结</title>
       <link>https://luojiego.com/posts/2021-annual-summary/</link>
       <pubDate>Sat, 01 Jan 2022 17:44:34 +0000</pubDate>
       <guid>https://luojiego.com/posts/2021-annual-summary/</guid>
-      <description>&lt;h2 id=&#34;二宝出生&#34;&gt;二宝出生&lt;/h2&gt;&#xA;&lt;p&gt;奥利奥于 2021 年 5 月 28 日出生，农历四月十七，跟我农历生日月和日都差了一。&lt;/p&gt;&#xA;&lt;p&gt;鉴于生老大时媳妇对顺产的心理阴影，我们思考再三选择了剖腹产，宝宝距离预产期十天来到我们和身边。&lt;/p&gt;&#xA;&lt;p&gt;第四医院虽然体验极其糟糕，但好在宝宝出生第四天我们就到了月子中心，这感觉简直是天差地别，同样的空间医院竟然能住六个产妇，简直难道想象。**在此我强烈建议，如果想要大人恢复的比较好，一定不要在家做月子。**根据自己的经济条件，能在月子中心多待几天是几天。&lt;/p&gt;&#xA;&lt;p&gt;老大一到三岁，我陪伴的时间太少了，二宝我是几乎天天看着他长大的，真心体会到当妈妈的辛苦。出生时七斤三两，已经被媳妇奶成了二十二斤的大胖小子了。&lt;/p&gt;&#xA;&lt;p&gt;二宝在年底最后的几天开始不停地喊”爸~爸，耙，爸爸“。&lt;/p&gt;&#xA;&lt;p&gt;总之**陪伴孩子成长的过程是一个不停学习，不停治愈自己的过程，孩子真的是来教育大人的。**还没有准备要宝宝的小伙伴们，可以准备啦。陪孩子一起学习成长的感觉其实是非常不错的。&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;二宝出生&#34;&gt;二宝出生&lt;/h2&gt;
+&lt;p&gt;奥利奥于 2021 年 5 月 28 日出生，农历四月十七，跟我农历生日月和日都差了一。&lt;/p&gt;
+&lt;p&gt;鉴于生老大时媳妇对顺产的心理阴影，我们思考再三选择了剖腹产，宝宝距离预产期十天来到我们和身边。&lt;/p&gt;
+&lt;p&gt;第四医院虽然体验极其糟糕，但好在宝宝出生第四天我们就到了月子中心，这感觉简直是天差地别，同样的空间医院竟然能住六个产妇，简直难道想象。**在此我强烈建议，如果想要大人恢复的比较好，一定不要在家做月子。**根据自己的经济条件，能在月子中心多待几天是几天。&lt;/p&gt;
+&lt;p&gt;老大一到三岁，我陪伴的时间太少了，二宝我是几乎天天看着他长大的，真心体会到当妈妈的辛苦。出生时七斤三两，已经被媳妇奶成了二十二斤的大胖小子了。&lt;/p&gt;
+&lt;p&gt;二宝在年底最后的几天开始不停地喊”爸~爸，耙，爸爸“。&lt;/p&gt;
+&lt;p&gt;总之**陪伴孩子成长的过程是一个不停学习，不停治愈自己的过程，孩子真的是来教育大人的。**还没有准备要宝宝的小伙伴们，可以准备啦。陪孩子一起学习成长的感觉其实是非常不错的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>我的 Go 语言学习之路</title>
       <link>https://luojiego.com/posts/geek-time-go-first-course-share/</link>
       <pubDate>Mon, 27 Dec 2021 19:17:02 +0000</pubDate>
       <guid>https://luojiego.com/posts/geek-time-go-first-course-share/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;以下内容是我在 &lt;a href=&#34;https://time.geekbang.org/column/intro/100093501&#34;&gt;Tony Bai · Go 语言第一课&lt;/a&gt;的分享&lt;a href=&#34;https://time.geekbang.org/column/article/472588&#34;&gt;用户故事｜罗杰：我的Go语言学习之路&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;&#xA;你好，我是罗杰，目前在一家游戏公司担任后端开发主程。今天，我想跟你分享一下我学习Go的一些经历，如果你还是一个Go新人，希望我的这些经历，能给你带来一些启发和帮助。&lt;/p&gt;&#xA;&lt;p&gt;说起来，我接触Go语言已经很久了，但前面好多次都没真正学起来。&lt;/p&gt;&#xA;&lt;p&gt;我第一次接触 Go 语言是在 2010 年，当时我还在读大二，一个学长建议我了解一下 Go 语言，毕竟是谷歌出的一门语言，可能未来比较有发展前景。所以我当时下载并安装了Go的开发环境，还写了个 “hello world”，但是由于没有中文的教程，也没有人一起学习，学习 Go 语言这件事情很快就被我抛在脑后了。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;以下内容是我在 &lt;a href=&#34;https://time.geekbang.org/column/intro/100093501&#34;&gt;Tony Bai · Go 语言第一课&lt;/a&gt;的分享&lt;a href=&#34;https://time.geekbang.org/column/article/472588&#34;&gt;用户故事｜罗杰：我的Go语言学习之路&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
+你好，我是罗杰，目前在一家游戏公司担任后端开发主程。今天，我想跟你分享一下我学习Go的一些经历，如果你还是一个Go新人，希望我的这些经历，能给你带来一些启发和帮助。&lt;/p&gt;
+&lt;p&gt;说起来，我接触Go语言已经很久了，但前面好多次都没真正学起来。&lt;/p&gt;
+&lt;p&gt;我第一次接触 Go 语言是在 2010 年，当时我还在读大二，一个学长建议我了解一下 Go 语言，毕竟是谷歌出的一门语言，可能未来比较有发展前景。所以我当时下载并安装了Go的开发环境，还写了个 “hello world”，但是由于没有中文的教程，也没有人一起学习，学习 Go 语言这件事情很快就被我抛在脑后了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>改变从学习开始</title>
       <link>https://luojiego.com/posts/summary-share/</link>
       <pubDate>Fri, 19 Nov 2021 13:36:10 +0000</pubDate>
       <guid>https://luojiego.com/posts/summary-share/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;以下内容是我在 &lt;a href=&#34;https://time.geekbang.org/column/intro/100085301?tab=catalog&#34;&gt;陈天 · Rust 编程第一课&lt;/a&gt;的分享&lt;a href=&#34;https://time.geekbang.org/column/article/445818?cid=100085301&#34;&gt;用户故事｜绝望之谷：罗杰，改变从学习开始&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;你好，我是罗杰，目前在一家游戏公司担任后端开发主程。&lt;/p&gt;&#xA;&lt;p&gt;到现在我也快工作十年了，作为一个从小学习能力很一般的人，这中间的打怪升级史可以说是相当惨痛。&lt;/p&gt;&#xA;&lt;p&gt;我是13 年毕业的，在师范类院校学的软件工程专业。大四参加校招，历时三个月不断面试、笔试，勉强找到一份工作，做棋牌游戏后端开发，签到了深圳。这份工作实习不到半个月，我就开始失眠，因为在学校里从来没有深入学习，专业知识非常欠缺，代码几乎看不懂，当时也没有太多可以寻求帮助的途径，进入不了工作状态，非常痛苦。&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;以下内容是我在 &lt;a href=&#34;https://time.geekbang.org/column/intro/100085301?tab=catalog&#34;&gt;陈天 · Rust 编程第一课&lt;/a&gt;的分享&lt;a href=&#34;https://time.geekbang.org/column/article/445818?cid=100085301&#34;&gt;用户故事｜绝望之谷：罗杰，改变从学习开始&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;你好，我是罗杰，目前在一家游戏公司担任后端开发主程。&lt;/p&gt;
+&lt;p&gt;到现在我也快工作十年了，作为一个从小学习能力很一般的人，这中间的打怪升级史可以说是相当惨痛。&lt;/p&gt;
+&lt;p&gt;我是13 年毕业的，在师范类院校学的软件工程专业。大四参加校招，历时三个月不断面试、笔试，勉强找到一份工作，做棋牌游戏后端开发，签到了深圳。这份工作实习不到半个月，我就开始失眠，因为在学校里从来没有深入学习，专业知识非常欠缺，代码几乎看不懂，当时也没有太多可以寻求帮助的途径，进入不了工作状态，非常痛苦。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rust 超快安装方法</title>
       <link>https://luojiego.com/posts/rust-install/</link>
       <pubDate>Wed, 03 Nov 2021 21:46:46 +0000</pubDate>
       <guid>https://luojiego.com/posts/rust-install/</guid>
-      <description>&lt;p&gt;由于 Rust 安装需要从 github 下载资源，直接安装，速度会非常感人，而且安装到一半还可能会失败，即使使用源码也会面临相同的情况。&lt;/p&gt;&#xA;&lt;p&gt;感谢中科大，Respect！！！&lt;/p&gt;&#xA;&lt;p&gt;以下是简单的解决方法：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export RUSTUP_DIST_SERVER&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;https://mirrors.ustc.edu.cn/rust-static&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;export RUSTUP_UPDATE_ROOT&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;https://mirrors.ustc.edu.cn/rust-static/rustup&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl --proto &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;=https&amp;#39;&lt;/span&gt; --tlsv1.2 -sSf https://sh.rustup.rs | sh&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;几乎不出一分钟，就安装成功了。&lt;/p&gt;&#xA;&lt;p&gt;安装成功，执行个 &lt;code&gt;cargo install ripgrep&lt;/code&gt; ，依然让人非常无语。&lt;/p&gt;&#xA;&lt;p&gt;此时只需要添加 &lt;code&gt;~/.cargo/config&lt;/code&gt; 文件&lt;/p&gt;&#xA;&lt;p&gt;文件内容如下：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;source.crates-io&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;                                                                                                                                                                                              &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;registry &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://github.com/rust-lang/crates.io-index&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;replace-with &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;tuna&amp;#39;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;source.tuna&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;registry &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样能就能愉快的  &lt;code&gt;cargo install/run/build&lt;/code&gt; 了。&lt;/p&gt;&#xA;&lt;p&gt;注意：ustc 的源已经不能正常使用了，tuna 速度还是不错的&lt;/p&gt;</description>
+      <description>&lt;p&gt;由于 Rust 安装需要从 github 下载资源，直接安装，速度会非常感人，而且安装到一半还可能会失败，即使使用源码也会面临相同的情况。&lt;/p&gt;
+&lt;p&gt;感谢中科大，Respect！！！&lt;/p&gt;
+&lt;p&gt;以下是简单的解决方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;RUSTUP_DIST_SERVER&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://mirrors.ustc.edu.cn/rust-static
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;RUSTUP_UPDATE_ROOT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://mirrors.ustc.edu.cn/rust-static/rustup
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl --proto &lt;span class=&#34;s1&#34;&gt;&amp;#39;=https&amp;#39;&lt;/span&gt; --tlsv1.2 -sSf https://sh.rustup.rs &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;几乎不出一分钟，就安装成功了。&lt;/p&gt;
+&lt;p&gt;安装成功，执行个 &lt;code&gt;cargo install ripgrep&lt;/code&gt; ，依然让人非常无语。&lt;/p&gt;
+&lt;p&gt;此时只需要添加 &lt;code&gt;~/.cargo/config&lt;/code&gt; 文件&lt;/p&gt;
+&lt;p&gt;文件内容如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;source.crates-io&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;                                                                                                                                                                                              
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;registry&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://github.com/rust-lang/crates.io-index&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;replace-with &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;tuna&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;source.tuna&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;registry&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样能就能愉快的  &lt;code&gt;cargo install/run/build&lt;/code&gt; 了。&lt;/p&gt;
+&lt;p&gt;注意：ustc 的源已经不能正常使用了，tuna 速度还是不错的&lt;/p&gt;</description>
     </item>
     <item>
       <title>除 0 真的会 panic 吗？</title>
       <link>https://luojiego.com/posts/divied-zero-panic/</link>
       <pubDate>Sat, 16 Oct 2021 07:47:20 +0000</pubDate>
       <guid>https://luojiego.com/posts/divied-zero-panic/</guid>
-      <description>&lt;p&gt;某天，小伙伴反馈说程序 panic 在一个比较诡异的地方，差不多是下面的代码。&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;type&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Point&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;struct&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&#x9;&lt;span style=&#34;color:#a6e22e&#34;&gt;X&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;float32&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&#x9;&lt;span style=&#34;color:#a6e22e&#34;&gt;Y&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;float32&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Get&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Point&lt;/span&gt;) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&#x9;&lt;span style=&#34;color:#75715e&#34;&gt;// import github.com/shopspring/decimal&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&#x9;&lt;span style=&#34;color:#a6e22e&#34;&gt;x&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;decimal&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;NewFromFloat32&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;p&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;X&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;Round&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;Float64&lt;/span&gt;()&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>&lt;p&gt;某天，小伙伴反馈说程序 panic 在一个比较诡异的地方，差不多是下面的代码。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Point&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;		&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;float32&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;		&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;float32&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Point&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;		&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// import github.com/shopspring/decimal&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;		&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;decimal&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;NewFromFloat32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Round&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Float64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>如何删除 MySQL 表中 2.5 亿条数据？</title>
       <link>https://luojiego.com/posts/delete-mysql-250-million-items/</link>
       <pubDate>Tue, 25 May 2021 21:57:32 +0000</pubDate>
       <guid>https://luojiego.com/posts/delete-mysql-250-million-items/</guid>
-      <description>&lt;h1 id=&#34;为什么会有-25-亿条数据&#34;&gt;为什么会有 2.5 亿条数据&lt;/h1&gt;&#xA;&lt;p&gt;运营需求，需要提供查询用户登录的记录。&lt;/p&gt;&#xA;&lt;p&gt;我一思索，这简单呀，就设计了如下的数据表。&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;desc&lt;/span&gt; login_record;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-------------+------------------+------+-----+-------------------+-------+&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; Field       &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Type&lt;/span&gt;             &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Null&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Key&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;Default&lt;/span&gt;           &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; Extra &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-------------+------------------+------+-----+-------------------+-------+&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; user_id     &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; int(&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;) unsigned &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;NO&lt;/span&gt;   &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; MUL &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;NULL&lt;/span&gt;              &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;       &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; ip          &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; varchar(&lt;span style=&#34;color:#ae81ff&#34;&gt;40&lt;/span&gt;)      &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; YES  &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;                   &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;       &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; device_mark &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; varchar(&lt;span style=&#34;color:#ae81ff&#34;&gt;500&lt;/span&gt;)     &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;NO&lt;/span&gt;   &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;     &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;                   &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;       &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; time        &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;timestamp&lt;/span&gt;        &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;NO&lt;/span&gt;   &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; MUL &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;CURRENT_TIMESTAMP&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;       &lt;span style=&#34;color:#f92672&#34;&gt;|&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-------------+------------------+------+-----+-------------------+-------+&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>&lt;h1 id=&#34;为什么会有-25-亿条数据&#34;&gt;为什么会有 2.5 亿条数据&lt;/h1&gt;
+&lt;p&gt;运营需求，需要提供查询用户登录的记录。&lt;/p&gt;
+&lt;p&gt;我一思索，这简单呀，就设计了如下的数据表。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;desc&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;login_record&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;-------------+------------------+------+-----+-------------------+-------+
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Field&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;       &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;Type&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;             &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;Null&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;Key&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;Default&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;           &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Extra&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;-------------+------------------+------+-----+-------------------+-------+
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;user_id&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;     &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;unsigned&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;NO&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;   &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MUL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;              &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;       &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ip&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;          &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;varchar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;40&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;YES&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;     &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;                   &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;       &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;device_mark&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;varchar&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;500&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;     &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;NO&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;   &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;     &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;                   &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;       &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;timestamp&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;NO&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;   &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MUL&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;k&#34;&gt;CURRENT_TIMESTAMP&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;       &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;-------------+------------------+------+-----+-------------------+-------+
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Filco Minila Air 使用体验</title>
@@ -370,119 +834,238 @@
       <link>https://luojiego.com/posts/aws-re-invent-12-23/</link>
       <pubDate>Sun, 27 Dec 2020 11:45:53 +0000</pubDate>
       <guid>https://luojiego.com/posts/aws-re-invent-12-23/</guid>
-      <description>&lt;h1 id=&#34;巅峰科技-重塑未来&#34;&gt;巅峰科技 重塑未来&lt;/h1&gt;&#xA;&lt;p&gt;这次举办的比上一次参加的 10 月 23 的能好一些，人也多一些。不过总体的感觉就是每次都是新产品推销会议。但是对于我们小公司而言，了解趋势有帮助。不然一直用着那些古老的技术也不太合适。&lt;/p&gt;&#xA;&lt;h2 id=&#34;2020-主题分享&#34;&gt;2020 主题分享&lt;/h2&gt;&#xA;&lt;p&gt;算是对于 re:invent 发布的内容的总体概览，讲解者的职位最高，也是最能将东西讲解的最清楚的。&lt;/p&gt;&#xA;&lt;p&gt;自 2006 年发布 S3，AWS 已经持续创新 15 年。&lt;/p&gt;&#xA;&lt;p&gt;2019，在拉斯维加斯举办的线上有高达 6.7 万的参会者，而且门票将近 1.8K 美金。&lt;/p&gt;&#xA;&lt;p&gt;2020 年因为疫情的原因，在线上举行超过 3 周，有超过 50w 的注意用户观看。现在线上的版本已经有了中文版本，对于有需要的可以点击链接去观看了。&lt;/p&gt;&#xA;&lt;p&gt;AWS 云市场的份额高达 45 %。&lt;/p&gt;&#xA;&lt;p&gt;目前云计算本地部署高达 96%，而云上部署只有 4%，这个数字让我特别震惊。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;巅峰科技-重塑未来&#34;&gt;巅峰科技 重塑未来&lt;/h1&gt;
+&lt;p&gt;这次举办的比上一次参加的 10 月 23 的能好一些，人也多一些。不过总体的感觉就是每次都是新产品推销会议。但是对于我们小公司而言，了解趋势有帮助。不然一直用着那些古老的技术也不太合适。&lt;/p&gt;
+&lt;h2 id=&#34;2020-主题分享&#34;&gt;2020 主题分享&lt;/h2&gt;
+&lt;p&gt;算是对于 re:invent 发布的内容的总体概览，讲解者的职位最高，也是最能将东西讲解的最清楚的。&lt;/p&gt;
+&lt;p&gt;自 2006 年发布 S3，AWS 已经持续创新 15 年。&lt;/p&gt;
+&lt;p&gt;2019，在拉斯维加斯举办的线上有高达 6.7 万的参会者，而且门票将近 1.8K 美金。&lt;/p&gt;
+&lt;p&gt;2020 年因为疫情的原因，在线上举行超过 3 周，有超过 50w 的注意用户观看。现在线上的版本已经有了中文版本，对于有需要的可以点击链接去观看了。&lt;/p&gt;
+&lt;p&gt;AWS 云市场的份额高达 45 %。&lt;/p&gt;
+&lt;p&gt;目前云计算本地部署高达 96%，而云上部署只有 4%，这个数字让我特别震惊。&lt;/p&gt;</description>
     </item>
     <item>
       <title>aws secrity day 10 月 23 日笔记</title>
       <link>https://luojiego.com/posts/aws-secrity-day/</link>
       <pubDate>Sun, 25 Oct 2020 10:30:11 +0000</pubDate>
       <guid>https://luojiego.com/posts/aws-secrity-day/</guid>
-      <description>&lt;h1 id=&#34;security-day&#34;&gt;Security Day&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;责任共担&lt;/strong&gt; 的安全模型&lt;/p&gt;&#xA;&lt;p&gt;AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设施&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;安全可视化和安全可控&lt;/li&gt;&#xA;&lt;li&gt;服务之间高度集成，达到自动化布署 Macie 。。&lt;/li&gt;&#xA;&lt;li&gt;建立隐私数据保护&lt;/li&gt;&#xA;&lt;li&gt;丰富的使用场景&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h1 id=&#34;security-day&#34;&gt;Security Day&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;责任共担&lt;/strong&gt; 的安全模型&lt;/p&gt;
+&lt;p&gt;AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设施&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安全可视化和安全可控&lt;/li&gt;
+&lt;li&gt;服务之间高度集成，达到自动化布署 Macie 。。&lt;/li&gt;
+&lt;li&gt;建立隐私数据保护&lt;/li&gt;
+&lt;li&gt;丰富的使用场景&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>Go 中&#34;坑爹&#34;的类型转换</title>
       <link>https://luojiego.com/posts/the-convert-in-go/</link>
       <pubDate>Sun, 20 Sep 2020 00:34:56 +0000</pubDate>
       <guid>https://luojiego.com/posts/the-convert-in-go/</guid>
-      <description>&lt;h2 id=&#34;go-代码&#34;&gt;go 代码&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;package&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; (&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;math&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#66d9ef&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;count&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;uint32&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;count: %d\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;count&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;count - 1: %d\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;count&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#75715e&#34;&gt;// num := math.Pow(2, float64(count-1))&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;math.Pow(2, float64(count-1)): %f\n&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;math&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pow&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, float64(&lt;span style=&#34;color:#a6e22e&#34;&gt;count&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;)))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;int(math.Pow(2, float64(count-1))): %d\n&amp;#34;&lt;/span&gt;, int(&lt;span style=&#34;color:#a6e22e&#34;&gt;math&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pow&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, float64(&lt;span style=&#34;color:#a6e22e&#34;&gt;count&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;uint32(math.Pow(2, float64(count-1))): %d\n&amp;#34;&lt;/span&gt;, uint32(&lt;span style=&#34;color:#a6e22e&#34;&gt;math&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pow&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, float64(&lt;span style=&#34;color:#a6e22e&#34;&gt;count&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;int32(math.Pow(2, float64(count-1))): %d\n&amp;#34;&lt;/span&gt;, int32(&lt;span style=&#34;color:#a6e22e&#34;&gt;math&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pow&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, float64(&lt;span style=&#34;color:#a6e22e&#34;&gt;count&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;uint64(math.Pow(2, float64(count-1))): %d\n&amp;#34;&lt;/span&gt;, uint64(&lt;span style=&#34;color:#a6e22e&#34;&gt;math&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pow&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, float64(&lt;span style=&#34;color:#a6e22e&#34;&gt;count&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;))))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;int64(pow(2,1023): %d\n&amp;#34;&lt;/span&gt;, int64(&lt;span style=&#34;color:#a6e22e&#34;&gt;math&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pow&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1023&lt;/span&gt;)))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#a6e22e&#34;&gt;fmt&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Printf&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;uint64(pow(2,1023): %d\n&amp;#34;&lt;/span&gt;, uint64(&lt;span style=&#34;color:#a6e22e&#34;&gt;math&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Pow&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;1023&lt;/span&gt;)))&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>&lt;h2 id=&#34;go-代码&#34;&gt;go 代码&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;math&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;uint32&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;count: %d\n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;count - 1: %d\n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// num := math.Pow(2, float64(count-1))&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;math.Pow(2, float64(count-1)): %f\n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;math&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;float64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;int(math.Pow(2, float64(count-1))): %d\n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;math&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;float64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))))&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;uint32(math.Pow(2, float64(count-1))): %d\n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;uint32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;math&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;float64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))))&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;int32(math.Pow(2, float64(count-1))): %d\n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;int32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;math&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;float64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))))&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;uint64(math.Pow(2, float64(count-1))): %d\n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;uint64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;math&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;float64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))))&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;int64(pow(2,1023): %d\n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;int64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;math&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1023&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;	&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;uint64(pow(2,1023): %d\n&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;uint64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;math&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Pow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1023&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>为什么程序员更应该支持正版软件？</title>
       <link>https://luojiego.com/posts/why-should-programmers-support-genuine-software/</link>
       <pubDate>Sat, 29 Aug 2020 08:45:22 +0000</pubDate>
       <guid>https://luojiego.com/posts/why-should-programmers-support-genuine-software/</guid>
-      <description>&lt;h1 id=&#34;做对的事情&#34;&gt;做对的事情&lt;/h1&gt;&#xA;&lt;p&gt;我始终觉得，程序员应该将更多的精力花费在自己的专业上。如果在自己可接受的范围里面，花钱去支持正版软件，节约自己的时间，提高幸福感，才是正确的事情。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;做对的事情&#34;&gt;做对的事情&lt;/h1&gt;
+&lt;p&gt;我始终觉得，程序员应该将更多的精力花费在自己的专业上。如果在自己可接受的范围里面，花钱去支持正版软件，节约自己的时间，提高幸福感，才是正确的事情。&lt;/p&gt;</description>
     </item>
     <item>
       <title>MantisBT 安装</title>
       <link>https://luojiego.com/posts/install-mantisbt/</link>
       <pubDate>Wed, 01 Jul 2020 08:43:41 +0000</pubDate>
       <guid>https://luojiego.com/posts/install-mantisbt/</guid>
-      <description>&lt;h1 id=&#34;mantisbt-安装&#34;&gt;MantisBT 安装&lt;/h1&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/mantisbt/mantisbt&#34;&gt;github 地址&lt;/a&gt; &lt;strong&gt;注意，不能从 release 页面下载来安装，要从官网进行下载&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;下载并解压&#34;&gt;下载并解压&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# curl -LO https://github.com/mantisbt/mantisbt/archive/release-2.24.1.zip # 这个代码是错误的&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl -LO https://nchc.dl.sourceforge.net/project/mantisbt/mantis-stable/2.24.1/mantisbt-2.24.1.zip&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;unzip unzip release-2.24.1.zip&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://www.mantisbt.org/docs/master/en-US/Admin_Guide/html-desktop/&#34;&gt;安装官方文档&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;建议详细阅读官方文档&lt;/strong&gt;，不然将会和我一样遇到一车子的坑。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;mantisbt-安装&#34;&gt;MantisBT 安装&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/mantisbt/mantisbt&#34;&gt;github 地址&lt;/a&gt; &lt;strong&gt;注意，不能从 release 页面下载来安装，要从官网进行下载&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;下载并解压&#34;&gt;下载并解压&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# curl -LO https://github.com/mantisbt/mantisbt/archive/release-2.24.1.zip # 这个代码是错误的&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -LO https://nchc.dl.sourceforge.net/project/mantisbt/mantis-stable/2.24.1/mantisbt-2.24.1.zip
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;unzip unzip release-2.24.1.zip
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://www.mantisbt.org/docs/master/en-US/Admin_Guide/html-desktop/&#34;&gt;安装官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;建议详细阅读官方文档&lt;/strong&gt;，不然将会和我一样遇到一车子的坑。&lt;/p&gt;</description>
     </item>
     <item>
       <title>V2ray 终端代理</title>
       <link>https://luojiego.com/posts/v2ray-proxy-setting/</link>
       <pubDate>Wed, 01 Jul 2020 08:40:09 +0000</pubDate>
       <guid>https://luojiego.com/posts/v2ray-proxy-setting/</guid>
-      <description>&lt;h1 id=&#34;v2ray-终端代理设置&#34;&gt;V2ray 终端代理设置&lt;/h1&gt;&#xA;&lt;p&gt;我可能是个白痴吧，从业这么久了，都没有研究过在终端加速 HTTP/HTTPS，特别是下载 &lt;strong&gt;github&lt;/strong&gt; 的开源代码，或者使用 &lt;strong&gt;brew&lt;/strong&gt; 更新或者安装软件。&lt;/p&gt;&#xA;&lt;p&gt;昨天竟然才明白，终端使用了代理之后，&lt;strong&gt;ping&lt;/strong&gt; 不通谷歌或者非死不可是正常的。所以之前的郁闷一下就解决了。下面说说在三个操作系统上简单的设置吧。&lt;/p&gt;&#xA;&lt;h2 id=&#34;mac&#34;&gt;Mac&lt;/h2&gt;&#xA;&lt;h3 id=&#34;拷贝代理地址&#34;&gt;拷贝代理地址&lt;/h3&gt;&#xA;&lt;p&gt;如图，右键选择菜单项，地址就会被拷贝，然后在终端执行就 OK 了。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://go-daily.oss-cn-chengdu.aliyuncs.com/img/image-20200627234616476.png&#34; alt=&#34;右键选中Copy代理地址&#34;&gt;&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;v2ray-终端代理设置&#34;&gt;V2ray 终端代理设置&lt;/h1&gt;
+&lt;p&gt;我可能是个白痴吧，从业这么久了，都没有研究过在终端加速 HTTP/HTTPS，特别是下载 &lt;strong&gt;github&lt;/strong&gt; 的开源代码，或者使用 &lt;strong&gt;brew&lt;/strong&gt; 更新或者安装软件。&lt;/p&gt;
+&lt;p&gt;昨天竟然才明白，终端使用了代理之后，&lt;strong&gt;ping&lt;/strong&gt; 不通谷歌或者非死不可是正常的。所以之前的郁闷一下就解决了。下面说说在三个操作系统上简单的设置吧。&lt;/p&gt;
+&lt;h2 id=&#34;mac&#34;&gt;Mac&lt;/h2&gt;
+&lt;h3 id=&#34;拷贝代理地址&#34;&gt;拷贝代理地址&lt;/h3&gt;
+&lt;p&gt;如图，右键选择菜单项，地址就会被拷贝，然后在终端执行就 OK 了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;右键选中Copy代理地址&#34; loading=&#34;lazy&#34; src=&#34;https://go-daily.oss-cn-chengdu.aliyuncs.com/img/image-20200627234616476.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>谈谈我对 Mac 的看法</title>
       <link>https://luojiego.com/posts/about-mac/</link>
       <pubDate>Sat, 27 Jun 2020 10:48:46 +0000</pubDate>
       <guid>https://luojiego.com/posts/about-mac/</guid>
-      <description>&lt;h1 id=&#34;当初错误的决定&#34;&gt;当初错误的决定&lt;/h1&gt;&#xA;&lt;p&gt;Air 是 2015 年初买的 2014 年的 128GB机器，自己一个人的深圳呆的非常无聊，想买点啥来填补内心的空虚，索性就买了一个 Macbook Air。为啥不买 Pro? 因为当时的工资还不够买一个 Pro，而且看同事用的 Pro，颜值也不是很好，但是当买回来之后，用了一段时间之后，感觉还是视网膜屏幕舒服。其实现有看来，当初应该买个 Pro，最起码用的时候，看着很养眼……&lt;/p&gt;&#xA;&lt;h1 id=&#34;一直闲置的机器&#34;&gt;一直闲置的机器&lt;/h1&gt;&#xA;&lt;p&gt;讲道理，上班一直用的 Windows 开发，下班也比较累，几乎用笔记本在家解决一下线上的问题。对于 Mac 真的就是有啥问题，反正凑合能用即可，Mac 上的快捷键到最近我都认不全。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;当初错误的决定&#34;&gt;当初错误的决定&lt;/h1&gt;
+&lt;p&gt;Air 是 2015 年初买的 2014 年的 128GB机器，自己一个人的深圳呆的非常无聊，想买点啥来填补内心的空虚，索性就买了一个 Macbook Air。为啥不买 Pro? 因为当时的工资还不够买一个 Pro，而且看同事用的 Pro，颜值也不是很好，但是当买回来之后，用了一段时间之后，感觉还是视网膜屏幕舒服。其实现有看来，当初应该买个 Pro，最起码用的时候，看着很养眼……&lt;/p&gt;
+&lt;h1 id=&#34;一直闲置的机器&#34;&gt;一直闲置的机器&lt;/h1&gt;
+&lt;p&gt;讲道理，上班一直用的 Windows 开发，下班也比较累，几乎用笔记本在家解决一下线上的问题。对于 Mac 真的就是有啥问题，反正凑合能用即可，Mac 上的快捷键到最近我都认不全。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Mac 重装之后,删除容器中的其它卷宗</title>
       <link>https://luojiego.com/posts/mac-delete-container/</link>
       <pubDate>Sat, 27 Jun 2020 10:44:10 +0000</pubDate>
       <guid>https://luojiego.com/posts/mac-delete-container/</guid>
-      <description>&lt;h1 id=&#34;问题&#34;&gt;问题&lt;/h1&gt;&#xA;&lt;p&gt;128GB 的机器，重新安装机器之后，安装完一些必备的软件，发现只有 8GB 可用了，要知道我是为了节省一个空间才重新安装的，结果成这样，恶心程度可想而知啊。&lt;/p&gt;&#xA;&lt;p&gt;如图：&lt;br&gt;&#xA;&lt;img src=&#34;https://img-blog.csdnimg.cn/20200627093013328.png&#34; alt=&#34;可怜的存储空间&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;存储空间查看&#34;&gt;存储空间查看&lt;/h2&gt;&#xA;&lt;p&gt;关于本机 -&amp;gt; 存储空间&lt;br&gt;&#xA;发现『容器中的其它卷宗』占用了 70GB+&lt;/p&gt;&#xA;&lt;h2 id=&#34;一番谷歌&#34;&gt;一番谷歌&lt;/h2&gt;&#xA;&lt;p&gt;Apple 论坛上并没有找到解决方案，让我重启，重启并没有任何改善。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;问题&#34;&gt;问题&lt;/h1&gt;
+&lt;p&gt;128GB 的机器，重新安装机器之后，安装完一些必备的软件，发现只有 8GB 可用了，要知道我是为了节省一个空间才重新安装的，结果成这样，恶心程度可想而知啊。&lt;/p&gt;
+&lt;p&gt;如图：&lt;br&gt;
+&lt;img alt=&#34;可怜的存储空间&#34; loading=&#34;lazy&#34; src=&#34;https://img-blog.csdnimg.cn/20200627093013328.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;存储空间查看&#34;&gt;存储空间查看&lt;/h2&gt;
+&lt;p&gt;关于本机 -&amp;gt; 存储空间&lt;br&gt;
+发现『容器中的其它卷宗』占用了 70GB+&lt;/p&gt;
+&lt;h2 id=&#34;一番谷歌&#34;&gt;一番谷歌&lt;/h2&gt;
+&lt;p&gt;Apple 论坛上并没有找到解决方案，让我重启，重启并没有任何改善。&lt;/p&gt;</description>
     </item>
     <item>
       <title>go-micro-broker-kafka-demo</title>
       <link>https://luojiego.com/posts/go-micro-broker-kafka-demo/</link>
       <pubDate>Wed, 10 Jun 2020 08:13:33 +0000</pubDate>
       <guid>https://luojiego.com/posts/go-micro-broker-kafka-demo/</guid>
-      <description>&lt;h1 id=&#34;困惑&#34;&gt;困惑&lt;/h1&gt;&#xA;&lt;p&gt;有点小心动要研究一下 go-micro 的 broker，正好在研究 kafka，想找个 demo 尝试一下，但是真让人头大，并没有找到很容易上手的案例，于是自己码一篇来帮助有兴趣研究的朋友。&lt;/p&gt;&#xA;&lt;h1 id=&#34;v2-版本&#34;&gt;V2 版本&lt;/h1&gt;&#xA;&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;在 &lt;a href=&#34;https://github.com/micro/examples&#34;&gt;https://github.com/micro/examples&lt;/a&gt; v2 版本下面的 broker/main.go 中增加了一行代码&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;github.com/micro/go-plugins/broker/kafka/v2&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>&lt;h1 id=&#34;困惑&#34;&gt;困惑&lt;/h1&gt;
+&lt;p&gt;有点小心动要研究一下 go-micro 的 broker，正好在研究 kafka，想找个 demo 尝试一下，但是真让人头大，并没有找到很容易上手的案例，于是自己码一篇来帮助有兴趣研究的朋友。&lt;/p&gt;
+&lt;h1 id=&#34;v2-版本&#34;&gt;V2 版本&lt;/h1&gt;
+&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;在 &lt;a href=&#34;https://github.com/micro/examples&#34;&gt;https://github.com/micro/examples&lt;/a&gt; v2 版本下面的 broker/main.go 中增加了一行代码&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;_&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;github.com/micro/go-plugins/broker/kafka/v2&amp;#34;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>C&#43;&#43; Mysql null 引发的血案</title>
       <link>https://luojiego.com/posts/cpp-null/</link>
       <pubDate>Wed, 03 Jun 2020 09:11:51 +0000</pubDate>
       <guid>https://luojiego.com/posts/cpp-null/</guid>
-      <description>&lt;h1 id=&#34;代码&#34;&gt;代码&lt;/h1&gt;&#xA;&lt;h2 id=&#34;出错代码段&#34;&gt;出错代码段&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;bool&lt;/span&gt; CGameServer&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;getAccountInfoByUserId(&lt;span style=&#34;color:#66d9ef&#34;&gt;int&lt;/span&gt; user_id, UserAccountData&lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt; data) {                                                                                          &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (connectToLocalDB()) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        log_error(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;connect to db failed&amp;#34;&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; false;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    TLIB_DB_LINK &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;pTempDBLink &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&lt;/span&gt;m_stLDBLink;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    snprintf(pTempDBLink&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;sQuery[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;], &lt;span style=&#34;color:#66d9ef&#34;&gt;sizeof&lt;/span&gt;(pTempDBLink&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;sQuery[&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;]), &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;select bind_mark, account, password, state, device_mark, country, tunnel, \&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        register_version, transfer_code, bind_equipment from account_data where \&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        user_id=%d&amp;#34;&lt;/span&gt;, user_id);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;//......&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (pTempDBLink&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;stRow[i]) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    data._transfer_code &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; pTempDBLink&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;stRow[i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;];&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (pTempDBLink&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;stRow[i]) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    data._bind_equipment &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; atoi(pTempDBLink&lt;span style=&#34;color:#f92672&#34;&gt;-&amp;gt;&lt;/span&gt;stRow[i&lt;span style=&#34;color:#f92672&#34;&gt;++&lt;/span&gt;]);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#75715e&#34;&gt;//......&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>&lt;h1 id=&#34;代码&#34;&gt;代码&lt;/h1&gt;
+&lt;h2 id=&#34;出错代码段&#34;&gt;出错代码段&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;CGameServer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getAccountInfoByUserId&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;user_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;UserAccountData&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;                                                                                          
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;connectToLocalDB&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;log_error&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;connect to db failed&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;TLIB_DB_LINK&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pTempDBLink&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m_stLDBLink&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;snprintf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pTempDBLink&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sQuery&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pTempDBLink&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sQuery&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]),&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;s&#34;&gt;&amp;#34;select bind_mark, account, password, state, device_mark, country, tunnel, \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;        register_version, transfer_code, bind_equipment from account_data where \
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;        user_id=%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;user_id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;//......
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pTempDBLink&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stRow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_transfer_code&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pTempDBLink&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stRow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pTempDBLink&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stRow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                    &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_bind_equipment&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;atoi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pTempDBLink&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stRow&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;c1&#34;&gt;//......
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>管理后台关于时间的“补丁”</title>
       <link>https://luojiego.com/posts/background-time/</link>
       <pubDate>Wed, 20 May 2020 07:39:12 +0000</pubDate>
       <guid>https://luojiego.com/posts/background-time/</guid>
-      <description>&lt;h1 id=&#34;我们管理后台的历史&#34;&gt;我们管理后台的历史&lt;/h1&gt;&#xA;&lt;p&gt;18年可以新做的项目，要求我们做管理后台，但是我之前没有前端的任何经验，另外两个小伙伴也没有。只是用 Go 做过简单的页面。只接触过一点点模板的东西，要做一个管理后台，难度可想而知。&lt;br&gt;&#xA;但是坚持了下来，19年后台经过两三次的框架重构，算是有模有样了吧。&lt;/p&gt;&#xA;&lt;h1 id=&#34;问题显现&#34;&gt;问题显现&lt;/h1&gt;&#xA;&lt;p&gt;刚开始，我们只有国际版本的后台，使用的是 UTC 时间，管理后台上有很多关于活动时间的设置，之前并没有任何关于时间的标准设计方式。所以后台页面传入到后台的时间格式有两种，一种是&lt;strong&gt;时间格式字符串，例如 2020-05-20 20:00&lt;/strong&gt;，另外一种是&lt;strong&gt;以时间戳的方式传递给后端&lt;/strong&gt;。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;我们管理后台的历史&#34;&gt;我们管理后台的历史&lt;/h1&gt;
+&lt;p&gt;18年可以新做的项目，要求我们做管理后台，但是我之前没有前端的任何经验，另外两个小伙伴也没有。只是用 Go 做过简单的页面。只接触过一点点模板的东西，要做一个管理后台，难度可想而知。&lt;br&gt;
+但是坚持了下来，19年后台经过两三次的框架重构，算是有模有样了吧。&lt;/p&gt;
+&lt;h1 id=&#34;问题显现&#34;&gt;问题显现&lt;/h1&gt;
+&lt;p&gt;刚开始，我们只有国际版本的后台，使用的是 UTC 时间，管理后台上有很多关于活动时间的设置，之前并没有任何关于时间的标准设计方式。所以后台页面传入到后台的时间格式有两种，一种是&lt;strong&gt;时间格式字符串，例如 2020-05-20 20:00&lt;/strong&gt;，另外一种是&lt;strong&gt;以时间戳的方式传递给后端&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>goland 25 大特色编辑功能</title>
       <link>https://luojiego.com/posts/goland-short-cuts/</link>
       <pubDate>Sun, 19 Apr 2020 10:13:32 +0000</pubDate>
       <guid>https://luojiego.com/posts/goland-short-cuts/</guid>
-      <description>&lt;h1 id=&#34;写在前面&#34;&gt;写在前面&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;使用了Goland两年了，好多功能都不会用，特意总结一下，加强自己的记忆&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.jetbrains.com/cn/2019/11/goland-ide-p1/&#34;&gt;GoLand IDE 的 25 大特色编辑功能 – 第 1 部分&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;https://blog.jetbrains.com/cn/2019/11/goland-ide-p2/&#34;&gt;GoLand IDE 的 25 大特色编辑功能 – 第 2 部分&lt;/a&gt;&lt;br&gt;&#xA;&lt;a href=&#34;https://blog.jetbrains.com/cn/2020/02/goland-ide-3/&#34;&gt;GoLand IDE 的 25 大特色编辑功能 – 第 3 部分&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;写在前面&#34;&gt;写在前面&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;使用了Goland两年了，好多功能都不会用，特意总结一下，加强自己的记忆&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.jetbrains.com/cn/2019/11/goland-ide-p1/&#34;&gt;GoLand IDE 的 25 大特色编辑功能 – 第 1 部分&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://blog.jetbrains.com/cn/2019/11/goland-ide-p2/&#34;&gt;GoLand IDE 的 25 大特色编辑功能 – 第 2 部分&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://blog.jetbrains.com/cn/2020/02/goland-ide-3/&#34;&gt;GoLand IDE 的 25 大特色编辑功能 – 第 3 部分&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>程序员“花式作死”的入职方式</title>
       <link>https://luojiego.com/posts/programmer-fancy-death-onboarding-method/</link>
       <pubDate>Mon, 13 Apr 2020 00:05:20 +0000</pubDate>
       <guid>https://luojiego.com/posts/programmer-fancy-death-onboarding-method/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;不会游泳，怎么换泳池也是没有用的。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;程序员很有可能在做出一些成就的时候，过分高估自己的能力。从此目中无人，很快便会发现，在公司干不下去。在他看来，是原有公司的问题比较多，所以离职了。&lt;/p&gt;&#xA;&lt;p&gt;但是他们却忘记了，离开平台，他们什么也不是，甚至连他平时使用最熟悉的一个平台，或者环境都没有能力搭起来，这个时间，在新入职的公司，必然磕磕绊绊。甚至会出现，一年内连续换几家公司的情况。&lt;/p&gt;&#xA;&lt;p&gt;下面我说说我对于这些问题的看法，毕竟自己也曾错的一塌糊涂。&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;不会游泳，怎么换泳池也是没有用的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;程序员很有可能在做出一些成就的时候，过分高估自己的能力。从此目中无人，很快便会发现，在公司干不下去。在他看来，是原有公司的问题比较多，所以离职了。&lt;/p&gt;
+&lt;p&gt;但是他们却忘记了，离开平台，他们什么也不是，甚至连他平时使用最熟悉的一个平台，或者环境都没有能力搭起来，这个时间，在新入职的公司，必然磕磕绊绊。甚至会出现，一年内连续换几家公司的情况。&lt;/p&gt;
+&lt;p&gt;下面我说说我对于这些问题的看法，毕竟自己也曾错的一塌糊涂。&lt;/p&gt;</description>
     </item>
     <item>
       <title>学习目标</title>
       <link>https://luojiego.com/posts/goal-md/</link>
       <pubDate>Thu, 09 Apr 2020 23:18:32 +0000</pubDate>
       <guid>https://luojiego.com/posts/goal-md/</guid>
-      <description>&lt;h2 id=&#34;误区&#34;&gt;误区&lt;/h2&gt;&#xA;&lt;p&gt;从业7年以来，前5年都在使用 C++, 14年就开始接触 Redis 和 Protobuf, 但是到现在，依然只停留在使用层面，甚至只会使用一些简单的东西。类似于 Redis 中的集群，根本连了解都没有了解过，批量请求也没有使用过。接触 Go 以来，也是只会用, 原理不了解。&lt;/p&gt;&#xA;&lt;h2 id=&#34;改进&#34;&gt;改进&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;每个疑惑点，最好深究原因；&lt;/li&gt;&#xA;&lt;li&gt;重新学习，&lt;strong&gt;学而时习之，不亦乐乎&lt;/strong&gt;；&lt;/li&gt;&#xA;&lt;li&gt;学习源码，刚开始必然很难，可以从别人的讲解开始；&lt;/li&gt;&#xA;&lt;li&gt;学习算法，之前学习的太浅，根本不能在大脑中停留太长时间；&lt;/li&gt;&#xA;&lt;li&gt;坚持，每天早晨6点30起床，早睡早起，使用早起的时间来学习；&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;h2 id=&#34;误区&#34;&gt;误区&lt;/h2&gt;
+&lt;p&gt;从业7年以来，前5年都在使用 C++, 14年就开始接触 Redis 和 Protobuf, 但是到现在，依然只停留在使用层面，甚至只会使用一些简单的东西。类似于 Redis 中的集群，根本连了解都没有了解过，批量请求也没有使用过。接触 Go 以来，也是只会用, 原理不了解。&lt;/p&gt;
+&lt;h2 id=&#34;改进&#34;&gt;改进&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;每个疑惑点，最好深究原因；&lt;/li&gt;
+&lt;li&gt;重新学习，&lt;strong&gt;学而时习之，不亦乐乎&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;学习源码，刚开始必然很难，可以从别人的讲解开始；&lt;/li&gt;
+&lt;li&gt;学习算法，之前学习的太浅，根本不能在大脑中停留太长时间；&lt;/li&gt;
+&lt;li&gt;坚持，每天早晨6点30起床，早睡早起，使用早起的时间来学习；&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     <item>
       <title>遇见Go夜读</title>
       <link>https://luojiego.com/posts/meet-ngiht-go/</link>
       <pubDate>Tue, 07 Apr 2020 00:06:15 +0000</pubDate>
       <guid>https://luojiego.com/posts/meet-ngiht-go/</guid>
-      <description>&lt;h1 id=&#34;更加清晰的人生方向&#34;&gt;更加清晰的人生方向&lt;/h1&gt;&#xA;&lt;h2 id=&#34;不再迷茫&#34;&gt;不再迷茫&lt;/h2&gt;&#xA;&lt;p&gt;​&#x9;&#x9;在人生的第 30 个年头，终于明白人生的意义。19 年 9 月底，公司唯一一款产品因为一些原因被苹果下架。梦想破灭，我几乎要对游戏失去了兴趣，有想过放弃现在的环境，重新选择。但是，在西安这个比较小的环境里面，我也清楚的知道，没有其它的选择。虽然很失望，但是起码和老婆孩子在一起，每天下班回到家，儿子一直不停的叫着“爸爸”，也没有那么累了。&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;&#x9;在这个比较关键的时刻，我终于开始听一年前媳妇推荐给我的樊登读书。得益于樊老师传达的许多理论，让我不再迷茫。9月24日被通知产品下架，10月8日我便从这个失意的过程中走出。因为在这段时间，吸收了许多的人生智慧，get 不到许多新技能。我从产品被下架的阴影中走出来了，同时也放下手里的烟，顺带明白了如何和媳妇孩子相处。我终于明白，&lt;strong&gt;活的不快乐只是因为内心不够充实，而物质的满足对于内心的满足无任何帮助，反而只会让欲望变得更强&lt;/strong&gt;。&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;更加清晰的人生方向&#34;&gt;更加清晰的人生方向&lt;/h1&gt;
+&lt;h2 id=&#34;不再迷茫&#34;&gt;不再迷茫&lt;/h2&gt;
+&lt;p&gt;​		在人生的第 30 个年头，终于明白人生的意义。19 年 9 月底，公司唯一一款产品因为一些原因被苹果下架。梦想破灭，我几乎要对游戏失去了兴趣，有想过放弃现在的环境，重新选择。但是，在西安这个比较小的环境里面，我也清楚的知道，没有其它的选择。虽然很失望，但是起码和老婆孩子在一起，每天下班回到家，儿子一直不停的叫着“爸爸”，也没有那么累了。&lt;/p&gt;
+&lt;p&gt;​		在这个比较关键的时刻，我终于开始听一年前媳妇推荐给我的樊登读书。得益于樊老师传达的许多理论，让我不再迷茫。9月24日被通知产品下架，10月8日我便从这个失意的过程中走出。因为在这段时间，吸收了许多的人生智慧，get 不到许多新技能。我从产品被下架的阴影中走出来了，同时也放下手里的烟，顺带明白了如何和媳妇孩子相处。我终于明白，&lt;strong&gt;活的不快乐只是因为内心不够充实，而物质的满足对于内心的满足无任何帮助，反而只会让欲望变得更强&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于我</title>
       <link>https://luojiego.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://luojiego.com/about/</guid>
-      <description>&lt;p&gt;深耕游戏后端十余年，长期从事在线游戏服务端架构与核心逻辑开发。&lt;br&gt;&#xA;曾作为后端主程，将一款单机三合休闲游戏改造为联网游戏，项目累计流水超过 6 亿。&lt;/p&gt;&#xA;&lt;p&gt;在合成、模拟、放置 RPG、棋牌游戏等品类中，具备成熟的后端设计与落地经验。&lt;br&gt;&#xA;多次从 0 到 1 参与完整游戏研发流程，覆盖账号、存档、活动、邮件、GM 后台、运维与线上问题处理。&lt;/p&gt;&#xA;&lt;p&gt;常用语言：Go、C++、JS / TS。&lt;br&gt;&#xA;关注系统稳定性、可维护性与长期演进，而不止是“能跑”。&lt;/p&gt;&#xA;&lt;p&gt;坐标西安，两个儿子在侧，持续输出劳动力中。&lt;br&gt;&#xA;喜欢学习和读书，空闲时会玩一些休闲游戏，观察设计而不只是消遣。&lt;/p&gt;&#xA;&lt;p&gt;提供后端架构与游戏技术方向的付费咨询&lt;br&gt;&#xA;📧 联系邮箱：marked.41centric@icloud.com&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>搜索</title>
-      <link>https://luojiego.com/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://luojiego.com/search/</guid>
-      <description></description>
+      <description>&lt;p&gt;深耕游戏后端十余年，长期从事在线游戏服务端架构与核心逻辑开发。&lt;br&gt;
+曾作为后端主程，将一款单机三合休闲游戏改造为联网游戏，项目累计流水超过 6 亿。&lt;/p&gt;
+&lt;p&gt;在合成、模拟、放置 RPG、棋牌游戏等品类中，具备成熟的后端设计与落地经验。&lt;br&gt;
+多次从 0 到 1 参与完整游戏研发流程，覆盖账号、存档、活动、邮件、GM 后台、运维与线上问题处理。&lt;/p&gt;
+&lt;p&gt;常用语言：Go、C++、JS / TS。&lt;br&gt;
+关注系统稳定性、可维护性与长期演进，而不止是“能跑”。&lt;/p&gt;
+&lt;p&gt;坐标西安，两个儿子在侧，持续输出劳动力中。&lt;br&gt;
+喜欢学习和读书，空闲时会玩一些休闲游戏，观察设计而不只是消遣。&lt;/p&gt;
+&lt;p&gt;提供后端架构与游戏技术方向的付费咨询&lt;br&gt;
+📧 联系邮箱：marked.41centric@icloud.com&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>技巧 on Roger&#39;s Blog</title>
+    <link>https://luojiego.com/tags/%E6%8A%80%E5%B7%A7/</link>
+    <description>Recent content in 技巧 on Roger&#39;s Blog</description>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Jan 2026 11:51:36 +0800</lastBuildDate>
+    <atom:link href="https://luojiego.com/tags/%E6%8A%80%E5%B7%A7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Obsidian 智能工作日志：自动编号 &#43; 每日英语</title>
+      <link>https://luojiego.com/posts/obsidian-workday-counter-and-daily-english/</link>
+      <pubDate>Sat, 24 Jan 2026 11:51:36 +0800</pubDate>
+      <guid>https://luojiego.com/posts/obsidian-workday-counter-and-daily-english/</guid>
+      <description>&lt;p&gt;从开始工作起，我就习惯了记录工作日志。最开始的方式非常简单，在本子上写个日期，今天是在这家公司的第多少天，顺便记录一句鼓励自己的话。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;翻看前一天的记录确定今天是第几个工作日&lt;/li&gt;
+&lt;li&gt;手动找一个英语学习的网站，基本上抄个每日英语什么的，算是今天跟英语单词又说 hello 了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这是一个比较机械的活，也是我每日上班前的重要仪式，虽然有时候会因为业务比较繁忙，而忘记记录，后续我都会将空缺的那几日的工作日计算进去。&lt;/p&gt;
+&lt;p&gt;后面随着更换工作，有些公司连个本子都不发的时候，我就开始用尝试用笔记工具来记录，最后在经历了各种笔记工具的折腾之后，我开始使用 Obsidian 来记录工作日志和 TODO list。&lt;/p&gt;
+&lt;p&gt;这些重复性的操作虽然是个仪式，但是要回看前一日的计数，然后 + 1 变成今天的索引，还是挺让人烦恼的。&lt;/p&gt;
+&lt;p&gt;直到我发现了 Obsidian 的 Templater 插件，我先是是解决了自动编号的问题，后面又思考每日英语句子的获取，是不是也可以完成呢？最终在 AI 的加持下，这个脚本很快就完成了。&lt;/p&gt;
+&lt;h2 id=&#34;最终效果&#34;&gt;最终效果&lt;/h2&gt;
+&lt;p&gt;现在，每次创建新的工作日志时，模板会自动生成：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;#workday 2
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;The quieter you become, the more you can hear. 你越是安静，能听到的便越多。——拉姆·达斯
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;#home
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;光标在这里，可以立即开始记录&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;一切都是自动的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;✅ 工作日编号自动计算（支持归档文件夹）&lt;/li&gt;
+&lt;li&gt;✅ 每日英语句子自动获取（来自欧路词典）&lt;/li&gt;
+&lt;li&gt;✅ 光标自动定位到内容区域&lt;/li&gt;
+&lt;li&gt;✅ 开箱即用，无需手动操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;文件结构&#34;&gt;文件结构&lt;/h2&gt;
+&lt;p&gt;我的工作日志组织方式如下：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;workday/
+├── template/
+│   └── journal-template.md  # 模板文件
+├── 2024-archive/            # 归档文件夹
+│   ├── 2024-01-15.md
+│   ├── 2024-01-16.md
+│   └── ...
+├── 2025-09-01.md
+├── 2025-09-02.md
+└── 2025-09-24.md
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;每个日志都有 &lt;code&gt;#workday N&lt;/code&gt; 标签，记录这是在当前公司工作的第几天。由于会定期归档，简单的文件计数无法满足需求，必须遍历所有子目录。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

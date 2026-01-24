@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>日志 on Roger&#39;s Blog</title>
     <link>https://luojiego.com/tags/%E6%97%A5%E5%BF%97/</link>
     <description>Recent content in 日志 on Roger&#39;s Blog</description>
-    <generator>Hugo</generator>
+    <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 21 Dec 2025 22:15:17 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/tags/%E6%97%A5%E5%BF%97/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,13 @@
       <link>https://luojiego.com/posts/goodbye-grep-transition-from-cli-grafana-loki/</link>
       <pubDate>Sun, 21 Dec 2025 22:15:17 +0800</pubDate>
       <guid>https://luojiego.com/posts/goodbye-grep-transition-from-cli-grafana-loki/</guid>
-      <description>&lt;h1 id=&#34;我走了太多弯路&#34;&gt;我走了太多弯路&lt;/h1&gt;&#xA;&lt;p&gt;说实话，在日志处理这件事上，我被“知识陷阱”困了很久。&lt;/p&gt;&#xA;&lt;p&gt;因为我太熟悉命令行了，grep、rg、awk 玩得飞起，所以过去很长一段时间，我都固执地认为这就是分析日志的“正统”方式。但现实经常打脸：当日志散落在不同服务器、不同路径下时，我得开无数个终端窗口跳来跳去，查个链路问题跟查案一样。&lt;/p&gt;&#xA;&lt;p&gt;更惨的是，以前公司不给硬件资源，我根本不敢想 Elasticsearch 这种“吞金兽”。为了解决查询问题，我还自己折腾过一套特原始的方案：写脚本去 OSS 上拉压缩包，下载、解压、再用 rg 扫。还能只查找固定时间短的日志，使用者必须先在 GM 后台上查询到用户的登录记录，再根据日期查询具体时间的日志。&lt;/p&gt;&#xA;&lt;p&gt;后来入职新公司，我这套“土法炼钢”的操作甚至被同事吐槽过：“你怎么还在当原始人？我们早都用 Grafana 查了。”&lt;/p&gt;&#xA;&lt;p&gt;直到最近，我硬着头皮自己试着搭了一套 Grafana + Loki + Promtail，真的感觉推开了新世界的大门。那种震撼感在于：我只花了不到三十分钟部署，那种多机协同、可视化检索的爽感，瞬间就秒杀了过去几年的肉搏操作。&lt;/p&gt;&#xA;&lt;p&gt;现在回头看，天天蹲在黑框框里人肉搜索，确实像个原始人。这篇文章就记录一下这个让我“走出石器时代”的工具组合，以及我的安装过程。讲真，以后哪怕项目再小、只有一个服务，我也要把日志接入 Loki。&lt;strong&gt;人生苦短，不要把生命浪费在 cd 和 grep 上。&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;我走了太多弯路&#34;&gt;我走了太多弯路&lt;/h1&gt;
+&lt;p&gt;说实话，在日志处理这件事上，我被“知识陷阱”困了很久。&lt;/p&gt;
+&lt;p&gt;因为我太熟悉命令行了，grep、rg、awk 玩得飞起，所以过去很长一段时间，我都固执地认为这就是分析日志的“正统”方式。但现实经常打脸：当日志散落在不同服务器、不同路径下时，我得开无数个终端窗口跳来跳去，查个链路问题跟查案一样。&lt;/p&gt;
+&lt;p&gt;更惨的是，以前公司不给硬件资源，我根本不敢想 Elasticsearch 这种“吞金兽”。为了解决查询问题，我还自己折腾过一套特原始的方案：写脚本去 OSS 上拉压缩包，下载、解压、再用 rg 扫。还能只查找固定时间短的日志，使用者必须先在 GM 后台上查询到用户的登录记录，再根据日期查询具体时间的日志。&lt;/p&gt;
+&lt;p&gt;后来入职新公司，我这套“土法炼钢”的操作甚至被同事吐槽过：“你怎么还在当原始人？我们早都用 Grafana 查了。”&lt;/p&gt;
+&lt;p&gt;直到最近，我硬着头皮自己试着搭了一套 Grafana + Loki + Promtail，真的感觉推开了新世界的大门。那种震撼感在于：我只花了不到三十分钟部署，那种多机协同、可视化检索的爽感，瞬间就秒杀了过去几年的肉搏操作。&lt;/p&gt;
+&lt;p&gt;现在回头看，天天蹲在黑框框里人肉搜索，确实像个原始人。这篇文章就记录一下这个让我“走出石器时代”的工具组合，以及我的安装过程。讲真，以后哪怕项目再小、只有一个服务，我也要把日志接入 Loki。&lt;strong&gt;人生苦短，不要把生命浪费在 cd 和 grep 上。&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
