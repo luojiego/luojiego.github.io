@@ -169,7 +169,7 @@
 HSET 的时候，还会调用 EXPIRE 设置过期时间，调用了两次 redisAppendCommand ，但却只调用了一次 redisGetReply 命令，也即只获取了 hset 的返回，但是并未获取 expire 的返回，这会导致后续的命令再调用 redisGetReply 时获取到是 expire 的返回，后续的命令就会连续错位。
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2022-03-06 22:26:27 +0000 UTC'>March 6, 2022</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>610 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
+  <footer class="entry-footer">2022-03-06 · 9 分钟 · 约 3917 字</footer>
   <a class="entry-link" aria-label="post link to 内存不足 Redis 获取数据出错引发的雪崩分析" href="https://luojiego.com/posts/avalanche-caused-by-insufficient-machine-memory/"></a>
 </article>
     </main>

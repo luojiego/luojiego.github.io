@@ -168,7 +168,7 @@
 我一思索，这简单呀，就设计了如下的数据表。
 desc login_record; &#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43; | Field | Type | Null | Key | Default | Extra | &#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43; | user_id | int(10) unsigned | NO | MUL | NULL | | | ip | varchar(40) | YES | | | | | device_mark | varchar(500) | NO | | | | | time | timestamp | NO | MUL | CURRENT_TIMESTAMP | | &#43;-------------&#43;------------------&#43;------&#43;-----&#43;-------------------&#43;-------&#43; ...</p>
   </div>
-  <footer class="entry-footer"><span title='2021-05-25 21:57:32 +0000 UTC'>May 25, 2021</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>322 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
+  <footer class="entry-footer">2021-05-25 · 5 分钟 · 约 2659 字</footer>
   <a class="entry-link" aria-label="post link to 如何删除 MySQL 表中 2.5 亿条数据？" href="https://luojiego.com/posts/delete-mysql-250-million-items/"></a>
 </article>
 
@@ -180,7 +180,7 @@ desc login_record; &#43;-------------&#43;------------------&#43;------&#43;----
   <div class="entry-content">
     <p>代码 出错代码段 bool CGameServer::getAccountInfoByUserId(int user_id, UserAccountData&amp; data) { if (connectToLocalDB()) { log_error(&#34;connect to db failed&#34;); return false; } TLIB_DB_LINK *pTempDBLink = &amp;m_stLDBLink; snprintf(pTempDBLink-&gt;sQuery[0], sizeof(pTempDBLink-&gt;sQuery[0]), &#34;select bind_mark, account, password, state, device_mark, country, tunnel, \ register_version, transfer_code, bind_equipment from account_data where \ user_id=%d&#34;, user_id); //...... if (pTempDBLink-&gt;stRow[i]) { data._transfer_code = pTempDBLink-&gt;stRow[i&#43;&#43;]; } if (pTempDBLink-&gt;stRow[i]) { data._bind_equipment = atoi(pTempDBLink-&gt;stRow[i&#43;&#43;]); } //...... ...</p>
   </div>
-  <footer class="entry-footer"><span title='2020-06-03 09:11:51 +0000 UTC'>June 3, 2020</span>&nbsp;·&nbsp;<span>1 min</span>&nbsp;·&nbsp;<span>157 words</span>&nbsp;·&nbsp;<span>Roger</span></footer>
+  <footer class="entry-footer">2020-06-03 · 3 分钟 · 约 977 字</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43; Mysql null 引发的血案" href="https://luojiego.com/posts/cpp-null/"></a>
 </article>
     </main>
