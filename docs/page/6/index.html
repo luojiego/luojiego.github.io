@@ -161,6 +161,27 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Rust 超快安装方法
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>由于 Rust 安装需要从 github 下载资源，直接安装，速度会非常感人，而且安装到一半还可能会失败，即使使用源码也会面临相同的情况。
+感谢中科大，Respect！！！
+以下是简单的解决方法：
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh 几乎不出一分钟，就安装成功了。
+安装成功，执行个 cargo install ripgrep ，依然让人非常无语。
+此时只需要添加 ~/.cargo/config 文件
+文件内容如下：
+[source.crates-io] registry = &#34;https://github.com/rust-lang/crates.io-index&#34; replace-with = &#39;tuna&#39; [source.tuna] registry = &#34;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&#34; 这样能就能愉快的 cargo install/run/build 了。
+注意：ustc 的源已经不能正常使用了，tuna 速度还是不错的
+</p>
+  </div>
+  <footer class="entry-footer">2021-11-03 · 2 分钟 · 约 480 字</footer>
+  <a class="entry-link" aria-label="post link to Rust 超快安装方法" href="https://luojiego.com/posts/rust-install/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">除 0 真的会 panic 吗？
     </h2>
   </header>
@@ -285,20 +306,6 @@ Mac 拷贝代理地址 如图，右键选择菜单项，地址就会被拷贝，
   </div>
   <footer class="entry-footer">2020-07-01 · 4 分钟 · 约 1753 字</footer>
   <a class="entry-link" aria-label="post link to V2ray 终端代理" href="https://luojiego.com/posts/v2ray-proxy-setting/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">谈谈我对 Mac 的看法
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>当初错误的决定 Air 是 2015 年初买的 2014 年的 128GB机器，自己一个人的深圳呆的非常无聊，想买点啥来填补内心的空虚，索性就买了一个 Macbook Air。为啥不买 Pro? 因为当时的工资还不够买一个 Pro，而且看同事用的 Pro，颜值也不是很好，但是当买回来之后，用了一段时间之后，感觉还是视网膜屏幕舒服。其实现有看来，当初应该买个 Pro，最起码用的时候，看着很养眼……
-一直闲置的机器 讲道理，上班一直用的 Windows 开发，下班也比较累，几乎用笔记本在家解决一下线上的问题。对于 Mac 真的就是有啥问题，反正凑合能用即可，Mac 上的快捷键到最近我都认不全。
-...</p>
-  </div>
-  <footer class="entry-footer">2020-06-27 · 6 分钟 · 约 3324 字</footer>
-  <a class="entry-link" aria-label="post link to 谈谈我对 Mac 的看法" href="https://luojiego.com/posts/about-mac/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
