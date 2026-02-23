@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Setting on Roger&#39;s Blog</title>
+    <link>https://luojiego.com/tags/setting/</link>
+    <description>Recent content in Setting on Roger&#39;s Blog</description>
+    <generator>Hugo -- 0.154.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Dec 2022 18:28:59 +0800</lastBuildDate>
+    <atom:link href="https://luojiego.com/tags/setting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的常用软件字体设置</title>
+      <link>https://luojiego.com/posts/my-font-settings/</link>
+      <pubDate>Fri, 23 Dec 2022 18:28:59 +0800</pubDate>
+      <guid>https://luojiego.com/posts/my-font-settings/</guid>
+      <description>&lt;p&gt;由于“霞鹜文楷”这个字体太好看了，不得不想要设置成为，我所有的非常常用的软件字体。&lt;br&gt;
+但是这款字体的英文着实不是太漂亮，所以我的常用软件的首选字体是 “Roboto Mono”，这样中文字体会使用“霞鹜文楷”&lt;br&gt;
+github 地址：&lt;a href=&#34;https://github.com/lxgw/LxgwWenKai&#34;&gt;字体地址&lt;/a&gt;&lt;br&gt;
+安装比较简单，VS Code 和 Typora 需要机器本身安装这两款字体。&lt;/p&gt;
+&lt;h1 id=&#34;vs-code-设置&#34;&gt;VS Code 设置&lt;/h1&gt;
+&lt;p&gt;就正常设置 “Font Family” 即可：&lt;code&gt;&#39;Roboto Mono&#39;,&#39;霞鹜文楷等宽&#39;&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>V2ray 终端代理</title>
+      <link>https://luojiego.com/posts/v2ray-proxy-setting/</link>
+      <pubDate>Wed, 01 Jul 2020 08:40:09 +0800</pubDate>
+      <guid>https://luojiego.com/posts/v2ray-proxy-setting/</guid>
+      <description>&lt;h1 id=&#34;v2ray-终端代理设置&#34;&gt;V2ray 终端代理设置&lt;/h1&gt;
+&lt;p&gt;我可能是个白痴吧，从业这么久了，都没有研究过在终端加速 HTTP/HTTPS，特别是下载 &lt;strong&gt;github&lt;/strong&gt; 的开源代码，或者使用 &lt;strong&gt;brew&lt;/strong&gt; 更新或者安装软件。&lt;/p&gt;
+&lt;p&gt;昨天竟然才明白，终端使用了代理之后，&lt;strong&gt;ping&lt;/strong&gt; 不通谷歌或者非死不可是正常的。所以之前的郁闷一下就解决了。下面说说在三个操作系统上简单的设置吧。&lt;/p&gt;
+&lt;h2 id=&#34;mac&#34;&gt;Mac&lt;/h2&gt;
+&lt;h3 id=&#34;拷贝代理地址&#34;&gt;拷贝代理地址&lt;/h3&gt;
+&lt;p&gt;如图，右键选择菜单项，地址就会被拷贝，然后在终端执行就 OK 了。&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;右键选中Copy代理地址&#34; loading=&#34;lazy&#34; src=&#34;https://go-daily.oss-cn-chengdu.aliyuncs.com/img/image-20200627234616476.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

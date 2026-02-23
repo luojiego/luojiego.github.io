@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Aws on Roger&#39;s Blog</title>
+    <title>AWS on Roger&#39;s Blog</title>
     <link>https://luojiego.com/tags/aws/</link>
-    <description>Recent content in Aws on Roger&#39;s Blog</description>
+    <description>Recent content in AWS on Roger&#39;s Blog</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Dec 2020 11:45:53 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 27 Dec 2020 11:45:53 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS re-invent 12-23</title>
       <link>https://luojiego.com/posts/aws-re-invent-12-23/</link>
-      <pubDate>Sun, 27 Dec 2020 11:45:53 +0000</pubDate>
+      <pubDate>Sun, 27 Dec 2020 11:45:53 +0800</pubDate>
       <guid>https://luojiego.com/posts/aws-re-invent-12-23/</guid>
       <description>&lt;h1 id=&#34;巅峰科技-重塑未来&#34;&gt;巅峰科技 重塑未来&lt;/h1&gt;
 &lt;p&gt;这次举办的比上一次参加的 10 月 23 的能好一些，人也多一些。不过总体的感觉就是每次都是新产品推销会议。但是对于我们小公司而言，了解趋势有帮助。不然一直用着那些古老的技术也不太合适。&lt;/p&gt;
@@ -22,6 +22,21 @@
 &lt;p&gt;2020 年因为疫情的原因，在线上举行超过 3 周，有超过 50w 的注意用户观看。现在线上的版本已经有了中文版本，对于有需要的可以点击链接去观看了。&lt;/p&gt;
 &lt;p&gt;AWS 云市场的份额高达 45 %。&lt;/p&gt;
 &lt;p&gt;目前云计算本地部署高达 96%，而云上部署只有 4%，这个数字让我特别震惊。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AWS secrity day 10 月 23 日笔记</title>
+      <link>https://luojiego.com/posts/aws-secrity-day/</link>
+      <pubDate>Sun, 25 Oct 2020 10:30:11 +0800</pubDate>
+      <guid>https://luojiego.com/posts/aws-secrity-day/</guid>
+      <description>&lt;h1 id=&#34;security-day&#34;&gt;Security Day&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;责任共担&lt;/strong&gt; 的安全模型&lt;/p&gt;
+&lt;p&gt;AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设施&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安全可视化和安全可控&lt;/li&gt;
+&lt;li&gt;服务之间高度集成，达到自动化布署 Macie 。。&lt;/li&gt;
+&lt;li&gt;建立隐私数据保护&lt;/li&gt;
+&lt;li&gt;丰富的使用场景&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

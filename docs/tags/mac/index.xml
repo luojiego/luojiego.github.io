@@ -6,12 +6,12 @@
     <description>Recent content in Mac on Roger&#39;s Blog</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jun 2020 10:48:46 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2020 10:48:46 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>谈谈我对 Mac 的看法</title>
       <link>https://luojiego.com/posts/about-mac/</link>
-      <pubDate>Sat, 27 Jun 2020 10:48:46 +0000</pubDate>
+      <pubDate>Sat, 27 Jun 2020 10:48:46 +0800</pubDate>
       <guid>https://luojiego.com/posts/about-mac/</guid>
       <description>&lt;h1 id=&#34;当初错误的决定&#34;&gt;当初错误的决定&lt;/h1&gt;
 &lt;p&gt;Air 是 2015 年初买的 2014 年的 128GB机器，自己一个人的深圳呆的非常无聊，想买点啥来填补内心的空虚，索性就买了一个 Macbook Air。为啥不买 Pro? 因为当时的工资还不够买一个 Pro，而且看同事用的 Pro，颜值也不是很好，但是当买回来之后，用了一段时间之后，感觉还是视网膜屏幕舒服。其实现有看来，当初应该买个 Pro，最起码用的时候，看着很养眼……&lt;/p&gt;
@@ -21,7 +21,7 @@
     <item>
       <title>Mac 重装之后,删除容器中的其它卷宗</title>
       <link>https://luojiego.com/posts/mac-delete-container/</link>
-      <pubDate>Sat, 27 Jun 2020 10:44:10 +0000</pubDate>
+      <pubDate>Sat, 27 Jun 2020 10:44:10 +0800</pubDate>
       <guid>https://luojiego.com/posts/mac-delete-container/</guid>
       <description>&lt;h1 id=&#34;问题&#34;&gt;问题&lt;/h1&gt;
 &lt;p&gt;128GB 的机器，重新安装机器之后，安装完一些必备的软件，发现只有 8GB 可用了，要知道我是为了节省一个空间才重新安装的，结果成这样，恶心程度可想而知啊。&lt;/p&gt;

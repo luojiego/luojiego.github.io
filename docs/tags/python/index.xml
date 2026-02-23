@@ -6,12 +6,12 @@
     <description>Recent content in Python on Roger&#39;s Blog</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Oct 2021 07:47:20 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 Oct 2021 07:47:20 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>除 0 真的会 panic 吗？</title>
       <link>https://luojiego.com/posts/divied-zero-panic/</link>
-      <pubDate>Sat, 16 Oct 2021 07:47:20 +0000</pubDate>
+      <pubDate>Sat, 16 Oct 2021 07:47:20 +0800</pubDate>
       <guid>https://luojiego.com/posts/divied-zero-panic/</guid>
       <description>&lt;p&gt;某天，小伙伴反馈说程序 panic 在一个比较诡异的地方，差不多是下面的代码。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Point&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;

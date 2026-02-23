@@ -6,12 +6,12 @@
     <description>Recent content in Rust on Roger&#39;s Blog</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Nov 2021 13:36:10 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 19 Nov 2021 13:36:10 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>改变从学习开始</title>
       <link>https://luojiego.com/posts/summary-share/</link>
-      <pubDate>Fri, 19 Nov 2021 13:36:10 +0000</pubDate>
+      <pubDate>Fri, 19 Nov 2021 13:36:10 +0800</pubDate>
       <guid>https://luojiego.com/posts/summary-share/</guid>
       <description>&lt;p&gt;&lt;strong&gt;以下内容是我在 &lt;a href=&#34;https://time.geekbang.org/column/intro/100085301?tab=catalog&#34;&gt;陈天 · Rust 编程第一课&lt;/a&gt;的分享&lt;a href=&#34;https://time.geekbang.org/column/article/445818?cid=100085301&#34;&gt;用户故事｜绝望之谷：罗杰，改变从学习开始&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;你好，我是罗杰，目前在一家游戏公司担任后端开发主程。&lt;/p&gt;
@@ -21,9 +21,9 @@
     <item>
       <title>Rust 超快安装方法</title>
       <link>https://luojiego.com/posts/rust-install/</link>
-      <pubDate>Wed, 03 Nov 2021 21:46:46 +0000</pubDate>
+      <pubDate>Wed, 03 Nov 2021 21:46:46 +0800</pubDate>
       <guid>https://luojiego.com/posts/rust-install/</guid>
-      <description>&lt;p&gt;由于 Rust 安装需要从 github 下载资源，直接安装，速度会非常感人，而且安装到一半还可能会失败，即使使用源码也会面临相同的情况。&lt;/p&gt;
+      <description>&lt;p&gt;由于 Rust 安装需要从 Github 下载资源，直接安装，速度会非常感人，而且安装到一半还可能会失败，即使使用源码也会面临相同的情况。&lt;/p&gt;
 &lt;p&gt;感谢中科大，Respect！！！&lt;/p&gt;
 &lt;p&gt;以下是简单的解决方法：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;RUSTUP_DIST_SERVER&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://mirrors.ustc.edu.cn/rust-static
@@ -45,7 +45,7 @@
     <item>
       <title>除 0 真的会 panic 吗？</title>
       <link>https://luojiego.com/posts/divied-zero-panic/</link>
-      <pubDate>Sat, 16 Oct 2021 07:47:20 +0000</pubDate>
+      <pubDate>Sat, 16 Oct 2021 07:47:20 +0800</pubDate>
       <guid>https://luojiego.com/posts/divied-zero-panic/</guid>
       <description>&lt;p&gt;某天，小伙伴反馈说程序 panic 在一个比较诡异的地方，差不多是下面的代码。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Point&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;

@@ -6,12 +6,12 @@
     <description>Recent content in 时间 on Roger&#39;s Blog</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 May 2020 07:39:12 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 May 2020 07:39:12 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/tags/%E6%97%B6%E9%97%B4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>管理后台关于时间的“补丁”</title>
       <link>https://luojiego.com/posts/background-time/</link>
-      <pubDate>Wed, 20 May 2020 07:39:12 +0000</pubDate>
+      <pubDate>Wed, 20 May 2020 07:39:12 +0800</pubDate>
       <guid>https://luojiego.com/posts/background-time/</guid>
       <description>&lt;h1 id=&#34;我们管理后台的历史&#34;&gt;我们管理后台的历史&lt;/h1&gt;
 &lt;p&gt;18年可以新做的项目，要求我们做管理后台，但是我之前没有前端的任何经验，另外两个小伙伴也没有。只是用 Go 做过简单的页面。只接触过一点点模板的东西，要做一个管理后台，难度可想而知。&lt;br&gt;

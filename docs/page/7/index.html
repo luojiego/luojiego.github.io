@@ -161,6 +161,134 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">除 0 真的会 panic 吗？
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>某天，小伙伴反馈说程序 panic 在一个比较诡异的地方，差不多是下面的代码。
+type Point struct { X float32 Y float32 } func Get(p Point) { // import github.com/shopspring/decimal x, _ := decimal.NewFromFloat32(p.X).Round(7).Float64() } ...</p>
+  </div>
+  <footer class="entry-footer">2021-10-16 · 6 分钟 · 约 1860 字</footer>
+  <a class="entry-link" aria-label="post link to 除 0 真的会 panic 吗？" href="https://luojiego.com/posts/divied-zero-panic/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">如何删除 MySQL 表中 2.5 亿条数据？
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>为什么会有 2.5 亿条数据 运营需求，需要提供查询用户登录的记录。
+我一思索，这简单呀，就设计了如下的数据表。
+desc login_record; &#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;-&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;--&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;-&#43;&#43;&#43;&#43;&#43;&#43;&#43;-&#43; | Field | Type | Null | Key | Default | Extra | &#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;-&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;--&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;-&#43;&#43;&#43;&#43;&#43;&#43;&#43;-&#43; | user_id | int(10) unsigned | NO | MUL | NULL | | | ip | varchar(40) | YES | | | | | device_mark | varchar(500) | NO | | | | | time | timestamp | NO | MUL | CURRENT_TIMESTAMP | | &#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;-&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;--&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;&#43;-&#43;&#43;&#43;&#43;&#43;&#43;&#43;-&#43; ...</p>
+  </div>
+  <footer class="entry-footer">2021-05-25 · 5 分钟 · 约 2659 字</footer>
+  <a class="entry-link" aria-label="post link to 如何删除 MySQL 表中 2.5 亿条数据？" href="https://luojiego.com/posts/delete-mysql-250-million-items/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Filco Minila Air 使用体验
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>今年 6 月，公司喊了两年的搬家终于看起来要搬了，而且我的 IKBC C87 服役超过三个年头了，我想是时候换个新键盘了，毕竟已经相当用了三年零三个月了。
+...</p>
+  </div>
+  <footer class="entry-footer">2021-01-17 · 6 分钟 · 约 3256 字</footer>
+  <a class="entry-link" aria-label="post link to Filco Minila Air 使用体验" href="https://luojiego.com/posts/filco-minila-air-experience/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">AWS re-invent 12-23
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>巅峰科技 重塑未来 这次举办的比上一次参加的 10 月 23 的能好一些，人也多一些。不过总体的感觉就是每次都是新产品推销会议。但是对于我们小公司而言，了解趋势有帮助。不然一直用着那些古老的技术也不太合适。
+2020 主题分享 算是对于 re:invent 发布的内容的总体概览，讲解者的职位最高，也是最能将东西讲解的最清楚的。
+自 2006 年发布 S3，AWS 已经持续创新 15 年。
+2019，在拉斯维加斯举办的线上有高达 6.7 万的参会者，而且门票将近 1.8K 美金。
+2020 年因为疫情的原因，在线上举行超过 3 周，有超过 50w 的注意用户观看。现在线上的版本已经有了中文版本，对于有需要的可以点击链接去观看了。
+AWS 云市场的份额高达 45 %。
+目前云计算本地部署高达 96%，而云上部署只有 4%，这个数字让我特别震惊。
+...</p>
+  </div>
+  <footer class="entry-footer">2020-12-27 · 5 分钟 · 约 2683 字</footer>
+  <a class="entry-link" aria-label="post link to AWS re-invent 12-23" href="https://luojiego.com/posts/aws-re-invent-12-23/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">AWS secrity day 10 月 23 日笔记
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Security Day 责任共担 的安全模型
+AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设施
+安全可视化和安全可控 服务之间高度集成，达到自动化布署 Macie 。。 建立隐私数据保护 丰富的使用场景 ...</p>
+  </div>
+  <footer class="entry-footer">2020-10-25 · 3 分钟 · 约 1637 字</footer>
+  <a class="entry-link" aria-label="post link to AWS secrity day 10 月 23 日笔记" href="https://luojiego.com/posts/aws-secrity-day/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Go 中&#34;坑爹&#34;的类型转换
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Go 代码 package main import ( &#34;fmt&#34; &#34;math&#34; ) func main() { var count uint32 fmt.Printf(&#34;count: %d\n&#34;, count) fmt.Printf(&#34;count - 1: %d\n&#34;, count - 1) // num := math.Pow(2, float64(count-1)) fmt.Printf(&#34;math.Pow(2, float64(count-1)): %f\n&#34;, math.Pow(2, float64(count-1))) fmt.Printf(&#34;int(math.Pow(2, float64(count-1))): %d\n&#34;, int(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;uint32(math.Pow(2, float64(count-1))): %d\n&#34;, uint32(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;int32(math.Pow(2, float64(count-1))): %d\n&#34;, int32(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;uint64(math.Pow(2, float64(count-1))): %d\n&#34;, uint64(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;int64(pow(2,1023): %d\n&#34;, int64(math.Pow(2, 1023))) fmt.Printf(&#34;uint64(pow(2,1023): %d\n&#34;, uint64(math.Pow(2, 1023))) } ...</p>
+  </div>
+  <footer class="entry-footer">2020-09-20 · 4 分钟 · 约 1772 字</footer>
+  <a class="entry-link" aria-label="post link to Go 中&#34;坑爹&#34;的类型转换" href="https://luojiego.com/posts/the-convert-in-go/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">为什么程序员更应该支持正版软件？
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>做对的事情 我始终觉得，程序员应该将更多的精力花费在自己的专业上。如果在自己可接受的范围里面，花钱去支持正版软件，节约自己的时间，提高幸福感，才是正确的事情。
+...</p>
+  </div>
+  <footer class="entry-footer">2020-08-29 · 5 分钟 · 约 2586 字</footer>
+  <a class="entry-link" aria-label="post link to 为什么程序员更应该支持正版软件？" href="https://luojiego.com/posts/why-should-programmers-support-genuine-software/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">MantisBT 安装
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>MantisBT 安装 github 地址 注意，不能从 release 页面下载来安装，要从官网进行下载
+下载并解压 # curl -LO https://github.com/mantisbt/mantisbt/archive/release-2.24.1.zip # 这个代码是错误的 curl -LO https://nchc.dl.sourceforge.net/project/mantisbt/mantis-stable/2.24.1/mantisbt-2.24.1.zip unzip unzip release-2.24.1.zip 安装官方文档
+建议详细阅读官方文档，不然将会和我一样遇到一车子的坑。
+...</p>
+  </div>
+  <footer class="entry-footer">2020-07-01 · 4 分钟 · 约 1947 字</footer>
+  <a class="entry-link" aria-label="post link to MantisBT 安装" href="https://luojiego.com/posts/install-mantisbt/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">V2ray 终端代理
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>V2ray 终端代理设置 我可能是个白痴吧，从业这么久了，都没有研究过在终端加速 HTTP/HTTPS，特别是下载 github 的开源代码，或者使用 brew 更新或者安装软件。
+昨天竟然才明白，终端使用了代理之后，ping 不通谷歌或者非死不可是正常的。所以之前的郁闷一下就解决了。下面说说在三个操作系统上简单的设置吧。
+Mac 拷贝代理地址 如图，右键选择菜单项，地址就会被拷贝，然后在终端执行就 OK 了。
+...</p>
+  </div>
+  <footer class="entry-footer">2020-07-01 · 4 分钟 · 约 1753 字</footer>
+  <a class="entry-link" aria-label="post link to V2ray 终端代理" href="https://luojiego.com/posts/v2ray-proxy-setting/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">谈谈我对 Mac 的看法
     </h2>
   </header>
@@ -172,127 +300,12 @@
   <footer class="entry-footer">2020-06-27 · 6 分钟 · 约 3324 字</footer>
   <a class="entry-link" aria-label="post link to 谈谈我对 Mac 的看法" href="https://luojiego.com/posts/about-mac/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Mac 重装之后,删除容器中的其它卷宗
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>问题 128GB 的机器，重新安装机器之后，安装完一些必备的软件，发现只有 8GB 可用了，要知道我是为了节省一个空间才重新安装的，结果成这样，恶心程度可想而知啊。
-如图：
-存储空间查看 关于本机 -&gt; 存储空间
-发现『容器中的其它卷宗』占用了 70GB&#43;
-一番谷歌 Apple 论坛上并没有找到解决方案，让我重启，重启并没有任何改善。
-...</p>
-  </div>
-  <footer class="entry-footer">2020-06-27 · 2 分钟 · 约 960 字</footer>
-  <a class="entry-link" aria-label="post link to Mac 重装之后,删除容器中的其它卷宗" href="https://luojiego.com/posts/mac-delete-container/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">go-micro-broker-kafka-demo
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>困惑 有点小心动要研究一下 go-micro 的 broker，正好在研究 kafka，想找个 demo 尝试一下，但是真让人头大，并没有找到很容易上手的案例，于是自己码一篇来帮助有兴趣研究的朋友。
-V2 版本 代码 在 https://github.com/micro/examples v2 版本下面的 broker/main.go 中增加了一行代码
-_ &#34;github.com/micro/go-plugins/broker/kafka/v2&#34; ...</p>
-  </div>
-  <footer class="entry-footer">2020-06-10 · 4 分钟 · 约 1025 字</footer>
-  <a class="entry-link" aria-label="post link to go-micro-broker-kafka-demo" href="https://luojiego.com/posts/go-micro-broker-kafka-demo/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">C&#43;&#43; Mysql null 引发的血案
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>代码 出错代码段 bool CGameServer::getAccountInfoByUserId(int user_id, UserAccountData&amp; data) { if (connectToLocalDB()) { log_error(&#34;connect to db failed&#34;); return false; } TLIB_DB_LINK *pTempDBLink = &amp;m_stLDBLink; snprintf(pTempDBLink-&gt;sQuery[0], sizeof(pTempDBLink-&gt;sQuery[0]), &#34;select bind_mark, account, password, state, device_mark, country, tunnel, \ register_version, transfer_code, bind_equipment from account_data where \ user_id=%d&#34;, user_id); //...... if (pTempDBLink-&gt;stRow[i]) { data._transfer_code = pTempDBLink-&gt;stRow[i&#43;&#43;]; } if (pTempDBLink-&gt;stRow[i]) { data._bind_equipment = atoi(pTempDBLink-&gt;stRow[i&#43;&#43;]); } //...... ...</p>
-  </div>
-  <footer class="entry-footer">2020-06-03 · 3 分钟 · 约 977 字</footer>
-  <a class="entry-link" aria-label="post link to C&#43;&#43; Mysql null 引发的血案" href="https://luojiego.com/posts/cpp-null/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">管理后台关于时间的“补丁”
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>我们管理后台的历史 18年可以新做的项目，要求我们做管理后台，但是我之前没有前端的任何经验，另外两个小伙伴也没有。只是用 Go 做过简单的页面。只接触过一点点模板的东西，要做一个管理后台，难度可想而知。
-但是坚持了下来，19年后台经过两三次的框架重构，算是有模有样了吧。
-问题显现 刚开始，我们只有国际版本的后台，使用的是 UTC 时间，管理后台上有很多关于活动时间的设置，之前并没有任何关于时间的标准设计方式。所以后台页面传入到后台的时间格式有两种，一种是时间格式字符串，例如 2020-05-20 20:00，另外一种是以时间戳的方式传递给后端。
-...</p>
-  </div>
-  <footer class="entry-footer">2020-05-20 · 5 分钟 · 约 2667 字</footer>
-  <a class="entry-link" aria-label="post link to 管理后台关于时间的“补丁”" href="https://luojiego.com/posts/background-time/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">goland 25 大特色编辑功能
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>写在前面 使用了Goland两年了，好多功能都不会用，特意总结一下，加强自己的记忆
-GoLand IDE 的 25 大特色编辑功能 – 第 1 部分
-GoLand IDE 的 25 大特色编辑功能 – 第 2 部分
-GoLand IDE 的 25 大特色编辑功能 – 第 3 部分
-...</p>
-  </div>
-  <footer class="entry-footer">2020-04-19 · 5 分钟 · 约 2641 字</footer>
-  <a class="entry-link" aria-label="post link to goland 25 大特色编辑功能" href="https://luojiego.com/posts/goland-short-cuts/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">程序员“花式作死”的入职方式
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> 不会游泳，怎么换泳池也是没有用的。
-程序员很有可能在做出一些成就的时候，过分高估自己的能力。从此目中无人，很快便会发现，在公司干不下去。在他看来，是原有公司的问题比较多，所以离职了。
-但是他们却忘记了，离开平台，他们什么也不是，甚至连他平时使用最熟悉的一个平台，或者环境都没有能力搭起来，这个时间，在新入职的公司，必然磕磕绊绊。甚至会出现，一年内连续换几家公司的情况。
-下面我说说我对于这些问题的看法，毕竟自己也曾错的一塌糊涂。
-...</p>
-  </div>
-  <footer class="entry-footer">2020-04-13 · 6 分钟 · 约 3179 字</footer>
-  <a class="entry-link" aria-label="post link to 程序员“花式作死”的入职方式" href="https://luojiego.com/posts/programmer-fancy-death-onboarding-method/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">学习目标
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>误区 从业7年以来，前5年都在使用 C&#43;&#43;, 14年就开始接触 Redis 和 Protobuf, 但是到现在，依然只停留在使用层面，甚至只会使用一些简单的东西。类似于 Redis 中的集群，根本连了解都没有了解过，批量请求也没有使用过。接触 Go 以来，也是只会用, 原理不了解。
-改进 每个疑惑点，最好深究原因； 重新学习，学而时习之，不亦乐乎； 学习源码，刚开始必然很难，可以从别人的讲解开始； 学习算法，之前学习的太浅，根本不能在大脑中停留太长时间； 坚持，每天早晨6点30起床，早睡早起，使用早起的时间来学习； </p>
-  </div>
-  <footer class="entry-footer">2020-04-09 · 1 分钟 · 约 560 字</footer>
-  <a class="entry-link" aria-label="post link to 学习目标" href="https://luojiego.com/posts/goal-md/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">遇见Go夜读
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>更加清晰的人生方向 不再迷茫 ​	在人生的第 30 个年头，终于明白人生的意义。19 年 9 月底，公司唯一一款产品因为一些原因被苹果下架。梦想破灭，我几乎要对游戏失去了兴趣，有想过放弃现在的环境，重新选择。但是，在西安这个比较小的环境里面，我也清楚的知道，没有其它的选择。虽然很失望，但是起码和老婆孩子在一起，每天下班回到家，儿子一直不停的叫着“爸爸”，也没有那么累了。
-​	在这个比较关键的时刻，我终于开始听一年前媳妇推荐给我的樊登读书。得益于樊老师传达的许多理论，让我不再迷茫。9月24日被通知产品下架，10月8日我便从这个失意的过程中走出。因为在这段时间，吸收了许多的人生智慧，get 不到许多新技能。我从产品被下架的阴影中走出来了，同时也放下手里的烟，顺带明白了如何和媳妇孩子相处。我终于明白，活的不快乐只是因为内心不够充实，而物质的满足对于内心的满足无任何帮助，反而只会让欲望变得更强。
-...</p>
-  </div>
-  <footer class="entry-footer">2020-04-07 · 6 分钟 · 约 3092 字</footer>
-  <a class="entry-link" aria-label="post link to 遇见Go夜读" href="https://luojiego.com/posts/meet-ngiht-go/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://luojiego.com/page/6/">
       «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://luojiego.com/page/8/">Next&nbsp;&nbsp;»
     </a>
   </nav>
 </footer>
