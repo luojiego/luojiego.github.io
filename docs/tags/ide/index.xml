@@ -15,5 +15,16 @@
       <guid>https://luojiego.com/posts/key-takeaway-after-switching-8-ides/</guid>
       <description>&lt;p&gt;有一天打开代码时，突然有些想不起第一个用的编辑器叫啥了，这才意识到是时候记录下这些年我和各种 IDE 的爱恨情仇了。&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Goland 25 大特色编辑功能</title>
+      <link>https://luojiego.com/posts/goland-short-cuts/</link>
+      <pubDate>Sun, 19 Apr 2020 10:13:32 +0800</pubDate>
+      <guid>https://luojiego.com/posts/goland-short-cuts/</guid>
+      <description>&lt;h1 id=&#34;写在前面&#34;&gt;写在前面&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;使用了Goland两年了，好多功能都不会用，特意总结一下，加强自己的记忆&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.jetbrains.com/cn/2019/11/goland-ide-p1/&#34;&gt;GoLand IDE 的 25 大特色编辑功能 – 第 1 部分&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://blog.jetbrains.com/cn/2019/11/goland-ide-p2/&#34;&gt;GoLand IDE 的 25 大特色编辑功能 – 第 2 部分&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://blog.jetbrains.com/cn/2020/02/goland-ide-3/&#34;&gt;GoLand IDE 的 25 大特色编辑功能 – 第 3 部分&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
