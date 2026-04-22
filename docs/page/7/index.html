@@ -161,6 +161,21 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">内存不足 Redis 获取数据出错引发的雪崩分析
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>异常回顾 28 日凌晨机器警报拉响，某 Redis 服务出现“MISCONF Redis is configured to save RDB snapshots……”，接着活动服开始连续崩溃，大概十分钟之后，活动服正常拉起。
+经过分析，发现机器由于内存不足，Redis 服务无法正常 dump，导致写入失败引发的连环错误。但是看服务的日志时，我们发现一些特别诡异的问题，从 Redis 中获取出来的数据数据格式和请求的根本的不匹配。熟悉 C&#43;&#43; 的小伙伴深知，这大概率是内存出错了。但是仔细看了看，毫无头绪，主要由于服务使用的是单线程的模型，请求数据时，返回的数据格式就是错误的。
+HSET 的时候，还会调用 EXPIRE 设置过期时间，调用了两次 redisAppendCommand ，但却只调用了一次 redisGetReply 命令，也即只获取了 hset 的返回，但是并未获取 expire 的返回，这会导致后续的命令再调用 redisGetReply 时获取到是 expire 的返回，后续的命令就会连续错位。
+...</p>
+  </div>
+  <footer class="entry-footer">2022-03-06 · 9 分钟 · 约 3917 字</footer>
+  <a class="entry-link" aria-label="post link to 内存不足 Redis 获取数据出错引发的雪崩分析" href="https://luojiego.com/posts/avalanche-caused-by-insufficient-machine-memory/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">2021 年度总结
     </h2>
   </header>
@@ -301,18 +316,6 @@ AWS 的安全责任：计算，存储，数据库和网络以及 全球基础设
   </div>
   <footer class="entry-footer">2020-10-25 · 3 分钟 · 约 1637 字</footer>
   <a class="entry-link" aria-label="post link to AWS secrity day 10 月 23 日笔记" href="https://luojiego.com/posts/aws-secrity-day/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Go 中&#34;坑爹&#34;的类型转换
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Go 代码 package main import ( &#34;fmt&#34; &#34;math&#34; ) func main() { var count uint32 fmt.Printf(&#34;count: %d\n&#34;, count) fmt.Printf(&#34;count - 1: %d\n&#34;, count - 1) // num := math.Pow(2, float64(count-1)) fmt.Printf(&#34;math.Pow(2, float64(count-1)): %f\n&#34;, math.Pow(2, float64(count-1))) fmt.Printf(&#34;int(math.Pow(2, float64(count-1))): %d\n&#34;, int(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;uint32(math.Pow(2, float64(count-1))): %d\n&#34;, uint32(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;int32(math.Pow(2, float64(count-1))): %d\n&#34;, int32(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;uint64(math.Pow(2, float64(count-1))): %d\n&#34;, uint64(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;int64(pow(2,1023): %d\n&#34;, int64(math.Pow(2, 1023))) fmt.Printf(&#34;uint64(pow(2,1023): %d\n&#34;, uint64(math.Pow(2, 1023))) } ...</p>
-  </div>
-  <footer class="entry-footer">2020-09-20 · 4 分钟 · 约 1772 字</footer>
-  <a class="entry-link" aria-label="post link to Go 中&#34;坑爹&#34;的类型转换" href="https://luojiego.com/posts/the-convert-in-go/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

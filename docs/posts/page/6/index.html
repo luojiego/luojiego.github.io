@@ -175,6 +175,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">开始使用 GitHub Pages
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>买个服务器单纯用来部署个博客挺浪费的，既然 GitHub 提供了，那就安心使用吧。
+后续直接使用 GitHub Pages，不再考虑单独使用服务器，浪费时间和精力。
+</p>
+  </div>
+  <footer class="entry-footer">2024-04-11 · 1 分钟 · 约 165 字</footer>
+  <a class="entry-link" aria-label="post link to 开始使用 GitHub Pages" href="https://luojiego.com/posts/start_use_github_pages/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">《别想太多啦》读书笔记
     </h2>
   </header>
@@ -318,21 +332,6 @@ VS Code 设置 就正常设置 “Font Family” 即可：&#39;Roboto Mono&#39;,
   </div>
   <footer class="entry-footer">2022-12-23 · 3 分钟 · 约 1104 字</footer>
   <a class="entry-link" aria-label="post link to 我的常用软件字体设置" href="https://luojiego.com/posts/my-font-settings/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">内存不足 Redis 获取数据出错引发的雪崩分析
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>异常回顾 28 日凌晨机器警报拉响，某 Redis 服务出现“MISCONF Redis is configured to save RDB snapshots……”，接着活动服开始连续崩溃，大概十分钟之后，活动服正常拉起。
-经过分析，发现机器由于内存不足，Redis 服务无法正常 dump，导致写入失败引发的连环错误。但是看服务的日志时，我们发现一些特别诡异的问题，从 Redis 中获取出来的数据数据格式和请求的根本的不匹配。熟悉 C&#43;&#43; 的小伙伴深知，这大概率是内存出错了。但是仔细看了看，毫无头绪，主要由于服务使用的是单线程的模型，请求数据时，返回的数据格式就是错误的。
-HSET 的时候，还会调用 EXPIRE 设置过期时间，调用了两次 redisAppendCommand ，但却只调用了一次 redisGetReply 命令，也即只获取了 hset 的返回，但是并未获取 expire 的返回，这会导致后续的命令再调用 redisGetReply 时获取到是 expire 的返回，后续的命令就会连续错位。
-...</p>
-  </div>
-  <footer class="entry-footer">2022-03-06 · 9 分钟 · 约 3917 字</footer>
-  <a class="entry-link" aria-label="post link to 内存不足 Redis 获取数据出错引发的雪崩分析" href="https://luojiego.com/posts/avalanche-caused-by-insufficient-machine-memory/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

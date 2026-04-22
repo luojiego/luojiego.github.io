@@ -161,6 +161,18 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Go 中&#34;坑爹&#34;的类型转换
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Go 代码 package main import ( &#34;fmt&#34; &#34;math&#34; ) func main() { var count uint32 fmt.Printf(&#34;count: %d\n&#34;, count) fmt.Printf(&#34;count - 1: %d\n&#34;, count - 1) // num := math.Pow(2, float64(count-1)) fmt.Printf(&#34;math.Pow(2, float64(count-1)): %f\n&#34;, math.Pow(2, float64(count-1))) fmt.Printf(&#34;int(math.Pow(2, float64(count-1))): %d\n&#34;, int(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;uint32(math.Pow(2, float64(count-1))): %d\n&#34;, uint32(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;int32(math.Pow(2, float64(count-1))): %d\n&#34;, int32(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;uint64(math.Pow(2, float64(count-1))): %d\n&#34;, uint64(math.Pow(2, float64(count-1)))) fmt.Printf(&#34;int64(pow(2,1023): %d\n&#34;, int64(math.Pow(2, 1023))) fmt.Printf(&#34;uint64(pow(2,1023): %d\n&#34;, uint64(math.Pow(2, 1023))) } ...</p>
+  </div>
+  <footer class="entry-footer">2020-09-20 · 4 分钟 · 约 1772 字</footer>
+  <a class="entry-link" aria-label="post link to Go 中&#34;坑爹&#34;的类型转换" href="https://luojiego.com/posts/the-convert-in-go/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">为什么程序员更应该支持正版软件？
     </h2>
   </header>
@@ -288,22 +300,6 @@ GoLand IDE 的 25 大特色编辑功能 – 第 3 部分
   </div>
   <footer class="entry-footer">2020-04-19 · 5 分钟 · 约 2641 字</footer>
   <a class="entry-link" aria-label="post link to Goland 25 大特色编辑功能" href="https://luojiego.com/posts/goland-short-cuts/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">程序员“花式作死”的入职方式
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> 不会游泳，怎么换泳池也是没有用的。
-程序员很有可能在做出一些成就的时候，过分高估自己的能力。从此目中无人，很快便会发现，在公司干不下去。在他看来，是原有公司的问题比较多，所以离职了。
-但是他们却忘记了，离开平台，他们什么也不是，甚至连他平时使用最熟悉的一个平台，或者环境都没有能力搭起来，这个时间，在新入职的公司，必然磕磕绊绊。甚至会出现，一年内连续换几家公司的情况。
-下面我说说我对于这些问题的看法，毕竟自己也曾错的一塌糊涂。
-...</p>
-  </div>
-  <footer class="entry-footer">2020-04-13 · 6 分钟 · 约 3179 字</footer>
-  <a class="entry-link" aria-label="post link to 程序员“花式作死”的入职方式" href="https://luojiego.com/posts/programmer-fancy-death-onboarding-method/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

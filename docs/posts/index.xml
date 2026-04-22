@@ -6,8 +6,43 @@
     <description>Recent content in Posts on Roger&#39;s Blog</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Apr 2026 19:07:59 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2026 21:15:28 +0800</lastBuildDate>
     <atom:link href="https://luojiego.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>《黑客与画家》 读书笔记</title>
+      <link>https://luojiego.com/posts/hackers-with-painters-notes/</link>
+      <pubDate>Wed, 22 Apr 2026 21:15:28 +0800</pubDate>
+      <guid>https://luojiego.com/posts/hackers-with-painters-notes/</guid>
+      <description>&lt;p&gt;我与这本书的渊缘始于刚开始工作的半个月，要熟悉环境，还要熟悉那么多的代码，压力山大，连续有半个月晚上失眠睡不着觉，有个晚上看完了这本书，但是唯一有印象的是作者提到了 Lisp 这门语言，其它相关的内容就是大家都“黑客”概念的误解。&lt;/p&gt;
+&lt;p&gt;“黑客”一词在高中的时候就听说，对于农村家庭的孩子，电脑都接触不到。有天放学的时候，准备去网吧。同桌问我，你去干啥，我说，去网吧，我准备要成为一名“黑客”。但是当时的我，根本就不清楚这意味着什么。&lt;/p&gt;
+&lt;p&gt;第一次高考完，成绩相当糟糕，只能让专科。因为高三都跟女朋友谈恋爱了（她现在是我媳妇），当时全部报的志愿都是计算机专业。但是最后选择了复读，第二年倒是听了堂姐的话，报了大连外国语的英语相关专业，但是没被录取，最后又回到了软件行业。我当时就觉得我适合干这行，但是具体是什么样子的，我根本不知道。&lt;/p&gt;
+&lt;p&gt;如今我已经从业十多年，从一个菜鸟变成了一个老鸟，再重新读这本书，感触良多。&lt;/p&gt;
+&lt;p&gt;对于没有从事开发的人而言，读这本书可能没有多少感觉。这也是为什么我当时看了一遍书籍几乎没有感觉，加上当时读书的习惯很不好，没有涂涂画画，也没有整理笔记。&lt;/p&gt;
+&lt;p&gt;这次读，读的也比较慢，在讲书呆子如何应对这个世界时，一边想着上小学被别人欺负的场景，也一边再思考上小学的大宝给我们讲他是如何应对来自同伴的压力。&lt;/p&gt;
+&lt;p&gt;工作的前三年，只会一门 C++，别的都不会。到现在语言已不再是问题，数据库，WEB 前台以及后端架构与实现，可以信手拈来之后。重新看这本书，关于设计方面的内容，只觉得自己平时书看的太少了。往往是在不停的踩过坑之后，才看过已经有很多大神帮我们总结过了。&lt;/p&gt;
+&lt;p&gt;作为一个程序员，无时无刻不再设计。从函数名到变量名，都在设计，都在提高自己的品味。最常见的当然属于制定各种交互接口，因为与我对接的同事，要么不愿意做，要么设计之后，不愿意修改。而我会以最快的速度先实现第一个版本，然后自测，去发现其中的不足，然后在自测的过程不断优化。开始对接的时候，遇到不合理的地方，我也会习惯性的去修改，而不以时间为理由，回复一句就这样吧，或者下个版本再说之类的话。我希望设计的接口足够的简洁，尽可能的无歧义。因为别人根据名称发现调错接口时，设计接口的人负有主要责任。&lt;/p&gt;
+&lt;p&gt;实习的第一个月，我一度觉得自己坚持不下来了，想要去做产品。但是现在回头想想，多亏自己坚持下来了，因为我的性格本身就适合往“黑客”的方向去深入。随着不停的深入，发现自己需要学习的东西就越多，但我不会因为这些退缩，反倒会有更多的动力去学习。&lt;/p&gt;
+&lt;h1 id=&#34;笔记&#34;&gt;笔记&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;设计是技术和人类需求的桥梁，只有通过好的设计，技术才能源源不断地满足需求&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;运营创业公司，每天都像在战斗；而为大公司工作，就像在窒息中挣扎。&lt;/p&gt;
+&lt;p&gt;我们生活中的一切，都正在成为计算机。所以，如果你想理解我们目前的世界以及它的未来动向，那么多了解一些黑客的想法会对你有帮助。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;许多伟大的公司，一开始的时候做的都是与后来业务完全不同的事情。乔布斯创建苹果公司后的第一个计划是出售计算机零件，然后让用户自己组装，后来才变成开发苹果计算机。你需要倾听用户的声音，琢磨他们需要什么，然后就去做&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;所有东西都在变成软件。印刷机诞生后，人类写过多少个字，未来就有多少家软件公司。&lt;/p&gt;
+&lt;p&gt;德国哲学家马丁·海德格尔（Martin Heidegger）说过一句著名的话：&lt;strong&gt;人应该”向死而生“（Being-toward-death）&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;正如格雷厄姆所说，你要做的就是“&lt;strong&gt;活在未来，然后选出现在还没有的部分&lt;/strong&gt;”（&lt;strong&gt;Live in the future, then build what&amp;rsquo;s missing&lt;/strong&gt;）。&lt;/p&gt;
+&lt;p&gt;想要把握这个时代，就必须理解计算机。理解计算机的关键，则是要理解计算机背后的人。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;程序员的审美决定了你看到的软件界面，程序员的爱好决定了你有什么样的软件可以使用&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;我们的时代是程序员主导的时代，而伟大的程序员就是黑客。&lt;/p&gt;
+&lt;p&gt;自由软件基金会创建人理查德·斯托曼（Richard M.Stallman）说：”&lt;strong&gt;出于兴趣而解决某个难题，不管它有没有用，这就是黑客。&lt;/strong&gt;”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;All information should be free&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Hackers should be judged by their hacking, not bogus criteria such as degree, age, race, or position.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;You can create art and beauty on a computer.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;黑客价值观的核心原则则可以概括成这样几点：&lt;strong&gt;分享、开放、民主、计算机的自由使用、进步&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;对于黑客来说，关着的门就是一种挑衅，而锁着的门则是一种侮辱。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;真正的黑客致力于改变世界，让世界运转得更好&lt;/strong&gt;。媒体对黑客的定义未免过于片面。&lt;/p&gt;
+&lt;p&gt;和画家一样，黑客只是杯有一门特殊手艺、有创造天赋的普通人。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;编程语言就是程序员的思维方式&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>《好的家庭教育》读书笔记</title>
       <link>https://luojiego.com/posts/good-family-education-notes/</link>
