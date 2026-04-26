@@ -175,6 +175,24 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">从Grep 到 Grafana Loki 的日志分析之路
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>我走了太多弯路 说实话，在日志处理这件事上，我被“知识陷阱”困了很久。
+因为我太熟悉命令行了，grep、rg、awk 玩得飞起，所以过去很长一段时间，我都固执地认为这就是分析日志的“正统”方式。但现实经常打脸：当日志散落在不同服务器、不同路径下时，我得开无数个终端窗口跳来跳去，查个链路问题跟查案一样。
+更惨的是，以前公司不给硬件资源，我根本不敢想 Elasticsearch 这种“吞金兽”。为了解决查询问题，我还自己折腾过一套特原始的方案：写脚本去 OSS 上拉压缩包，下载、解压、再用 rg 扫。还能只查找固定时间短的日志，使用者必须先在 GM 后台上查询到用户的登录记录，再根据日期查询具体时间的日志。
+后来入职新公司，我这套“土法炼钢”的操作甚至被同事吐槽过：“你怎么还在当原始人？我们早都用 Grafana 查了。”
+直到最近，我硬着头皮自己试着搭了一套 Grafana &#43; Loki &#43; Promtail，真的感觉推开了新世界的大门。那种震撼感在于：我只花了不到三十分钟部署，那种多机协同、可视化检索的爽感，瞬间就秒杀了过去几年的肉搏操作。
+现在回头看，天天蹲在黑框框里人肉搜索，确实像个原始人。这篇文章就记录一下这个让我“走出石器时代”的工具组合，以及我的安装过程。讲真，以后哪怕项目再小、只有一个服务，我也要把日志接入 Loki。人生苦短，不要把生命浪费在 cd 和 grep 上。
+...</p>
+  </div>
+  <footer class="entry-footer">2025-12-21 · 8 分钟 · 约 3247 字</footer>
+  <a class="entry-link" aria-label="post link to 从Grep 到 Grafana Loki 的日志分析之路" href="https://luojiego.com/posts/goodbye-grep-transition-from-cli-grafana-loki/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">这些年我用过的 IDE
     </h2>
   </header>
@@ -316,20 +334,6 @@ AI 革新浪潮中的思考 2024 年被称为 AI 元年诚非偶然。当下 AI 
   </div>
   <footer class="entry-footer">2025-01-05 · 104 分钟 · 约 61680 字</footer>
   <a class="entry-link" aria-label="post link to 提高抽象思维能力 - 《数学通识 50 讲》笔记" href="https://luojiego.com/posts/50-lecture-general-mathematics/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">什么是哲学 - 《境界》读书笔记
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>最早接触“哲学”这个词语，竟然是在学习 Go 语言的时候，有人提到 XXX 是这个语言的设计哲学。
-然后是在 19 年，听了《悲剧的诞生》这本书，也算是开始对哲学有了关注，后来断断续续在樊登读书上听了几本哲学相关的书籍，但是没有像这本书一样，一次讲到好多哲学的大家。虽然讲了这么多哲学相关的内容，但是我对哲学是什么还没有一个清晰的概念，需要我后续学习更多的书籍，去体会什么是哲学。
-...</p>
-  </div>
-  <footer class="entry-footer">2025-01-04 · 45 分钟 · 约 26423 字</footer>
-  <a class="entry-link" aria-label="post link to 什么是哲学 - 《境界》读书笔记" href="https://luojiego.com/posts/jing-jie/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
