@@ -15,7 +15,7 @@
       <guid>https://luojiego.com/posts/v2ray-proxy-setting/</guid>
       <description>&lt;h1 id=&#34;v2ray-终端代理设置&#34;&gt;V2ray 终端代理设置&lt;/h1&gt;
 &lt;p&gt;我可能是个白痴吧，从业这么久了，都没有研究过在终端加速 HTTP/HTTPS，特别是下载 &lt;strong&gt;github&lt;/strong&gt; 的开源代码，或者使用 &lt;strong&gt;brew&lt;/strong&gt; 更新或者安装软件。&lt;/p&gt;
-&lt;p&gt;昨天竟然才明白，终端使用了代理之后，&lt;strong&gt;ping&lt;/strong&gt; 不通谷歌或者非死不可是正常的。所以之前的郁闷一下就解决了。下面说说在三个操作系统上简单的设置吧。&lt;/p&gt;
+&lt;p&gt;昨天竟然才明白，终端使用了代理之后，&lt;strong&gt;ping&lt;/strong&gt; 不通 Google 或者 Facebook 是正常的。所以之前的郁闷一下就解决了。下面说说在三个操作系统上简单的设置吧。&lt;/p&gt;
 &lt;h2 id=&#34;mac&#34;&gt;Mac&lt;/h2&gt;
 &lt;h3 id=&#34;拷贝代理地址&#34;&gt;拷贝代理地址&lt;/h3&gt;
 &lt;p&gt;如图，右键选择菜单项，地址就会被拷贝，然后在终端执行就 OK 了。&lt;/p&gt;
